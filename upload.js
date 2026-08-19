@@ -127,8 +127,15 @@ async function ensureRemoteDir(sftp, remoteDir) {
  * Returns true when anything was kept at or below this level. The caller uses
  * that to skip its own `rmdir`: a preserved entry leaves its parent non-empty,
  * and `rmdir` fails on a non-empty directory.
+ *
+ * An entry the account may not delete is recorded in `problems` and skipped
+ * rather than ending the deploy. A control panel leaves files of its own in a
+ * new web root -- `404.html`, `index.html`, sometimes an immutable `.user.ini`
+ * -- and refusing to publish because one of them will not move is the wrong
+ * trade: the upload overwrites what it replaces, and whatever is left over is
+ * reported at the end instead of stopping the site from updating.
  */
-async function cleanRemoteDir(sftp, remoteDir) {
+async function cleanRemoteDir(sftp, remoteDir, problems) {
 	const list = await sftp.list(remoteDir);
 	let preservedAny = false;
 
@@ -143,18 +150,29 @@ async function cleanRemoteDir(sftp, remoteDir) {
 		}
 
 		if (item.type === "d") {
-			if (await cleanRemoteDir(sftp, remotePath)) {
+			if (await cleanRemoteDir(sftp, remotePath, problems)) {
 				preservedAny = true;
 				continue;
 			}
 
-			await sftp.rmdir(remotePath);
-			console.log(`Removed directory: ${remotePath}`);
+			try {
+				await sftp.rmdir(remotePath);
+				console.log(`Removed directory: ${remotePath}`);
+			} catch (error) {
+				problems.push({ remotePath: `${remotePath}/`, message: error.message });
+				// a directory that stays keeps its parent non-empty
+				preservedAny = true;
+			}
 			continue;
 		}
 
-		await sftp.delete(remotePath);
-		console.log(`Removed file: ${remotePath}`);
+		try {
+			await sftp.delete(remotePath);
+			console.log(`Removed file: ${remotePath}`);
+		} catch (error) {
+			problems.push({ remotePath, message: error.message });
+			preservedAny = true;
+		}
 	}
 
 	return preservedAny;
@@ -178,7 +196,19 @@ async function deploy(localDir, remoteDir, config) {
 		await ensureRemoteDir(sftp, remoteDir);
 
 		console.log(`Cleaning remote directory: ${remoteDir}`);
-		await cleanRemoteDir(sftp, remoteDir);
+		const problems = [];
+		await cleanRemoteDir(sftp, remoteDir, problems);
+
+		if (problems.length > 0) {
+			console.warn(`${problems.length} entr${problems.length === 1 ? "y" : "ies"} could not be removed:`);
+			for (const problem of problems.slice(0, 20)) {
+				console.warn(`  ${problem.remotePath}: ${problem.message}`);
+			}
+			if (problems.length > 20) {
+				console.warn(`  ... and ${problems.length - 20} more`);
+			}
+			console.warn("The upload overwrites any of these it replaces; the rest stay as they are.");
+		}
 
 		console.log(`Uploading ${resolvedLocalDir} -> ${remoteDir}`);
 		await sftp.uploadDir(resolvedLocalDir, remoteDir);
