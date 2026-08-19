@@ -1,0 +1,798 @@
+/* =============================================================================
+   docs — the reading experience.
+
+   Everything here is scoped to the docs chrome (`#nd-*`) or to `.prose`.
+   Generic prose rules stay at `.prose` specificity (0,1,0) so a component class
+   such as `.dfx-diag td` (0,1,1) always wins without `!important`.
+   ============================================================================= */
+
+/* -----------------------------------------------------------------------------
+   1. layout chrome
+   -------------------------------------------------------------------------- */
+
+#nd-docs-layout {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--dream-flux) 10%, transparent),
+      transparent 22rem
+    ),
+    linear-gradient(
+      115deg,
+      color-mix(in oklab, var(--dream-pink) 7%, transparent),
+      transparent 24rem
+    );
+}
+
+#nd-nav > div,
+#nd-subnav {
+  border-color: color-mix(in oklab, var(--dream-flux) 26%, var(--color-fd-border));
+}
+
+#nd-nav a[data-active='true'],
+#nd-nav button[data-active='true'] {
+  color: var(--dfx-brand-text);
+}
+
+#nd-sidebar {
+  border-color: color-mix(in oklab, var(--dream-flux) 20%, var(--color-fd-border));
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--dream-flux) 10%, transparent),
+      transparent 18rem
+    ),
+    color-mix(in oklab, var(--color-fd-card) 92%, transparent);
+}
+
+[data-search],
+[data-search-full] {
+  border-color: color-mix(in oklab, var(--dream-flux) 30%, var(--color-fd-border));
+}
+
+/* -----------------------------------------------------------------------------
+   2. sidebar tree — hierarchy has to carry 13 sections / 51 pages
+   -------------------------------------------------------------------------- */
+
+/* section headers: heavier than their children, with air above each group */
+#nd-sidebar button[aria-expanded] {
+  margin-block-start: var(--dfx-space-2);
+  padding-block: 0.3rem;
+  color: var(--color-fd-foreground);
+  font-size: var(--dfx-text-base);
+  font-weight: 600;
+}
+
+#nd-sidebar a[data-active] {
+  padding-block: 0.3rem;
+  font-size: var(--dfx-text-base);
+  line-height: var(--dfx-leading-snug);
+}
+
+/* restrained active state: a left rule and a weight change, never a filled pill */
+#nd-sidebar a[data-active='true'] {
+  background: transparent;
+  color: var(--dfx-brand-text);
+  font-weight: 600;
+}
+
+/* fumadocs only emits `content` on nested items, so top-level actives get the
+   colour/weight change and no rule — which is what the hierarchy wants. */
+#nd-sidebar a[data-active='true']::before {
+  inset-block: 0.28rem;
+  width: 2px;
+  border-radius: var(--dfx-radius-pill);
+  background: var(--dream-flux);
+}
+
+#nd-sidebar a[data-active='false']:hover {
+  background: var(--dfx-tint-hover);
+  color: var(--color-fd-foreground);
+}
+
+/* -----------------------------------------------------------------------------
+   3. table of contents
+   -------------------------------------------------------------------------- */
+
+#nd-toc h3,
+[data-toc-popover-content] h3 {
+  font-size: var(--dfx-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* the TOC re-uses `.prose` on its links; keep the docs type scale out of it */
+#nd-toc .prose,
+[data-toc-popover-content] .prose {
+  font-size: var(--dfx-text-sm);
+  line-height: var(--dfx-leading-snug);
+}
+
+#nd-toc a[data-active] {
+  border-inline-start: 2px solid transparent;
+  margin-inline-start: -1px;
+  padding-block: 0.3rem;
+}
+
+#nd-toc a[data-active='true'] {
+  border-inline-start-color: var(--dream-flux);
+  color: var(--dfx-brand-text);
+  font-weight: 500;
+}
+
+#nd-toc code,
+[data-toc-popover-content] code {
+  border: 0;
+  border-radius: var(--dfx-radius-xs);
+  background: var(--dfx-code-inline-bg);
+  padding: 0.1em 0.3em;
+  color: inherit;
+  font-family: var(--dfx-font-mono);
+  font-size: 0.92em;
+}
+
+/* -----------------------------------------------------------------------------
+   4. page header, breadcrumb, pagination
+   -------------------------------------------------------------------------- */
+
+#nd-page {
+  position: relative;
+}
+
+/* the brand hairline that opens every page */
+#nd-page::before {
+  content: '';
+  position: absolute;
+  inset-inline: 1rem;
+  inset-block-start: 0.35rem;
+  height: 2px;
+  border-radius: var(--dfx-radius-pill);
+  background: linear-gradient(
+    90deg,
+    var(--dream-flux),
+    var(--dream-cyan),
+    var(--dream-pink),
+    var(--dream-yellow)
+  );
+  opacity: 0.6;
+}
+
+/* breadcrumb — first child only when it is not the article body itself */
+#nd-page > div:first-child:not(.prose) {
+  color: var(--color-fd-muted-foreground);
+  font-size: var(--dfx-text-xs);
+  letter-spacing: 0.02em;
+}
+
+#nd-page > div:first-child:not(.prose) .text-fd-primary {
+  color: var(--dfx-brand-text);
+}
+
+#nd-page > h1 {
+  max-width: var(--dfx-measure);
+  color: var(--color-fd-foreground);
+  font-size: var(--dfx-text-2xl);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: var(--dfx-leading-tight);
+  text-wrap: balance;
+}
+
+#nd-page > h1 + p {
+  max-width: var(--dfx-measure);
+  color: var(--color-fd-muted-foreground);
+  font-size: var(--dfx-text-md);
+  line-height: var(--dfx-leading-snug);
+}
+
+/* pagination — last child only when it is not the article body itself */
+#nd-page > div:last-child:not(.prose) a {
+  border-color: var(--dfx-rule);
+  border-radius: var(--dfx-radius-md);
+}
+
+#nd-page > div:last-child:not(.prose) a:hover {
+  border-color: var(--dfx-rule-strong);
+  background: var(--dfx-tint-hover);
+}
+
+/* -----------------------------------------------------------------------------
+   5. prose rhythm and type scale
+   -------------------------------------------------------------------------- */
+
+.prose {
+  --tw-prose-links: var(--dfx-brand-text);
+  --tw-prose-code: var(--dfx-code-inline-fg);
+  --tw-prose-hr: var(--dfx-rule);
+  --tw-prose-th-borders: var(--dfx-rule);
+  --tw-prose-td-borders: var(--dfx-rule);
+  --tw-prose-quote-borders: var(--dfx-rule-strong);
+  font-size: var(--dfx-text-base);
+  line-height: var(--dfx-leading-body);
+}
+
+/* a comfortable measure for running text; tables, figures and the wide
+   containers deliberately keep the full column width */
+.prose > :where(p, ul, ol, dl, blockquote, h1, h2, h3, h4, h5, h6) {
+  max-width: var(--dfx-measure);
+}
+
+.prose :where(h1, h2, h3, h4):not(:where(.not-prose, .not-prose *)) {
+  color: var(--color-fd-foreground);
+  letter-spacing: -0.008em;
+  text-wrap: pretty;
+}
+
+.prose :where(h1):not(:where(.not-prose, .not-prose *)) {
+  font-size: var(--dfx-text-2xl);
+  font-weight: 600;
+  line-height: var(--dfx-leading-tight);
+}
+
+/* h2 opens a section: a hairline above it gives long reference pages a spine */
+.prose :where(h2):not(:where(.not-prose, .not-prose *)) {
+  margin-block: 2.4em 1em;
+  border-top: 1px solid var(--dfx-rule-faint);
+  padding-block-start: 0.8em;
+  font-size: var(--dfx-text-xl);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.prose > h2:first-child {
+  margin-block-start: 0;
+  border-top: 0;
+  padding-block-start: 0;
+}
+
+.prose :where(h3):not(:where(.not-prose, .not-prose *)) {
+  margin-block: 2em 0.7em;
+  font-size: var(--dfx-text-lg);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.prose :where(h4):not(:where(.not-prose, .not-prose *)) {
+  margin-block: 1.6em 0.5em;
+  font-size: var(--dfx-text-md);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.prose :where(p, li):not(:where(.not-prose, .not-prose *)) {
+  overflow-wrap: break-word;
+}
+
+.prose :where(a):not(:where(.not-prose, .not-prose *)) {
+  text-decoration-color: color-mix(in oklab, var(--dream-flux) 58%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+.prose :where(hr):not(:where(.not-prose, .not-prose *)) {
+  margin-block: var(--dfx-space-7);
+}
+
+/* -----------------------------------------------------------------------------
+   6. inline code — quieter than links, one step smaller than body
+   -------------------------------------------------------------------------- */
+
+.prose :where(code):not(:where(.not-prose, .not-prose *)) {
+  border: 0;
+  border-radius: var(--dfx-radius-xs);
+  background: var(--dfx-code-inline-bg);
+  padding: 0.14em 0.34em;
+  color: var(--dfx-code-inline-fg);
+  font-family: var(--dfx-font-mono);
+  font-size: 0.875em;
+  font-weight: inherit;
+  overflow-wrap: break-word;
+}
+
+.prose :where(a code):not(:where(.not-prose, .not-prose *)) {
+  color: inherit;
+}
+
+.prose :where(h1, h2, h3, h4) :where(code):not(:where(.not-prose, .not-prose *)) {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: 0.94em;
+}
+
+/* -----------------------------------------------------------------------------
+   7. code blocks — one hairline, a recessed surround, generous inner padding
+   -------------------------------------------------------------------------- */
+
+.prose figure.shiki {
+  margin-block: var(--dfx-space-5);
+  border: 1px solid var(--dfx-rule);
+  border-radius: var(--dfx-radius-md);
+  background: var(--dfx-code-surface);
+  box-shadow: none;
+}
+
+.prose figure.shiki > [role='region'] {
+  padding-block: var(--dfx-space-3);
+  font-size: var(--dfx-text-sm);
+}
+
+.prose figure.shiki pre {
+  font-family: var(--dfx-font-mono);
+  line-height: 1.7;
+}
+
+.prose figure.shiki figcaption {
+  border-bottom: 1px solid var(--dfx-rule-faint);
+  padding: 0.5rem var(--dfx-space-4);
+  color: var(--color-fd-muted-foreground);
+  font-family: var(--dfx-font-mono);
+  font-size: var(--dfx-text-xs);
+}
+
+/* -----------------------------------------------------------------------------
+   8. tables — the highest-value surface on a reference site.
+   Hairline row rules, no vertical grid, no zebra, sticky header when the
+   container scrolls, tabular numerals.
+   -------------------------------------------------------------------------- */
+
+.prose :where(table):not(:where(.not-prose, .not-prose *)) {
+  width: 100%;
+  /* the wrapper fumadocs emits owns the outer spacing */
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: transparent;
+  /* `hidden` here would trap the sticky header inside the table box */
+  overflow: visible;
+  font-size: var(--dfx-text-sm);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.6;
+  table-layout: auto;
+}
+
+/* `position` is deliberately not set here: a sticky header only makes sense
+   inside a container that actually scrolls, so it is declared on `.dfx-wide`
+   and `.dfx-diag`. Setting it globally would pin every header to the viewport. */
+.prose :where(thead th):not(:where(.not-prose, .not-prose *)) {
+  border: 0;
+  border-block-end: 1px solid var(--dfx-rule-strong);
+  background: var(--dfx-table-head-bg);
+  padding: 0.5rem 0.8rem;
+  color: var(--color-fd-foreground);
+  font-size: var(--dfx-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: start;
+  vertical-align: bottom;
+}
+
+.prose :where(td):not(:where(.not-prose, .not-prose *)) {
+  border: 0;
+  border-block-end: 1px solid var(--dfx-rule-faint);
+  padding: 0.5rem 0.8rem;
+  overflow-wrap: break-word;
+  text-align: start;
+  vertical-align: top;
+}
+
+.prose :where(tbody tr:hover td):not(:where(.not-prose, .not-prose *)) {
+  background: var(--dfx-table-row-hover);
+}
+
+/* the first column is nearly always an identifier: keep it on one line and
+   let it read as the row's key */
+.prose :where(tbody td:first-child):not(:where(.not-prose, .not-prose *)) {
+  color: var(--color-fd-foreground);
+}
+
+.prose :where(tbody td:first-child):has(> code:only-child) {
+  white-space: nowrap;
+}
+
+/* code inside a cell must wrap rather than blow the column */
+.prose :where(td code):not(:where(.not-prose, .not-prose *)) {
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.prose :where(td:first-child > code:only-child):not(:where(.not-prose, .not-prose *)) {
+  overflow-wrap: normal;
+}
+
+/* -----------------------------------------------------------------------------
+   9. callouts — four intents on the brand palette, a left rule and a low tint
+   -------------------------------------------------------------------------- */
+
+.prose [style*='--callout-color'] {
+  margin-block: var(--dfx-space-5);
+  border: 1px solid color-mix(in oklab, var(--callout-color) 24%, transparent);
+  border-radius: var(--dfx-radius-md);
+  background: color-mix(in oklab, var(--callout-color) 6%, var(--color-fd-card));
+  padding-block: var(--dfx-space-3);
+  padding-inline: 0 var(--dfx-space-4);
+  box-shadow: none;
+  font-size: var(--dfx-text-base);
+  line-height: var(--dfx-leading-snug);
+}
+
+.prose [style*='--callout-color'] > [role='none'] {
+  width: 2px;
+  border-radius: var(--dfx-radius-pill);
+  background: var(--callout-color);
+}
+
+/* -----------------------------------------------------------------------------
+   10. custom MDX components (COMPONENTS.md)
+
+   Class contract, matching what components/mdx/ actually renders:
+     .dfx-since / .dfx-since-ue   inline <span> version pill (`-ue` is a modifier)
+     .dfx-deprecated             block-level <div> banner
+     .dfx-synopsis               <div> wrapping a grammar fence
+     .dfx-grammar                the meta-syntax legend <table> itself
+     .dfx-wide                   <div> wrapping an over-wide table
+     .dfx-diag                   the diagnostics <table>, nested inside a <Wide>
+     .dfx-diag-msg               the <td> holding the message
+     .dfx-diag-ph                <span> around a `{Placeholder}` inside a message
+   -------------------------------------------------------------------------- */
+
+/* --- <Since v="…" /> ------------------------------------------------------ */
+
+.dfx-since {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  margin-inline-start: 0.45em;
+  border-radius: var(--dfx-radius-pill);
+  background: var(--dfx-since-bg);
+  padding: 0.14em 0.5em;
+  color: var(--dfx-since-fg);
+  font-family: var(--dfx-font-mono);
+  font-size: var(--dfx-text-xs);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  text-transform: none;
+  vertical-align: 0.08em;
+  white-space: nowrap;
+}
+
+.dfx-since-ue {
+  background: var(--dfx-since-ue-bg);
+  color: var(--dfx-since-ue-fg);
+}
+
+/* on its own line under a heading, or leading a table cell */
+:where(p, td, li) > .dfx-since:first-child {
+  margin-inline-start: 0;
+}
+
+/* --- <Deprecated since="…" use="…" /> ------------------------------------- */
+
+.dfx-deprecated {
+  display: grid;
+  gap: var(--dfx-space-2);
+  margin-block: var(--dfx-space-5);
+  border: 1px solid color-mix(in oklab, var(--dream-pink) 24%, transparent);
+  border-inline-start: 2px solid var(--dfx-pink-text);
+  border-radius: var(--dfx-radius-md);
+  background: color-mix(in oklab, var(--dream-pink) 6%, var(--color-fd-card));
+  padding: var(--dfx-space-3) var(--dfx-space-4);
+  font-size: var(--dfx-text-base);
+  line-height: var(--dfx-leading-snug);
+}
+
+.dfx-deprecated strong {
+  color: var(--dfx-pink-text);
+  font-weight: 600;
+}
+
+.dfx-deprecated p {
+  margin: 0;
+  color: var(--color-fd-muted-foreground);
+}
+
+.dfx-deprecated > p:first-child {
+  color: var(--color-fd-foreground);
+}
+
+/* --- <Synopsis> — a grammar rule, not runnable code ----------------------- */
+
+.dfx-synopsis {
+  margin-block: var(--dfx-space-5);
+}
+
+/* `.prose` is repeated so this always outranks the plain code-block rule */
+.prose .dfx-synopsis figure.shiki,
+.dfx-synopsis figure.shiki {
+  margin-block: 0;
+  border-color: var(--dfx-rule-faint);
+  border-inline-start: 3px solid var(--dream-flux);
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+  background: var(--dfx-synopsis-surface);
+}
+
+/* a synopsis reads as one muted ink rather than as syntax highlighting */
+.dfx-synopsis figure.shiki code span,
+.dark .dfx-synopsis figure.shiki code span {
+  color: var(--dfx-synopsis-fg);
+}
+
+/* --- <Grammar> — the shared meta-syntax legend ----------------------------
+   The component renders a bare <table class="dfx-grammar">, so the panel
+   treatment lives on the table box itself. */
+
+table.dfx-grammar {
+  width: 100%;
+  margin-block: var(--dfx-space-5);
+  border: 1px solid var(--dfx-rule);
+  border-radius: var(--dfx-radius-md);
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--dfx-surface-sunken);
+  overflow: visible;
+  font-size: var(--dfx-text-sm);
+  table-layout: auto;
+}
+
+.dfx-grammar th {
+  border: 0;
+  border-block-end: 1px solid var(--dfx-rule);
+  background: transparent;
+  padding: 0.45rem 0.6rem;
+  color: var(--color-fd-muted-foreground);
+  font-size: var(--dfx-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-align: start;
+  text-transform: uppercase;
+}
+
+.dfx-grammar td {
+  border: 0;
+  border-block-end: 1px solid var(--dfx-rule-faint);
+  padding: 0.45rem 0.6rem;
+  vertical-align: top;
+}
+
+.dfx-grammar tr:last-child td {
+  border-block-end: 0;
+}
+
+.dfx-grammar td:first-child {
+  color: var(--dfx-brand-text);
+  font-family: var(--dfx-font-mono);
+  white-space: nowrap;
+}
+
+/* --- <Wide> — a table that owns its horizontal scroll --------------------- */
+
+.dfx-wide {
+  position: relative;
+  max-height: var(--dfx-table-max-block);
+  overflow: auto;
+  overscroll-behavior: contain;
+  margin-block: var(--dfx-space-5);
+  border: 1px solid var(--dfx-rule-faint);
+  border-radius: var(--dfx-radius-md);
+  /* honest edge hints: the `local` covers scroll away with the content, so the
+     shadow only shows while there is more table in that direction */
+  background:
+    linear-gradient(to right, var(--dfx-surface-sunken) 40%, transparent) 0 0 / 28px 100% no-repeat
+      local,
+    linear-gradient(to left, var(--dfx-surface-sunken) 40%, transparent) 100% 0 / 28px 100% no-repeat
+      local,
+    radial-gradient(farthest-side at 0 50%, var(--dfx-scroll-shadow), transparent) 0 0 / 14px 100%
+      no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%, var(--dfx-scroll-shadow), transparent) 100% 0 / 14px
+      100% no-repeat scroll,
+    var(--dfx-surface-sunken);
+}
+
+/* the wrapper fumadocs puts around the markdown table must not scroll as well */
+.dfx-wide > * {
+  max-height: none;
+  overflow: visible;
+  margin: 0;
+}
+
+/* a floor per column, so six columns overflow and scroll instead of being
+   squeezed into unreadable slivers */
+.dfx-wide :is(th, td) {
+  min-width: 7.5rem;
+}
+
+/* the header stays put while the body scrolls under it */
+.dfx-wide thead th {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 1;
+}
+
+/* --- <Diag> — the diagnostics table ---------------------------------------
+   `<Diag>` renders <table class="dfx-diag"> inside a `<Wide>`, so the scroll
+   container, the surface and the edge hints already come from `.dfx-wide`. */
+
+table.dfx-diag {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: transparent;
+  overflow: visible;
+  font-size: var(--dfx-text-sm);
+  line-height: 1.6;
+}
+
+.dfx-diag th {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 1;
+  min-width: 8rem;
+  border: 0;
+  border-block-end: 1px solid var(--dfx-rule-strong);
+  background: var(--dfx-table-head-bg);
+  padding: 0.5rem 0.8rem;
+  color: var(--color-fd-foreground);
+  font-size: var(--dfx-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: start;
+}
+
+.dfx-diag td {
+  min-width: 8rem;
+  border: 0;
+  border-block-end: 1px solid var(--dfx-rule-faint);
+  padding: 0.55rem 0.8rem;
+  vertical-align: top;
+}
+
+.dfx-diag td:first-child {
+  min-width: 16rem;
+}
+
+.dfx-diag tr:last-child td {
+  border-block-end: 0;
+}
+
+/* `.dfx-diag-msg` sits on the <td>, so it must not change `display` */
+.dfx-diag-msg {
+  color: var(--color-fd-foreground);
+  font-family: var(--dfx-font-mono);
+  font-size: 0.94em;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.dfx-diag-ph {
+  color: var(--color-fd-muted-foreground);
+  font-style: italic;
+  font-weight: 400;
+}
+
+
+/* --- <Dfx sev="…" msg="…" /> — one diagnostic's generated half -------------
+   Sits under a `## DFXnnnn` heading: the heading owns the anchor and the TOC
+   entry, this block owns severity, the verbatim message and where it is
+   raised from. The message keeps its printf placeholders so a reader matching
+   a log line sees the same spelling; only their weight is dialled down. */
+
+.dfx-entry {
+  display: grid;
+  gap: var(--dfx-space-2);
+  margin-block: var(--dfx-space-4) var(--dfx-space-5);
+  border: 1px solid var(--dfx-rule-faint);
+  border-inline-start: 2px solid var(--dfx-rule-strong);
+  border-radius: var(--dfx-radius-md);
+  background: var(--dfx-surface-sunken);
+  padding: var(--dfx-space-3) var(--dfx-space-4);
+}
+
+.prose .dfx-entry p {
+  margin: 0;
+}
+
+.dfx-entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dfx-entry-raised {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4em;
+  color: var(--color-fd-muted-foreground);
+  font-size: var(--dfx-text-xs);
+}
+
+.prose .dfx-entry-raised code {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: var(--color-fd-muted-foreground);
+  font-size: inherit;
+}
+
+.dfx-entry-msg {
+  color: var(--color-fd-foreground);
+  font-family: var(--dfx-font-mono);
+  font-size: var(--dfx-text-sm);
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+/* a runtime substitution: still verbatim, just not shouted */
+.dfx-ph {
+  color: var(--color-fd-muted-foreground);
+  font-style: italic;
+}
+
+/* --- <Sev s="…"> — severity pill ------------------------------------------ */
+
+.dfx-sev {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--dfx-radius-pill);
+  padding: 0.1em 0.55em;
+  font-family: var(--dfx-font-mono);
+  font-size: var(--dfx-text-xs);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.dfx-sev-error {
+  background: var(--dfx-sev-error-bg);
+  color: var(--dfx-sev-error-fg);
+}
+
+.dfx-sev-warning {
+  background: var(--dfx-sev-warning-bg);
+  color: var(--dfx-sev-warning-fg);
+}
+
+.dfx-sev-info {
+  background: var(--dfx-sev-info-bg);
+  color: var(--dfx-sev-info-fg);
+}
+
+/* --- <Gap code="…"> — something the round trip cannot carry ---------------- */
+
+.dfx-gap {
+  display: grid;
+  gap: var(--dfx-space-2);
+  margin-block: var(--dfx-space-5);
+  border: 1px solid color-mix(in oklab, var(--dream-spark) 26%, transparent);
+  border-inline-start: 2px solid var(--dfx-spark-text);
+  border-radius: var(--dfx-radius-md);
+  background: color-mix(in oklab, var(--dream-spark) 6%, var(--color-fd-card));
+  padding: var(--dfx-space-3) var(--dfx-space-4);
+  font-size: var(--dfx-text-base);
+  line-height: var(--dfx-leading-snug);
+}
+
+.prose .dfx-gap p {
+  margin: 0;
+  color: var(--color-fd-muted-foreground);
+}
+
+.prose .dfx-gap > .dfx-gap-head {
+  color: var(--color-fd-foreground);
+}
+
+.dfx-gap-head strong {
+  color: var(--dfx-spark-text);
+  font-weight: 600;
+}

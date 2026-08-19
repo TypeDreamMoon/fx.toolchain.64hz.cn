@@ -1,0 +1,223 @@
+/* =============================================================================
+   tokens — the single source of truth for colour, type, space, radius, motion.
+
+   Light values live in `@theme` (the fumadocs surface palette, so Tailwind's
+   `*-fd-*` utilities resolve to the DreamFX palette) and in `:root` (brand and
+   derived tokens). Dark values live in `.dark`. Nothing below this file
+   re-declares a raw colour.
+
+   The brand is violet — the compiler side of the toolchain — with an ember
+   accent for the particles it emits. The surface ramp carries the same violet
+   hue at low saturation, so the chrome never fights the content.
+   ============================================================================= */
+
+@theme {
+  /* fumadocs surface palette — light */
+  --color-fd-background: hsl(258 46% 98%);
+  --color-fd-foreground: hsl(258 42% 13%);
+  --color-fd-muted: hsl(258 34% 94%);
+  --color-fd-muted-foreground: hsl(258 18% 39%);
+  --color-fd-popover: hsl(0 0% 100%);
+  --color-fd-card: hsl(258 44% 96%);
+  --color-fd-card-foreground: hsl(258 42% 13%);
+  --color-fd-border: hsl(258 32% 78% / 0.62);
+  --color-fd-primary: hsl(258 74% 56%);
+  --color-fd-primary-foreground: hsl(258 60% 98%);
+  --color-fd-secondary: hsl(258 40% 93%);
+  --color-fd-secondary-foreground: hsl(258 44% 17%);
+  --color-fd-accent: hsl(258 46% 89% / 0.72);
+  --color-fd-accent-foreground: hsl(258 62% 20%);
+  --color-fd-ring: hsl(258 80% 62%);
+  --color-fd-overlay: hsl(258 52% 10% / 0.22);
+}
+
+:root {
+  /* --- brand ------------------------------------------------------------- */
+  --dream-flux: #7c4dff; /* primary — the compiler side */
+  --dream-spark: #ff8a3d; /* ember — the particles it emits */
+  --dream-cyan: #29c7e8;
+  --dream-pink: #ff5aa5;
+  --dream-yellow: #ffc861;
+  --dream-ink: #17122b;
+
+  /* --- type -------------------------------------------------------------- */
+  --dfx-font-mono:
+    ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+
+  /* modest ~1.2 ratio; body sits at 15px so an h3 still reads as a divider */
+  --dfx-text-2xs: 0.6875rem; /* 11 */
+  --dfx-text-xs: 0.75rem; /* 12 */
+  --dfx-text-sm: 0.8125rem; /* 13 */
+  --dfx-text-base: 0.9375rem; /* 15 */
+  --dfx-text-md: 1.0625rem; /* 17 */
+  --dfx-text-lg: 1.1875rem; /* 19 */
+  --dfx-text-xl: 1.5rem; /* 24 */
+  --dfx-text-2xl: 1.8125rem; /* 29 */
+  --dfx-text-3xl: 2.25rem; /* 36 */
+
+  --dfx-leading-tight: 1.2;
+  --dfx-leading-snug: 1.45;
+  --dfx-leading-body: 1.78;
+
+  /* comfortable measure on the docs column */
+  --dfx-measure: 76ch;
+
+  /* --- space ------------------------------------------------------------- */
+  --dfx-space-1: 0.25rem;
+  --dfx-space-2: 0.5rem;
+  --dfx-space-3: 0.75rem;
+  --dfx-space-4: 1rem;
+  --dfx-space-5: 1.5rem;
+  --dfx-space-6: 2rem;
+  --dfx-space-7: 3rem;
+  --dfx-space-8: 4rem;
+
+  /* --- radius ------------------------------------------------------------ */
+  --dfx-radius-xs: 4px;
+  --dfx-radius-sm: 6px;
+  --dfx-radius-md: 8px;
+  --dfx-radius-lg: 12px;
+  --dfx-radius-pill: 999px;
+
+  /* --- layout ------------------------------------------------------------ */
+  --dfx-nav-height: 3.5rem; /* fumadocs' #nd-nav is h-14 */
+
+  /* --- motion ------------------------------------------------------------ */
+  --dfx-ease: cubic-bezier(0.22, 0.9, 0.3, 1);
+  --dfx-dur-fast: 160ms;
+  --dfx-dur-mid: 320ms;
+  --dfx-dur-slow: 720ms;
+
+  /* --- derived: brand ink, contrast-checked against the light background -- */
+  --dfx-brand-text: color-mix(in oklab, var(--dream-flux) 84%, black);
+  --dfx-cyan-text: color-mix(in oklab, var(--dream-cyan) 58%, black);
+  --dfx-pink-text: color-mix(in oklab, var(--dream-pink) 68%, black);
+  --dfx-yellow-text: color-mix(in oklab, var(--dream-yellow) 50%, black);
+  --dfx-spark-text: color-mix(in oklab, var(--dream-spark) 62%, black);
+  /* ink that sits on top of a full-strength brand fill, both themes */
+  --dfx-on-brand: hsl(258 60% 97%);
+
+  /* --- derived: rules and surfaces --------------------------------------- */
+  --dfx-rule-faint: color-mix(in oklab, var(--color-fd-border) 52%, transparent);
+  --dfx-rule: color-mix(in oklab, var(--dream-flux) 14%, var(--color-fd-border));
+  --dfx-rule-strong: color-mix(in oklab, var(--dream-flux) 45%, var(--color-fd-border));
+
+  --dfx-surface-raised: color-mix(in oklab, var(--color-fd-card) 74%, white);
+  --dfx-surface-sunken: color-mix(in oklab, var(--dream-flux) 5%, var(--color-fd-card));
+  --dfx-tint-weak: color-mix(in oklab, var(--dream-flux) 7%, transparent);
+  --dfx-tint-hover: color-mix(in oklab, var(--dream-flux) 6%, transparent);
+
+  --dfx-shadow-soft: 0 14px 34px color-mix(in oklab, var(--dream-ink) 12%, transparent);
+  --dfx-shadow-lift: 0 12px 28px color-mix(in oklab, var(--dream-ink) 16%, transparent);
+  --dfx-scroll-shadow: color-mix(in oklab, var(--dream-ink) 20%, transparent);
+  --dfx-scrollbar-thumb: color-mix(in oklab, var(--dream-flux) 40%, transparent);
+  --dfx-focus-ring: color-mix(in oklab, var(--dream-flux) 78%, var(--dream-ink));
+
+  /* --- derived: code ------------------------------------------------------ */
+  --dfx-code-inline-bg: color-mix(in oklab, var(--dream-flux) 11%, transparent);
+  --dfx-code-inline-fg: color-mix(in oklab, var(--dream-spark) 26%, var(--dfx-brand-text));
+  --dfx-code-surface: color-mix(in oklab, var(--color-fd-card) 60%, white);
+  --dfx-synopsis-surface: color-mix(in oklab, var(--dream-flux) 5%, var(--color-fd-card));
+  --dfx-synopsis-fg: color-mix(in oklab, var(--color-fd-foreground) 76%, transparent);
+
+  /* --- derived: tables ---------------------------------------------------- */
+  --dfx-table-head-bg: color-mix(in oklab, var(--dream-flux) 8%, var(--color-fd-card));
+  --dfx-table-row-hover: color-mix(in oklab, var(--dream-flux) 5%, transparent);
+  --dfx-table-max-block: min(76vh, 44rem);
+
+  /* --- derived: version pills --------------------------------------------- */
+  --dfx-since-bg: color-mix(in oklab, var(--dream-flux) 13%, transparent);
+  --dfx-since-fg: var(--dfx-brand-text);
+  --dfx-since-ue-bg: color-mix(in oklab, var(--dream-cyan) 15%, transparent);
+  --dfx-since-ue-fg: var(--dfx-cyan-text);
+
+  /* --- derived: diagnostic severities ------------------------------------- */
+  --dfx-sev-error-bg: color-mix(in oklab, var(--dream-pink) 15%, transparent);
+  --dfx-sev-error-fg: var(--dfx-pink-text);
+  --dfx-sev-warning-bg: color-mix(in oklab, var(--dream-yellow) 24%, transparent);
+  --dfx-sev-warning-fg: var(--dfx-yellow-text);
+  --dfx-sev-info-bg: color-mix(in oklab, var(--dream-cyan) 15%, transparent);
+  --dfx-sev-info-fg: var(--dfx-cyan-text);
+
+  /* --- callout intents ----------------------------------------------------
+     fumadocs reads these through `--callout-color`, so the intents map straight
+     onto the brand palette. Declared unlayered so they win over the preset's
+     `@theme static` defaults. */
+  --color-fd-info: var(--dfx-cyan-text);
+  --color-fd-warning: var(--dfx-yellow-text);
+  --color-fd-error: var(--dfx-pink-text);
+  --color-fd-success: var(--dfx-brand-text);
+  --color-fd-idea: var(--dfx-spark-text);
+}
+
+.dark {
+  /* fumadocs surface palette — dark */
+  --color-fd-background: hsl(258 34% 8%);
+  --color-fd-foreground: hsl(258 32% 92%);
+  --color-fd-muted: hsl(258 28% 13%);
+  --color-fd-muted-foreground: hsl(256 18% 70%);
+  --color-fd-popover: hsl(258 32% 10%);
+  --color-fd-card: hsl(258 30% 11%);
+  --color-fd-card-foreground: hsl(258 32% 92%);
+  --color-fd-border: hsl(258 48% 62% / 0.24);
+  --color-fd-primary: hsl(258 96% 78%);
+  --color-fd-primary-foreground: hsl(258 60% 10%);
+  --color-fd-secondary: hsl(258 28% 14%);
+  --color-fd-secondary-foreground: hsl(258 32% 92%);
+  --color-fd-accent: hsl(258 44% 30% / 0.48);
+  --color-fd-accent-foreground: hsl(258 82% 89%);
+  --color-fd-ring: hsl(258 96% 78%);
+  --color-fd-overlay: hsl(258 62% 3% / 0.5);
+
+  /* brand ink — lifted toward white so the raw hues clear 5:1 on the dark bg */
+  --dfx-brand-text: color-mix(in oklab, var(--dream-flux) 48%, white);
+  --dfx-cyan-text: color-mix(in oklab, var(--dream-cyan) 88%, white);
+  --dfx-pink-text: color-mix(in oklab, var(--dream-pink) 90%, white);
+  --dfx-yellow-text: var(--dream-yellow);
+  --dfx-spark-text: color-mix(in oklab, var(--dream-spark) 88%, white);
+
+  --dfx-rule-faint: color-mix(in oklab, var(--color-fd-border) 60%, transparent);
+  --dfx-rule: color-mix(in oklab, var(--dream-flux) 14%, var(--color-fd-border));
+  --dfx-rule-strong: color-mix(in oklab, var(--dream-flux) 36%, var(--color-fd-border));
+
+  --dfx-surface-raised: color-mix(in oklab, var(--color-fd-card) 86%, white);
+  --dfx-surface-sunken: color-mix(in oklab, var(--color-fd-background) 80%, black);
+  --dfx-tint-weak: color-mix(in oklab, var(--dream-flux) 13%, transparent);
+  --dfx-tint-hover: color-mix(in oklab, var(--dream-flux) 12%, transparent);
+
+  --dfx-shadow-soft: 0 18px 42px hsl(258 80% 3% / 0.46);
+  --dfx-shadow-lift: 0 12px 28px hsl(258 80% 3% / 0.56);
+  --dfx-scroll-shadow: hsl(258 80% 2% / 0.55);
+  --dfx-scrollbar-thumb: color-mix(in oklab, var(--dream-flux) 40%, transparent);
+  --dfx-focus-ring: color-mix(in oklab, var(--dream-flux) 60%, white);
+
+  --dfx-code-inline-bg: color-mix(in oklab, var(--dream-flux) 20%, transparent);
+  --dfx-code-inline-fg: color-mix(in oklab, var(--dream-spark) 22%, var(--dfx-brand-text));
+  --dfx-code-surface: color-mix(in oklab, var(--color-fd-background) 70%, black);
+  --dfx-synopsis-surface: color-mix(in oklab, var(--dream-flux) 8%, var(--dfx-code-surface));
+  --dfx-synopsis-fg: color-mix(in oklab, var(--color-fd-foreground) 72%, transparent);
+
+  --dfx-table-head-bg: color-mix(in oklab, var(--dream-flux) 9%, var(--color-fd-card));
+  --dfx-table-row-hover: color-mix(in oklab, var(--dream-flux) 9%, transparent);
+
+  --dfx-since-bg: color-mix(in oklab, var(--dream-flux) 22%, transparent);
+  --dfx-since-ue-bg: color-mix(in oklab, var(--dream-cyan) 18%, transparent);
+
+  --dfx-sev-error-bg: color-mix(in oklab, var(--dream-pink) 20%, transparent);
+  --dfx-sev-warning-bg: color-mix(in oklab, var(--dream-yellow) 20%, transparent);
+  --dfx-sev-info-bg: color-mix(in oklab, var(--dream-cyan) 20%, transparent);
+
+  --color-fd-info: var(--dfx-cyan-text);
+  --color-fd-warning: var(--dfx-yellow-text);
+  --color-fd-error: var(--dfx-pink-text);
+  --color-fd-success: var(--dfx-brand-text);
+  --color-fd-idea: var(--dfx-spark-text);
+}
+
+/* the sidebar keeps its own muted ramp so it separates from the page in dark */
+.dark #nd-sidebar {
+  --color-fd-muted: hsl(258 28% 13%);
+  --color-fd-secondary: hsl(258 28% 14%);
+  --color-fd-muted-foreground: hsl(256 18% 70%);
+}

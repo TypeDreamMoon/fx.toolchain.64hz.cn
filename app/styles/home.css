@@ -1,0 +1,1297 @@
+/* =============================================================================
+   home — the marketing page (`.dfx-*`).
+
+   The page is ordinary document flow: a hero, three bands, a foot rule. No
+   scroll capture, no fixed-height screens, no bottom-anchored content. Every
+   band shares one container width, one heading scale and one card recipe.
+   ============================================================================= */
+
+/* -----------------------------------------------------------------------------
+   full page — one band per screen
+
+   Snapping is CSS, never a wheel handler: the page keeps native scrolling,
+   keyboard paging, find-in-page and momentum. `proximity` rather than `mandatory`
+   is the safety valve — a band that outgrows the viewport (a short laptop, a
+   large font, a translated string that wraps) scrolls like an ordinary page
+   instead of trapping the reader between two snap points.
+
+   Scoped with :has() so only the marketing route is affected; the docs keep
+   ordinary document flow.
+   -------------------------------------------------------------------------- */
+
+html:has(.dfx-home) {
+  scroll-snap-type: y mandatory;
+  scroll-padding-block-start: var(--dfx-nav-height);
+}
+
+/* `scroll-behavior: smooth` is deliberately NOT set here. With mandatory
+   snapping the two animations fight — the browser glides, re-targets, then
+   snaps again — and that double motion is what reads as stutter. `SlideDeck`
+   owns the timing instead (one 720ms ease per gesture, snapping suspended while
+   it runs) and hands control straight back to CSS when it is done. Without
+   JavaScript, the browser's own snap animation is the fallback. */
+
+/* an eased glide should not be redrawn from scratch every frame */
+.dfx-art-figure,
+.dfx-cue svg {
+  will-change: transform;
+}
+
+#nd-home-layout.dfx-home {
+  min-height: 100svh;
+  background: var(--color-fd-background);
+  color: var(--color-fd-foreground);
+}
+
+/* every band is a screen: full height, content centred in it */
+.dfx-hero,
+.dfx-home .dfx-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* -----------------------------------------------------------------------------
+   arrival reveals
+
+   `data-state` is set by SlideDeck: `in` for a screen that has arrived, `out`
+   for one still below the fold. A screen the reader can already see is marked
+   `in` at hydration, so nothing visible ever flashes, and with no JavaScript the
+   attribute is simply absent — which is the fully visible state.
+   -------------------------------------------------------------------------- */
+
+/* Only ever hide anything when the reader has not asked for less motion —
+   otherwise the reveal would be a visibility mechanism rather than an
+   animation, and content would depend on an observer to come back. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-state='out'] :is(.dfx-head, .dfx-sample, .dfx-command, .dfx-steps > *, .dfx-tool-grid, .dfx-route-grid, .dfx-foot) {
+    opacity: 0;
+    translate: 0 1.25rem;
+  }
+}
+
+[data-state] :is(.dfx-head, .dfx-sample, .dfx-command, .dfx-steps > *, .dfx-tool-grid, .dfx-route-grid, .dfx-foot) {
+  transition:
+    opacity 620ms var(--dfx-ease),
+    translate 620ms var(--dfx-ease);
+}
+
+/* the steps arrive as a run rather than all at once */
+[data-state] .dfx-steps > *:nth-child(2) {
+  transition-delay: 90ms;
+}
+
+[data-state] .dfx-steps > *:nth-child(3) {
+  transition-delay: 180ms;
+}
+
+[data-state] .dfx-steps > *:nth-child(4) {
+  transition-delay: 270ms;
+}
+
+[data-state] :is(.dfx-sample, .dfx-tool-grid, .dfx-route-grid) {
+  transition-delay: 120ms;
+}
+
+[data-state] :is(.dfx-command, .dfx-foot) {
+  transition-delay: 220ms;
+}
+
+.dfx-home .dfx-section {
+  display: grid;
+  align-items: center;
+  min-block-size: calc(100svh - var(--dfx-nav-height));
+  padding-block: clamp(var(--dfx-space-5), 5vh, var(--dfx-space-7));
+}
+
+/* a short viewport is not a slide deck — let the bands breathe instead */
+@media (max-height: 660px), (max-width: 720px) {
+  html:has(.dfx-home) {
+    scroll-snap-type: none;
+  }
+
+  .dfx-home .dfx-section {
+    min-block-size: 0;
+  }
+}
+
+.dfx-container {
+  width: min(100% - 2.5rem, 1140px);
+  margin-inline: auto;
+}
+
+/* -----------------------------------------------------------------------------
+   backdrop — three drifting lights and a slow weave, fixed behind the deck
+
+   Only `translate`, `scale` and `opacity` are animated, so every frame is a
+   compositor job: no blur filter to re-run, no background-position to repaint.
+   The lights also re-place themselves per screen off `[data-screen]`, which
+   SlideDeck sets, so changing screens moves the light as well as the content.
+   -------------------------------------------------------------------------- */
+
+.dfx-backdrop {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.dfx-glow {
+  position: absolute;
+  border-radius: 50%;
+  /* soft stops instead of a blur filter — same look, a fraction of the cost */
+  opacity: 0.85;
+  transition:
+    translate 900ms var(--dfx-ease),
+    scale 900ms var(--dfx-ease),
+    opacity 900ms var(--dfx-ease);
+  will-change: transform;
+}
+
+.dfx-glow-a {
+  inset-block-start: -18vh;
+  inset-inline-start: -12vw;
+  width: 58vw;
+  height: 58vw;
+  animation: dfx-drift-a 34s var(--dfx-ease) infinite alternate;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--dream-flux) 26%, transparent),
+    transparent 70%
+  );
+}
+
+.dfx-glow-b {
+  inset-block-end: -26vh;
+  inset-inline-end: -16vw;
+  width: 52vw;
+  height: 52vw;
+  animation: dfx-drift-b 41s var(--dfx-ease) infinite alternate;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--dream-cyan) 17%, transparent),
+    transparent 70%
+  );
+}
+
+.dfx-glow-c {
+  inset-block-start: 34vh;
+  inset-inline-start: 46vw;
+  width: 34vw;
+  height: 34vw;
+  animation: dfx-drift-c 29s var(--dfx-ease) infinite alternate;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--dream-spark) 13%, transparent),
+    transparent 68%
+  );
+}
+
+/* the plotting grid, panned slowly enough to read as depth rather than motion */
+.dfx-weave {
+  position: absolute;
+  inset: -12vh -12vw;
+  opacity: 0.5;
+  animation: dfx-weave 72s linear infinite;
+  background-image:
+    linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--dream-flux) 11%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      0deg,
+      color-mix(in oklab, var(--dream-flux) 9%, transparent) 1px,
+      transparent 1px
+    );
+  background-size:
+    88px 88px,
+    88px 88px;
+  mask-image: radial-gradient(closest-side at 50% 40%, black, transparent 92%);
+  will-change: transform;
+}
+
+@keyframes dfx-drift-a {
+  from {
+    translate: 0 0;
+    scale: 1;
+  }
+  to {
+    translate: 7vw 6vh;
+    scale: 1.12;
+  }
+}
+
+@keyframes dfx-drift-b {
+  from {
+    translate: 0 0;
+    scale: 1.08;
+  }
+  to {
+    translate: -8vw -5vh;
+    scale: 1;
+  }
+}
+
+@keyframes dfx-drift-c {
+  from {
+    translate: 0 0;
+    scale: 0.94;
+  }
+  to {
+    translate: -6vw 9vh;
+    scale: 1.16;
+  }
+}
+
+@keyframes dfx-weave {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: -88px -88px;
+  }
+}
+
+/* --- the light follows the deck ------------------------------------------- */
+
+:root[data-screen='sample'] .dfx-glow-a {
+  translate: 62vw 12vh;
+  scale: 0.9;
+}
+
+:root[data-screen='sample'] .dfx-glow-b {
+  opacity: 0.5;
+}
+
+:root[data-screen='workflow'] .dfx-glow-a {
+  translate: 10vw 46vh;
+  opacity: 0.6;
+}
+
+:root[data-screen='workflow'] .dfx-glow-b {
+  translate: -14vw -30vh;
+  scale: 1.1;
+}
+
+:root[data-screen='tools'] .dfx-glow-a {
+  translate: 48vw 40vh;
+  opacity: 0.55;
+}
+
+:root[data-screen='tools'] .dfx-glow-c {
+  translate: -26vw -14vh;
+  scale: 1.3;
+  opacity: 1;
+}
+
+:root[data-screen='docs'] .dfx-glow-a {
+  translate: 26vw 58vh;
+  scale: 1.15;
+}
+
+:root[data-screen='docs'] .dfx-glow-b {
+  translate: -6vw -12vh;
+  opacity: 0.8;
+}
+
+/* the motes: the hero's own layer, behind the copy and the figure */
+.dfx-motes {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* the bands sit above the backdrop; their washes are translucent, so it reads
+   through them rather than being covered */
+.dfx-hero > .dfx-container,
+.dfx-home .dfx-section > .dfx-container,
+.dfx-cue {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dfx-glow,
+  .dfx-weave {
+    animation: none;
+  }
+}
+
+/* --- the dot rail ---------------------------------------------------------- */
+
+.dfx-rail {
+  position: fixed;
+  z-index: 30;
+  inset-block-start: 50%;
+  inset-inline-end: clamp(0.5rem, 1.6vw, 1.4rem);
+  translate: 0 -50%;
+}
+
+.dfx-rail ul {
+  display: grid;
+  gap: var(--dfx-space-3);
+}
+
+.dfx-rail-dot {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--dfx-space-3);
+  padding-block: 0.2rem;
+  color: var(--color-fd-muted-foreground);
+}
+
+.dfx-rail-label {
+  font-size: var(--dfx-text-2xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transition:
+    opacity var(--dfx-dur-fast) ease,
+    translate var(--dfx-dur-fast) ease;
+  translate: 0.35rem 0;
+  white-space: nowrap;
+}
+
+.dfx-rail-mark {
+  width: 0.5rem;
+  height: 0.5rem;
+  flex: none;
+  border: 1px solid var(--dfx-rule-strong);
+  border-radius: 50%;
+  background: transparent;
+  transition:
+    background var(--dfx-dur-fast) ease,
+    border-color var(--dfx-dur-fast) ease,
+    scale var(--dfx-dur-fast) ease;
+}
+
+.dfx-rail-dot:hover .dfx-rail-label,
+.dfx-rail-dot:focus-visible .dfx-rail-label {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.dfx-rail-dot:hover .dfx-rail-mark {
+  border-color: var(--dream-flux);
+}
+
+.dfx-rail-dot[aria-current] {
+  color: var(--dfx-brand-text);
+}
+
+.dfx-rail-dot[aria-current] .dfx-rail-mark {
+  border-color: var(--dream-flux);
+  background: var(--dream-flux);
+  scale: 1.2;
+}
+
+.dfx-rail-dot[aria-current] .dfx-rail-label {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* the rail would sit on top of the content on a narrow screen */
+@media (max-width: 900px), (max-height: 660px) {
+  .dfx-rail {
+    display: none;
+  }
+}
+
+/* --- the hero's scroll cue -------------------------------------------------- */
+
+.dfx-cue {
+  position: absolute;
+  z-index: 2;
+  inset-block-end: clamp(var(--dfx-space-4), 3vh, var(--dfx-space-6));
+  inset-inline-start: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  translate: -50% 0;
+  color: var(--color-fd-muted-foreground);
+  font-size: var(--dfx-text-2xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.dfx-cue:hover {
+  color: var(--dfx-brand-text);
+}
+
+.dfx-cue svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  animation: dfx-cue-bob 2.4s var(--dfx-ease) infinite;
+}
+
+@keyframes dfx-cue-bob {
+  0%,
+  100% {
+    translate: 0 -0.1rem;
+  }
+  50% {
+    translate: 0 0.25rem;
+  }
+}
+
+@media (max-height: 660px), (max-width: 720px) {
+  .dfx-cue {
+    display: none;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   shared: kicker, heading, lead, buttons
+   -------------------------------------------------------------------------- */
+
+.dfx-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--dfx-space-2);
+  color: var(--dfx-brand-text);
+  font-size: var(--dfx-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.dfx-kicker svg {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.dfx-hero-copy h1,
+.dfx-head h2 {
+  margin: var(--dfx-space-4) 0 0;
+  color: var(--color-fd-foreground);
+  font-weight: 800;
+  letter-spacing: -0.022em;
+  /* a hard guard: a display size may never push the page sideways */
+  overflow-wrap: break-word;
+}
+
+.dfx-hero-copy h1 {
+  display: grid;
+  gap: 0.04em;
+  font-size: clamp(2.9rem, 4.6vw, 4.4rem);
+  line-height: 0.94;
+}
+
+.dfx-hero-copy h1 span:last-child {
+  color: var(--dfx-brand-text);
+}
+
+.dfx-head h2 {
+  max-width: 22ch;
+  font-size: clamp(1.75rem, 2.9vw, 2.5rem);
+  line-height: 1.14;
+}
+
+.dfx-lead {
+  max-width: 54ch;
+  margin: var(--dfx-space-4) 0 0;
+  color: var(--color-fd-muted-foreground);
+  font-size: var(--dfx-text-md);
+  line-height: var(--dfx-leading-body);
+}
+
+.dfx-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--dfx-space-3);
+  margin-block-start: var(--dfx-space-6);
+}
+
+.dfx-btn {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: var(--dfx-space-2);
+  border: 1px solid transparent;
+  border-radius: var(--dfx-radius-md);
+  padding: 0.7rem var(--dfx-space-5);
+  font-size: var(--dfx-text-base);
+  font-weight: 700;
+  transition:
+    transform var(--dfx-dur-fast) ease,
+    border-color var(--dfx-dur-fast) ease,
+    background var(--dfx-dur-fast) ease,
+    box-shadow var(--dfx-dur-fast) ease;
+}
+
+.dfx-btn:hover {
+  box-shadow: var(--dfx-shadow-lift);
+  transform: translateY(-1px);
+}
+
+.dfx-btn svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.dfx-btn-primary {
+  background: var(--dream-flux);
+  color: var(--dfx-on-brand);
+}
+
+.dfx-btn-ghost {
+  border-color: var(--dfx-rule-strong);
+  background: var(--color-fd-card);
+  color: var(--color-fd-foreground);
+}
+
+/* -----------------------------------------------------------------------------
+   hero
+   -------------------------------------------------------------------------- */
+
+.dfx-hero {
+  position: relative;
+  /* the first screen of the deck */
+  min-height: calc(100svh - var(--dfx-nav-height));
+  display: grid;
+  align-items: center;
+  padding-block: clamp(var(--dfx-space-7), 8vh, var(--dfx-space-8))
+    clamp(var(--dfx-space-8), 10vh, 6rem);
+  overflow: clip;
+}
+
+/* one soft wash behind the hero only, kept subtle now that the backdrop's
+   lights carry the colour */
+.dfx-aurora {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background:
+    radial-gradient(
+      64rem 34rem at 12% -10%,
+      color-mix(in oklab, var(--dream-flux) 17%, transparent),
+      transparent 62%
+    ),
+    radial-gradient(
+      46rem 30rem at 96% 8%,
+      color-mix(in oklab, var(--dream-spark) 12%, transparent),
+      transparent 64%
+    );
+  pointer-events: none;
+}
+
+.dark .dfx-aurora {
+  background:
+    radial-gradient(64rem 34rem at 12% -10%, hsl(258 90% 62% / 0.20), transparent 62%),
+    radial-gradient(46rem 30rem at 96% 8%, hsl(24 95% 60% / 0.12), transparent 64%);
+}
+
+.dfx-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-items: center;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.8fr);
+  gap: clamp(var(--dfx-space-6), 5vw, 4rem);
+}
+
+/* -----------------------------------------------------------------------------
+   hero art — the mascot, lit by the page rather than by her own render
+   -------------------------------------------------------------------------- */
+
+.dfx-hero-art {
+  display: grid;
+  justify-items: center;
+}
+
+.dfx-art {
+  display: grid;
+  justify-items: center;
+}
+
+/* the figure and its light sit in their own stacking context, so the plaque
+   below is never lit by the floor glow */
+.dfx-art-stage {
+  position: relative;
+  display: grid;
+  place-items: end center;
+  isolation: isolate;
+}
+
+.dfx-art-figure {
+  position: relative;
+  z-index: 2;
+  display: block;
+  block-size: clamp(22rem, 66vh, 42rem);
+  inline-size: auto;
+  max-inline-size: 100%;
+  filter: drop-shadow(0 24px 44px color-mix(in oklab, var(--dream-ink) 34%, transparent));
+  animation: dfx-float 11s var(--dfx-ease) infinite;
+}
+
+.dark .dfx-art-figure {
+  filter: drop-shadow(0 24px 48px hsl(258 80% 3% / 0.6));
+}
+
+/* Absolutely positioned children of a grid container take their static position,
+   which is the container's inline start — not its centre. Centre them explicitly
+   or the halo hangs off her left shoulder. */
+.dfx-art-halo,
+.dfx-art-ring,
+.dfx-art-plinth {
+  inset-inline-start: 50%;
+  translate: -50% 0;
+}
+
+/* the wash she stands in: a violet halo behind her, an ember rim on the right */
+.dfx-art-halo {
+  position: absolute;
+  z-index: 0;
+  inset-block-start: 2%;
+  inline-size: min(26rem, 118%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      closest-side,
+      color-mix(in oklab, var(--dream-flux) 34%, transparent),
+      transparent 72%
+    ),
+    radial-gradient(
+      closest-side at 78% 62%,
+      color-mix(in oklab, var(--dream-spark) 16%, transparent),
+      transparent 68%
+    );
+  filter: blur(2px);
+}
+
+/* one flattened orbit at her feet — a stage mark, not a halo ring */
+.dfx-art-ring {
+  position: absolute;
+  z-index: 1;
+  inset-block-end: 3%;
+  inline-size: min(26rem, 112%);
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in oklab, var(--dream-cyan) 62%, transparent);
+  border-radius: 50%;
+  opacity: 0.4;
+  rotate: -7deg;
+  scale: 1 0.26;
+}
+
+.dark .dfx-art-ring {
+  opacity: 0.5;
+}
+
+/* the floor she is lit from */
+.dfx-art-plinth {
+  position: absolute;
+  z-index: 0;
+  inset-block-end: 1%;
+  inline-size: min(22rem, 92%);
+  block-size: 3.75rem;
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--dream-flux) 52%, transparent),
+    transparent 78%
+  );
+  filter: blur(6px);
+}
+
+/* the plaque the crop left behind: the obelisk beside her carried this line */
+.dfx-art-plaque {
+  position: relative;
+  z-index: 2;
+  margin: var(--dfx-space-4) 0 0;
+  border-block-start: 1px solid var(--dfx-rule);
+  padding-block-start: var(--dfx-space-3);
+  color: var(--color-fd-muted-foreground);
+  font-family: var(--dfx-font-mono);
+  font-size: var(--dfx-text-2xs);
+  letter-spacing: 0.16em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@keyframes dfx-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -0.65rem;
+  }
+}
+
+.dfx-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--dfx-space-2);
+  margin-block-start: var(--dfx-space-6);
+}
+
+.dfx-tags li {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  border: 1px solid var(--dfx-rule);
+  border-radius: var(--dfx-radius-pill);
+  background: var(--color-fd-card);
+  padding: 0.35rem 0.7rem;
+  color: var(--color-fd-foreground);
+  font-size: var(--dfx-text-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.dfx-tags strong {
+  color: var(--color-fd-muted-foreground);
+  font-size: var(--dfx-text-2xs);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* -----------------------------------------------------------------------------
+   hero code panel
+   -------------------------------------------------------------------------- */
+
+/* the panel carries its own two-step surface so it reads as a distinct object
+   in both themes: the body takes the card colour, the chrome a brand tint */
+.dfx-code-panel {
+  --dfx-panel-bg: var(--color-fd-card);
+  --dfx-panel-chrome: color-mix(in oklab, var(--dream-flux) 10%, var(--color-fd-card));
+
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--dfx-rule);
+  border-radius: var(--dfx-radius-lg);
+  background: var(--dfx-panel-bg);
+  box-shadow: var(--dfx-shadow-soft);
+}
+
+.dark .dfx-code-panel {
+  --dfx-panel-bg: var(--dfx-code-surface);
+  --dfx-panel-chrome: color-mix(in oklab, var(--dream-flux) 8%, var(--color-fd-card));
+}
+
+.dfx-code-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--dfx-space-4);
+  border-block-end: 1px solid var(--dfx-rule);
+  background: var(--dfx-panel-chrome);
+  padding: 0.6rem var(--dfx-space-4);
+}
+
+.dfx-code-file {
+  color: var(--color-fd-foreground);
+  font-family: var(--dfx-font-mono);
+  font-size: var(--dfx-text-sm);
+  font-weight: 700;
+}
+
+.dfx-code-lang {
+  color: var(--dfx-brand-text);
+  font-size: var(--dfx-text-2xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.dfx-code-body {
+  overflow-x: auto;
+  padding: var(--dfx-space-4) var(--dfx-space-4) var(--dfx-space-4) 0;
+  font-family: var(--dfx-font-mono);
+  font-size: var(--dfx-text-sm);
+  line-height: 1.7;
+  /* the gutter numbers are drawn from a counter, so a copy never picks them up */
+  counter-reset: dfx-code-line;
+  tab-size: 4;
+}
+
+.dfx-code-line {
+  display: block;
+  min-height: 1.7em;
+  white-space: pre;
+  counter-increment: dfx-code-line;
+}
+
+.dfx-code-line::before {
+  content: counter(dfx-code-line);
+  display: inline-block;
+  width: 3.25rem;
+  padding-inline-end: var(--dfx-space-4);
+  color: color-mix(in oklab, var(--color-fd-muted-foreground) 80%, transparent);
+  text-align: end;
+  user-select: none;
+}
+
+.dfx-code-foot {
+  display: flex;
+  align-items: center;
+  gap: var(--dfx-space-2);
+  border-block-start: 1px solid var(--dfx-rule);
+  background: var(--dfx-panel-chrome);
+  padding: 0.65rem var(--dfx-space-4);
+  color: var(--color-fd-muted-foreground);
+  font-family: var(--dfx-font-mono);
+  font-size: var(--dfx-text-xs);
+}
+
+.dfx-code-foot svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  flex: none;
+  color: var(--dfx-brand-text);
+}
+
+/* token colours — the same four hues the docs code blocks use */
+.dfx-t-kw {
+  color: var(--dfx-pink-text);
+  font-weight: 700;
+}
+
+.dfx-t-type {
+  color: var(--dfx-cyan-text);
+}
+
+.dfx-t-fn {
+  color: var(--dfx-brand-text);
+}
+
+.dfx-t-str {
+  color: var(--dfx-yellow-text);
+}
+
+.dfx-t-num {
+  color: var(--dfx-cyan-text);
+}
+
+.dfx-t-prop {
+  color: var(--dfx-brand-text);
+}
+
+/* punctuation recedes from identifiers but is still code, so it stays readable */
+.dfx-t-punct {
+  color: var(--color-fd-muted-foreground);
+}
+
+/* -----------------------------------------------------------------------------
+   bands
+   -------------------------------------------------------------------------- */
+
+.dfx-section {
+  border-block-start: 1px solid var(--dfx-rule-faint);
+  padding-block: clamp(var(--dfx-space-8), 8vw, 6.5rem);
+}
+
+/* Each screen carries its own wash. Faint on purpose: it should register when a
+   band arrives, not compete with the text that lands on top of it. */
+
+.dfx-section-sample {
+  background:
+    radial-gradient(
+      52rem 30rem at 88% 8%,
+      color-mix(in oklab, var(--dream-flux) 12%, transparent),
+      transparent 70%
+    ),
+    var(--dfx-tint-weak);
+}
+
+.dfx-section-workflow {
+  background: radial-gradient(
+    46rem 26rem at 6% 92%,
+    color-mix(in oklab, var(--dream-cyan) 9%, transparent),
+    transparent 68%
+  );
+}
+
+.dfx-section-tools {
+  background:
+    radial-gradient(
+      44rem 26rem at 92% 88%,
+      color-mix(in oklab, var(--dream-spark) 8%, transparent),
+      transparent 68%
+    ),
+    var(--dfx-tint-weak);
+}
+
+.dfx-section-docs {
+  background: radial-gradient(
+    50rem 28rem at 50% 108%,
+    color-mix(in oklab, var(--dream-flux) 11%, transparent),
+    transparent 66%
+  );
+}
+
+/* -----------------------------------------------------------------------------
+   sample band — the source panel with the command that turns it into an asset
+   -------------------------------------------------------------------------- */
+
+.dfx-sample {
+  display: grid;
+  gap: var(--dfx-space-4);
+  max-inline-size: 62rem;
+}
+
+/* On a full-height band the head and the panel share the screen rather than
+   stacking, which is what kept the sample from fitting one. */
+.dfx-section-sample .dfx-container {
+  display: grid;
+  align-items: center;
+  gap: clamp(var(--dfx-space-6), 4vw, 3.5rem);
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+}
+
+.dfx-section-sample .dfx-head {
+  margin-block-end: 0;
+}
+
+/* one step smaller than the docs' code, so a 29-line file still fits a screen */
+.dfx-section-sample .dfx-code-body {
+  font-size: var(--dfx-text-xs);
+  line-height: 1.62;
+  padding-block: var(--dfx-space-3);
+}
+
+.dfx-section-sample .dfx-code-line::before {
+  width: 2.6rem;
+  padding-inline-end: var(--dfx-space-3);
+}
+
+@media (max-width: 1080px) {
+  .dfx-section-sample .dfx-container {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.dfx-command {
+  display: flex;
+  align-items: center;
+  gap: var(--dfx-space-3);
+  overflow-x: auto;
+  margin: 0;
+  border: 1px solid var(--dfx-rule);
+  border-radius: var(--dfx-radius-md);
+  background: var(--color-fd-card);
+  padding: 0.7rem var(--dfx-space-4);
+}
+
+.dfx-command svg {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+  color: var(--dfx-brand-text);
+}
+
+.dfx-command code {
+  color: var(--color-fd-foreground);
+  font-family: var(--dfx-font-mono);
+  font-size: var(--dfx-text-sm);
+  white-space: pre;
+}
+
+.dfx-head {
+  max-width: 62ch;
+  margin-block-end: clamp(var(--dfx-space-6), 4vw, var(--dfx-space-8));
+}
+
+/* -----------------------------------------------------------------------------
+   workflow
+   -------------------------------------------------------------------------- */
+
+.dfx-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--dfx-space-5);
+}
+
+.dfx-step {
+  position: relative;
+  border-block-start: 2px solid var(--dfx-rule-strong);
+  padding-block-start: var(--dfx-space-4);
+}
+
+/* the rule reads as a track, and the dot as the step's position on it */
+.dfx-step::before {
+  content: '';
+  position: absolute;
+  inset-block-start: -0.3125rem;
+  inset-inline-start: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--dream-flux);
+}
+
+.dfx-step-index {
+  color: var(--dfx-brand-text);
+  font-family: var(--dfx-font-mono);
+  font-size: var(--dfx-text-sm);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.dfx-step h3 {
+  margin: var(--dfx-space-2) 0 0;
+  color: var(--color-fd-foreground);
+  font-size: var(--dfx-text-lg);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.dfx-step p {
+  margin: var(--dfx-space-2) 0 0;
+  color: var(--color-fd-muted-foreground);
+  font-size: var(--dfx-text-base);
+  line-height: var(--dfx-leading-snug);
+}
+
+/* -----------------------------------------------------------------------------
+   tools
+   -------------------------------------------------------------------------- */
+
+.dfx-tool-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--dfx-space-4);
+}
+
+.dfx-tool-card {
+  display: grid;
+  align-content: start;
+  border: 1px solid var(--dfx-rule);
+  border-radius: var(--dfx-radius-lg);
+  background: var(--color-fd-card);
+  padding: var(--dfx-space-5);
+  transition:
+    transform var(--dfx-dur-fast) ease,
+    border-color var(--dfx-dur-fast) ease,
+    box-shadow var(--dfx-dur-fast) ease;
+}
+
+.dfx-tool-card:hover {
+  border-color: color-mix(in oklab, var(--dream-flux) 45%, var(--color-fd-border));
+  box-shadow: var(--dfx-shadow-lift);
+  transform: translateY(-2px);
+}
+
+.dfx-tool-card:hover .dfx-tool-icon {
+  border-color: color-mix(in oklab, var(--dream-flux) 40%, var(--color-fd-border));
+  background: color-mix(in oklab, var(--dream-flux) 14%, transparent);
+}
+
+.dfx-tool-icon {
+  transition:
+    background var(--dfx-dur-fast) ease,
+    border-color var(--dfx-dur-fast) ease;
+}
+
+.dfx-tool-icon {
+  display: inline-grid;
+  width: 2.4rem;
+  height: 2.4rem;
+  place-items: center;
+  border: 1px solid var(--dfx-rule);
+  border-radius: var(--dfx-radius-md);
+  background: var(--dfx-tint-weak);
+  color: var(--dfx-brand-text);
+}
+
+.dfx-tool-icon svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.dfx-tool-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: var(--dfx-space-4) 0 0;
+  color: var(--color-fd-foreground);
+  font-size: var(--dfx-text-md);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.dfx-tool-card h3 svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  color: var(--color-fd-muted-foreground);
+}
+
+.dfx-tool-card p {
+  margin: var(--dfx-space-2) 0 0;
+  color: var(--color-fd-muted-foreground);
+  font-size: var(--dfx-text-base);
+  line-height: var(--dfx-leading-snug);
+}
+
+/* -----------------------------------------------------------------------------
+   reading paths
+   -------------------------------------------------------------------------- */
+
+.dfx-route-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--dfx-rule);
+  border-radius: var(--dfx-radius-lg);
+  background: var(--dfx-rule);
+  overflow: hidden;
+}
+
+.dfx-route {
+  display: grid;
+  align-content: start;
+  background: var(--color-fd-background);
+  padding: var(--dfx-space-5);
+  transition:
+    background var(--dfx-dur-fast) ease,
+    color var(--dfx-dur-fast) ease;
+}
+
+.dfx-route:hover {
+  background: var(--dfx-tint-hover);
+}
+
+.dfx-route h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--dfx-space-3);
+  color: var(--color-fd-foreground);
+  font-size: var(--dfx-text-md);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.dfx-route h3 svg {
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+  color: var(--dfx-brand-text);
+  opacity: 0;
+  transition:
+    opacity var(--dfx-dur-fast) ease,
+    translate var(--dfx-dur-fast) ease;
+  translate: -4px 0;
+}
+
+.dfx-route:hover h3 svg {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.dfx-route p {
+  margin: var(--dfx-space-2) 0 0;
+  color: var(--color-fd-muted-foreground);
+  font-size: var(--dfx-text-base);
+  line-height: var(--dfx-leading-snug);
+}
+
+/* -----------------------------------------------------------------------------
+   foot
+   -------------------------------------------------------------------------- */
+
+.dfx-foot {
+  margin-block-start: clamp(var(--dfx-space-6), 6vh, var(--dfx-space-8));
+  border-block-start: 1px solid var(--dfx-rule-faint);
+  padding-block-start: var(--dfx-space-5);
+}
+
+.dfx-foot .dfx-container {
+  width: 100%;
+}
+
+.dfx-foot .dfx-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--dfx-space-4);
+}
+
+.dfx-foot-brand {
+  color: var(--color-fd-foreground);
+  font-size: var(--dfx-text-base);
+  font-weight: 700;
+}
+
+.dfx-foot-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--dfx-space-3);
+  color: var(--color-fd-muted-foreground);
+  font-size: var(--dfx-text-sm);
+}
+
+.dfx-foot-links a:hover {
+  color: var(--dfx-brand-text);
+}
+
+/* -----------------------------------------------------------------------------
+   narrow viewports
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1080px) {
+  .dfx-tool-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dfx-route-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dfx-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--dfx-space-6);
+  }
+}
+
+@media (max-width: 960px) {
+  .dfx-hero {
+    min-height: 0;
+  }
+
+  .dfx-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--dfx-space-6);
+  }
+
+  /* art first would push the headline below the fold on a phone */
+  .dfx-hero-art {
+    order: 2;
+  }
+
+  .dfx-art-figure {
+    block-size: clamp(18rem, 46vh, 26rem);
+  }
+}
+
+@media (max-width: 620px) {
+  .dfx-tool-grid,
+  .dfx-route-grid,
+  .dfx-steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dfx-actions,
+  .dfx-btn {
+    width: 100%;
+  }
+
+  .dfx-code-body {
+    font-size: var(--dfx-text-xs);
+  }
+
+  .dfx-code-line::before {
+    width: 2.5rem;
+    padding-inline-end: var(--dfx-space-3);
+  }
+}

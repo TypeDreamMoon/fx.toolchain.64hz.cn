@@ -1,0 +1,73 @@
+name: Build and deploy
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Two deploys at once would race inside the same web root: upload.js cleans the
+# remote directory before it uploads, so an overlapping run can serve a
+# half-emptied site. One at a time, newest wins.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build and deploy static site
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+
+      # Pure stdlib Python, and it reads out/ — so it checks what actually
+      # shipped rather than what the sources looked like they meant.
+      - name: Check internal links
+        run: python3 scripts/check-links.py
+
+      # A missing credential otherwise surfaces as an SSH timeout several
+      # minutes in, which reads like a server problem and is not one.
+      - name: Check deploy credentials
+        if: github.event_name != 'pull_request'
+        env:
+          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+          SFTP_PRIVATE_KEY: ${{ secrets.SFTP_PRIVATE_KEY }}
+        run: |
+          if [ -z "$SFTP_PASSWORD" ] && [ -z "$SFTP_PRIVATE_KEY" ]; then
+            echo "::error::Set either the SFTP_PASSWORD or the SFTP_PRIVATE_KEY repository secret."
+            exit 1
+          fi
+
+      - name: Upload static export
+        if: github.event_name != 'pull_request'
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_PORT: ${{ secrets.SFTP_PORT }}
+          SFTP_USER: ${{ secrets.SFTP_USER }}
+          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+          SFTP_PRIVATE_KEY: ${{ secrets.SFTP_PRIVATE_KEY }}
+          SFTP_PASSPHRASE: ${{ secrets.SFTP_PASSPHRASE }}
+          SFTP_REMOTE_DIR: ${{ secrets.SFTP_REMOTE_DIR }}
+        run: npm run upload

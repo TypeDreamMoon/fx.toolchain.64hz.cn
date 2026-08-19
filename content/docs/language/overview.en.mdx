@@ -1,0 +1,139 @@
+---
+title: The file model
+description: The shape every DreamFXLang file shares — header, blocks, statements, comments, attributes — and an index of the eight L rules.
+---
+
+DreamFXLang has one file shape. The three extensions differ in what the top-level declaration is, not
+in the grammar.
+
+<Synopsis>
+
+```text
+<Kind>(Name = <string>[, Root = <string>])
+{
+    <block> …
+}
+```
+
+</Synopsis>
+
+<Grammar />
+
+| `Kind` | Extension | Produces |
+| --- | --- | --- |
+| `System` | `.dfs` | a `UNiagaraSystem` |
+| `Emitter` | `.dfe` | nothing (copied into a `.dfs` by `from`) |
+| `Module` / `DynamicInput` | `.dfm` | a `UNiagaraScript` |
+
+A `Kind` that disagrees with the extension is
+[DFX2021](/docs/diagnostics/dfx2xxx#dfx2021); one file holds exactly one top-level object, and
+anything after it is [DFX2022](/docs/diagnostics/dfx2xxx#dfx2022). What `Root` accepts is in
+[layout and naming](/docs/start/project-layout).
+
+## Blocks, statements, attributes
+
+```cpp
+Settings = {                       // a block: Name = { … }
+    WarmupTime = 0.0;              // statements end in ;
+}
+
+Properties = {
+    int SparkCount = 24 [ Group="Burst"; SortPriority=10 ];   // attributes hang off a declaration
+}
+
+// line comment
+/* block comment */
+```
+
+- a **block** is `Name = { ... }`;
+- a **statement** ends in `;`;
+- **attributes** are `Key=Value` pairs in brackets after a declaration, separated by `;`;
+- **comments** are `//` and `/* */`.
+
+### `#Region` is only a comment
+
+```cpp
+ParticleUpdate = {
+    #Region "Forces"
+    GravityForce(Gravity = (0, 0, -680));
+    #EndRegion
+}
+```
+
+`#Region` / `#EndRegion` exist for humans and editors to fold on. They **do not reach the asset**
+(that is L5): the external edit API has no stack-note function. An unclosed one warns
+([DFX2010](/docs/diagnostics/dfx2xxx#dfx2010)); a stray `#EndRegion` is an error
+([DFX2005](/docs/diagnostics/dfx2xxx#dfx2005)).
+
+## Names that are not identifiers
+
+Niagara names come from a UI with no restrictions. Real content in this project has a user parameter
+called `PillarPower(0~1)` and a module input called `Ring/DiscDistributionMode`; neither is an
+identifier in any language. Back-quotes hold one:
+
+```cpp
+Properties = {
+    float `PillarPower(0~1)`;
+}
+
+ParticleSpawn = {
+    SphereLocation(
+        `Ring/DiscDistributionMode` = Direct,
+        Alpha                       = `User.PillarPower(0~1)`,
+    );
+}
+```
+
+A back-quoted name is **one token**, dots included — `` `User.PillarPower(0~1)` ``, not
+``User.`PillarPower(0~1)` ``. Only quote what needs it: `` `Speed` `` is legal but reads worse than
+`Speed`, and the decompiler applies exactly that rule. A name containing a back-quote has no written
+form at all — rename the parameter. An unterminated one is
+[DFX1005](/docs/diagnostics/dfx1xxx#dfx1005).
+
+## The eight `L*` rules
+
+The language's skeleton is eight rules, and the docs refer to them by name:
+
+| | Rule |
+| --- | --- |
+| **L1** | A stack is an ordered statement block. Six of them: `SystemSpawn`, `SystemUpdate`, `EmitterSpawn`, `EmitterUpdate`, `ParticleSpawn`, `ParticleUpdate`. **Writing order is module order.** |
+| **L2** | Two statement forms: a module call, and an assignment. **Consecutive assignments fold into one Set Parameters module**; a module call breaks the run. A new attribute is declared by its first write. |
+| **L3** | Four value modes: literal, linked, dynamic input, HLSL. |
+| **L4** | Module names resolve through `Settings.ModulePaths`; write a longer path only when a short name is ambiguous. |
+| **L5** | `#Region` is a comment. It does not reach the asset. |
+| **L6** | Inline expressions lower to one HLSL expression, and only whitelisted functions are allowed. |
+| **L7** | Numeric conversion widens, never narrows. `int -> float` is implicit; `float -> int` needs `int(...)`. |
+| **L8** | Renderer properties are schema-driven generic assignment; every renderer type is supported without per-type syntax. |
+
+L2, L3, L6 and L7 are unpacked in [values and rules](/docs/language/values), L1 in
+[`.dfs`](/docs/language/dfs), and L8 in
+[the renderer section of `.dfs`](/docs/language/dfs#renderers).
+
+## A page per file kind
+
+<Cards>
+  <Card title="`.dfs` — a system" href="/docs/language/dfs">
+    Settings, Properties, the six stacks, renderers, `from`, `Defaults`.
+  </Card>
+  <Card title="`.dfe` — a reusable emitter" href="/docs/language/dfe">
+    One `Emitter` block, and what the `from` merge replaces.
+  </Card>
+  <Card title="`.dfm` — modules and dynamic inputs" href="/docs/language/dfm">
+    `Usage`, `Inputs`, the HLSL `Body`, and which engines can generate one.
+  </Card>
+  <Card title="Values, types and the `L*` rules" href="/docs/language/values">
+    The four value modes, `curve { }`, inline expressions, the type table.
+  </Card>
+  <Card title="Events and simulation stages" href="/docs/language/events-and-stages">
+    `OnEvent` and `Stage`, and the hard limits on each.
+  </Card>
+</Cards>
+
+## What is deliberately not here
+
+- **Emitter inheritance.** `from` is copy, not inherit. Editing a `.dfe` does not reach back into
+  systems that already copied it until they are rebuilt.
+- **`MaterialParam`.** Reserved syntax, not implemented
+  ([DFX5093](/docs/diagnostics/dfx5xxx#dfx5093)).
+- **Anything that would need a general expression compiler.** See
+  [L6](/docs/language/values#l6).

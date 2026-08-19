@@ -1,0 +1,284 @@
+---
+title: 诊断码
+description: 全部 DFXnnnn 诊断码：怎么读一条诊断、八个族各自属于流水线的哪一段，以及按码速查。
+---
+
+DreamFX 的每一条诊断都是一个 `DFXnnnn`，带着**文件、行、列**：
+
+```text
+DFX/Effects/NS_Hello.dfs(31,17): error DFX3003: Module 'GravityForce' has no input named 'Gravty'.
+Did you mean 'Gravity'? Available inputs: Gravity, CoordinateSpace
+```
+
+| | |
+| --- | --- |
+| 日志分类 | `LogDreamFX` |
+| 严重级别 | `error` / `warning` / `info` —— 三级都真实使用 |
+| 位置 | 每个码都带文件、行、列 |
+| 编辑器里 | 失败的构建弹一条带 **Open in VSCode** 链接的 toast，直接跳到那一行那一列 |
+
+**首位数字就是抛出它的阶段。** 这既是一条阅读线索，也是排错时该往哪里看的指路牌：
+
+| 段 | 阶段 | 意味着 |
+| --- | --- | --- |
+| [`DFX1xxx`](/docs/diagnostics/dfx1xxx) | 驱动与文件 I/O | 文件读不了，或者词法层面就断了 |
+| [`DFX2xxx`](/docs/diagnostics/dfx2xxx) | 词法与语法 | 语法不对：括号、分号、关键字 |
+| [`DFX3xxx`](/docs/diagnostics/dfx3xxx) | 声明与文档结构 | 语法对了，但声明的东西对不上真实资产 |
+| [`DFX4xxx`](/docs/diagnostics/dfx4xxx) | 值、类型与表达式 | 等号右边有问题 |
+| [`DFX5xxx`](/docs/diagnostics/dfx5xxx) | 生成与资产写入 | 写资产这一步出了问题，或者有意的降级提示 |
+| [`DFX6xxx`](/docs/diagnostics/dfx6xxx) | Niagara 编译 | 资产写出来了，Niagara 自己不满意 |
+| [`DFX7xxx`](/docs/diagnostics/dfx7xxx) | 溯源、漂移与 lint | 资产与源码失同步，或者 lint 觉得不对劲 |
+| [`DFX8xxx`](/docs/diagnostics/dfx8xxx) | 反编译器 | 导出、Adopt、往返缺口 |
+
+<Callout type="info">
+  文档的一半是**机器写的**：严重级别、消息模板和抛出位置从插件源码里扫出来，
+  `gen-diagnostics.ps1 -Check` 是防止它漂移的门。人写的那一半 —— 成因与修法 —— 只写一次。
+  见 [ci.ps1 与门禁](/docs/tools/ci)。
+</Callout>
+
+## 排错的顺序
+
+<Steps>
+
+<Step>
+### 按码去查
+本页下面的表，或者对应的族页面。码是稳定的：`DFX3003` 永远是同一个失败模式。
+</Step>
+
+<Step>
+### 拿真实签名核对
+`dfx.ps1 schema <Module> -Stack <Stack>` 打印构建看到的输入签名 ——
+包括静态开关揭示出来的那些。名字的权威在资产上，不在记忆里。
+</Step>
+
+<Step>
+### 还是不对，就看边界
+[能力边界](/docs/diagnostics/limitations) 列出不覆盖的东西与 1.0.0 的已知问题。
+</Step>
+
+</Steps>
+
+## 按码速查
+
+
+### DFX1xxx — 驱动与文件 I/O
+
+<Wide>
+
+| 码 | 级别 | 消息 |
+| --- | --- | --- |
+| [DFX1000](/docs/diagnostics/dfx1xxx#dfx1000) | 错误 | Could not read source file '%s'. |
+| [DFX1001](/docs/diagnostics/dfx1xxx#dfx1001) | 错误 | Unterminated string literal. |
+| [DFX1002](/docs/diagnostics/dfx1xxx#dfx1002) | 错误 | Unterminated block comment. |
+| [DFX1003](/docs/diagnostics/dfx1xxx#dfx1003) | 错误 | Unexpected character '%c' (U+%04X). |
+| [DFX1004](/docs/diagnostics/dfx1xxx#dfx1004) | 错误 | Unterminated raw block: missing '}'. |
+| [DFX1005](/docs/diagnostics/dfx1xxx#dfx1005) | 错误 | Unterminated back-quoted name. A `name` must close on the same line. |
+
+</Wide>
+
+
+### DFX2xxx — 词法与语法
+
+<Wide>
+
+| 码 | 级别 | 消息 |
+| --- | --- | --- |
+| [DFX2000](/docs/diagnostics/dfx2xxx#dfx2000) | 错误 | Unknown document type '%s'. Expected System, Emitter, Module or DynamicInput. |
+| [DFX2001](/docs/diagnostics/dfx2xxx#dfx2001) | 错误 | Expected '&#123;' to open a raw block but found '%s'. |
+| [DFX2002](/docs/diagnostics/dfx2xxx#dfx2002) | 错误 | Expected a name but found %s. |
+| [DFX2003](/docs/diagnostics/dfx2xxx#dfx2003) | 错误 | Expected a number but found '%s'. |
+| [DFX2004](/docs/diagnostics/dfx2xxx#dfx2004) | 错误 | Expected a value but found %s. |
+| [DFX2005](/docs/diagnostics/dfx2xxx#dfx2005) | 错误 | '#EndRegion' has no matching '#Region'. |
+| [DFX2006](/docs/diagnostics/dfx2xxx#dfx2006) | 错误 | Unknown directive '#%s'. Expected Region or EndRegion. |
+| [DFX2007](/docs/diagnostics/dfx2xxx#dfx2007) | 错误 | Expected a version after '@'. |
+| [DFX2008](/docs/diagnostics/dfx2xxx#dfx2008) | 错误 | Module '%s' was given a positional argument. Module inputs must be written as 'Name = Value'. |
+| [DFX2010](/docs/diagnostics/dfx2xxx#dfx2010) | 警告 | '#Region \"%s\"' was never closed with '#EndRegion'. |
+| [DFX2013](/docs/diagnostics/dfx2xxx#dfx2013) | 错误 | '%s' is a system-scope stack and must be written at the top level of a .dfs, not inside an emit… |
+| [DFX2015](/docs/diagnostics/dfx2xxx#dfx2015) | 错误 | 'from' must be followed by a quoted path to a .dfe source file. |
+| [DFX2016](/docs/diagnostics/dfx2xxx#dfx2016) | 错误 | (built at runtime) |
+| [DFX2018](/docs/diagnostics/dfx2xxx#dfx2018) | 错误 | A Module or DynamicInput must declare a 'Body = &#123; }' block. |
+| [DFX2019](/docs/diagnostics/dfx2xxx#dfx2019) | 错误 | Header argument '%s' must be a quoted string. |
+| [DFX2020](/docs/diagnostics/dfx2xxx#dfx2020) | 错误 | Unknown curve key attribute '%s'. Expected Interp, Tangent, Arrive or Leave. |
+| [DFX2021](/docs/diagnostics/dfx2xxx#dfx2021) | 错误 | File declares '%s' but its extension is '%s'. Rename the file to '%s' or change the declaration. |
+| [DFX2022](/docs/diagnostics/dfx2xxx#dfx2022) | 错误 | Unexpected '%s' after the end of the document. A DreamFX file declares exactly one top-level ob… |
+| [DFX2023](/docs/diagnostics/dfx2xxx#dfx2023) | 错误 | '%s' is a module call, so it cannot be given a type. Types are written only on assignments. |
+| [DFX2024](/docs/diagnostics/dfx2xxx#dfx2024) | 错误 | 'disabled' can only prefix a module call, and '%s' is an assignment. |
+| [DFX2025](/docs/diagnostics/dfx2xxx#dfx2025) | 错误 | Unknown OnEvent argument '%s'. Expected Source, Event, Mode, SpawnNumber, MaxEventsPerFrame, Up… |
+| [DFX2026](/docs/diagnostics/dfx2xxx#dfx2026) | 错误 | Unknown Stage argument '%s'. Expected Iteration, DataInterface, NumIterations, ExecuteBehavior… |
+
+</Wide>
+
+
+### DFX3xxx — 声明与文档结构
+
+<Wide>
+
+| 码 | 级别 | 消息 |
+| --- | --- | --- |
+| [DFX3000](/docs/diagnostics/dfx3xxx#dfx3000) | 错误 | (built at runtime) |
+| [DFX3001](/docs/diagnostics/dfx3xxx#dfx3001) | 错误 | (built at runtime) |
+| [DFX3002](/docs/diagnostics/dfx3xxx#dfx3002) | 错误 | Could not read the input schema of module '%s': %s |
+| [DFX3003](/docs/diagnostics/dfx3xxx#dfx3003) | 错误 | Module '%s' has no input named '%s'.%s Available inputs: %s |
+| [DFX3004](/docs/diagnostics/dfx3xxx#dfx3004) | 错误 | Unknown renderer type '%s'. Expected one of SpriteRenderer, MeshRenderer, RibbonRenderer, Light… |
+| [DFX3005](/docs/diagnostics/dfx3xxx#dfx3005) | 错误 | Emitter '%s' is declared more than once. Emitter names are stable keys and must be unique. |
+| [DFX3006](/docs/diagnostics/dfx3xxx#dfx3006) | 错误 | '%s' is neither an allowed inline function (%s) nor a dynamic input: %s |
+| [DFX3007](/docs/diagnostics/dfx3xxx#dfx3007) | 错误 | Could not read the input schema of dynamic input '%s': %s |
+| [DFX3008](/docs/diagnostics/dfx3xxx#dfx3008) | 错误 | Dynamic input '%s' has no input named '%s'. Available inputs: %s |
+| [DFX3009](/docs/diagnostics/dfx3xxx#dfx3009) | 错误 | Dynamic input '%s' is pinned to version %s, which its asset does not offer. Available version(s… |
+| [DFX3010](/docs/diagnostics/dfx3xxx#dfx3010) | 错误 | Property '%s': %s |
+| [DFX3020](/docs/diagnostics/dfx3xxx#dfx3020) | 错误 | Unknown %s setting '%s'. Available settings: %s |
+| [DFX3021](/docs/diagnostics/dfx3xxx#dfx3021) | 错误 | User parameter '%s' is declared more than once. |
+| [DFX3030](/docs/diagnostics/dfx3xxx#dfx3030) | 错误 | A Module or DynamicInput must declare Settings.Usage -- it decides which stacks the module can… |
+| [DFX3031](/docs/diagnostics/dfx3xxx#dfx3031) | 错误 | A DynamicInput must declare Settings.Output -- its return type cannot be inferred from the body. |
+| [DFX3032](/docs/diagnostics/dfx3xxx#dfx3032) | 错误 | A DynamicInput's Usage must be DynamicInput, not '%s'. |
+| [DFX3033](/docs/diagnostics/dfx3xxx#dfx3033) | 错误 | Input '%s' is declared more than once. |
+| [DFX3034](/docs/diagnostics/dfx3xxx#dfx3034) | 错误 | Input '%s' is marked [StaticSwitch] but is a %s. A static switch must be a bool, an int or an e… |
+| [DFX3035](/docs/diagnostics/dfx3xxx#dfx3035) | 错误 | Input '%s' is a [StaticSwitch], so its default must be a compile-time constant. |
+| [DFX3036](/docs/diagnostics/dfx3xxx#dfx3036) | 错误 | The Body block is empty. |
+| [DFX3037](/docs/diagnostics/dfx3xxx#dfx3037) | 错误 | (built at runtime) |
+| [DFX3038](/docs/diagnostics/dfx3xxx#dfx3038) | 错误 | '%s' is not a stack a module can be placed in. Use one of: %s. |
+| [DFX3039](/docs/diagnostics/dfx3xxx#dfx3039) | 错误 | A DynamicInput cannot return a data interface; its Output must be a value type. |
+| [DFX3040](/docs/diagnostics/dfx3xxx#dfx3040) | 错误 | (built at runtime) |
+| [DFX3041](/docs/diagnostics/dfx3xxx#dfx3041) | 错误 | '%s' could not be parsed; see the errors above. |
+| [DFX3042](/docs/diagnostics/dfx3xxx#dfx3042) | 错误 | '%s' declares a %s, but 'from' needs an Emitter document. |
+| [DFX3043](/docs/diagnostics/dfx3xxx#dfx3043) | 错误 | '%s' reads user parameters this system does not declare: %s. Add them to the Properties block. |
+| [DFX3044](/docs/diagnostics/dfx3xxx#dfx3044) | 错误 | The default for input '%s' has to be a literal or an enum entry. A module input default is stor… |
+| [DFX3045](/docs/diagnostics/dfx3xxx#dfx3045) | 错误 | '%s' is not a type a particle attribute can have. |
+| [DFX3046](/docs/diagnostics/dfx3xxx#dfx3046) | 错误 | '%s' is not a particle attribute DreamFX knows the type of. Write the type at its first use in… |
+| [DFX3047](/docs/diagnostics/dfx3xxx#dfx3047) | 错误 | A DynamicInput computes a value; it cannot write '%s'. Move the write into a Module. |
+
+</Wide>
+
+
+### DFX4xxx — 值、类型与表达式
+
+<Wide>
+
+| 码 | 级别 | 消息 |
+| --- | --- | --- |
+| [DFX4001](/docs/diagnostics/dfx4xxx#dfx4001) | 错误 | Input '%s' expects %s, but a number was written. |
+| [DFX4002](/docs/diagnostics/dfx4xxx#dfx4002) | 错误 | Expression for '%s': a vector literal must have 2 to 4 components. |
+| [DFX4003](/docs/diagnostics/dfx4xxx#dfx4003) | 错误 | Input '%s' is an integer, but %s was written. Narrowing is not implicit -- write int(%s) if tru… |
+| [DFX4004](/docs/diagnostics/dfx4xxx#dfx4004) | 错误 | Input '%s' has no resolvable Niagara type. |
+| [DFX4005](/docs/diagnostics/dfx4xxx#dfx4005) | 错误 | Property '%s': component %d is not a number. |
+| [DFX4006](/docs/diagnostics/dfx4xxx#dfx4006) | 错误 | Input '%s' is a %s, which has no entry named '%s'. Valid entries: %s |
+| [DFX4007](/docs/diagnostics/dfx4xxx#dfx4007) | 错误 | Input '%s' expects %s. '%s' is neither a literal of that type nor a parameter reference -- para… |
+| [DFX4010](/docs/diagnostics/dfx4xxx#dfx4010) | 错误 | Input '%s' is set more than once on dynamic input '%s'. |
+| [DFX4020](/docs/diagnostics/dfx4xxx#dfx4020) | 错误 | Parameter '%s': 'Object' needs an inner type, e.g. Object&lt;Texture>. |
+| [DFX4021](/docs/diagnostics/dfx4xxx#dfx4021) | 错误 | Parameter '%s': no UObject class named '%s'. Object&lt;> takes a class name such as Object&lt;Texture… |
+| [DFX4022](/docs/diagnostics/dfx4xxx#dfx4022) | 错误 | Cannot infer the type of '%s' from its value. A first assignment to a new attribute must use a… |
+| [DFX4023](/docs/diagnostics/dfx4xxx#dfx4023) | 错误 | Property '%s': box() takes 6 numbers -- minX, minY, minZ, maxX, maxY, maxZ. |
+| [DFX4024](/docs/diagnostics/dfx4xxx#dfx4024) | 错误 | Cannot type '%s = %s': the type of '%s' is not known here. Declare it in Properties, or assign… |
+| [DFX4025](/docs/diagnostics/dfx4xxx#dfx4025) | 错误 | '%s' is not a valid assignment target. Parameter names are namespace-qualified, e.g. Particles.… |
+| [DFX4026](/docs/diagnostics/dfx4xxx#dfx4026) | 错误 | 'Bind %s -> %s': the target must be a qualified parameter -- either a namespace such as Particl… |
+| [DFX4027](/docs/diagnostics/dfx4xxx#dfx4027) | 错误 | '%s' is %s, but '%s' is %s. Linking binds a parameter directly -- there is no conversion. Decla… |
+| [DFX4028](/docs/diagnostics/dfx4xxx#dfx4028) | 错误 | Default for '%s' needs a declared type. A default has no module signature to infer one from, so… |
+| [DFX4029](/docs/diagnostics/dfx4xxx#dfx4029) | 错误 | Default for '%s' must be a literal, an enum or another parameter. A dynamic input computes a va… |
+| [DFX4030](/docs/diagnostics/dfx4xxx#dfx4030) | 错误 | The hlsl block for '%s' must be a single expression: no statements, no local variables, no retu… |
+| [DFX4031](/docs/diagnostics/dfx4xxx#dfx4031) | 错误 | '%s' is not an allowed inline function. Allowed: %s. Anything else belongs in a .dfm dynamic in… |
+| [DFX4032](/docs/diagnostics/dfx4xxx#dfx4032) | 错误 | '%s' in the expression for '%s' is not a parameter. Only namespace-qualified parameters (User.X… |
+| [DFX4033](/docs/diagnostics/dfx4xxx#dfx4033) | 错误 | Builtin '%s' takes positional arguments, not named ones. |
+| [DFX4034](/docs/diagnostics/dfx4xxx#dfx4034) | 错误 | Builtin '%s' takes %d argument(s), but %d were written. |
+| [DFX4035](/docs/diagnostics/dfx4xxx#dfx4035) | 错误 | Expression for '%s' contains a value that has no HLSL form. |
+| [DFX4036](/docs/diagnostics/dfx4xxx#dfx4036) | 错误 | The hlsl block for '%s' is empty. |
+| [DFX4037](/docs/diagnostics/dfx4xxx#dfx4037) | 错误 | '%s' is %s; a curve &#123; } literal only fits a curve data interface input. |
+| [DFX4038](/docs/diagnostics/dfx4xxx#dfx4038) | 错误 | The curve for '%s' has no keys. |
+| [DFX4039](/docs/diagnostics/dfx4xxx#dfx4039) | 错误 | Unknown curve interpolation '%s'. Expected Auto, Cubic, Linear or Constant. |
+| [DFX4040](/docs/diagnostics/dfx4xxx#dfx4040) | 错误 | Parameter '%s': no asset at '%s'. |
+| [DFX4041](/docs/diagnostics/dfx4xxx#dfx4041) | 错误 | Parameter '%s': '%s' is a %s, which is not a %s. |
+| [DFX4042](/docs/diagnostics/dfx4xxx#dfx4042) | 错误 | Unknown curve tangent mode '%s'. Expected Auto, User, Break or None. |
+| [DFX4091](/docs/diagnostics/dfx4xxx#dfx4091) | 错误 | Input '%s': dynamic inputs, hlsl blocks, curves and inline expressions are not available yet (p… |
+
+</Wide>
+
+
+### DFX5xxx — 生成与资产写入
+
+<Wide>
+
+| 码 | 级别 | 消息 |
+| --- | --- | --- |
+| [DFX5001](/docs/diagnostics/dfx5xxx#dfx5001) | 错误 | Stack '%s' has no Niagara script usage mapping. |
+| [DFX5002](/docs/diagnostics/dfx5xxx#dfx5002) | 警告 | This system declares no emitters, so it will produce nothing. |
+| [DFX5003](/docs/diagnostics/dfx5xxx#dfx5003) | 提示 | '%s' is not declared in this source, so its existing modules are left as-is: %s |
+| [DFX5004](/docs/diagnostics/dfx5xxx#dfx5004) | 提示 | No Material was set, so the engine default was applied: %s. Write 'Material = \"...\";' to choo… |
+| [DFX5030](/docs/diagnostics/dfx5xxx#dfx5030) | 错误 | SavePackage failed for '%s'. |
+| [DFX5031](/docs/diagnostics/dfx5xxx#dfx5031) | 错误 | Emitter '%s' declares more than one OnEvent block. Only one event handler per emitter is repres… |
+| [DFX5032](/docs/diagnostics/dfx5xxx#dfx5032) | 错误 | Emitter '%s' declares two Stage blocks named '%s'. Stages are identified by name; rename one. |
+| [DFX5033](/docs/diagnostics/dfx5xxx#dfx5033) | 错误 | Emitter '%s' declares Stage blocks but simulates on the CPU. Simulation stages are a GPU featur… |
+| [DFX5034](/docs/diagnostics/dfx5xxx#dfx5034) | 错误 | Emitter '%s' uses 'as %s' on two module calls. Node names are unique per emitter; rename one. |
+| [DFX5093](/docs/diagnostics/dfx5xxx#dfx5093) | 错误 | 'MaterialParam' is reserved syntax and is not implemented in v1 (plan section 7). |
+| [DFX5097](/docs/diagnostics/dfx5xxx#dfx5097) | 错误 | Only System documents can be generated right now; this file declares a %s. |
+| [DFX5098](/docs/diagnostics/dfx5xxx#dfx5098) | 错误 | Data interface parameter '%s' takes its configuration as a quoted JSON object, the form the dec… |
+| [DFX5099](/docs/diagnostics/dfx5xxx#dfx5099) | 提示 | [Group] and [SortPriority] are kept in source only: the external edit API's user variable struc… |
+| [DFX5100](/docs/diagnostics/dfx5xxx#dfx5100) | 错误 | '%s' is a %s with no generated asset at '%s', and %s |
+| [DFX5101](/docs/diagnostics/dfx5xxx#dfx5101) | 错误 | (built at runtime) |
+| [DFX5102](/docs/diagnostics/dfx5xxx#dfx5102) | 提示 | Input '%s' is marked [StaticSwitch]. Tier-one generation (plan 3.3) lowers the whole Body to a… |
+| [DFX5103](/docs/diagnostics/dfx5xxx#dfx5103) | 错误 | Package '%s' exists on disk but could not be loaded. |
+| [DFX5104](/docs/diagnostics/dfx5xxx#dfx5104) | 错误 | Package '%s' exists but holds no Niagara script named '%s'. Refusing to overwrite it. |
+| [DFX5105](/docs/diagnostics/dfx5xxx#dfx5105) | 错误 | Could not create package '%s'. |
+| [DFX5106](/docs/diagnostics/dfx5xxx#dfx5106) | 错误 | Could not wire the module graph. The Niagara schema rejected a parameter map connection. |
+| [DFX5107](/docs/diagnostics/dfx5xxx#dfx5107) | 错误 | '%s' no longer matches the module asset at '%s', and this build cannot regenerate it. Rebuild i… |
+
+</Wide>
+
+
+### DFX6xxx — Niagara 编译
+
+<Wide>
+
+| 码 | 级别 | 消息 |
+| --- | --- | --- |
+| [DFX6001](/docs/diagnostics/dfx6xxx#dfx6001) | 错误 | (built at runtime) |
+| [DFX6002](/docs/diagnostics/dfx6xxx#dfx6002) | 警告 | (built at runtime) |
+| [DFX6003](/docs/diagnostics/dfx6xxx#dfx6003) | 错误 | (built at runtime) |
+| [DFX6004](/docs/diagnostics/dfx6xxx#dfx6004) | 警告 | (built at runtime) |
+| [DFX6005](/docs/diagnostics/dfx6xxx#dfx6005) | 错误 | Niagara compilation of '%s' did not succeed (status %s). |
+| [DFX6006](/docs/diagnostics/dfx6xxx#dfx6006) | 错误 | Niagara could not compile the body of '%s': %s |
+| [DFX6007](/docs/diagnostics/dfx6xxx#dfx6007) | 提示 | Nothing in this source writes that parameter, so there is no graph parameter for a default to s… |
+| [DFX6008](/docs/diagnostics/dfx6xxx#dfx6008) | 错误 | '%s' finished its compile with stale scripts: %s. The compiled VM was not rebuilt from the grap… |
+
+</Wide>
+
+
+### DFX7xxx — 溯源、漂移与 lint
+
+<Wide>
+
+| 码 | 级别 | 消息 |
+| --- | --- | --- |
+| [DFX7001](/docs/diagnostics/dfx7xxx#dfx7001) | 错误 | Asset '%s' carries no DreamFX provenance stamp: it was never generated from this source, or it… |
+| [DFX7002](/docs/diagnostics/dfx7xxx#dfx7002) | 错误 | Asset '%s' is stale: it was generated from a different revision of this source. Run the DreamFX… |
+| [DFX7003](/docs/diagnostics/dfx7xxx#dfx7003) | 警告 | Asset '%s' was generated by DreamFX %s; the current generator is %s. A rebuild is recommended. |
+| [DFX7004](/docs/diagnostics/dfx7xxx#dfx7004) | 错误 | Asset '%s' does not exist: this source has never been built. |
+| [DFX7005](/docs/diagnostics/dfx7xxx#dfx7005) | 错误 | (built at runtime) |
+| [DFX7101](/docs/diagnostics/dfx7xxx#dfx7101) | 警告 | Emitter '%s' simulates on the GPU but declares no FixedBounds. GPU emitters cannot compute thei… |
+| [DFX7102](/docs/diagnostics/dfx7xxx#dfx7102) | 警告 | Emitter '%s' spawns by rate ('%s') with no upper bound. Set AllocationMode = Fixed and PreAlloc… |
+| [DFX7103](/docs/diagnostics/dfx7xxx#dfx7103) | 警告 | Emitter '%s' uses randomness ('%s') but does not set Determinism = true, so it will look differ… |
+| [DFX7104](/docs/diagnostics/dfx7xxx#dfx7104) | 警告 | This renderer has no Material and DreamFX knows no default for its type, so it will not draw. S… |
+
+</Wide>
+
+
+### DFX8xxx — 反编译器
+
+<Wide>
+
+| 码 | 级别 | 消息 |
+| --- | --- | --- |
+| [DFX8000](/docs/diagnostics/dfx8xxx#dfx8000) | 错误 | Cannot decompile a null system. |
+| [DFX8001](/docs/diagnostics/dfx8xxx#dfx8001) | 错误 | Could not read emitters: %s |
+| [DFX8002](/docs/diagnostics/dfx8xxx#dfx8002) | 警告 | Skipping emitter '%s': %s |
+| [DFX8003](/docs/diagnostics/dfx8xxx#dfx8003) | 错误 | Cannot decompile a null emitter. |
+| [DFX8004](/docs/diagnostics/dfx8xxx#dfx8004) | 错误 | Could not create a host system to read the emitter through: %s |
+| [DFX8005](/docs/diagnostics/dfx8xxx#dfx8005) | 错误 | Could not copy emitter '%s' into a host system: %s |
+| [DFX8006](/docs/diagnostics/dfx8xxx#dfx8006) | 错误 | Could not read emitter '%s': %s |
+| [DFX8010](/docs/diagnostics/dfx8xxx#dfx8010) | 错误 | '%s' cannot be adopted: '%s' has no DreamFXLang form yet, so adopting would destroy it on the f… |
+| [DFX8011](/docs/diagnostics/dfx8xxx#dfx8011) | 错误 | '%s' is already generated by an existing source, so a second one would silently overwrite it on… |
+| [DFX8012](/docs/diagnostics/dfx8xxx#dfx8012) | 错误 | '%s' was adopted, but re-exporting the rebuilt asset does not reproduce this file. First differ… |
+| [DFX8013](/docs/diagnostics/dfx8xxx#dfx8013) | 错误 | This file sits in the decompiled output directory but Name=\"%s\" builds '%s', outside the '%s/… |
+| [DFX8014](/docs/diagnostics/dfx8xxx#dfx8014) | 警告 | Emitter '%s' inherits from '%s'. The export flattens the inheritance: the merged stack is carri… |
+| [DFX8015](/docs/diagnostics/dfx8xxx#dfx8015) | 警告 | Emitter '%s' carries %d event handler(s) this export cannot represent%s. The rebuilt emitter wi… |
+| [DFX8016](/docs/diagnostics/dfx8xxx#dfx8016) | 警告 | Emitter '%s' carries %d simulation stage(s) this export cannot represent (custom stage class or… |
+
+</Wide>

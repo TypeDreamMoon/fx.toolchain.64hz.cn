@@ -1,0 +1,198 @@
+---
+title: DFX2xxx — Lexer and syntax
+description: Every DFX2xxx diagnostic, with its severity, verbatim message, cause and fix.
+---
+
+22 codes in this family (21 error, 1 warning). The message is the format string as the compiler holds it: `%s`, `%d` and `%c` are substituted at runtime.
+
+## DFX2000
+
+<Dfx sev="error" msg={"Unknown document type '%s'. Expected System, Emitter, Module or DynamicInput."} raised="Parser/DreamFXParser.cpp:1740" />
+
+**Cause.** The first word of the file is not one of the four document kinds.
+
+**Fix.** Write `System`, `Emitter`, `Module` or `DynamicInput`, matching the file extension.
+
+## DFX2001
+
+<Dfx sev="error" msg={"Expected '{' to open a raw block but found '%s'."} raised="Parser/DreamFXLexer.cpp:399, Parser/DreamFXParser.cpp:87" />
+
+**Cause.** A construct that takes a raw block was not followed by `{`.
+
+**Fix.** Add the brace. `hlsl` and `Body` are always `hlsl { ... }` / `Body = { ... }`.
+
+## DFX2002
+
+<Dfx sev="error" msg={"Expected a name but found %s."} raised="Parser/DreamFXParser.cpp:98" />
+
+**Cause.** An identifier was expected -- a module name, an input name, an emitter name.
+
+**Fix.** Check for a stray punctuation mark before the position reported.
+
+## DFX2003
+
+<Dfx sev="error" msg={"Expected a number but found '%s'."} raised="Parser/DreamFXParser.cpp:394" />
+
+**Cause.** A number was expected, inside a vector literal, a `box()` or a curve key.
+
+**Fix.** Vector components and curve times are numbers only; a parameter reference cannot appear there.
+
+## DFX2004
+
+<Dfx sev="error" msg={"Expected a value but found %s."} raised="Parser/DreamFXParser.cpp:581" />
+
+**Cause.** A value was expected after `=`.
+
+**Fix.** Something is missing on the right-hand side, or the previous statement is missing its `;`.
+
+## DFX2005
+
+<Dfx sev="error" msg={"'#EndRegion' has no matching '#Region'."} raised="Parser/DreamFXParser.cpp:789" />
+
+**Cause.** `#EndRegion` appeared with no open `#Region`.
+
+**Fix.** Delete it, or add the opening `#Region "..."`.
+
+## DFX2006
+
+<Dfx sev="error" msg={"Unknown directive '#%s'. Expected Region or EndRegion."} raised="Parser/DreamFXParser.cpp:799" />
+
+**Cause.** The only directives are `#Region` and `#EndRegion`.
+
+**Fix.** Check the spelling. `#Region` is a comment device (L5) and never reaches the asset.
+
+## DFX2007
+
+<Dfx sev="error" msg={"Expected a version after '@'."} raised="Parser/DreamFXParser.cpp:460, Parser/DreamFXParser.cpp:481, Parser/DreamFXParser.cpp:859" />
+
+**Cause.** `@` introduces an R7 version pin and must be followed by a version.
+
+**Fix.** Write `ModuleName@1.2`, or drop the `@`.
+
+## DFX2008
+
+<Dfx sev="error" msg={"Module '%s' was given a positional argument. Module inputs must be written as 'Name = Value'."} raised="Parser/DreamFXParser.cpp:878, Generation/DreamFXGenerator.cpp:973" />
+
+**Cause.** A module call was given a bare value. Niagara addresses module inputs by name, and the order they appear in the stack UI is not the order they are declared in.
+
+**Fix.** Write `Name = Value` for every argument. `dfx schema <Module>` lists the names.
+
+## DFX2010
+
+<Dfx sev="warning" msg={"'#Region \\\"%s\\\"' was never closed with '#EndRegion'."} raised="Parser/DreamFXParser.cpp:963" />
+
+**Cause.** A `#Region` ran to the end of the block without an `#EndRegion`. Harmless -- regions are text -- but usually means a section was moved and its closer left behind.
+
+**Fix.** Add the `#EndRegion`.
+
+## DFX2013
+
+<Dfx sev="error" msg={"'%s' is a system-scope stack and must be written at the top level of a .dfs, not inside an emitter."} raised="Parser/DreamFXParser.cpp:1153" />
+
+**Cause.** `SystemSpawn` and `SystemUpdate` belong to the system, not to an emitter (L1).
+
+**Fix.** Move the block to the top level of the `.dfs`, beside the `Emitter` blocks.
+
+## DFX2015
+
+<Dfx sev="error" msg={"'from' must be followed by a quoted path to a .dfe source file."} raised="Parser/DreamFXParser.cpp:1483" />
+
+**Cause.** `from` takes a quoted path to a `.dfe`.
+
+**Fix.** Quote it. The extension is optional; the path resolves relative to this file first.
+
+## DFX2016
+
+<Dfx sev="error" msg={"(built at runtime)"} raised="Parser/DreamFXParser.cpp:1097" />
+
+**Cause.** A `Defaults = { … }` block contained something other than an assignment. A default says what reading a parameter produces when nothing set it, so a module call has nothing to mean there.
+
+**Fix.** Move the module call into one of the stacks (`ParticleSpawn`, `ParticleUpdate`, …). Only `<type> Namespace.Name = value;` belongs in `Defaults`.
+
+## DFX2018
+
+<Dfx sev="error" msg={"A Module or DynamicInput must declare a 'Body = { }' block."} raised="Parser/DreamFXParser.cpp:1650" />
+
+**Cause.** A `.dfm` with no `Body` declares inputs and generates a module that does nothing.
+
+**Fix.** Add `Body = { ... }`.
+
+## DFX2019
+
+<Dfx sev="error" msg={"Header argument '%s' must be a quoted string."} raised="Parser/DreamFXParser.cpp:1677, Parser/DreamFXParser.cpp:1694, Parser/DreamFXParser.cpp:1702" />
+
+**Cause.** Header arguments (`Name=`, `Root=`) are quoted strings.
+
+**Fix.** Quote the value.
+
+## DFX2020
+
+<Dfx sev="error" msg={"Unknown curve key attribute '%s'. Expected Interp, Tangent, Arrive or Leave."} raised="Parser/DreamFXParser.cpp:365" />
+
+**Cause.** A curve key's attribute list accepts only `Interp`, `Arrive` and `Leave` (plan 3.5).
+
+**Fix.** Check the spelling. Tangents are only honoured when `Interp` makes them meaningful.
+
+## DFX2021
+
+<Dfx sev="error" msg={"File declares '%s' but its extension is '%s'. Rename the file to '%s' or change the declaration."} raised="Parser/DreamFXParser.cpp:1754" />
+
+**Cause.** The declared document kind and the file extension disagree.
+
+**Fix.** Rename the file or change the declaration -- the extension is what the build enumerates by.
+
+## DFX2022
+
+<Dfx sev="error" msg={"Unexpected '%s' after the end of the document. A DreamFX file declares exactly one top-level object."} raised="Parser/DreamFXParser.cpp:1783" />
+
+**Cause.** Content followed the closing brace of the top-level object. Usually a duplicated block or one brace too few somewhere above.
+
+**Fix.** One file, one top-level object. The position reported is where the extra content starts, not where the imbalance is.
+
+## DFX2023
+
+<Dfx sev="error" msg={"'%s' is a module call, so it cannot be given a type. Types are written only on assignments."} raised="Parser/DreamFXParser.cpp:919" />
+
+**Cause.** A type was written in front of a module call. Types annotate assignments, where L2 has to know what a new attribute is; a module call's types come from its schema.
+
+**Fix.** Drop the type.
+
+## DFX2024
+
+<Dfx sev="error" msg={"'disabled' can only prefix a module call, and '%s' is an assignment."} raised="Parser/DreamFXParser.cpp:930" />
+
+**Cause.** `disabled` prefixes a *module call*, and the statement it was written on is an assignment.
+
+An assignment has nothing to disable: it is folded into the stack's own Set Parameters module alongside every other assignment in that stack, and turning that module off would silently drop all of them.
+
+**Fix.** Delete the `disabled` and comment the line out instead, or move the assignment into a module call that can be parked as a whole.
+
+## DFX2025
+
+<Dfx sev="error" msg={"Unknown OnEvent argument '%s'. Expected Source, Event, Mode, SpawnNumber, MaxEventsPerFrame, UpdateAttributeInitialValues, RandomSpawnNumber or MinSpawnNumber."} raised="Parser/DreamFXParser.cpp:1311, Parser/DreamFXParser.cpp:1319, Parser/DreamFXParser.cpp:1334" />
+
+**Cause.** An `OnEvent(...)` header carries an argument the parser does not know, an argument is missing its value, or a required argument (`Source`, `Event`) was left out entirely.
+
+The header is not a module call — its arguments configure the *handler itself* (which emitter's events it listens to and how it spends them), so the accepted set is fixed: `Source` (emitter name in this system), `Event` (the event name, quoted), `Mode` (`SpawnedParticles` or `EveryParticle`), `SpawnNumber`, `MaxEventsPerFrame`, `UpdateAttributeInitialValues`, `RandomSpawnNumber`, `MinSpawnNumber`. Modules that *react* to the event go inside the block, not in the header.
+
+**Fix.** Spell the argument as listed above (matching ignores case), give every argument a value of the right shape — `Source` and `Mode` are identifiers, `Event` a name or string, the numbers integers, the flags `true`/`false` — and always write at least `Source` and `Event`:
+
+```
+OnEvent(Source = Sparks, Event = "LocationEvent", Mode = SpawnedParticles, SpawnNumber = 1) = {
+    ReceiveLocationEvent();
+}
+```
+
+## DFX2026
+
+<Dfx sev="error" msg={"Unknown Stage argument '%s'. Expected Iteration, DataInterface, NumIterations, ExecuteBehavior or Enabled."} raised="Parser/DreamFXParser.cpp:1447, Parser/DreamFXParser.cpp:1455" />
+
+**Cause.** A `Stage name(...)` header carries an argument the grammar does not know, or one whose
+value has the wrong shape. The four arguments are `Iteration` (an identifier naming an
+`ENiagaraIterationSource` entry: `Particles`, `DataInterface`, `DirectSet`), `DataInterface` (the
+bound grid's dotted name, as a string or bare identifiers), `NumIterations` (an integer) and
+`Enabled` (`true`/`false`). Everything is optional — a bare `Stage name = { }` is an enabled
+particles-iteration stage that runs once.
+
+**Fix.** Spell the argument as the list above; a stage property beyond these four (execute
+behaviour, the state-iteration trio) has no text form yet and cannot be requested here.

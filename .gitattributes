@@ -1,0 +1,4 @@
+# One line ending in the repository. CI is Linux; the working tree is LF.
+* text=auto eol=lf
+*.png binary
+*.webp binary

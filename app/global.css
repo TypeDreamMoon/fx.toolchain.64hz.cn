@@ -1,0 +1,10 @@
+/* Tailwind and the fumadocs preset must come first — Tailwind 4 requires every
+   `@import` before any other rule, and our layers override the preset. */
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+
+@import './styles/tokens.css';
+@import './styles/base.css';
+@import './styles/docs.css';
+@import './styles/home.css';

@@ -1,0 +1,149 @@
+---
+title: The dfx.ps1 command line
+description: Every subcommand and switch of the headless driver — build, verify, lint, decompile, mirror-diff, asset-diff, coverage, schema, index, corpus.
+---
+
+`dfx.ps1` wraps `UnrealEditor-Cmd.exe <project> -run=DreamFX …` so a build is one command and one
+exit code instead of several hundred lines of engine boot spam.
+
+```bash
+pwsh -File Plugins/DreamFX/.skill/dfx.ps1 <command> [target] [switches]
+```
+
+On top of the raw commandlet it adds: engine resolution from the `.uproject`'s `EngineAssociation`,
+project discovery by walking up from the source file, de-duplication of the doubled log echo, **a
+report of every asset the run wrote** classified against git (so a throw-away probe asset is
+distinguishable from a tracked asset the run just overwrote), and `-CleanNew`, which deletes only
+the untracked assets this run created.
+
+<Callout type="warn">
+  **Commands that write assets want the editor closed** (`build`, `corpus`, `mirror-diff`,
+  `decompile-all`). Two processes saving the same packages race, and the one that saves second wins.
+  The run warns when it sees an editor, but it cannot tell which project that editor has open — so
+  it is a warning, not a refusal.
+</Callout>
+
+## The commands
+
+| Command | What it does | Writes assets |
+| --- | --- | :--: |
+| `build` | generate assets from source | ✓ |
+| `verify` | check assets against source, writing nothing | |
+| `lint` | static checks only, no asset access | |
+| `decompile` | one asset → source | |
+| `decompile-all` | a whole content tree → source, in one boot | ✓ |
+| `mirror-diff` | L1 text + L2 compile | ✓ |
+| `asset-diff` | reflection-walked asset facts (both sides force-compiled) | ✓ |
+| `coverage` | how much of a tree is expressible, bucketed by feature | |
+| `rename` | `<asset>:<oldName>:<newName>` renames an emitter | ✓ |
+| `schema` | one module's real input signature | |
+| `list` | every module on the search paths (`-DynamicInputs` for dynamic inputs) | |
+| `index` | write `DFX/.dfx-index.json` for the editor extension | |
+| `graph` | print the module dependency graph | |
+| `corpus` | run the `DreamFX.Corpus` automation suites | ✓ |
+
+## `build`
+
+```bash
+dfx.ps1 build DFX/Effects/NS_Hello.dfs        # one file
+dfx.ps1 build -All                            # every source under every root
+dfx.ps1 build DFX/Effects/NS_Hello.dfs -Force # ignore the hash
+dfx.ps1 build -All -NoSave                    # build in memory, write no packages
+```
+
+| Switch | Effect |
+| --- | --- |
+| `-All` | every source under every DFX root, in modules → emitters → systems order |
+| `-Force` | bypass the provenance-hash skip |
+| `-NoSave` | build without writing packages |
+| `-CleanNew` | delete assets this run created that git reports as untracked |
+| `-Window <n>` | compile pipeline depth; `1` restores the fully serial build |
+| `-ForceReflectionBackend` | build `.dfm` graphs through the reflection backend (see [engines and backends](/docs/generation/engines)) |
+| `-NoWriteScope`, `-RebuildOnStructural`, `-RebuildOnSwitch`, `-RebuildPerAdd` | each restores one older, slower behaviour. For A/B measurement and escape |
+
+## `verify` / `lint`
+
+```bash
+dfx.ps1 verify -All
+dfx.ps1 verify -All -StrictVersions     # module version drift becomes an error
+dfx.ps1 lint DFX/Effects/NS_Hello.dfs
+```
+
+See [provenance and verify](/docs/generation/provenance).
+
+## `decompile` / `decompile-all`
+
+```bash
+dfx.ps1 decompile /Game/VFX/NS_Explosion                       # print it
+dfx.ps1 decompile /Game/VFX/NS_Explosion -Out DFX/NS_X.dfs     # write it
+dfx.ps1 decompile /Game/VFX/NS_Explosion -Root Plugin.MoonToon # stamp a Root=
+dfx.ps1 decompile /Game/VFX/NS_Explosion -NoDefaults           # every input (diagnostic only)
+dfx.ps1 decompile-all -Path=/Game/FX+/Game/Explosions          # several paths, separated by +
+```
+
+## `mirror-diff` / `asset-diff`
+
+```bash
+dfx.ps1 mirror-diff -Path /Game/FX                # L1 + L2
+dfx.ps1 mirror-diff -Path /Game/FX -NoCompile     # text only
+dfx.ps1 asset-diff  -Path /Game/FX -DumpFacts     # both sides' full fact lists to Saved/DreamFX/*.facts
+```
+
+`-DumpFacts` is worth remembering: the console report truncates every fact to 400 characters, which
+is exactly wrong for chasing a difference that lives past that mark — and the `compiled` fact family
+routinely does.
+
+## `schema` / `list` / `index`
+
+```bash
+dfx.ps1 schema GravityForce
+dfx.ps1 schema InitializeParticle -Stack ParticleSpawn
+dfx.ps1 list
+dfx.ps1 list -DynamicInputs
+dfx.ps1 index                 # writes DFX/.dfx-index.json
+dfx.ps1 index -NoInputs       # skip the input probe; fast
+dfx.ps1 index -Retry          # clear the quarantine and try again (after an engine upgrade)
+```
+
+<Callout type="warn">
+  **Some module graphs cannot be walked.** `/Niagara/Modules/Masks/ConeMask` — stock engine content —
+  makes `UNiagaraGraph::ReferencesStaticVariable` recurse without bound, and the stack overflow ends
+  the process; `dfx schema` on it has always done this. A plugin cannot add a visited-set to engine
+  code and a stack overflow is not worth catching, so the walk is **resumable** instead: the module
+  about to be probed is recorded first, and whatever is still recorded when the next run starts is
+  quarantined. `dfx.ps1` re-runs until the walk completes, so a handful of bad graphs costs a few
+  extra boots rather than the feature. A quarantined module keeps its name, path and stacks; only its
+  inputs are missing, and it says so.
+</Callout>
+
+## `corpus`
+
+```bash
+dfx.ps1 corpus                            # every DreamFX.Corpus suite
+dfx.ps1 corpus DreamFX.Corpus.Decompile   # one filter
+```
+
+The corpus suites are **automation tests** rather than a commandlet mode, so the same assertions run
+from the editor's Session Frontend without a second implementation. The cost is that it boots the
+editor and reads the verdict out of the log — the automation controller sets no process exit code.
+
+<Callout type="info">
+  The verdict counts `Result={Success}` / `Result={Fail}` lines **and** looks at the process exit
+  code: a test that crashes mid-suite leaves no Result line at all, so counting alone reads "an
+  assert in test 6 of 9" as "corpus OK (5 passed)". Both signals together are the verdict.
+</Callout>
+
+## The exit code
+
+The exit code is the commandlet's own return value — the **error count** — not the process exit code.
+
+That was measured, not assumed. On this project the two disagree: `verify -All` reliably returns 0,
+logs no error in any category, shuts down cleanly, and still leaves the process at 3. Ruled out one
+by one (an abort during teardown, the stats report verify skips, unsaved dirty packages,
+Angelscript's warnings, the verify path itself), the conclusion is that something downstream of the
+commandlet corrupts the code without saying so. So the driver reads the
+`finished execution (result N)` line back out of the log.
+
+This is not a way of ignoring failures: a non-zero result still fails, and a run that never reaches
+that line keeps whatever the process reported. It replaces a proxy with the value the proxy was
+standing in for.

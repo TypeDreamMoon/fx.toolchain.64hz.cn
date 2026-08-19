@@ -1,0 +1,304 @@
+---
+title: .dfs — a system
+description: System settings, user parameters, module calls and assignments in the six stacks, Defaults, renderers and bindings, and referencing a .dfe.
+---
+
+A `.dfs` produces one `UNiagaraSystem`.
+
+```cpp
+System(Name="Effects/NS_Spark", Root="Game")
+{
+    Settings   = { ... }        // system properties
+    Properties = { ... }        // user parameters (User.*)
+
+    SystemSpawn  = { ... }      // system-scope stacks (L1)
+    SystemUpdate = { ... }
+
+    Emitter <Name> { ... }               // inline
+    Emitter <Name> from "<path>" { ... } // copied from a .dfe, then overridden
+}
+```
+
+## `Settings`
+
+Schema-driven: the names are read off the live asset, so a misspelling reports the real list
+([DFX3020](/docs/diagnostics/dfx3xxx#dfx3020)). Common ones:
+
+```cpp
+Settings = {
+    EffectType  = "/Niagara/Default/FX_Default.FX_Default";
+    WarmupTime  = 0.0;
+    FixedBounds = box(-200, -200, -50, 200, 200, 300);
+    FixedTickDelta     = true;      // substep at a fixed rate instead of once per frame
+    FixedTickDeltaTime = 0.01667;   // ... of 60Hz. Changes simulation, not just smoothness
+    ModulePaths = ["/Niagara/Modules", "/Game/FX/Modules"];
+}
+```
+
+`ModulePaths` is DreamFX's own, not Niagara's: it **adds** search roots for resolving module short
+names (L4). The engine defaults stay on the list, so declaring your own folder adds to them rather
+than replacing them.
+
+## `Properties` — user parameters
+
+```cpp
+Properties = {
+    int              SparkCount = 24                     [ Group="Burst"; SortPriority=10 ];
+    float            SparkSpeed = 450.0;
+    Color            TintA      = (1.0, 0.72, 0.25, 1.0);
+    Vector           HitNormal  = (0, 0, 1)              [ Description="Impact normal from blueprint" ];
+    Texture2D        NoiseTex   = "Plugin.MoonToon:Textures/T_Noise01";
+    DI<SkeletalMesh> TargetMesh;
+}
+```
+
+Each becomes `User.<Name>`, settable from blueprint with `SetNiagaraVariable*`. The name is a
+**stable key across rebuilds**, so renaming one breaks every blueprint that referenced it.
+
+`Description` reaches the asset. `Group` and `SortPriority` do not — the external edit API's user
+variable struct has no metadata fields for them, which the build says once as
+[DFX5099](/docs/diagnostics/dfx5xxx#dfx5099). They stay in the source as documentation.
+
+### Data interface parameters carry their configuration
+
+```cpp
+Properties = {
+    DI<RigidMeshCollisionQuery> Collide_StaticMesh = "{\"ActorTags\":[\"collider\"], … }";
+    DI<Curve>                   SizeCurve;          // declared bare: a slot to fill at runtime
+}
+```
+
+The configuration is the quoted JSON blob the exporter writes, carried verbatim.
+
+<Callout type="info">
+  Until 2026-08-12 this was declaration-only (DFX5098 used to mean "feed it at runtime"). That was a
+  deliberate scope cut and it aged badly: a collision source or a property reader **is** its
+  configuration, so a rebuilt mirror default-constructed the objects the effect queries the world
+  through — the smoke came out, and what it collided with did not.
+  [DFX5098](/docs/diagnostics/dfx5xxx#dfx5098) now means the value is the wrong *shape*, not that it
+  will be ignored.
+</Callout>
+
+A declaration with no value is still a slot to fill at runtime, and stays one. `curve { }` remains
+the readable spelling for a curve interface — see
+[values and rules](/docs/language/values#curve).
+
+## Stacks
+
+Six stacks, two at system scope and four per emitter (L1), plus a per-emitter event stack declared
+with `OnEvent` and any number of simulation stage stacks declared with `Stage` — both on
+[events and stages](/docs/language/events-and-stages).
+
+```
+SystemSpawn      SystemUpdate           <- top level of the .dfs
+EmitterSpawn     EmitterUpdate          <- inside an Emitter block
+ParticleSpawn    ParticleUpdate
+```
+
+**Writing order is module order.** Two statement forms (L2):
+
+```cpp
+ParticleUpdate = {
+    GravityForce(Gravity = (0, 0, -680));      // module call
+    Particles.Moon.Seed = 0.5;                 // assignment
+    Particles.Moon.Tint = User.TintA;          // ...folds into the same Set Parameters module
+    SolveForcesAndVelocity();                  // ...and this call ends the run
+}
+```
+
+**Consecutive assignments fold into one Set Parameters module**, and a module call breaks the run.
+That rule is what makes the round trip symmetric: one Set Parameters module exports as one block of
+assignments.
+
+### An undeclared stack is left alone
+
+A stack you do not declare keeps its existing modules, and the build says what it kept
+([DFX5003](/docs/diagnostics/dfx5xxx#dfx5003)). This matters for `SystemUpdate`, which a new system
+gets a `SystemState` in — clearing every undeclared stack would make each `.dfs` without an explicit
+`SystemUpdate` produce a system that never runs.
+
+To take a stack over and empty it, declare it empty:
+
+```cpp
+SystemUpdate = { }
+```
+
+An emitter's four stacks are not subject to this: DreamFX builds emitters with no default modules, so
+they start empty either way.
+
+## Module calls
+
+```cpp
+ModuleName(Input = Value, Input = Value);
+Spawn/Initialization/V2/InitializeParticle(...);   // partial path, when the short name is ambiguous
+ModuleName@1.2(...);                               // R7 version pin
+disabled GravityForce(Gravity = (0, 0, -980));     // in the stack, not executed
+Grid3D_ResampleFloat() as Grid3D_ResampleFloat003; // pin the node's name (see below)
+```
+
+Arguments are always named ([DFX2008](/docs/diagnostics/dfx2xxx#dfx2008)). Input names are
+normalised — Niagara's `Loop Duration` is written `LoopDuration`.
+
+### `disabled`
+
+`disabled` parks a module without deleting it: it stays in the stack, keeps its inputs, and does not
+run. That is Niagara's own "keep it but turn it off" state, and **keeping the inputs** is the whole
+reason to use it rather than commenting the line out.
+
+It prefixes a module call only. On an assignment it is
+[DFX2024](/docs/diagnostics/dfx2xxx#dfx2024), because an assignment is folded into the stack's shared
+Set Parameters module, and disabling that would drop every other assignment beside it.
+
+### `as` — pinning a node name
+
+```cpp
+Grid3D_ResampleFloat() as Grid3D_ResampleFloat003;
+```
+
+`as` pins the function call **node's** name. It matters the moment anything links
+`Output.<node>.<value>` — those links resolve by the node's display name, the engine numbers fresh
+nodes by add order, and an original whose numbering carries years of editing history (a `003` whose
+siblings are long deleted) would rebuild with different numbers, leaving every output link dangling
+as "read before set".
+
+The decompiler emits `as` whenever a node's name is not simply the module asset's; hand-written
+sources rarely need it. Names are unique per emitter
+([DFX5034](/docs/diagnostics/dfx5xxx#dfx5034)).
+
+### Static switch ordering
+
+**Static switches gate other inputs, and on a module source order is write order.** An input that
+only exists once a switch is set has to be written after it:
+
+```cpp
+EmitterState(
+    LifeCycleMode = Self,        // gates everything below
+    LoopBehavior  = Once,
+    LoopDuration  = 0.15
+);
+```
+
+On a **dynamic input** the rule is relaxed: switches are hoisted and written first whatever order
+they appear in.
+
+```cpp
+VelocityStrength = RandomRangeFloat(
+    Minimum        = User.Speed * 0.5,
+    Maximum        = User.Speed,
+    RandomnessMode = SimulationDefaults   // a switch, written before the two above
+)
+```
+
+`dfx schema <Module> -Stack <Stack>` prints the signature as the build sees it, static switches
+included.
+
+### `@version`
+
+`@1.2` records which version the source was written against, **selects** it on the module node, and
+errors if the asset no longer exposes it ([DFX3009](/docs/diagnostics/dfx3xxx#dfx3009)). Selection is
+a graph-level operation, so it works on any engine.
+
+## Assignments
+
+```cpp
+Particles.Moon.Seed        = 0.5;          // first write declares the attribute (L2)
+Color Particles.Color      = hlsl { ... }; // a type, when the value carries none
+Emitter.MyCounter          = 0;
+```
+
+The target is namespace-qualified ([DFX4025](/docs/diagnostics/dfx4xxx#dfx4025)). The type comes from
+the value; an `hlsl` block, a dynamic input and an inline expression all have none, so those need the
+annotation ([DFX4022](/docs/diagnostics/dfx4xxx#dfx4022)).
+
+## `Defaults` — what a read produces when nothing wrote
+
+```cpp
+Emitter Sparks
+{
+    Defaults = {
+        float Particles.MySize = 1.0;                     // a value
+        Vector Particles.Home  = Engine.Owner.Position;   // a binding
+    }
+
+    ParticleSpawn = { … }
+}
+```
+
+An assignment says *this parameter is now this*. A default says *if nothing set it, reading it gives
+this* — Niagara's `DefaultMode`, and the difference between a read that compiles and one that does
+not.
+
+Entries are assignments with a declared type
+([DFX4028](/docs/diagnostics/dfx4xxx#dfx4028)); the value must be a literal, an enum or another
+parameter, because a default cannot compute per particle
+([DFX4029](/docs/diagnostics/dfx4xxx#dfx4029)).
+
+<Callout type="info">
+  This block was once filed as an API gap. It was an ordering bug: the writes were creating the very
+  entry they then refused to fill. The fix applies defaults after the stacks with an implied Value
+  pass. The decompiler exports a `Defaults` block when an emitter graph carries one that differs from
+  what a fresh build produces.
+</Callout>
+
+## Renderers
+
+```cpp
+SpriteRenderer Core
+{
+    Material     = "Plugin.MoonToon:Materials/FX/M_SparkSprite";
+    Alignment    = VelocityAligned;
+    FacingMode   = FaceCamera;
+    SortMode     = ViewDepth;
+    SubImageSize = (2, 2);
+
+    Bind SpriteSize -> Particles.SpriteSize;
+    Bind Color      -> Particles.Color;
+}
+```
+
+Properties are schema-driven (L8): every renderer type gets its whole property set with no per-type
+syntax, and an unknown name reports the real list. Only the type keyword is a closed set
+([DFX3004](/docs/diagnostics/dfx3xxx#dfx3004)).
+
+### Properties that hold a list of assets
+
+`Meshes` and `OverrideMaterials` on a mesh renderer are written as an array of paths:
+
+```cpp
+MeshRenderer Body
+{
+    Meshes            = ["/Engine/BasicShapes/Cube"];
+    OverrideMaterials = ["Plugin.MoonToon:Materials/FX/M_Chunk"];
+}
+```
+
+Each element is really a struct with the asset as one field inside it; which field is found by
+reflection, so this works for renderer types that do not exist yet. The struct's *other* fields — a
+mesh's per-element pivot, scale and LOD range — have no syntax. An export that would have dropped one
+says so in the file header rather than flattening it away.
+
+### Why `Bind` is separate from property assignment
+
+Attribute bindings are not plain fields: the binding struct caches a display name, a data-set name
+and source-mode flags that only its own `SetValue` recomputes. Writing the serialised field would
+leave half a binding behind.
+
+### Declaration order is renderer order
+
+There is no other addressing scheme. **Reordering two renderer blocks repaints the effect.**
+
+Leaving `Material` out applies the engine default
+([DFX5004](/docs/diagnostics/dfx5xxx#dfx5004)) rather than drawing nothing.
+
+## Referencing a `.dfe`
+
+```cpp
+Emitter Flash from "../Emitters/E_MoonFlashCard"
+{
+    EmitterUpdate = {
+        EmitterState(LifeCycleMode = Self, LoopBehavior = Once, LoopDuration = 0.08);
+    }
+}
+```
+
+See [`.dfe`](/docs/language/dfe) for what the merge does and does not do.

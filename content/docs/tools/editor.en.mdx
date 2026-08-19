@@ -1,0 +1,131 @@
+---
+title: Editor integration
+description: The Tools menu, the level toolbar, Content Browser actions, the Niagara editor toolbar, the toasts, the file watcher and the settings.
+---
+
+Every place DreamFX attaches itself to the Unreal editor UI.
+
+| | |
+| :-- | :-- |
+| Registered by | `DreamFXEditor` at module startup, through `UToolMenus::RegisterStartupCallback` |
+| ToolMenu owner | `DreamFXEditor` |
+| Suppressed by | `-NoDreamFXEditor`, and by every commandlet run |
+| Settings | *Project Settings ▸ Plugins ▸ DreamFX* |
+
+Registration is idempotent — a second pass adds nothing — and is skipped while the editor is shutting
+down.
+
+<Callout type="info">
+  **Every entry calls the same code the commandlet calls.** A menu is an entry point, never a second
+  implementation: if *Rebuild DFX* works, `dfx build -All` works, and vice versa.
+</Callout>
+
+## Tools menu
+
+*Tools ▸ DreamFX*, extending `LevelEditor.MainMenu.Tools`, section `DreamFX`.
+
+| Label | Effect |
+| :-- | :-- |
+| **Rebuild DFX** | Queues every `.dfs` / `.dfe` / `.dfm` into the watcher's build queue, exactly as if each had been saved. One summary toast when the queue drains |
+| **Verify DFX** | Verifies every source against its generated asset. Writes nothing. One toast: clean, or a drift count pointing at the Output Log |
+| **Open DreamFX Workspace (VSCode)** | Rewrites `DFX/DreamFX.code-workspace` from the current source roots, then launches it |
+
+The Level Editor toolbar carries two of the same: **DFX** (= Rebuild) and the workspace button.
+
+## Content Browser context menus
+
+Added into the stock `GetAssetActions` section of the per-class asset context menu.
+
+<Callout type="warn">
+  **Every DreamFX context-menu entry requires exactly one selected asset.** With two or more selected
+  the section is empty and nothing says why. Right-click a single asset.
+</Callout>
+
+### Niagara System
+
+The contents depend on whether the asset carries a DreamFX
+[provenance stamp](/docs/generation/provenance), because a generated asset and an imported one need
+opposite things.
+
+**Without provenance** (an asset DreamFX did not make), the *Decompiler* section:
+
+| Entry | Effect |
+| :-- | :-- |
+| **Export .dfs** | Decompiles to `<DecompiledOutputDirectory>/<package path>.dfs` and opens it. The file rebuilds a mirror under `Decompiled/`; **the asset is never modified** |
+| **Adopt (take over as a DFX source)** | See [Export vs Adopt](/docs/generation/adopt) |
+
+**With provenance**, the *Source* section:
+
+| Entry | Effect |
+| :-- | :-- |
+| **Open Source** | Opens the `.dfs` named in the stamp |
+| **Rebuild from Source** | Queues that one file |
+| **Verify** | Checks this asset against its source |
+
+### Niagara Emitter
+
+One entry — **Export .dfe** — because a standalone emitter has no round trip: a `.dfe` generates no
+asset of its own, so there is nothing to stamp, rebuild or verify.
+
+The export copies the emitter into a throwaway `/Temp` host system, reads it there, and writes the
+file. That detour is what makes it honest rather than a guess: every reader in the external edit API
+addresses through an owning system.
+
+### Niagara system editor toolbar
+
+A **DreamFX** combo button on `AssetEditor.Niagara.ToolBar`, whose content is the same two-state
+System submenu.
+
+<Callout type="info">
+  `AssetEditor.Niagara.ToolBar` is shared. `FNiagaraSystemToolkit`, `FNiagaraSimCacheToolkit`,
+  `FNiagaraParameterDefinitionsToolkit`, `FNiagaraParameterCollectionToolkit` and
+  `FNiagaraStatelessEmitterTemplateToolkit` all return the toolkit name `"Niagara"`. So the entry
+  first looks for a `UNiagaraSystem` among the objects being edited and adds nothing when there is
+  none — opening a Sim Cache shows no DreamFX button.
+</Callout>
+
+## Toasts
+
+| Toast | Condition |
+| --- | --- |
+| `DreamFX: {Built} built, {Skipped} up to date.` | nothing failed |
+| `DreamFX build failed: {FirstError}` + **Open in VSCode** | one or more failed; the link jumps to the first error's file, line and column |
+| `DreamFX found no .dfs/.dfe/.dfm sources to rebuild.` | no sources at all |
+| `DreamFX: {N} source(s) verified, all assets in step.` | verify clean |
+| `DreamFX: {Drifted} of {N} source(s) out of step ({Failed} failed).` | verify found drift |
+
+The diagnostic has carried a position all along; before this it only reached the log.
+
+## The file watcher
+
+Every `DFX/` root is watched. Save → queued → the debounce ticker builds **modules, then emitters,
+then systems** — the same order the commandlet uses, and load-bearing when a `.dfm` and the `.dfs`
+that calls it are queued together.
+
+A batch over the **Bulk Rebuild Threshold** (default 8) is offered rather than built — the reasoning
+and the measurements are in [the daily loop](/docs/start/workflow).
+
+## Settings
+
+*Project Settings ▸ Plugins ▸ DreamFX*, stored in `Config/DefaultEditor.ini`.
+
+| Setting | Default | Effect |
+| --- | --- | --- |
+| **Open Workspace In New Window** | `true` | Only the workspace launcher reads it |
+| **Decompiled Output Directory** | `DFX/Decompiled` | Where *Export .dfs* / *Export .dfe* write, relative to the project directory. Ordinary source: discovered, watched and built — but files here must name an asset in the `Decompiled/` namespace ([DFX8013](/docs/diagnostics/dfx8xxx#dfx8013)) |
+| **Bulk Rebuild Threshold** | `8` | A batch larger than this is offered rather than built |
+
+## Turning the integration off
+
+```powershell
+UnrealEditor.exe "<Project>.uproject" -NoDreamFXEditor
+```
+
+| Disabled | Still active |
+| --- | --- |
+| Every menu, toolbar and context-menu entry on this page | The `-run=DreamFX` commandlet, which never uses any of it |
+| The source watcher and save-to-rebuild | The parser, generator, decompiler and settings object |
+| The generated-asset guard | Assets already generated and saved on disk |
+
+A commandlet run reaches the same state by another route: `IsRunningCommandlet()` returns true and
+the module registers nothing.

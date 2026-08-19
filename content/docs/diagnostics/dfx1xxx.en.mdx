@@ -1,0 +1,64 @@
+---
+title: DFX1xxx — Driver and file I/O
+description: Every DFX1xxx diagnostic, with its severity, verbatim message, cause and fix.
+---
+
+6 codes in this family (6 error). The message is the format string as the compiler holds it: `%s`, `%d` and `%c` are substituted at runtime.
+
+## DFX1000
+
+<Dfx sev="error" msg={"Could not read source file '%s'."} raised="Parser/DreamFXParser.cpp:1837" />
+
+**Cause.** The path does not exist, or the process cannot read it. A `from` reference and a `-File=` argument both land here.
+
+**Fix.** Check the path. Relative `from` paths resolve against the referencing file first, then against every DFX root.
+
+## DFX1001
+
+<Dfx sev="error" msg={"Unterminated string literal."} raised="Parser/DreamFXLexer.cpp:304" />
+
+**Cause.** A quoted string ran to the end of the line without a closing quote.
+
+**Fix.** Close the quote. DreamFX strings do not span lines.
+
+## DFX1002
+
+<Dfx sev="error" msg={"Unterminated block comment."} raised="Parser/DreamFXLexer.cpp:127" />
+
+**Cause.** A `/*` was never closed.
+
+**Fix.** Add the `*/`. The reported position is where the comment started, not where the file ended.
+
+## DFX1003
+
+<Dfx sev="error" msg={"Unexpected character '%c' (U+%04X)."} raised="Parser/DreamFXLexer.cpp:335" />
+
+**Cause.** A character that is not part of the language appeared outside a string, comment or raw block. Smart quotes pasted from a document are the usual cause.
+
+**Fix.** Delete it. The code point is printed so a look-alike character is identifiable.
+
+## DFX1004
+
+<Dfx sev="error" msg={"Unterminated raw block: missing '}'."} raised="Parser/DreamFXLexer.cpp:488" />
+
+**Cause.** A raw block -- `hlsl { }`, `Body = { }` -- was opened and never closed. Raw blocks are brace-balanced, so an unbalanced brace *inside* the HLSL runs the block to end of file.
+
+**Fix.** Balance the braces inside the block.
+
+## DFX1005
+
+<Dfx sev="error" msg={"Unterminated back-quoted name. A `name` must close on the same line."} raised="Parser/DreamFXLexer.cpp:185, Parser/DreamFXLexer.cpp:198" />
+
+**Cause.** A back-quote opened a name that never closed before the end of the line, or closed
+immediately with nothing between the quotes.
+
+A back-quoted name is how the language holds a Niagara name it could not otherwise spell —
+`` `PillarPower(0~1)` ``, `` `Ring/DiscDistributionMode` ``. Names never span lines, so a missing
+closing quote is reported at the end of the line rather than swallowing the rest of the file.
+
+**Fix.** Close the quote. If the name itself contains a back-quote there is no way to write it: the
+escape would need an escape, and nothing in Niagara produces one — rename the parameter instead.
+
+Back-quotes are only needed when the name is not already an identifier. `` `Speed` `` is legal but
+noise; write `Speed`. The decompiler applies exactly that rule, so a re-export is the quickest way to
+see which names need quoting.

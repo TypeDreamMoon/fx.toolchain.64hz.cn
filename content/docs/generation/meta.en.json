@@ -1,0 +1,10 @@
+{
+  "title": "Generation",
+  "pages": [
+    "pipeline",
+    "provenance",
+    "roundtrip",
+    "adopt",
+    "engines"
+  ]
+}

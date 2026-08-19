@@ -1,0 +1,185 @@
+---
+title: Values, types and rules
+description: Everything that can appear on the right of an =, the curve literal, the inline-expression whitelist, the type table, and L2 / L3 / L6 / L7.
+---
+
+## L3 — the four value modes [#l3]
+
+```cpp
+InitializeParticle(
+    Lifetime   = 0.25,                                       // literal
+    Color      = User.TintA,                                 // linked
+    SpriteSize = RandomRangeFloat(Minimum = 1, Maximum = 4)  // dynamic input
+);
+
+Color Particles.Color = hlsl {                               // HLSL expression
+    float4(Particles.Color.rgb, saturate(1.0 - Particles.NormalizedAge))
+};
+```
+
+### Literals
+
+```cpp
+450.0        24           true
+(1, 0, 0)    (1.0, 0.72, 0.25, 1.0)      // 2, 3 or 4 components
+"/Game/FX/M_Spark"                        // asset path
+box(-200, -200, -50, 200, 200, 300)       // six numbers: min xyz, max xyz
+```
+
+`24` and `24.0` are different: the first is an integer literal, and L7 uses that distinction.
+
+Enum entries are written by name, with spaces and hyphens removed — Niagara's `Direct Set` is
+`DirectSet`. The names are read from the live asset, because a user-defined Niagara enum stores
+`NewEnumerator0` internally and keeps the real name in display text; an unknown one reports the real
+list ([DFX4006](/docs/diagnostics/dfx4xxx#dfx4006)).
+
+Names that are not identifiers go in back-quotes — see [the file model](/docs/language/overview).
+
+### Linked
+
+```cpp
+SpawnCount = User.SparkCount;
+ConeAxis   = Particles.Velocity;
+```
+
+Any namespace-qualified parameter: `User.`, `Particles.`, `Emitter.`, `System.`, `Engine.`.
+
+A link binds the parameter **directly** — there is no conversion step anywhere in it. So the two
+types have to match exactly, and [DFX4027](/docs/diagnostics/dfx4xxx#dfx4027) is the one L7 case an
+explicit cast cannot fix, because there is nowhere to put one. A `float` user parameter cannot drive
+an `int32` spawn count; declare it `int`.
+
+### Dynamic input
+
+```cpp
+UniformScaleFactor = FloatFromCurve(
+    FloatCurve = curve { 0.0 -> 1.0; 1.0 -> 0.0; },
+    CurveIndex = Particles.NormalizedAge
+)
+```
+
+Nests to any depth — a chain is just a longer address, written parent-first.
+
+### HLSL
+
+```cpp
+Color Particles.Color = hlsl {
+    float4(Particles.Color.rgb, saturate(1.0 - Particles.NormalizedAge))
+};
+```
+
+Raw and multi-line, no escaping. Namespaced parameters are read as written.
+
+**One expression only** ([DFX4030](/docs/diagnostics/dfx4xxx#dfx4030)). A stack input's HLSL lowers
+to a node with one typed output pin and no body, so there is nowhere for a statement to go.
+Multi-statement logic belongs in a [`.dfm` module](/docs/language/dfm), whose body is emitted
+verbatim.
+
+An `hlsl` block carries no type of its own, so an assignment to a new attribute needs the annotation:
+`Color Particles.Color = hlsl { ... };`
+([DFX4022](/docs/diagnostics/dfx4xxx#dfx4022)).
+
+## `curve { }` [#curve]
+
+```cpp
+curve {
+    0.0 -> 1.0;
+    0.7 -> 0.85 [ Interp=Cubic; Arrive=-0.4; Leave=-1.2 ];
+    0.9 -> 0.40 [ Interp=Cubic; Tangent=Break; Arrive=0.0; Leave=-2.25 ];
+    1.0 -> 0.0  [ Interp=Linear ];
+}
+```
+
+It fills a curve data interface, so it goes where one is expected — usually a dynamic input such as
+`FloatFromCurve` ([DFX4037](/docs/diagnostics/dfx4xxx#dfx4037)).
+
+**Tangents are per key and are exported per key.** They matter: a hand-tuned shape written back
+without its tangents is a different curve, and losing shape is losing data. `Interp` defaults to
+`Auto`.
+
+`Tangent` names the tangent mode — `Auto`, `User`, `Break` or `None` — and may be left out, in which
+case a key with a tangent means `User` and a key without means `Auto`. Only `Break` and `None` ever
+have to be written, plus the `Auto` key that carries a stored slope, so ordinary hand-written sources
+never mention it.
+
+<Callout type="warn">
+  **`Break` is the one that had to be spelled.** It is how a key holds two independent tangents — a
+  corner — and until 2026-08-12 the exporter wrote tangents only under `User` and dropped everything
+  else, so every corner came back smooth and every Auto key's stored slope came back zero. A curve is
+  *evaluated* from its stored tangents whatever the mode says; the engine re-derives them only when
+  something edits the curve, so "the mode is Auto, the engine will work them out" is false for a
+  curve nobody is editing.
+</Callout>
+
+A curve data interface with anything set outside its keys — an exposed curve, a LUT turned off, an
+external curve asset — is written as raw configuration JSON instead of a `curve { }` literal, and a
+multi-channel interface (vector, colour) takes the readable form only when its channels are the same
+shape. The readable form is a convenience, **and a convenience does not get to lose data**.
+
+## L6 — inline expressions [#l6]
+
+```cpp
+VelocityStrength = RandomRangeFloat(Minimum = User.SparkSpeed * 0.6, Maximum = User.SparkSpeed)
+StretchDir       = normalize(Particles.Velocity)
+```
+
+Arithmetic (`+ - * /`), unary minus, parentheses, and these functions:
+
+```text
+normalize  saturate  clamp  lerp  frac  min  max
+abs  floor  ceil  pow  sqrt  dot  cross  length
+```
+
+The whole expression lowers to one HLSL expression dynamic input, with the type inferred from the
+operands. Only namespace-qualified parameters exist inside one — **there are no locals**
+([DFX4032](/docs/diagnostics/dfx4xxx#dfx4032)). The builtins are positional, not named
+([DFX4033](/docs/diagnostics/dfx4xxx#dfx4033)).
+
+**Anything outside the list is an error** ([DFX4031](/docs/diagnostics/dfx4xxx#dfx4031)), and the
+list is short on purpose. Widening it is the first step toward re-implementing a general expression
+compiler, which is the ~13k-line component DreamShader has and DreamFX exists partly to avoid.
+`hlsl { }` is the escape hatch: inside one, any HLSL is allowed.
+
+**Expressions are not recovered by the decompiler** — they come back as an equivalent `hlsl { }`
+block. The round trip is semantic, not textual.
+
+## L7 — numeric conversion [#l7]
+
+| From → to | |
+| --- | --- |
+| `int` → `float` | implicit |
+| `float` → `int` | error; write `int(...)` ([DFX4003](/docs/diagnostics/dfx4xxx#dfx4003)) |
+| mismatched vector widths | error ([DFX4002](/docs/diagnostics/dfx4xxx#dfx4002)) |
+
+A silently truncated spawn count is among the hardest effect bugs to find, which is the whole reason
+the rule is one-directional.
+
+## L2 — the two statement forms [#l2]
+
+```cpp
+ParticleUpdate = {
+    GravityForce(Gravity = (0, 0, -680));      // module call
+    Particles.Moon.Seed = 0.5;                 // assignment ┐
+    Particles.Moon.Tint = User.TintA;          //            ┘ one Set Parameters module
+    SolveForcesAndVelocity();                  // a call breaks the run
+}
+```
+
+A new attribute is declared by its first write. Unpacked in [`.dfs`](/docs/language/dfs).
+
+## Types
+
+| DSL | Niagara |
+| --- | --- |
+| `float` `int` `bool` | `NiagaraFloat` / `NiagaraInt32` / `NiagaraBool` |
+| `Vector2` `Vector` `Vector4` | 2 / 3 / 4 floats |
+| `Color` | `LinearColor` |
+| `Position` | `NiagaraPosition` |
+| `Quat` | `Quat` |
+| `Texture2D`, `DI<X>` | data interfaces |
+
+Data interface parameters carry their configuration as a quoted JSON object, the same verbatim form a
+module's data interface input uses and the same form the exporter writes. Declared bare, they stay a
+slot to fill at runtime. `curve { }` is the readable spelling for a curve interface.
+[DFX5098](/docs/diagnostics/dfx5xxx#dfx5098) means the value is the wrong **shape** — it no longer
+means "declared only, will be ignored".

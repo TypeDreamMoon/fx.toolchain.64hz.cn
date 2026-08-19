@@ -1,0 +1,11 @@
+{
+  "title": "工具链",
+  "pages": [
+    "cli",
+    "ci",
+    "editor",
+    "vscode",
+    "scripting",
+    "skills"
+  ]
+}
