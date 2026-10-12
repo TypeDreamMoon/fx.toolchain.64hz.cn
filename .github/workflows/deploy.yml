@@ -7,25 +7,33 @@ on:
       - master
   pull_request:
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Compare the export without changing server files
+        type: boolean
+        default: false
 
 permissions:
   contents: read
 
-# Two deploys at once would race inside the same web root: upload.js cleans the
-# remote directory before it uploads, so an overlapping run can serve a
-# half-emptied site. One at a time, newest wins.
+# All publishing branches share a web root. Finish an active deployment before
+# starting another; only superseded pull-request checks may be cancelled.
 concurrency:
-  group: deploy-${{ github.ref }}
-  cancel-in-progress: true
+  group: deploy-${{ github.event_name == 'pull_request' && github.ref || 'production' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   deploy:
     name: Build and deploy static site
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+
+      - name: Test deploy helper
+        run: python3 -B -m unittest discover -s scripts -p test_deploy_rsync.py
 
       - name: Setup Node
         uses: actions/setup-node@v5
@@ -60,7 +68,7 @@ jobs:
             exit 1
           fi
 
-      - name: Upload static export
+      - name: Sync static export via rsync
         if: github.event_name != 'pull_request'
         env:
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
@@ -70,4 +78,6 @@ jobs:
           SFTP_PRIVATE_KEY: ${{ secrets.SFTP_PRIVATE_KEY }}
           SFTP_PASSPHRASE: ${{ secrets.SFTP_PASSPHRASE }}
           SFTP_REMOTE_DIR: ${{ secrets.SFTP_REMOTE_DIR }}
-        run: npm run upload
+          SFTP_KNOWN_HOSTS: ${{ secrets.SFTP_KNOWN_HOSTS }}
+          DEPLOY_DRY_RUN: ${{ inputs.dry_run || false }}
+        run: python3 scripts/deploy_rsync.py --default-remote-dir /www/wwwroot/fx.toolchain.64hz.cn

@@ -4,7 +4,7 @@ The manual for [DreamFX](https://github.com/TypeDreamMoon/DreamFX): text-first N
 Unreal Engine. Chinese is the default locale, English lives under `/en`.
 
 Built on the same stack as its sister site [lang.64hz.cn](https://lang.64hz.cn) (DreamShaderLang):
-Next.js + fumadocs, a static export, and an SFTP deploy.
+Next.js + fumadocs, a static export, and rsync over SSH for CI deployment.
 
 ## Running it
 
@@ -18,6 +18,9 @@ npm run preview      # serve out/
 
 ## Deploying
 
+GitHub Actions uses incremental rsync deployment; see [DEPLOYMENT.md](DEPLOYMENT.md).
+The commands below retain the existing local SFTP uploader:
+
 ```bash
 cp .env.example .env       # fill in SFTP_PASSWORD or SFTP_KEY_PATH
 npm run deploy:sftp        # build, then upload out/ to the web root
@@ -30,10 +33,10 @@ remote directory outside `/www/wwwroot/`.
 ### GitHub Actions
 
 `.github/workflows/deploy.yml` runs `npm ci → typecheck → build → check-links` on every push and pull
-request, and uploads on a push to `main`/`master` (or a manual **Run workflow**). Pull requests build
-and check but never deploy, and `concurrency` keeps two deploys from racing inside the same web root —
-`upload.js` cleans the remote directory before uploading, so an overlapping run could serve a
-half-emptied site.
+request, and syncs `out/` over SSH on a push to `main`/`master` (or a manual **Run workflow**).
+Pull requests build and check but never deploy. Publishing branches share a concurrency group,
+and an active deployment finishes before the next one starts. Select **dry_run** in a manual run
+to compare without changing server files.
 
 Repository secrets (Settings ▸ Secrets and variables ▸ Actions):
 
@@ -46,11 +49,12 @@ Repository secrets (Settings ▸ Secrets and variables ▸ Actions):
 | `SFTP_PORT` | optional | `22` |
 | `SFTP_USER` | recommended | `root` |
 | `SFTP_REMOTE_DIR` | recommended | `/www/wwwroot/fx.toolchain.64hz.cn` |
+| `SFTP_KNOWN_HOSTS` | only for a different host/port or host-key rotation | verified known-hosts entries; see [DEPLOYMENT.md](DEPLOYMENT.md) |
 
-Host, port, user and remote directory fall back to exactly those values inside `upload.js`, so a run
-with only a credential set still lands in the right place — setting them explicitly just means the
-target is written down rather than inherited. `upload.js` refuses any remote directory outside
-`/www/wwwroot/`, and preserves `.user.ini`, `.htaccess` and `.well-known` when it cleans.
+Host, port, user and remote directory keep the same fallback values in CI and the local uploader.
+CI compares file contents, compresses transfers and delays deletion; it never clears the web root
+before uploading. Both paths refuse targets outside `/www/wwwroot/` and preserve `.user.ini`,
+`.htaccess` and `.well-known`.
 
 The workflow fails fast with a named error when neither credential secret is set, rather than hanging
 on an SSH connect.
