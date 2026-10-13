@@ -1,0 +1,782 @@
+{
+  "version": 1,
+  "repository": "TypeDreamMoon/DreamFX",
+  "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+  "workingTree": false,
+  "pages": {
+    "changelog/index": {
+      "hash": "c1dad62ffab3e8dbf3cc99e290d47c875a58a53a0a5882a2de1c2fd76a265757",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/changelog/index.en.md",
+      "outputHash": "8a10377d1f9eb654990ed5c2252468a7d649560152ae503d7681a80df78a485e",
+      "locale": "en",
+      "format": "md",
+      "title": "Changelog",
+      "sources": [
+        {
+          "path": "Docs/changelog/index.md",
+          "hash": "19b04f78ce886a4d2651424e6ab64c8d749db70ab1ee72bb2995e409b47b96d6"
+        }
+      ]
+    },
+    "diagnostics/dfx1xxx": {
+      "hash": "2c695f277abbe0b2746689de672a0e04a7971056a782841afe56883b1a044a4e",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/diagnostics/dfx1xxx.en.md",
+      "outputHash": "a3bc5de36df36a872d818b901fa4e6d5a68345763c84d719c7e62395e8e9c8d0",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX1xxx — Driver and file I/O",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX1xxx.md",
+          "hash": "c017c7d7a8a3c6b6ede54f8d91f616f47761f855e7cd12cf02340deea6e7dc7c"
+        }
+      ]
+    },
+    "diagnostics/dfx2xxx": {
+      "hash": "2f7182eac9aa5bdf0e8faf8423ed387491f3f6b56f39d03f8d8f50502d19e42c",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/diagnostics/dfx2xxx.en.md",
+      "outputHash": "d19cfa87b7d9e5a83a69aad923a55865c31ec1feef19f3f0ea902370d4b4b0b0",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX2xxx — Lexer and syntax",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX2xxx.md",
+          "hash": "ad89e8540451ee7268285198d5641bea4ce9733899a9913748ff7c99ef3a9f4c"
+        }
+      ]
+    },
+    "diagnostics/dfx3xxx": {
+      "hash": "e15c4819007c4b23c655426e236cf817f803628622119a49448202461777db16",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/diagnostics/dfx3xxx.en.md",
+      "outputHash": "e095f1cede0c52939a9138927a72fb8ca1e9cd90dff1e3f075b92b7bd3c97bfc",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX3xxx — Declarations and document structure",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX3xxx.md",
+          "hash": "68525e37957f2209f568967856b32808dada026a2634b6f92be2f6bf96a2c395"
+        },
+        {
+          "path": "Docs/diagnostics/history/DFX3045.md",
+          "hash": "90bf867048046cb47399228ec447fc373f88c93875fefbf86af2500c80abd1f0"
+        }
+      ]
+    },
+    "diagnostics/dfx4xxx": {
+      "hash": "bc1acd682f5172d815a54d0cf929eae720175516f90afa27655b7f3ab982f431",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/diagnostics/dfx4xxx.en.md",
+      "outputHash": "c40f9dd82dd50ab576ba1f159ab9177cd061b9baf87d16064bc5d8f6193e39bd",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX4xxx — Values, types and expressions",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX4xxx.md",
+          "hash": "747537b6fa95c4426881a8d20e94d096cf9eb5777fe8b60eb604a00d21411d2c"
+        }
+      ]
+    },
+    "diagnostics/dfx5xxx": {
+      "hash": "3ee74b5981861f0c1d1df17c9affa1042575ccd15c505626f19ca90f0d33b0ca",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/diagnostics/dfx5xxx.en.md",
+      "outputHash": "c8419ea95cc26aeef1dd1a4b0190a2c9ea52c1b7e3002777252445bcccab1a21",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX5xxx — Generation and asset writing",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX5xxx.md",
+          "hash": "5188993b4a4fd46c7c0e5cd9845c6fb1df99e61e4ff1a3b782e9326aebc013e2"
+        },
+        {
+          "path": "Docs/diagnostics/history/DFX5099.md",
+          "hash": "4a751f358b0d798abcb80032c7de4e80b4e6a8ca75a3438de42281525930b739"
+        },
+        {
+          "path": "Docs/diagnostics/history/unpublished-codes.md",
+          "hash": "cc531cb5892263a7bab97b3fb53a608628bba0576dcf835adb37946344a5891b"
+        }
+      ]
+    },
+    "diagnostics/dfx6xxx": {
+      "hash": "367b52bfa9ca38369e9cf0f757b091800975f4afad9fcb660641b993ae27a747",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/diagnostics/dfx6xxx.en.md",
+      "outputHash": "b4c5ef4ab55261d0555e01922fe22b3b016904966e0310f7cc34ca9e5fc50001",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX6xxx — Niagara compilation",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX6xxx.md",
+          "hash": "3bdacff08bf92ec696e7941039285f8d2bbd6f309774121c73054a3afcc44c1d"
+        }
+      ]
+    },
+    "diagnostics/dfx7xxx": {
+      "hash": "553e0f1b6de530e14a177d446fa6c1aa96075126ec1233d362366ab2907fd50c",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/diagnostics/dfx7xxx.en.md",
+      "outputHash": "71baf5534e2b1b0f48bd71f1d1e10bbe1e307015f6d859197520c94be200f341",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX7xxx — Provenance, drift and lint",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX7xxx.md",
+          "hash": "78091c818f0834595933499e6c82d34f1bf79cf1b4d427215699f772a60d757a"
+        }
+      ]
+    },
+    "diagnostics/dfx8xxx": {
+      "hash": "6a55c53f78cade1dedeb9dd6d584f32a62379db496cebab9322fa26575a699e3",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/diagnostics/dfx8xxx.en.md",
+      "outputHash": "d08df8bfca60e284691f9fc11aa222565a47beda3b264038185a758e6a666d4d",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX8xxx — Decompiler",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX8xxx.md",
+          "hash": "71008ad758ed8a8c0cc4827129d12d17621983c403b0fb099bd3edc626f2638e"
+        }
+      ]
+    },
+    "diagnostics/index": {
+      "hash": "41279d97b29803670d9e69a9ef260d403efd07ae225eb9d3916cd572e8da2c39",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/diagnostics/index.en.md",
+      "outputHash": "03bb9dc61ce61b919f8a8bee27d44618fe0a1408e84286defa951fff197531cd",
+      "locale": "en",
+      "format": "md",
+      "title": "Diagnostics",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/overview.md",
+          "hash": "41f38396afe75b5b653f8b33d48a94a8d19716341372d34d0ddf402601e7905a"
+        }
+      ]
+    },
+    "diagnostics/limitations": {
+      "hash": "de35bc92e5046fcdb75f39db65868de6e5f4864215155a2fdc9faa488606f859",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/diagnostics/limitations.en.md",
+      "outputHash": "c90afb1e99fec8976ffee1559707e56d17a4bfa6746e5f1b28d45d150feedda8",
+      "locale": "en",
+      "format": "md",
+      "title": "Limits",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/limitations.md",
+          "hash": "4d17598180dff32919e404ff0d4b7f84fe6fc9764a7f6bfdde7b596fdab87fab"
+        }
+      ]
+    },
+    "generation/adopt": {
+      "hash": "d0ba57aeea57e619c7c465d339f5ae7899c9de9f6eafe9e42b4a9dfbb50c10a6",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/generation/adopt.en.md",
+      "outputHash": "df5e46dc034298d4ec464a05e5891b2a604abe44465c404f9319e7df01a4d27a",
+      "locale": "en",
+      "format": "md",
+      "title": "Export vs Adopt",
+      "sources": [
+        {
+          "path": "Docs/generation/adopt.md",
+          "hash": "ac243e14a3962b4a8d2b5fcd5200683bf43b6def7edd6641488ebf65888ef737"
+        }
+      ]
+    },
+    "generation/engines": {
+      "hash": "330d4380b60e3157acae605a563e4091776c05aed8dc92b2d6272ffd38300894",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/generation/engines.en.md",
+      "outputHash": "a50d5b59279604fd91cec1d1fbb12ddb1f4b6b107ae01ccf318dbbe528825444",
+      "locale": "en",
+      "format": "md",
+      "title": "Engines and backends",
+      "sources": [
+        {
+          "path": "Docs/generation/engines.md",
+          "hash": "6d76d838c2637c06d34fb8ddc1f99721f0a99184a7a14f3dab15a4bce689746b"
+        }
+      ]
+    },
+    "generation/pipeline": {
+      "hash": "44adea2e8d32abdd4804a080917b845a27389d41560ec83572c11cd1d73a9e16",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/generation/pipeline.en.md",
+      "outputHash": "3df074c63cef78eaec4630026881428df55e95afc625a15ce70ccb731d5753e0",
+      "locale": "en",
+      "format": "md",
+      "title": "The build pipeline",
+      "sources": [
+        {
+          "path": "Docs/generation/pipeline.md",
+          "hash": "d4781cde538558de849d26ab726540c3acd56a7201cbf716c8d86985a091a7a9"
+        }
+      ]
+    },
+    "generation/provenance": {
+      "hash": "cffed4b22a45443c7b2756ff1ade8f42ad6478775c0391b6ac84c2f57bf79c92",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/generation/provenance.en.md",
+      "outputHash": "5d9bd6e9a4f5814034662c630d563b93d4ea635cfc3edd7859fb4c47b4277f93",
+      "locale": "en",
+      "format": "md",
+      "title": "Provenance and verify",
+      "sources": [
+        {
+          "path": "Docs/generation/provenance.md",
+          "hash": "76f7ea9065242c866c8c08770417fe0e2bd4c859390e754d2267e884863c9482"
+        }
+      ]
+    },
+    "generation/roundtrip": {
+      "hash": "686cd173b5a808806829a5b9a6f401425978bfbbe5c0c0707d2e857d39e48dcf",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/generation/roundtrip.en.md",
+      "outputHash": "545647511b0545b83d6499a2ae6b26aa3b1648869e4a922f7e1e180f508ebac9",
+      "locale": "en",
+      "format": "md",
+      "title": "Round trip and equivalence",
+      "sources": [
+        {
+          "path": "Docs/generation/roundtrip.md",
+          "hash": "06a7f250a141afbd7061a0dd75f66a0eb0e8f39629e9f2514ac7936231055e09"
+        }
+      ]
+    },
+    "index": {
+      "hash": "796d3871349a736e7503b339f98255b8342a9a4e204cb9844213f7d7c95fa0c8",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/index.en.md",
+      "outputHash": "1ff71479cb991eea3496fc0e8f7f3f1fffccf4930938bace45a7329398ce79b9",
+      "locale": "en",
+      "format": "md",
+      "title": "Overview",
+      "sources": [
+        {
+          "path": "Docs/overview.md",
+          "hash": "68af2fa2fad561e0fa62c2a663acdf4aa1a985157c639c1a7d75ccb49705b0b1"
+        }
+      ]
+    },
+    "language/dfe": {
+      "hash": "6abe8720afc7e6c19d8a05249ad09150b0f1d695a4c0cbddb7c072c52421a807",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/language/dfe.en.md",
+      "outputHash": "99e5c8fdf84cb438437d8c5edf255bad1cb7dc7dca54c9b882e668c079db8c1f",
+      "locale": "en",
+      "format": "md",
+      "title": ".dfe — a reusable emitter",
+      "sources": [
+        {
+          "path": "Docs/language/dfe.md",
+          "hash": "14e458f3e0f52ab45a6d23c624e80eb5101ca657f0cd6293bcd2b76643d30c22"
+        }
+      ]
+    },
+    "language/dfm": {
+      "hash": "ac94297c7a6495b3f62dc019fb6aa19e5aad198a1da894da8488824c1904d3c3",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/language/dfm.en.md",
+      "outputHash": "0d265c0b68062c0b0d1be936c2eb656ccdf90fadaa3b497ac926a11a2ad9a08f",
+      "locale": "en",
+      "format": "md",
+      "title": ".dfm — modules and dynamic inputs",
+      "sources": [
+        {
+          "path": "Docs/language/dfm.md",
+          "hash": "2de0e0fb4162f720ddf4ba95f91b45c8ec46d6ed924ba3a3a8df49d95b106995"
+        }
+      ]
+    },
+    "language/dfs": {
+      "hash": "b92a5ff275df8e8641f591818ae2ad21d2f6702f2b6c563034fdc4d5264e72ef",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/language/dfs.en.md",
+      "outputHash": "3e81d84ff52217ba239aaaa28558e5ecab568e8611b7f41dee3cbc4361ee6c67",
+      "locale": "en",
+      "format": "md",
+      "title": ".dfs — a system",
+      "sources": [
+        {
+          "path": "Docs/language/dfs.md",
+          "hash": "1ea8a1ca9c5bdead1142f6144933bad34bf27c5929acb4ab19fa9b2bcd5c81d2"
+        }
+      ]
+    },
+    "language/events-and-stages": {
+      "hash": "324d80700c7291d7a00b0e3d7902b8ed579401501ad0c4bcdf3f9494a16c1b06",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/language/events-and-stages.en.md",
+      "outputHash": "979bb40536053eb4c0c53a5c6329087170971b0239826f67103d09ffa654cedc",
+      "locale": "en",
+      "format": "md",
+      "title": "Events and simulation stages",
+      "sources": [
+        {
+          "path": "Docs/language/events-and-stages.md",
+          "hash": "0e24cfce42493e976624adf4943a51b82766c4d96e7065328ddd806cf22591cd"
+        }
+      ]
+    },
+    "language/overview": {
+      "hash": "2ceb6735a1a0562fdedf068e68daa2ff96e4d7acee71c9557ef6e47acecc3f14",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/language/overview.en.md",
+      "outputHash": "674daa6e43fe0d545762a1d8636b756e1c112251e1f6d699b075059d0aa715dc",
+      "locale": "en",
+      "format": "md",
+      "title": "The file model",
+      "sources": [
+        {
+          "path": "Docs/language/README.md",
+          "hash": "a757be5741ea751e109e7a46f33999b9c5d949860079686198ca4244a4b35412"
+        }
+      ]
+    },
+    "language/values": {
+      "hash": "c2eed38f2c36ec0722f6127b366f32832d7c488a92fbe0311c2e0e4e161924ba",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/language/values.en.md",
+      "outputHash": "6a9903340360fb8e2041fd7f040950f49688ea000ea2290b101a5f0e80867dae",
+      "locale": "en",
+      "format": "md",
+      "title": "Values, types and rules",
+      "sources": [
+        {
+          "path": "Docs/language/values.md",
+          "hash": "468ffd285f1836eb1a480609aa7f811cac38b301ff9bd1e2cacf383227120ac2"
+        }
+      ]
+    },
+    "start/about": {
+      "hash": "16eb7f0e9c375e464d65d4e504b0c4da43d7a295b35390d84083d4a86befb8db",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/start/about.en.md",
+      "outputHash": "6583547fcfa68bfaa712f354c85677be4e6ef5292356873b23b8e32302fb7fb4",
+      "locale": "en",
+      "format": "md",
+      "title": "What DreamFX is",
+      "sources": [
+        {
+          "path": "Docs/getting-started/about.md",
+          "hash": "408b07f23b13d856063ae818abc122bb00e654ce5eb9b41387e000b8bbee2726"
+        }
+      ]
+    },
+    "start/first-effect": {
+      "hash": "89cdcd34790e2d7a161802f80185b16276299badf787c7b32ef154dda3f8a72a",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/start/first-effect.en.md",
+      "outputHash": "4309b404333d9efb9929401b74506725fdd81ca982128bf0ad61b395f8dd6eb7",
+      "locale": "en",
+      "format": "md",
+      "title": "Your first effect",
+      "sources": [
+        {
+          "path": "Docs/getting-started/first-effect.md",
+          "hash": "260e1aad018a7326304c09035bfb59b8d08b98678b7362822c37df5de9c2fb63"
+        }
+      ]
+    },
+    "start/installation": {
+      "hash": "4e28c75f0fbf69a8963a0e3efb5682a87b529859e741e53c023cbf22e71c5a70",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/start/installation.en.md",
+      "outputHash": "b3014c50c022b7d8c9a4190bef2d5ae1ddc30fdbec2794e67ce606e0a09e1cf9",
+      "locale": "en",
+      "format": "md",
+      "title": "Install and sanity check",
+      "sources": [
+        {
+          "path": "Docs/getting-started/installation.md",
+          "hash": "4a208e142d8ed5d293e3c89f1f28f289bb21d7f67467832a49fc8e2340e1c5e5"
+        }
+      ]
+    },
+    "start/project-layout": {
+      "hash": "205fb5eb1dba21a7e518aef900896bace935219ca429726abf5638e43af0cf41",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/start/project-layout.en.md",
+      "outputHash": "32bab0ae1008c0c48ae3aac2b29b9275e1ee5df810907672250210e8154dd61c",
+      "locale": "en",
+      "format": "md",
+      "title": "Layout and naming",
+      "sources": [
+        {
+          "path": "Docs/getting-started/project-layout.md",
+          "hash": "b96948c227a0e4e3d7773f697be8bac609026e619152c25eea14152f4005bd97"
+        }
+      ]
+    },
+    "start/workflow": {
+      "hash": "5fe08d7f10f95e79f1c827d774927a539eeb24adc4814c81e48c8822288c42a1",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/start/workflow.en.md",
+      "outputHash": "e5b4e84ec14bd1d49992952f8b51fd7cf2ff971cd34a139448c38157a918d419",
+      "locale": "en",
+      "format": "md",
+      "title": "The daily loop",
+      "sources": [
+        {
+          "path": "Docs/getting-started/workflow.md",
+          "hash": "7396a915f1783ffd26fecfd01ccecc4efd4dbd12dcaad70b2cf315c7dc2aa93e"
+        }
+      ]
+    },
+    "tools/ci": {
+      "hash": "85b13b4d21b0eb7bda7d4c126e865ec0916831ec3706379f4ad36c16b6adbed5",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/tools/ci.en.md",
+      "outputHash": "113dbc31f6f8ea50664a7b09f288ff3267d14f54d8dc5b950f238570896fcaa2",
+      "locale": "en",
+      "format": "md",
+      "title": "ci.ps1 and gates",
+      "sources": [
+        {
+          "path": "Docs/tools/ci.md",
+          "hash": "bb0f633d173463a24e084fe395603132a73b1754eabcfc3ac7f5e988868327a1"
+        }
+      ]
+    },
+    "tools/cli": {
+      "hash": "50e157cefdac95111d01c5b4cdc5c4f95319ef30b23c172efb529127ca1ed0a8",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/tools/cli.en.md",
+      "outputHash": "8d15d2a18711269f17a3dec1a57b6f5708fa1a67710423ef2de8d810a0e2615b",
+      "locale": "en",
+      "format": "md",
+      "title": "The dfx.ps1 command line",
+      "sources": [
+        {
+          "path": "Docs/tools/headless-compilation.md",
+          "hash": "92cde1684eceae51e0fb222d77f3c7666c9170a452a7e3b6df1829d1524cdd29"
+        }
+      ]
+    },
+    "tools/editor": {
+      "hash": "8b023ecda55a74900c88d8d3f6c9c4e14d551223538d516ce519dc0b3d1d032c",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/tools/editor.en.md",
+      "outputHash": "0747c4031b65f68de7aabc8a8d2578293ebfb7970687a4e51a8c62ceae660eff",
+      "locale": "en",
+      "format": "md",
+      "title": "Editor integration",
+      "sources": [
+        {
+          "path": "Docs/tools/editor-integration.md",
+          "hash": "4752c76239f9200be4f3e667c5a6e279925fdc130af6e8ccb9dfb27ea8a3f700"
+        }
+      ]
+    },
+    "tools/scripting": {
+      "hash": "5345e84e1c27d1a5359d2cbf891b2701fc022e06a6320db62b437c6e58e18305",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/tools/scripting.en.md",
+      "outputHash": "fc02bc6cf05b3ffe3c787a255cd641e71db5cb82b1c271f4959e270b1dc40166",
+      "locale": "en",
+      "format": "md",
+      "title": "Python and Blueprint",
+      "sources": [
+        {
+          "path": "Docs/tools/scripting.md",
+          "hash": "89f3a024e65aca91fedef6c6d6b481a8ae8b54734b3a14d81f75fb6b3763a095"
+        }
+      ]
+    },
+    "tools/skills": {
+      "hash": "4cd7905d2c48e7cd6b5132060ab6971515b1d58fa47c7ef960e55c6d7f047f03",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/tools/skills.en.md",
+      "outputHash": "f783c508ae7eaf641924737b925112442b0f372e53218a6c75f7bd1d0820196c",
+      "locale": "en",
+      "format": "md",
+      "title": "Agent skills",
+      "sources": [
+        {
+          "path": "Docs/tools/skills.md",
+          "hash": "3c6c739097177cef5182dade03100e935b01e448adf739122eb3c785ba480a13"
+        }
+      ]
+    },
+    "tools/vscode": {
+      "hash": "4f087dd67b57ca5de7f451407a7d9088152095bac14f041e7085c2e775455c68",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/tools/vscode.en.md",
+      "outputHash": "d190d680bd13014bb7021baf3ee5165ed943d1a720a137f3548e8ac5a30935f6",
+      "locale": "en",
+      "format": "md",
+      "title": "VSCode and the module index",
+      "sources": [
+        {
+          "path": "Docs/tools/vscode.md",
+          "hash": "e6a00192fb3f95ccbcddd169dc9620f355ba916d25cf633cc7c72dfe09a267cd"
+        }
+      ]
+    },
+    "plugin/diagnostics/dfx1xxx": {
+      "hash": "e7a002a2fd6070cf53bb5c0619eb992359bebd04b3273f8f2205a6ebfc8cc8ee",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/plugin/diagnostics/dfx1xxx.en.md",
+      "outputHash": "be39e7ed1dcd89a3f33907ce16df7c352aa7fb4a712ddf1a478239d7bf4a5742",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX1xxx --- Driver and file I/O",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX1xxx.md",
+          "hash": "c017c7d7a8a3c6b6ede54f8d91f616f47761f855e7cd12cf02340deea6e7dc7c"
+        }
+      ]
+    },
+    "plugin/diagnostics/dfx2xxx": {
+      "hash": "ef514ad4ad9fef27a8c4dbff8b74674109714ebcd336bf2d436a25f6ab21a6dd",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/plugin/diagnostics/dfx2xxx.en.md",
+      "outputHash": "8ed5ae5b88a0cb3bed54e3c08c3fe36c3a4e656215dbd5ac5cac01020fb819da",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX2xxx --- Lexer and syntax",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX2xxx.md",
+          "hash": "ad89e8540451ee7268285198d5641bea4ce9733899a9913748ff7c99ef3a9f4c"
+        }
+      ]
+    },
+    "plugin/diagnostics/dfx3xxx": {
+      "hash": "e04b82154e16e127ba61a237eda0ff8d64b2dee52c0636d4fd7080a9f574b677",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/plugin/diagnostics/dfx3xxx.en.md",
+      "outputHash": "abc3f2bb4cd736e11809cea6aca26812222f51197269e2625082a5824e9b30e4",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX3xxx --- Declarations and document structure",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX3xxx.md",
+          "hash": "68525e37957f2209f568967856b32808dada026a2634b6f92be2f6bf96a2c395"
+        },
+        {
+          "path": "Docs/diagnostics/history/DFX3045.md",
+          "hash": "90bf867048046cb47399228ec447fc373f88c93875fefbf86af2500c80abd1f0"
+        }
+      ]
+    },
+    "plugin/diagnostics/dfx4xxx": {
+      "hash": "0d22381a3a91b57f10563a3d38b9a538661ce3b788be0e2699fb5ace7b7dcc7a",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/plugin/diagnostics/dfx4xxx.en.md",
+      "outputHash": "76fb04734af60cbab96a9ceafe9ba290cd65488e054fd1a5b888d138b0223613",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX4xxx --- Values, types and expressions",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX4xxx.md",
+          "hash": "747537b6fa95c4426881a8d20e94d096cf9eb5777fe8b60eb604a00d21411d2c"
+        }
+      ]
+    },
+    "plugin/diagnostics/dfx5xxx": {
+      "hash": "793418a2a793b510377b3b38730c0121ede73181830dc41119fc2929fd98f631",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/plugin/diagnostics/dfx5xxx.en.md",
+      "outputHash": "432ba1cecd835506899b783a1d71b9f3337dc93a6d012ccb8592bf3cdcdb816e",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX5xxx --- Generation and asset writing",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX5xxx.md",
+          "hash": "5188993b4a4fd46c7c0e5cd9845c6fb1df99e61e4ff1a3b782e9326aebc013e2"
+        },
+        {
+          "path": "Docs/diagnostics/history/DFX5099.md",
+          "hash": "4a751f358b0d798abcb80032c7de4e80b4e6a8ca75a3438de42281525930b739"
+        },
+        {
+          "path": "Docs/diagnostics/history/unpublished-codes.md",
+          "hash": "cc531cb5892263a7bab97b3fb53a608628bba0576dcf835adb37946344a5891b"
+        }
+      ]
+    },
+    "plugin/diagnostics/dfx6xxx": {
+      "hash": "363fe36528e26468f568640b2c88152f61d1423e79d3130c27aed14a4e2d47fa",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/plugin/diagnostics/dfx6xxx.en.md",
+      "outputHash": "f6606c8a533a61707639e1466b0e17afe7118efcc301bbf7eb2f94dbfb3811b1",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX6xxx --- Niagara compilation",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX6xxx.md",
+          "hash": "3bdacff08bf92ec696e7941039285f8d2bbd6f309774121c73054a3afcc44c1d"
+        }
+      ]
+    },
+    "plugin/diagnostics/dfx7xxx": {
+      "hash": "03b3b01ce95453cf31e4c85b310c43be460337cbdb8b11fbbfe54349c36195d2",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/plugin/diagnostics/dfx7xxx.en.md",
+      "outputHash": "87b2bb421728b62ece5ba39fbb75cb9b5e4aeb18cf73ae95a4a7762a7c28da61",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX7xxx --- Provenance, drift and lint",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX7xxx.md",
+          "hash": "78091c818f0834595933499e6c82d34f1bf79cf1b4d427215699f772a60d757a"
+        }
+      ]
+    },
+    "plugin/diagnostics/dfx8xxx": {
+      "hash": "d33f13e2ab2b3b2a5792d6c13d6ce5dafb31eed11e9cf351d7a0302d5be77c77",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/plugin/diagnostics/dfx8xxx.en.md",
+      "outputHash": "16258b1f4d7f5f7313c8105abb3ea8e0d83e256e83bd1f2f0a3efaac8fcac00d",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX8xxx --- Decompiler",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX8xxx.md",
+          "hash": "71008ad758ed8a8c0cc4827129d12d17621983c403b0fb099bd3edc626f2638e"
+        }
+      ]
+    },
+    "plugin/diagnostics/readme": {
+      "hash": "90ed262bfd93eb85cfa1f0bd0de2712e11b6443db19c4eda20aee2166b5912c5",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/plugin/diagnostics/readme.en.md",
+      "outputHash": "7e8fdedd6c4d0d1d0d14b91069b2aeed59b93640aa7d778209f322e7ed1d43c5",
+      "locale": "en",
+      "format": "md",
+      "title": "DreamFX diagnostics",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/README.md",
+          "hash": "e5ea59b6634e171677ee43aa75d7c95876f28ca424d098c5ec2b0d8c874b0e89"
+        }
+      ]
+    },
+    "plugin/getting-started": {
+      "hash": "4a8949f595dc57d3304f6143b85d41def6b7950ae2e6c80fac0b57fd1f640938",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/plugin/getting-started.en.md",
+      "outputHash": "b2e1f31e85b7af777fe70e0a23cf6354c87d92a667a0c9f25de381455dc184af",
+      "locale": "en",
+      "format": "md",
+      "title": "Getting started with DreamFX",
+      "sources": [
+        {
+          "path": "Docs/getting-started/quickstart.md",
+          "hash": "3e54efd6061dc8591df8d9e15b4330fcae2179b69c5725219633cf35ae11a56d"
+        }
+      ]
+    },
+    "plugin/language/native-emitter-inheritance": {
+      "hash": "aa8d0c4607962e635e98ad4c49fd16422ad9da0132a35243504b2fcd5d6269cd",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/plugin/language/native-emitter-inheritance.en.md",
+      "outputHash": "a597f172676f46d863a99d006cb01ac4ac87f378005505376bbd648b764cac81",
+      "locale": "en",
+      "format": "md",
+      "title": "Native emitter inheritance",
+      "sources": [
+        {
+          "path": "Docs/language/native-emitter-inheritance.md",
+          "hash": "0ac8c3d8f246a71a675e338cc021c659704e31a900e68c11a7118ed2f10d8b2b"
+        }
+      ]
+    },
+    "plugin/language/system-inheritance": {
+      "hash": "c532f46b25ee96665ed491c50e4404c09b5fed2d98e897fe9efc201402c69d8f",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/plugin/language/system-inheritance.en.md",
+      "outputHash": "02f1674587f506c6bb5ba21c905af17188a0d0fe9f546c211dfdb4dbb8b53bb7",
+      "locale": "en",
+      "format": "md",
+      "title": "System source inheritance",
+      "sources": [
+        {
+          "path": "Docs/language/system-inheritance.md",
+          "hash": "038d73763dac92e26efb9803a003a83c294ccbe4d8b8438be126ec962f8b1b77"
+        }
+      ]
+    },
+    "plugin/tools/asset-comparison-and-export": {
+      "hash": "f58077e4ba0cb5a4af3ea34778ac6fd16d03c5802690a484172c68964944deb1",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/plugin/tools/asset-comparison-and-export.en.md",
+      "outputHash": "e40f3624365b1aef694ca6143029e8a4e065cdfd6640b01c9cb9372fd32d2eed",
+      "locale": "en",
+      "format": "md",
+      "title": "Asset comparison and export coverage",
+      "sources": [
+        {
+          "path": "Docs/tools/asset-comparison-and-export.md",
+          "hash": "dccc56525d05ab27511cf3fb24a3459dd99bbf97b35b06e8b0356e744c886b76"
+        }
+      ]
+    },
+    "plugin/tools/incremental-builds": {
+      "hash": "9cc2005eda8a29b1735652b4b65d46b4da6905f9bec07b88e429ec299f64a1b4",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/plugin/tools/incremental-builds.en.md",
+      "outputHash": "2f01a147fb76a0ca0c5e1a0460cabb98ec3ee53b8f5be87184d9a4ed01038c81",
+      "locale": "en",
+      "format": "md",
+      "title": "Build on save and up-to-date checks",
+      "sources": [
+        {
+          "path": "Docs/tools/build-on-save.md",
+          "hash": "484f7d4dcf01176790612a30e77439884d9b9961b83f040983f7f6b69fe6ac19"
+        }
+      ]
+    },
+    "plugin/tools/pull": {
+      "hash": "0a875841f672bcf1449b0ccedebd5eadc8202a9532c0f0df0cbf42ac9ed1076f",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/plugin/tools/pull.en.md",
+      "outputHash": "f063a1d418453e96ad316d5b36d76b637d97e8bab54cb57a7272acce6a5dd165",
+      "locale": "en",
+      "format": "md",
+      "title": "`pull`: write current asset values back to source",
+      "sources": [
+        {
+          "path": "Docs/tools/pull.md",
+          "hash": "58add2c2f5a3113d374e01ab454e4ba0e2985169fce51b23769d668e9793b4d1"
+        }
+      ]
+    },
+    "plugin/tools/write-back-coverage": {
+      "hash": "f3cb7d84c7cdd450bf5b583086aa15bb15b99410da4f138752d3722036bd8034",
+      "revision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "output": "content/docs/plugin/tools/write-back-coverage.en.md",
+      "outputHash": "38e3dbc4c546e2b12590e04f5c0e3d712a3c8a0f34138d225421de44b28b8e20",
+      "locale": "en",
+      "format": "md",
+      "title": "Write-back coverage and gaps: measured inventory",
+      "sources": [
+        {
+          "path": "Docs/tools/write-back-coverage.md",
+          "hash": "6d000e27a69212148919b1cd272eb1083e64776b7a0b5e2615e0758dbeace0c2"
+        }
+      ]
+    }
+  }
+}

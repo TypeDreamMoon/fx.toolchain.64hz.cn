@@ -1,75 +1,54 @@
-"""Check every /docs link and #anchor in the content against the static export.
-
-Run `npm run build` first — this reads `out/`, so it validates what actually shipped
-rather than what the sources look like they meant.
-
-    python scripts/check-links.py
-
-Exit code 1 if anything is unresolved, so it can gate a deploy.
-"""
-
-import glob
-import io
-import os
-import re
+"""Validate rendered document links and fragments in the static export, in both locales."""
+from html.parser import HTMLParser
+from pathlib import Path
 import sys
+from urllib.parse import unquote, urlsplit
 
-SITE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = Path(__file__).resolve().parents[1]
 
-LINK = re.compile(r"\]\((/docs[^)\s]*)\)")
-HREF = re.compile(r'href="(/docs[^"]*)"')
+
+class Page(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.ids, self.links = set(), []
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if attrs.get('id'):
+            self.ids.add(attrs['id'])
+        if tag == 'a' and attrs.get('href'):
+            self.links.append(attrs['href'])
 
 
 def main():
-    os.chdir(SITE)
-
-    if not os.path.isdir("out"):
-        raise SystemExit("no out/ — run `npm run build` first")
-
-    routes = set()
-    for path in glob.glob("out/**/index.html", recursive=True):
-        rel = os.path.dirname(path).replace(os.sep, "/")[len("out"):]
-        routes.add("/" + rel.strip("/"))
-
-    anchors = {}
-    broken = []
-
-    for path in glob.glob("content/docs/**/*.mdx", recursive=True):
-        text = io.open(path, encoding="utf-8").read()
-        for target in LINK.findall(text) + HREF.findall(text):
-            route, _, fragment = target.partition("#")
-            route = route.rstrip("/")
-            if route not in routes:
-                broken.append((path, target))
-            elif fragment:
-                anchors.setdefault(route, []).append((path, target, fragment))
-
-    for path, target in broken:
-        print("missing route: %s -> %s" % (path, target))
-
-    missing_anchors = 0
-    for route, uses in anchors.items():
-        html_path = os.path.join("out", route.strip("/"), "index.html")
-        if not os.path.exists(html_path):
-            continue
-        ids = set(
-            re.findall(
-                r'id="([^"]+)"',
-                io.open(html_path, encoding="utf-8", errors="ignore").read(),
-            )
-        )
-        for path, target, fragment in uses:
-            if fragment not in ids:
-                missing_anchors += 1
-                print("missing anchor: %s -> %s" % (path, target))
-
-    print(
-        "%d routes exported, %d broken links, %d missing anchors"
-        % (len(routes), len(broken), missing_anchors)
-    )
-
-    return 1 if broken or missing_anchors else 0
+    export = ROOT / 'out'
+    if not export.is_dir():
+        raise SystemExit('No out/; build the site first')
+    pages = {}
+    for file in export.rglob('*.html'):
+        relative = file.relative_to(export).as_posix()
+        route = '/' + relative.removesuffix('index.html').removesuffix('.html').rstrip('/')
+        page = Page()
+        page.feed(file.read_text(encoding='utf-8'))
+        pages[route] = page
+    problems = set()
+    for origin, page in pages.items():
+        for link in page.links:
+            parsed = urlsplit(link)
+            if parsed.scheme or parsed.netloc:
+                continue
+            target = unquote(parsed.path).rstrip('/') or origin
+            if not target.startswith(('/docs', '/en/docs')):
+                continue
+            if target not in pages:
+                problems.add(f'{origin} -> {link}: missing page')
+            elif parsed.fragment and unquote(parsed.fragment) not in pages[target].ids:
+                problems.add(f'{origin} -> {link}: missing anchor')
+    for problem in sorted(problems):
+        print(problem)
+    print(f'{len(pages)} exported pages, {len(problems)} broken document links')
+    return bool(problems)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     sys.exit(main())
