@@ -1,28 +1,28 @@
 {
   "version": 2,
-  "status": "unreviewed",
-  "sourceHash": null,
-  "sourceRevision": "b1c700214cf15af4b2b6425520989557a8c55e94",
+  "status": "current",
+  "sourceHash": "a8cf6a47a57a80b1310a931f11a15378fc3991983fa4c4b6789dbd5656c0b12f",
+  "sourceRevision": "a31430767998e154603e58c84ea52b2e619fde00",
   "sources": [
     {
       "path": "Docs/diagnostics/DFX5xxx.md",
-      "sourceHash": null,
-      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
-      "translationHash": "b3e3fb074e90a650e87093d8a66069fb0e44278add0bead92370b72a947af3be"
+      "sourceHash": "8199ea7ea3823432f73fe3e6d85a5cf2bee0f765861de323e0384de41ae80746",
+      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
+      "translationHash": "aefac56c0374f243cab983f69c0159de8a2ab377d0283d35c7b8d5ca2eb37159"
     },
     {
       "path": "Docs/diagnostics/history/DFX5099.md",
-      "sourceHash": null,
-      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
-      "translationHash": "4b9fa0182b2a6ffd33ec4fee49ab0ef9946fe2dd99193369c45564f1ce0a4483"
+      "sourceHash": "4a751f358b0d798abcb80032c7de4e80b4e6a8ca75a3438de42281525930b739",
+      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
+      "translationHash": "4a48651e039c348746ab418fa78c41c3eb841c813a9dd1d6ed0107030b192a70"
     },
     {
       "path": "Docs/diagnostics/history/unpublished-codes.md",
-      "sourceHash": "cc531cb5892263a7bab97b3fb53a608628bba0576dcf835adb37946344a5891b",
-      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
-      "translationHash": "048f1e6a9479cb6e1fdd9ce44f544a6826f52b83d71c0216333d83f3aee2f196"
+      "sourceHash": "8ce55000b86e5e1f27a180bce632daad304de9d53ef03b6efff25e483e7c2383",
+      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
+      "translationHash": "63025a9984e8e7d364d5c511f0069a446080f75a2f6e79f2a59ccd9c6fd4919b"
     }
   ],
   "translationFile": "content/docs/plugin/diagnostics/dfx5xxx.md",
-  "translationHash": "72b07e667e15d7410363d94fceb7b8e405cf7d39862b2f5a43928c95bda5c498"
+  "translationHash": "46d73045f9f645e3c391ffea727bd230fa87a4f8445fd176ad4bc19cec09744e"
 }

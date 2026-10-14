@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "status": "unreviewed",
-  "sourceHash": null,
-  "sourceRevision": "b1c700214cf15af4b2b6425520989557a8c55e94",
+  "status": "current",
+  "sourceHash": "5345e84e1c27d1a5359d2cbf891b2701fc022e06a6320db62b437c6e58e18305",
+  "sourceRevision": "a31430767998e154603e58c84ea52b2e619fde00",
   "sources": [
     {
       "path": "Docs/tools/scripting.md",
-      "sourceHash": null,
-      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
-      "translationHash": "7090a3aecd271ebdb6c0d0af883a18a759608a86e069db6e5b43b59253c97f77"
+      "sourceHash": "c497946ef32d170f153359569f3ce172a3d79ab4b4cce38d06cbb7da6d9d1c3d",
+      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
+      "translationHash": "86c5f8909fa164a11f294b669eed8105e3082cba0787a6bbd7ee3f046fae346a"
     }
   ],
   "translationFile": "content/docs/tools/scripting.md",
-  "translationHash": "5b4b97075760101152651659f9d9a6af5d92cee0919c32069bd369b04685de24"
+  "translationHash": "08af5d87331b5d61d391d6c81435a9a035700afc26fae59e288865f499866c66"
 }

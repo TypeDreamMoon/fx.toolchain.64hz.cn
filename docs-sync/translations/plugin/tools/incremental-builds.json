@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "status": "current",
+  "sourceHash": "635100f532c14e505be7f4a9e216cddcb1be7aac50ebbee36b58d89cde72dec2",
+  "sourceRevision": "a31430767998e154603e58c84ea52b2e619fde00",
+  "sources": [
+    {
+      "path": "Docs/tools/build-on-save.md",
+      "sourceHash": "cb9f30c9f33d7538a061fb8b7f72f7154d3ace459e426bbe3904076d1f917da8",
+      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
+      "translationHash": "a58708f336ee9bf4f1e3f26589aaf2d87a31ebb83d8c4c11c22c1dccbc4c6166"
+    }
+  ],
+  "translationFile": "content/docs/plugin/tools/incremental-builds.md",
+  "translationHash": "429cca8432e39b3ac6fc9b2d9c7d192ba97bc153725cf4cae22f82daf4efe50f"
+}

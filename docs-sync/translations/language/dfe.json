@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "status": "unreviewed",
-  "sourceHash": null,
-  "sourceRevision": "b1c700214cf15af4b2b6425520989557a8c55e94",
+  "status": "current",
+  "sourceHash": "6abe8720afc7e6c19d8a05249ad09150b0f1d695a4c0cbddb7c072c52421a807",
+  "sourceRevision": "a31430767998e154603e58c84ea52b2e619fde00",
   "sources": [
     {
       "path": "Docs/language/dfe.md",
-      "sourceHash": null,
-      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
-      "translationHash": "75a1a186ca50ddaa471940b3f9e6579993d7ccb74622aea852e0ce148a1fd8b2"
+      "sourceHash": "14e458f3e0f52ab45a6d23c624e80eb5101ca657f0cd6293bcd2b76643d30c22",
+      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
+      "translationHash": "6faded4a95a28911d7c5333e853a766c5708f3c211405f934012142faae359a4"
     }
   ],
   "translationFile": "content/docs/language/dfe.md",
-  "translationHash": "08fbb029a10e7679e763d005c589e031a3a5f983898b11ab245e6e602197b7a7"
+  "translationHash": "47a92260bdcd5c48c0bf7896819d77a59b681de1a3dbd5c704bb353aa0156cba"
 }

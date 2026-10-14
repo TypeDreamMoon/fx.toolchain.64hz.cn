@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "status": "unreviewed",
-  "sourceHash": null,
-  "sourceRevision": "b1c700214cf15af4b2b6425520989557a8c55e94",
+  "status": "current",
+  "sourceHash": "4cd7905d2c48e7cd6b5132060ab6971515b1d58fa47c7ef960e55c6d7f047f03",
+  "sourceRevision": "a31430767998e154603e58c84ea52b2e619fde00",
   "sources": [
     {
       "path": "Docs/tools/skills.md",
-      "sourceHash": null,
-      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
-      "translationHash": "a332f47dc57fd34d019fc94531e522290a14e08ea5a43668fcf5f679d80be443"
+      "sourceHash": "3b4692527f649611afd7ec009321c1a6bc9d6429f19fdb4acc51bd6016d51acb",
+      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
+      "translationHash": "9d7dc6272b61672cacda78f113dc31cb63968b654add994b8535b3623f0f34f8"
     }
   ],
   "translationFile": "content/docs/tools/skills.md",
-  "translationHash": "1188df727ae7059b2228662a53cd248d6c7d5b4c8a4d0e8dedb9a49ac0377d12"
+  "translationHash": "6216aca73a988b75cb71b7d9f18a2a5f5218d82d2f5950c10d12c02e1bda1076"
 }

@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "status": "unreviewed",
-  "sourceHash": null,
-  "sourceRevision": "b1c700214cf15af4b2b6425520989557a8c55e94",
+  "status": "current",
+  "sourceHash": "2d06261be2ff00ff2561e1f9fa205058c6ef899f2d1dba5f2bafd360a5a616f5",
+  "sourceRevision": "a31430767998e154603e58c84ea52b2e619fde00",
   "sources": [
     {
       "path": "Docs/diagnostics/DFX4xxx.md",
-      "sourceHash": null,
-      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
-      "translationHash": "c0be0cf5f702c49f9fe38cf4572d9ddfb83ff1f805372ef660b90c580debba5d"
+      "sourceHash": "6e10b3962bc2e4f5f75ce30978a21c6874cf7af1dacb426252a63ae3d539a331",
+      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
+      "translationHash": "2e609dde6f570694fa05f16d4e90afd229cf13f42340df2b720142e516fc77ac"
     }
   ],
   "translationFile": "content/docs/plugin/diagnostics/dfx4xxx.md",
-  "translationHash": "4694769961fb8bbc410d9969401d87941f52a6a5c2098c2c2a89661dd01a98c8"
+  "translationHash": "10ac1d6d77771f119b48787fcb58fe7563fa5e2377d743b1b3d419b0c2388f3c"
 }

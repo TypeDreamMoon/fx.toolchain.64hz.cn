@@ -1,9 +1,9 @@
 {
   "version": 1,
   "repository": "TypeDreamMoon/DreamFX",
-  "revision": "b1c700214cf15af4b2b6425520989557a8c55e94",
+  "revision": "a31430767998e154603e58c84ea52b2e619fde00",
   "workingTree": false,
-  "translationSnapshotHash": "cebcc407cddcef4392f183f9efc5559b0d693160c36e70e91fd3ebbeac1db725",
+  "translationSnapshotHash": "b6f16bfd3885f8ce7ca1fd099a8891d22548f879c4495e42f3a9173b1508f921",
   "pages": {
     "changelog/index": {
       "hash": "c1dad62ffab3e8dbf3cc99e290d47c875a58a53a0a5882a2de1c2fd76a265757",
@@ -20,11 +20,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/changelog/index.md",
         "record": "docs-sync/translations/changelog/index.json",
-        "outputHash": "f876bae8006df2da886ff29784217c910df43676eee8f0f904cba64f5401cdda",
-        "bodyHash": "6de3fc1006dc7423f48548e4dc9e83c07fcb573510b19ca0298ddeb054d2c25f"
+        "outputHash": "56acdb88477b30ce012628cbc1ee9d1bbb57062bae6361cf4b1e615ef62c329b",
+        "bodyHash": "fa8aa3eba81a81c1a133176b672c0e93beb1e9f785b3e86a6dead3e123124cad"
       }
     },
     "diagnostics/dfx1xxx": {
@@ -42,11 +42,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/diagnostics/dfx1xxx.md",
         "record": "docs-sync/translations/diagnostics/dfx1xxx.json",
-        "outputHash": "818a1596dcda4e22d9d5da9885779217ed9e1e5d6e780992bed0b201ffcc757d",
-        "bodyHash": "f7acdbf4e9a433c0a058a00e14790686dbe475cd012bf02fead5f6e468dea002"
+        "outputHash": "538a4dd0795644d810cdc2815af942c09cd18a0b29cf04d0b585019bd22c0600",
+        "bodyHash": "feaeacf95a837534a5019840ec97c4ae6a46a1f604002cfdf2c36f520ce9367e"
       }
     },
     "diagnostics/dfx2xxx": {
@@ -64,11 +64,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/diagnostics/dfx2xxx.md",
         "record": "docs-sync/translations/diagnostics/dfx2xxx.json",
-        "outputHash": "761edae85ccd83f5c64affa7d810fb9e4cdca40c884e5ea38fcc295e66cea315",
-        "bodyHash": "68f24b4fddb1d93bb573db391aaf1109b265b5509c81b11026291ec9a3626ce4"
+        "outputHash": "1e08f7441b1faceafd2b7607fad9839a8a4a45840bd46b1c1e2f1d78f422e7de",
+        "bodyHash": "20323bf97df0de9b2c076d0580f9336e009d5cffc04487929d4e75fc3eba4a13"
       }
     },
     "diagnostics/dfx3xxx": {
@@ -90,11 +90,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/diagnostics/dfx3xxx.md",
         "record": "docs-sync/translations/diagnostics/dfx3xxx.json",
-        "outputHash": "549685d9068b4193d78822b91226cec5c69824a3d8a216f1cc98a56004c452d3",
-        "bodyHash": "5fa56788d7d2a26ebe32c1cd6c5d5b14c9aca4973d00ba9e0415802d9177962a"
+        "outputHash": "8fb6a1c221001b7fae6fb98fe1c6132d97560238e5f87c06f3d645ac7047f4ae",
+        "bodyHash": "a80ea5116aea11484fe1dae007328637f29cc74c15a721b3a50dea1b9922cec9"
       }
     },
     "diagnostics/dfx4xxx": {
@@ -112,11 +112,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/diagnostics/dfx4xxx.md",
         "record": "docs-sync/translations/diagnostics/dfx4xxx.json",
-        "outputHash": "4694769961fb8bbc410d9969401d87941f52a6a5c2098c2c2a89661dd01a98c8",
-        "bodyHash": "4497ff7707a4af4d41c299c044b3b16c78688ace8921ff8d6956eade00174bd6"
+        "outputHash": "10ac1d6d77771f119b48787fcb58fe7563fa5e2377d743b1b3d419b0c2388f3c",
+        "bodyHash": "e3beb206d953599236bdc10e7c54e3efd2d0ccce5603cc51aef6385990622cf5"
       }
     },
     "diagnostics/dfx5xxx": {
@@ -142,11 +142,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/diagnostics/dfx5xxx.md",
         "record": "docs-sync/translations/diagnostics/dfx5xxx.json",
-        "outputHash": "72b07e667e15d7410363d94fceb7b8e405cf7d39862b2f5a43928c95bda5c498",
-        "bodyHash": "67159610c66ad1d60f5f6aab30301e59a17fe17619b08c56e0fd1af7d478096f"
+        "outputHash": "46d73045f9f645e3c391ffea727bd230fa87a4f8445fd176ad4bc19cec09744e",
+        "bodyHash": "fc07beddcd5e1e3b59d3b266a4fc2d34f0ad73e56d87cce47f665bf516bdc66b"
       }
     },
     "diagnostics/dfx6xxx": {
@@ -164,11 +164,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/diagnostics/dfx6xxx.md",
         "record": "docs-sync/translations/diagnostics/dfx6xxx.json",
-        "outputHash": "b7dd22d4f06dadd34a245e1e195955079404060e42ec896b4c3c1b496378baf7",
-        "bodyHash": "c7fca627527a030ade5a5cefc408bb12e0acb51b404fdd836a439bf75c890481"
+        "outputHash": "5e4929fb458319b81c85625b07f5eea33e95b58647e17cd4d731660776ed7dba",
+        "bodyHash": "8d835153dcf8a910346c4beb347a12c73424fbb9a88f9c85a5911793003c26ad"
       }
     },
     "diagnostics/dfx7xxx": {
@@ -186,11 +186,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/diagnostics/dfx7xxx.md",
         "record": "docs-sync/translations/diagnostics/dfx7xxx.json",
-        "outputHash": "ee554b6cd752685dcabcae7f5030bbc0c40a0dde734b570cec542be431c8d909",
-        "bodyHash": "9eba755900a2427fa3f71db7dd1a3fea4d790b1fc2664246d7d109eb385efeb9"
+        "outputHash": "d96261a4db405280adccd48ee03ba38408adc8833ed8d53c907e0614bc1b134a",
+        "bodyHash": "59133569b2678759d9de9ccc7c91871bf9f46a64d4373d11e946174ab4512ad3"
       }
     },
     "diagnostics/dfx8xxx": {
@@ -208,11 +208,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/diagnostics/dfx8xxx.md",
         "record": "docs-sync/translations/diagnostics/dfx8xxx.json",
-        "outputHash": "d5f4ba84a9536723f6d183195480ecade560a7b2fd54845021819904e7546b8b",
-        "bodyHash": "e9d64429e8ab2553f1c7d42d88331aba990cb07b6681e8968ae1989880e3cb60"
+        "outputHash": "26e8288614d90ae57308be14c815aa953f357d4ca0f4f75b5418b099849373a0",
+        "bodyHash": "a24a3a9df570ffda36f860510f791dc5ea67ac30bfd823ab27ad756ee25d73e4"
       }
     },
     "diagnostics/index": {
@@ -230,11 +230,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/diagnostics/index.md",
         "record": "docs-sync/translations/diagnostics/index.json",
-        "outputHash": "203eff0b82b43b0f27b7779133813a876e4becc18fa9937248ffa94984780b1f",
-        "bodyHash": "aafcf708d416b607cd141e91c27691b2190998143a1fdd62a8ed0db2f6aa27de"
+        "outputHash": "45ca8272519320931bbb0321ab2192a448582b850e3908ddd8ee30e58de045ce",
+        "bodyHash": "4981e27acf3252ef1301447aed424caebd9ec21e2d913fcc8a690e38fa2d22df"
       }
     },
     "diagnostics/limitations": {
@@ -252,11 +252,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/diagnostics/limitations.md",
         "record": "docs-sync/translations/diagnostics/limitations.json",
-        "outputHash": "d35b3ba151fa1e5cea8519c48d3d7d6ef8f971ddb871e0e6617d59f526298ddc",
-        "bodyHash": "4781c9c6ff82445172ccc6cba28afb3f4c501029d8a2fedfe9cfba5a336e8ff4"
+        "outputHash": "5081266d29c822e106e5a885bdf97b7b8f47ee4badcdc1f17afaf436f23ad3a5",
+        "bodyHash": "a83efad9c475448cf72386b856a58129e8926d910d2baf1928e55fbf153a3781"
       }
     },
     "generation/adopt": {
@@ -274,11 +274,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/generation/adopt.md",
         "record": "docs-sync/translations/generation/adopt.json",
-        "outputHash": "60e7d36ffd8ec27554f357b85d0efe7eeb9926d00ed747bb43f186db232a99aa",
-        "bodyHash": "4514e61f73a45a91aa61084c0e8e053f0a51a75bbadbe95381bf2ce608a8a5c0"
+        "outputHash": "feec8f432f6460bcacf24403acf6f49a46d31362343a71e37028d9b804fb3f78",
+        "bodyHash": "00dd27d4a962dc3ab010499d4561a4a83cfdcbbafb38773a1b93db0293e6c7fa"
       }
     },
     "generation/engines": {
@@ -296,11 +296,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/generation/engines.md",
         "record": "docs-sync/translations/generation/engines.json",
-        "outputHash": "aa55d94dd0c89a951fd751e142f08d9c50af7af3a8f6a6dcdf431b727e9f7042",
-        "bodyHash": "c882e1dd6ef1f725ed2946ba7a3b9e1676d16353f74afd8f7c97fa00fe6daed6"
+        "outputHash": "1f3e7951db85f34ca6201b6d5f8aea77928f85edad7d2a0598c95fbadc5f75b3",
+        "bodyHash": "760028e3f557e3781865d8d6860fdbfc390bc7850b6438a6db381ca503b42d66"
       }
     },
     "generation/pipeline": {
@@ -318,11 +318,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/generation/pipeline.md",
         "record": "docs-sync/translations/generation/pipeline.json",
-        "outputHash": "5269b8df1068dcf7b1e480e4b58ab584a400ab25bf7ec183bde410093cf1b064",
-        "bodyHash": "f4b2c3544387f9f895ead63dadf5537490167f320208c23ce48acc7b6c70a498"
+        "outputHash": "b0452c305f41c8b9c69215ea95ec8f11321818b8d536fd50aa6f52ffe854dfdd",
+        "bodyHash": "6abc37692bff492fca9ab04021c11859cea8341291ade8766048a4850a720f0e"
       }
     },
     "generation/provenance": {
@@ -340,11 +340,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/generation/provenance.md",
         "record": "docs-sync/translations/generation/provenance.json",
-        "outputHash": "9268e28c2cbc0a402957c4d153b57c2d393c9cfbcf5c8021cdf20a9e782b6b55",
-        "bodyHash": "c2e31a01d02efbf89a31cba05ac1f569b5ef19267b3c7ee2abecdf5af3a0463d"
+        "outputHash": "caa1f62a603f581c8a0ec7ad4c46742a54adc82e024e6e8862826ee5a5c9b6fd",
+        "bodyHash": "c00dddf24de1d8c8e6c89bacfa9e9cd47dced345caf69908fd241f7b5f13d849"
       }
     },
     "generation/roundtrip": {
@@ -362,11 +362,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/generation/roundtrip.md",
         "record": "docs-sync/translations/generation/roundtrip.json",
-        "outputHash": "6297fdc581026bfac60fa128737fbf0d6039039c8a41d446526a7d70e241a71c",
-        "bodyHash": "f7d47fc3f77527f796c3c8ed1b6b83f327e8ef42510a62eda976894e0816d932"
+        "outputHash": "3ba6ab91f8a64fccb5392bcbec38c67ef1a296b5f5bcd8a662b1c3e10ebb535c",
+        "bodyHash": "b7291398bfe84f344d5617e302da3d78fbcdbaa809b40493bea9b1fdbdef8e19"
       }
     },
     "index": {
@@ -384,11 +384,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/index.md",
         "record": "docs-sync/translations/index.json",
-        "outputHash": "8e014c4f763cc8a74a2470959ba387efae6bcd1b8382c4aee715a84b448f7a8f",
-        "bodyHash": "5d57bff7bfb3df23b81f1db830407a85c94b8a47de39b2e70ed3e0d0f9c4dbcf"
+        "outputHash": "09089ae5cf58c484efef765780cba5413943039dc25c0f0fdf0b299d1a51fd51",
+        "bodyHash": "586a499417f43fff95f388d6351251918c7037584e184276f0c21aeab8092560"
       }
     },
     "language/dfe": {
@@ -406,11 +406,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/language/dfe.md",
         "record": "docs-sync/translations/language/dfe.json",
-        "outputHash": "08fbb029a10e7679e763d005c589e031a3a5f983898b11ab245e6e602197b7a7",
-        "bodyHash": "2eb273735d1c7869e17dd3de3758b8d8be8a26534dc9254b7dbb51a471ae7a84"
+        "outputHash": "47a92260bdcd5c48c0bf7896819d77a59b681de1a3dbd5c704bb353aa0156cba",
+        "bodyHash": "c54b922ba4c091fcfdcc9ae7d2d8eb284bc5994bfca3727a15b68b73d0d08af4"
       }
     },
     "language/dfm": {
@@ -428,11 +428,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/language/dfm.md",
         "record": "docs-sync/translations/language/dfm.json",
-        "outputHash": "884fd80f1456d1d24c66268294ec0f7679ceac580c3ddecdc6cb58d6991f3d26",
-        "bodyHash": "b9b9b3a4f000abb5325d201fb72c738c86c0b70415877cd0d9387d1ae952768d"
+        "outputHash": "bff102deda74276d5fbbd576f9b9e3cdfc4c1fa12db00eb831a17231aaf373fa",
+        "bodyHash": "64d428548f113af1456241fba231782ef6a3ce887438e9c37417c8d05693c8ff"
       }
     },
     "language/dfs": {
@@ -450,11 +450,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/language/dfs.md",
         "record": "docs-sync/translations/language/dfs.json",
-        "outputHash": "6f6c3316d27c6ab24f922a967bc57d93487f3ad9bcaf3e22c6d304f04fff562c",
-        "bodyHash": "acb4b1c6e568bf3c138ac21c84a74fc1f808316f1e91650245d49e648d31ef57"
+        "outputHash": "ed562b45095284f0f6cf5b6248c8668f265409c45830cb248702ece2cb6d06d9",
+        "bodyHash": "a2f6eea0d98886e1ffd61e5a09963263a925492c44e5bb2a161cdfa0216e623f"
       }
     },
     "language/events-and-stages": {
@@ -472,11 +472,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/language/events-and-stages.md",
         "record": "docs-sync/translations/language/events-and-stages.json",
-        "outputHash": "8d9dc5e50f94dd9484b8a6f35f9f3cd3d64c672fde6f8f4c2f665be57dad60d8",
-        "bodyHash": "5adf98a3f1056ec7d87bf20fc1c670988323a8f78a7bfc5a5937007d93b554a9"
+        "outputHash": "fde6c02a58af86f9892ad1bed8a053e21b79cc61196bb14293391a0259648ea1",
+        "bodyHash": "c340c1b7a74df104eb36a44efc2367c1b97de0f327ce54df4a744e7e0b806374"
       }
     },
     "language/overview": {
@@ -494,11 +494,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/language/overview.md",
         "record": "docs-sync/translations/language/overview.json",
-        "outputHash": "e37e47907532ca40bfc25ab106946248260db8969b1f307ae3d3a24cd7f9ead7",
-        "bodyHash": "7d533e3c7dd10f42d02691e01caf164c37a84094c5b034f782d58c10ef412f04"
+        "outputHash": "3903c6c4204c0cf2cd7931cebf4fbbb985358c8d0bf4a92a62f5b8950aba64c1",
+        "bodyHash": "023f09437f5f3756f8f22a69847e40642505ab4a64514e59d32b9082d8eccf28"
       }
     },
     "language/values": {
@@ -516,11 +516,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/language/values.md",
         "record": "docs-sync/translations/language/values.json",
-        "outputHash": "0126486aa99261e6db29e8d0f4c5f56b2431364a5db0f625f5e7d56bbebc1b89",
-        "bodyHash": "d4a01b24c1365747aa974f8962e7829608865051bc1323cadb954df0a31ebca9"
+        "outputHash": "2310ffa8b276da7d4b041fe3ba078dd398e63301a845111c9e6debf632c31fc2",
+        "bodyHash": "9cb929b5ab49eef7d5852c6ed7882825dd38778a9b513eb35bfc7a9f09a749d0"
       }
     },
     "start/about": {
@@ -538,11 +538,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/start/about.md",
         "record": "docs-sync/translations/start/about.json",
-        "outputHash": "74c4751e7eb82329f2e797b56afab17ebf339354be095db5a4e710c331155e8f",
-        "bodyHash": "f5a9dadc1131484f2ff812d05157a965da7fd493985f03f99c224906d86ad74b"
+        "outputHash": "f5d656a194c051d498ee375b7f2534a4f0bc41e6ff638ded120af5b96c11007b",
+        "bodyHash": "bc949b243d60689f4d9c9411c51959623b05a5dbeb8402d15a2dfb2999b6e8ab"
       }
     },
     "start/first-effect": {
@@ -560,11 +560,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/start/first-effect.md",
         "record": "docs-sync/translations/start/first-effect.json",
-        "outputHash": "f5c42c7de76c25844d2bdbad62d75cac8b0c1850102fb9c235e9791c8afc46bf",
-        "bodyHash": "b5a06d63dd74b783b829ba110b6e1f6dd412e464560b4622efb1051909002478"
+        "outputHash": "45fb3d86ce367dbe8624d54c407aac59e40caf8f0f431116275cb6d4dd537806",
+        "bodyHash": "dc414c0b29b6ec34a9683bdbbb6cf32af6805ef69943dc88f3e529aff80a39a4"
       }
     },
     "start/installation": {
@@ -582,11 +582,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/start/installation.md",
         "record": "docs-sync/translations/start/installation.json",
-        "outputHash": "e4f51dac9ed2201d764053f54d83a26a6742a3321a8f173d6db548f0f86e73ed",
-        "bodyHash": "c7977415e945cea05b3562d00a6c2f14fc11b023709528f839745efb89baec47"
+        "outputHash": "32283eb44bd9a187ebd8a4df63deb94e0da1359e540ae0a311ab8e41fcd0e615",
+        "bodyHash": "d3819e359003de7160d64286912968cc651f2d443d6c89823f6968c0d0a74173"
       }
     },
     "start/project-layout": {
@@ -604,11 +604,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/start/project-layout.md",
         "record": "docs-sync/translations/start/project-layout.json",
-        "outputHash": "627e84ace4436fa6b6d1c7066aaa52fde468940459ad2b98631215cb122ff403",
-        "bodyHash": "9ec651f6eb507b419b98576b23bfdbd6effe5695573e72522cbf8488b4b78bc1"
+        "outputHash": "3f9c6363e2bc0ba516f7f812179b01e8ff60a45b166a999acc83cc0e1127f375",
+        "bodyHash": "3269dd9cef2b01c96192c52d998960f7445b5a330bd51e6d79fb5da9374640f1"
       }
     },
     "start/workflow": {
@@ -626,11 +626,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/start/workflow.md",
         "record": "docs-sync/translations/start/workflow.json",
-        "outputHash": "9ac3d3c689e6ca6b40b0b78906dbe1063b5c1bbd13b8cf73e08f6cba79a73feb",
-        "bodyHash": "1d6ddfdf7d209cf1dcc73cc09558ed92fcef34152381545bd06d3f5548794278"
+        "outputHash": "abbea6bc824ea1f1262043d2991127c7e0711344e2b356839457831abba92b4e",
+        "bodyHash": "00adec418c5e8a13bec08be1b2cfea41d75aa68712c7645ff6829fb124644d5a"
       }
     },
     "tools/ci": {
@@ -648,11 +648,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/tools/ci.md",
         "record": "docs-sync/translations/tools/ci.json",
-        "outputHash": "2bc5d86f233ceab8b24c678b90b0ef74cd2082d98319e2543ff19d0414caeeb6",
-        "bodyHash": "2a78e69d60dd4660ac0181ba37085938d9af15a404da14739b521138ed4aece5"
+        "outputHash": "c8901e08ff61431333834b45ccd17982df1bbed68e45ac94dbb9d19603489a81",
+        "bodyHash": "545713daa148a45b7a2a8b17ed3d2145a76f6a73e9d2d838326962958f45c552"
       }
     },
     "tools/cli": {
@@ -670,11 +670,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/tools/cli.md",
         "record": "docs-sync/translations/tools/cli.json",
-        "outputHash": "8c1ab518336b2faffd7e19de5aeebe083c602e255e544689b06191bc7ec75a49",
-        "bodyHash": "e63c9f813215b7cad80e2390526ccc2d1fa0b8e141a5a5c728e5086bca63d5b3"
+        "outputHash": "5038b872ef4990ec281a2dec8fb71d04cf6bd979b234dd9a9d2a1748ea0d519d",
+        "bodyHash": "5432da571404784ad3b25d001957d162fbc558096a2e4269567e3f66410066aa"
       }
     },
     "tools/editor": {
@@ -692,11 +692,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/tools/editor.md",
         "record": "docs-sync/translations/tools/editor.json",
-        "outputHash": "ca172623abfbb964b944bb4c099a5f84a1e0119c8f7d72626169acb82c19f3ef",
-        "bodyHash": "4a9cbca6a8f5d3f052ad94b9bca7c103e18c565fdd798f060464e62a838d4e1a"
+        "outputHash": "bc8c0809c3a47ea3fdff990731a555abd17f157cfe62a283039fed6a69fc4b32",
+        "bodyHash": "41603876d5e94692e452f593a74893ffb55d017af1620592eae33165b8b86b4d"
       }
     },
     "tools/scripting": {
@@ -714,11 +714,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/tools/scripting.md",
         "record": "docs-sync/translations/tools/scripting.json",
-        "outputHash": "5b4b97075760101152651659f9d9a6af5d92cee0919c32069bd369b04685de24",
-        "bodyHash": "aa3cb5449f98a5a437796c050e2fb71531aba8327069689c301971ef3714f5fc"
+        "outputHash": "08af5d87331b5d61d391d6c81435a9a035700afc26fae59e288865f499866c66",
+        "bodyHash": "558b58890407e8e643bd65049c81cfbd8fa78c4a97b955d9cc082b10d6ca655b"
       }
     },
     "tools/skills": {
@@ -736,11 +736,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/tools/skills.md",
         "record": "docs-sync/translations/tools/skills.json",
-        "outputHash": "1188df727ae7059b2228662a53cd248d6c7d5b4c8a4d0e8dedb9a49ac0377d12",
-        "bodyHash": "90ed3d9fb5e75fc322a87bd470bc1913a1acbc02a316d9c520b168b36401856a"
+        "outputHash": "6216aca73a988b75cb71b7d9f18a2a5f5218d82d2f5950c10d12c02e1bda1076",
+        "bodyHash": "be2730e2df9193ce9e1083c6a20920424a1a9db9430619fd6e996b4570064940"
       }
     },
     "tools/vscode": {
@@ -758,11 +758,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/tools/vscode.md",
         "record": "docs-sync/translations/tools/vscode.json",
-        "outputHash": "1fcc056ca345c9dd726292080785d0e3fbfdd4d2d3aa97bf960830365cf391ff",
-        "bodyHash": "f0648074cd745630aad0643f5f04b70adb543d275c0092b6001f0f621d9954de"
+        "outputHash": "439124b63d5523d4fed36945abe6363635e8cd5fe9747fc91fbc9f740bc9a580",
+        "bodyHash": "cbced77f8a5ba9876323ae79bfda2d07ee461b852f493e612e79da61a8903f33"
       }
     },
     "plugin/diagnostics/dfx1xxx": {
@@ -780,11 +780,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/plugin/diagnostics/dfx1xxx.md",
         "record": "docs-sync/translations/plugin/diagnostics/dfx1xxx.json",
-        "outputHash": "818a1596dcda4e22d9d5da9885779217ed9e1e5d6e780992bed0b201ffcc757d",
-        "bodyHash": "f7acdbf4e9a433c0a058a00e14790686dbe475cd012bf02fead5f6e468dea002"
+        "outputHash": "538a4dd0795644d810cdc2815af942c09cd18a0b29cf04d0b585019bd22c0600",
+        "bodyHash": "feaeacf95a837534a5019840ec97c4ae6a46a1f604002cfdf2c36f520ce9367e"
       }
     },
     "plugin/diagnostics/dfx2xxx": {
@@ -802,11 +802,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/plugin/diagnostics/dfx2xxx.md",
         "record": "docs-sync/translations/plugin/diagnostics/dfx2xxx.json",
-        "outputHash": "761edae85ccd83f5c64affa7d810fb9e4cdca40c884e5ea38fcc295e66cea315",
-        "bodyHash": "68f24b4fddb1d93bb573db391aaf1109b265b5509c81b11026291ec9a3626ce4"
+        "outputHash": "1e08f7441b1faceafd2b7607fad9839a8a4a45840bd46b1c1e2f1d78f422e7de",
+        "bodyHash": "20323bf97df0de9b2c076d0580f9336e009d5cffc04487929d4e75fc3eba4a13"
       }
     },
     "plugin/diagnostics/dfx3xxx": {
@@ -828,11 +828,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/plugin/diagnostics/dfx3xxx.md",
         "record": "docs-sync/translations/plugin/diagnostics/dfx3xxx.json",
-        "outputHash": "549685d9068b4193d78822b91226cec5c69824a3d8a216f1cc98a56004c452d3",
-        "bodyHash": "5fa56788d7d2a26ebe32c1cd6c5d5b14c9aca4973d00ba9e0415802d9177962a"
+        "outputHash": "8fb6a1c221001b7fae6fb98fe1c6132d97560238e5f87c06f3d645ac7047f4ae",
+        "bodyHash": "a80ea5116aea11484fe1dae007328637f29cc74c15a721b3a50dea1b9922cec9"
       }
     },
     "plugin/diagnostics/dfx4xxx": {
@@ -850,11 +850,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/plugin/diagnostics/dfx4xxx.md",
         "record": "docs-sync/translations/plugin/diagnostics/dfx4xxx.json",
-        "outputHash": "4694769961fb8bbc410d9969401d87941f52a6a5c2098c2c2a89661dd01a98c8",
-        "bodyHash": "4497ff7707a4af4d41c299c044b3b16c78688ace8921ff8d6956eade00174bd6"
+        "outputHash": "10ac1d6d77771f119b48787fcb58fe7563fa5e2377d743b1b3d419b0c2388f3c",
+        "bodyHash": "e3beb206d953599236bdc10e7c54e3efd2d0ccce5603cc51aef6385990622cf5"
       }
     },
     "plugin/diagnostics/dfx5xxx": {
@@ -880,11 +880,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/plugin/diagnostics/dfx5xxx.md",
         "record": "docs-sync/translations/plugin/diagnostics/dfx5xxx.json",
-        "outputHash": "72b07e667e15d7410363d94fceb7b8e405cf7d39862b2f5a43928c95bda5c498",
-        "bodyHash": "67159610c66ad1d60f5f6aab30301e59a17fe17619b08c56e0fd1af7d478096f"
+        "outputHash": "46d73045f9f645e3c391ffea727bd230fa87a4f8445fd176ad4bc19cec09744e",
+        "bodyHash": "fc07beddcd5e1e3b59d3b266a4fc2d34f0ad73e56d87cce47f665bf516bdc66b"
       }
     },
     "plugin/diagnostics/dfx6xxx": {
@@ -902,11 +902,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/plugin/diagnostics/dfx6xxx.md",
         "record": "docs-sync/translations/plugin/diagnostics/dfx6xxx.json",
-        "outputHash": "b7dd22d4f06dadd34a245e1e195955079404060e42ec896b4c3c1b496378baf7",
-        "bodyHash": "c7fca627527a030ade5a5cefc408bb12e0acb51b404fdd836a439bf75c890481"
+        "outputHash": "5e4929fb458319b81c85625b07f5eea33e95b58647e17cd4d731660776ed7dba",
+        "bodyHash": "8d835153dcf8a910346c4beb347a12c73424fbb9a88f9c85a5911793003c26ad"
       }
     },
     "plugin/diagnostics/dfx7xxx": {
@@ -924,11 +924,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/plugin/diagnostics/dfx7xxx.md",
         "record": "docs-sync/translations/plugin/diagnostics/dfx7xxx.json",
-        "outputHash": "ee554b6cd752685dcabcae7f5030bbc0c40a0dde734b570cec542be431c8d909",
-        "bodyHash": "9eba755900a2427fa3f71db7dd1a3fea4d790b1fc2664246d7d109eb385efeb9"
+        "outputHash": "d96261a4db405280adccd48ee03ba38408adc8833ed8d53c907e0614bc1b134a",
+        "bodyHash": "59133569b2678759d9de9ccc7c91871bf9f46a64d4373d11e946174ab4512ad3"
       }
     },
     "plugin/diagnostics/dfx8xxx": {
@@ -946,11 +946,11 @@
         }
       ],
       "translation": {
-        "status": "unreviewed",
+        "status": "current",
         "output": "content/docs/plugin/diagnostics/dfx8xxx.md",
         "record": "docs-sync/translations/plugin/diagnostics/dfx8xxx.json",
-        "outputHash": "d5f4ba84a9536723f6d183195480ecade560a7b2fd54845021819904e7546b8b",
-        "bodyHash": "e9d64429e8ab2553f1c7d42d88331aba990cb07b6681e8968ae1989880e3cb60"
+        "outputHash": "26e8288614d90ae57308be14c815aa953f357d4ca0f4f75b5418b099849373a0",
+        "bodyHash": "a24a3a9df570ffda36f860510f791dc5ea67ac30bfd823ab27ad756ee25d73e4"
       }
     },
     "plugin/diagnostics/readme": {
@@ -968,7 +968,11 @@
         }
       ],
       "translation": {
-        "status": "missing"
+        "status": "current",
+        "output": "content/docs/plugin/diagnostics/readme.md",
+        "record": "docs-sync/translations/plugin/diagnostics/readme.json",
+        "outputHash": "92249e700d842db23d476c2f9368a8e1986dccbfbcfb99485c0338b2ebf429d4",
+        "bodyHash": "f31bf76155e1713b110b05a3ec9433aeef5abf6f25442bd4bc98734097f4e368"
       }
     },
     "plugin/getting-started": {
@@ -986,7 +990,11 @@
         }
       ],
       "translation": {
-        "status": "missing"
+        "status": "current",
+        "output": "content/docs/plugin/getting-started.md",
+        "record": "docs-sync/translations/plugin/getting-started.json",
+        "outputHash": "d089a53809e0f667b6e4cfe5b9d847e65cfb44dc54ad7af071c73a91a14a7442",
+        "bodyHash": "da98939244387f397d869e3790cdef344f10b916769919adf61140f0243772df"
       }
     },
     "plugin/language/native-emitter-inheritance": {
@@ -1004,7 +1012,11 @@
         }
       ],
       "translation": {
-        "status": "missing"
+        "status": "current",
+        "output": "content/docs/plugin/language/native-emitter-inheritance.md",
+        "record": "docs-sync/translations/plugin/language/native-emitter-inheritance.json",
+        "outputHash": "3b37f096acef1bbfcd19cc9653aaa5a0df17222aa6de0459d8810c4e2e432630",
+        "bodyHash": "6fa7280aec8ec019de181f13e9bffd195e0ed911cde5bdedd3f72b669630a1f2"
       }
     },
     "plugin/language/system-inheritance": {
@@ -1022,7 +1034,11 @@
         }
       ],
       "translation": {
-        "status": "missing"
+        "status": "current",
+        "output": "content/docs/plugin/language/system-inheritance.md",
+        "record": "docs-sync/translations/plugin/language/system-inheritance.json",
+        "outputHash": "615cfa9447b6c37d93d6087f7d04611def9d8ebd0f1c59825f23e8b3f8a7992b",
+        "bodyHash": "4cb32d87870e8f2bd86c8e66e0b6457c7392d0b127cf5a0173c96c07b3f08fe7"
       }
     },
     "plugin/tools/asset-comparison-and-export": {
@@ -1040,7 +1056,11 @@
         }
       ],
       "translation": {
-        "status": "missing"
+        "status": "current",
+        "output": "content/docs/plugin/tools/asset-comparison-and-export.md",
+        "record": "docs-sync/translations/plugin/tools/asset-comparison-and-export.json",
+        "outputHash": "15ef29966f57ae485954b87f215e7354bdd7abae7204ec93b6d75789c1b803e3",
+        "bodyHash": "9be23426f31209f528c0d915928876b9cc1976606ac7e6047735351cf027d29c"
       }
     },
     "plugin/tools/incremental-builds": {
@@ -1058,7 +1078,11 @@
         }
       ],
       "translation": {
-        "status": "missing"
+        "status": "current",
+        "output": "content/docs/plugin/tools/incremental-builds.md",
+        "record": "docs-sync/translations/plugin/tools/incremental-builds.json",
+        "outputHash": "429cca8432e39b3ac6fc9b2d9c7d192ba97bc153725cf4cae22f82daf4efe50f",
+        "bodyHash": "0a60ed6cd7b4e778a9bfbbb942f2e15842e12cd97f026ea99fdffbaf57c48586"
       }
     },
     "plugin/tools/incremental-build-reference": {
@@ -1076,7 +1100,11 @@
         }
       ],
       "translation": {
-        "status": "missing"
+        "status": "current",
+        "output": "content/docs/plugin/tools/incremental-build-reference.md",
+        "record": "docs-sync/translations/plugin/tools/incremental-build-reference.json",
+        "outputHash": "e9d7531345bdf29dbcb95561c8e1e8b49e2e41a0ff9f4ff366f16b1e87ecf32f",
+        "bodyHash": "006f309adf7b0148dbe63101b48e22902103cddfbf1b9f0291e93aa4d46bc618"
       }
     },
     "plugin/tools/pull": {
@@ -1094,7 +1122,11 @@
         }
       ],
       "translation": {
-        "status": "missing"
+        "status": "current",
+        "output": "content/docs/plugin/tools/pull.md",
+        "record": "docs-sync/translations/plugin/tools/pull.json",
+        "outputHash": "0f9603756b54ba4a1834ef135e3ee2c2ffc6929c473bcc219f616b625f23b871",
+        "bodyHash": "798085854c7c1e019dad77de3238375ab52a71d4042550074b43a04c189afa84"
       }
     },
     "plugin/tools/write-back-coverage": {
@@ -1112,7 +1144,11 @@
         }
       ],
       "translation": {
-        "status": "missing"
+        "status": "current",
+        "output": "content/docs/plugin/tools/write-back-coverage.md",
+        "record": "docs-sync/translations/plugin/tools/write-back-coverage.json",
+        "outputHash": "9a6fd5a9699a1bd8aca4ee61fe5c9f2346ba7ce51717dc57bad965979dc28a32",
+        "bodyHash": "3ba245d26d65071d05f79a6dce9d618eff3e48fc737a1e6db7db25a1b272cb21"
       }
     }
   }

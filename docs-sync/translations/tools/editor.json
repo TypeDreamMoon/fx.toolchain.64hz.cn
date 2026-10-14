@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "status": "unreviewed",
-  "sourceHash": null,
-  "sourceRevision": "b1c700214cf15af4b2b6425520989557a8c55e94",
+  "status": "current",
+  "sourceHash": "167c8685e0a3cbd3a5f6fc9d686d47aa6c23b16c891d4d5e8e2c4154855c343c",
+  "sourceRevision": "a31430767998e154603e58c84ea52b2e619fde00",
   "sources": [
     {
       "path": "Docs/tools/editor-integration.md",
-      "sourceHash": null,
-      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
-      "translationHash": "edd26ca6c879840fbb1467b5d8d7b99b5cf9aeda7df2c371e5c6fb1a67064ed6"
+      "sourceHash": "9d9a8f25619d020c6c12a1ccd96cfdc40ca6555e4f5164862d47f76b79d36a2c",
+      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
+      "translationHash": "377cbf3a4258de074888512e5f0176bdab894667af1c7524b325580257dea061"
     }
   ],
   "translationFile": "content/docs/tools/editor.md",
-  "translationHash": "ca172623abfbb964b944bb4c099a5f84a1e0119c8f7d72626169acb82c19f3ef"
+  "translationHash": "bc8c0809c3a47ea3fdff990731a555abd17f157cfe62a283039fed6a69fc4b32"
 }

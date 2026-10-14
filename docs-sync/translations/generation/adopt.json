@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "status": "unreviewed",
-  "sourceHash": null,
-  "sourceRevision": "b1c700214cf15af4b2b6425520989557a8c55e94",
+  "status": "current",
+  "sourceHash": "d0ba57aeea57e619c7c465d339f5ae7899c9de9f6eafe9e42b4a9dfbb50c10a6",
+  "sourceRevision": "a31430767998e154603e58c84ea52b2e619fde00",
   "sources": [
     {
       "path": "Docs/generation/adopt.md",
-      "sourceHash": null,
-      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
-      "translationHash": "7b6babeb460dc1e636f205f258eff6f35a257fb5c3c289a4431c6a8877cb4c23"
+      "sourceHash": "debe5627b2d39e57deef587e5b0fdb56f2b6656dd49c09eb46b84096da4cf3a3",
+      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
+      "translationHash": "8619582617e3815226818190c1123ed26fb3fc029d774ad26e8acea8db58eb5c"
     }
   ],
   "translationFile": "content/docs/generation/adopt.md",
-  "translationHash": "60e7d36ffd8ec27554f357b85d0efe7eeb9926d00ed747bb43f186db232a99aa"
+  "translationHash": "feec8f432f6460bcacf24403acf6f49a46d31362343a71e37028d9b804fb3f78"
 }

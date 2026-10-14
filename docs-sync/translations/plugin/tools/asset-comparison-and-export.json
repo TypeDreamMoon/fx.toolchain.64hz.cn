@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "status": "current",
+  "sourceHash": "f58077e4ba0cb5a4af3ea34778ac6fd16d03c5802690a484172c68964944deb1",
+  "sourceRevision": "a31430767998e154603e58c84ea52b2e619fde00",
+  "sources": [
+    {
+      "path": "Docs/tools/asset-comparison-and-export.md",
+      "sourceHash": "dccc56525d05ab27511cf3fb24a3459dd99bbf97b35b06e8b0356e744c886b76",
+      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
+      "translationHash": "c3780196f1268dcc73934c4838aa45f72e4ee5442a6d13fcb8ffd3d7f0490de7"
+    }
+  ],
+  "translationFile": "content/docs/plugin/tools/asset-comparison-and-export.md",
+  "translationHash": "15ef29966f57ae485954b87f215e7354bdd7abae7204ec93b6d75789c1b803e3"
+}

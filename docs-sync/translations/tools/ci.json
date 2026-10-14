@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "status": "unreviewed",
-  "sourceHash": null,
-  "sourceRevision": "b1c700214cf15af4b2b6425520989557a8c55e94",
+  "status": "current",
+  "sourceHash": "85b13b4d21b0eb7bda7d4c126e865ec0916831ec3706379f4ad36c16b6adbed5",
+  "sourceRevision": "a31430767998e154603e58c84ea52b2e619fde00",
   "sources": [
     {
       "path": "Docs/tools/ci.md",
-      "sourceHash": null,
-      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
-      "translationHash": "8a4d6052ecce7ad2690cacc9909f88a3a3375a301cae3aee582f4d10344d707c"
+      "sourceHash": "b973f3c8a538e79f8d5bccbfed0e4e3d565cbbc3f381315f2393eebbd2eb27f9",
+      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
+      "translationHash": "a1a0da43273cb2f55a2eec489090371f93006784f750849dd26295a57f18c587"
     }
   ],
   "translationFile": "content/docs/tools/ci.md",
-  "translationHash": "2bc5d86f233ceab8b24c678b90b0ef74cd2082d98319e2543ff19d0414caeeb6"
+  "translationHash": "c8901e08ff61431333834b45ccd17982df1bbed68e45ac94dbb9d19603489a81"
 }

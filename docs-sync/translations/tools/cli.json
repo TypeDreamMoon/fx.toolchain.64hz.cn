@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "status": "unreviewed",
-  "sourceHash": null,
-  "sourceRevision": "b1c700214cf15af4b2b6425520989557a8c55e94",
+  "status": "current",
+  "sourceHash": "7ed6ad2d21bc6acbb12b196e342fb8e13bad8140c46ea60b660aac0be5436eeb",
+  "sourceRevision": "a31430767998e154603e58c84ea52b2e619fde00",
   "sources": [
     {
       "path": "Docs/tools/headless-compilation.md",
-      "sourceHash": null,
-      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
-      "translationHash": "9cd153977b914ff8f75983fc831eaa07f66bc728b0079a49b2e5063a03100277"
+      "sourceHash": "0b0868e9b4650738f13b7ab091c8228b703740fb976c229dfd0b51cce0da9690",
+      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
+      "translationHash": "c8601b5824f0611e14f2d81b0e0383f7c6b02f2fbcce754a1a114aa6b9f4b590"
     }
   ],
   "translationFile": "content/docs/tools/cli.md",
-  "translationHash": "8c1ab518336b2faffd7e19de5aeebe083c602e255e544689b06191bc7ec75a49"
+  "translationHash": "5038b872ef4990ec281a2dec8fb71d04cf6bd979b234dd9a9d2a1748ea0d519d"
 }
