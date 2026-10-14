@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "status": "unreviewed",
+  "sourceHash": null,
+  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+  "sources": [
+    {
+      "path": "Docs/tools/editor-integration.md",
+      "sourceHash": null,
+      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "translationHash": "edd26ca6c879840fbb1467b5d8d7b99b5cf9aeda7df2c371e5c6fb1a67064ed6"
+    }
+  ],
+  "translationFile": "content/docs/tools/editor.md",
+  "translationHash": "ca172623abfbb964b944bb4c099a5f84a1e0119c8f7d72626169acb82c19f3ef"
+}

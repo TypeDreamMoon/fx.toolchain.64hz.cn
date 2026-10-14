@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "status": "unreviewed",
+  "sourceHash": null,
+  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+  "sources": [
+    {
+      "path": "Docs/diagnostics/DFX5xxx.md",
+      "sourceHash": null,
+      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "translationHash": "b3e3fb074e90a650e87093d8a66069fb0e44278add0bead92370b72a947af3be"
+    },
+    {
+      "path": "Docs/diagnostics/history/DFX5099.md",
+      "sourceHash": null,
+      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "translationHash": "4b9fa0182b2a6ffd33ec4fee49ab0ef9946fe2dd99193369c45564f1ce0a4483"
+    },
+    {
+      "path": "Docs/diagnostics/history/unpublished-codes.md",
+      "sourceHash": "cc531cb5892263a7bab97b3fb53a608628bba0576dcf835adb37946344a5891b",
+      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "translationHash": "048f1e6a9479cb6e1fdd9ce44f544a6826f52b83d71c0216333d83f3aee2f196"
+    }
+  ],
+  "translationFile": "content/docs/plugin/diagnostics/dfx5xxx.md",
+  "translationHash": "72b07e667e15d7410363d94fceb7b8e405cf7d39862b2f5a43928c95bda5c498"
+}

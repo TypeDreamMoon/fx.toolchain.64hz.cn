@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "status": "unreviewed",
+  "sourceHash": null,
+  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+  "sources": [
+    {
+      "path": "Docs/generation/provenance.md",
+      "sourceHash": null,
+      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "translationHash": "cc0d76ccdc52a8c17c777d8f5c2b56589e825de616b7c6722821ac878d0afb9e"
+    }
+  ],
+  "translationFile": "content/docs/generation/provenance.md",
+  "translationHash": "9268e28c2cbc0a402957c4d153b57c2d393c9cfbcf5c8021cdf20a9e782b6b55"
+}

@@ -23,7 +23,7 @@ pwsh -File Plugins/DreamFX/.skill/dfx.ps1 list
 ```
 
 That prints every Niagara module on the default search paths. If it errors before printing anything,
-the engine could not be resolved — pass `-Engine <root>` or set `UE_ENGINE_ROOT`.
+the engine could not be resolved (the driver looks the project's `EngineAssociation` up in the registry and in the Epic Games Launcher's install manifest) — pass `-Engine <root>` or set `UE_ENGINE_ROOT`.
 
 ---
 
@@ -153,6 +153,10 @@ Save-and-rebuild is wired up: the editor watches every `DFX/` root and rebuilds 
 saved. Open the generated asset in the Niagara editor and it refreshes on each rebuild — that is the
 live preview, and it costs nothing to set up.
 
+A save writes only what changed since the last build — a one-value edit takes a fraction of a second
+instead of rebuilding the whole system — and falls back to a full rebuild by itself when it cannot
+trust the asset's last state. See [tools/incremental-builds.md](/en/docs/plugin/tools/incremental-build-reference).
+
 One rule, and it is not optional: **despawn instances of a system before rebuilding it.** A live
 `NiagaraActor` during a hot-swap can see a half-built renderer layout and assert on a render worker,
 which takes the editor with it. It is an engine race, not something DreamFX can guard.
@@ -223,8 +227,10 @@ not a gate.
   [values and rules](/en/docs/language/values).
 - **[tools/editor-integration.md](/en/docs/tools/editor)** — every menu, every toast, the
   workspace file, VSCode discovery, and how to call the same commands from Python.
+- **[tools/incremental-builds.md](/en/docs/plugin/tools/incremental-build-reference)** — what a save writes, what each kind
+  of edit costs, and when a build falls back to rebuilding everything.
 - **[diagnostics/](/en/docs/plugin/diagnostics/readme)** — every `DFXnnnn`.
-- **[../CHANGELOG.md](https://github.com/TypeDreamMoon/DreamFX/blob/92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa/CHANGELOG.md)** — what each release covers, and the known-issue list.
+- **[../CHANGELOG.md](https://github.com/TypeDreamMoon/DreamFX/blob/c6ac796202e623a3fd81d32addce75f8ef5fa8ef/CHANGELOG.md)** — what each release covers, and the known-issue list.
 
 To ask the coverage question of your own content — what fraction of it DreamFX can already
 represent, and which gaps are worth closing — run it yourself:

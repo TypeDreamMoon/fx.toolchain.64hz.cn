@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "status": "unreviewed",
+  "sourceHash": null,
+  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+  "sources": [
+    {
+      "path": "Docs/diagnostics/DFX1xxx.md",
+      "sourceHash": null,
+      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "translationHash": "8a472172bfc6dda22af0ba27e91e9cec0a5359dd5915984cd4843f40c5d30366"
+    }
+  ],
+  "translationFile": "content/docs/diagnostics/dfx1xxx.md",
+  "translationHash": "818a1596dcda4e22d9d5da9885779217ed9e1e5d6e780992bed0b201ffcc757d"
+}

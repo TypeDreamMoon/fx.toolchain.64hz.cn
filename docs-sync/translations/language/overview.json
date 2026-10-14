@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "status": "unreviewed",
+  "sourceHash": null,
+  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+  "sources": [
+    {
+      "path": "Docs/language/README.md",
+      "sourceHash": null,
+      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "translationHash": "caaf3617eeeb2c636e376a9aa80fdd836b620c3f867a564240a7214e20271e28"
+    }
+  ],
+  "translationFile": "content/docs/language/overview.md",
+  "translationHash": "e37e47907532ca40bfc25ab106946248260db8969b1f307ae3d3a24cd7f9ead7"
+}

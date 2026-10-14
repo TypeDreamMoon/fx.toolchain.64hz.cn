@@ -53,7 +53,9 @@
       "format": "md",
       "title": "DFX3xxx — Declarations and document structure",
       "description": "Every DFX3xxx diagnostic, with its severity, verbatim message, cause and fix.",
-      "locale": "en"
+      "locale": "en",
+      "titleZh": "DFX3xxx — 声明与文档结构",
+      "descriptionZh": "DFX3xxx 段的全部诊断码，每条带严重级别、逐字消息、成因与修法。"
     },
     {
       "id": "diagnostics/dfx4xxx",
@@ -83,7 +85,9 @@
       "format": "md",
       "title": "DFX5xxx — Generation and asset writing",
       "description": "Every DFX5xxx diagnostic, with its severity, verbatim message, cause and fix.",
-      "locale": "en"
+      "locale": "en",
+      "titleZh": "DFX5xxx — 生成与资产写入",
+      "descriptionZh": "DFX5xxx 段的全部诊断码，每条带严重级别、逐字消息、成因与修法。"
     },
     {
       "id": "diagnostics/dfx6xxx",
@@ -570,7 +574,18 @@
       "format": "md",
       "locale": "en",
       "title": "Build on save and up-to-date checks",
-      "description": "The published DreamFX workflow: full rebuilds after source changes and provenance-based skips for unchanged sources."
+      "description": "The published DreamFX save workflow: incremental updates, full rebuild fallbacks and provenance checks."
+    },
+    {
+      "id": "plugin/tools/incremental-build-reference",
+      "sources": [
+        {
+          "path": "Docs/tools/incremental-builds.md"
+        }
+      ],
+      "format": "md",
+      "locale": "en",
+      "title": "Incremental build reference"
     },
     {
       "id": "plugin/tools/pull",
@@ -595,5 +610,6 @@
   ],
   "exclude": [
     "Docs/README.md"
-  ]
+  ],
+  "siteUrl": "https://fx.toolchain.64hz.cn"
 }

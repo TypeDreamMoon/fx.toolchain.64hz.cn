@@ -19,7 +19,7 @@ description: "DFX5xxx --- Generation and asset writing"
 Stack '%s' has no Niagara script usage mapping.
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:1350`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:1355`
 <!-- generated:end DFX5001 -->
 
 **Cause.** A stack kind with no Niagara script usage behind it. Every kind the parser can produce
@@ -40,7 +40,7 @@ was added to the enum without extending `ScriptUsageForStack`.
 This system declares no emitters, so it will produce nothing.
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:2473`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:2479`
 <!-- generated:end DFX5002 -->
 
 **Cause.** A system with no emitters compiles and produces nothing.
@@ -58,7 +58,7 @@ This system declares no emitters, so it will produce nothing.
 '%s' is not declared in this source, so its existing modules are left as-is: %s
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:3301`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:4064`
 <!-- generated:end DFX5003 -->
 
 **Cause.** Declaring a stack means taking it over; a stack this source never mentions keeps whatever it had. `CreateNiagaraSystem` puts a `SystemState` in `SystemUpdate`, and clearing it wholesale would make every `.dfs` without an explicit `SystemUpdate` produce a system that never runs. Informational so the difference is visible rather than silent.
@@ -76,12 +76,48 @@ This system declares no emitters, so it will produce nothing.
 No Material was set, so the engine default was applied: %s. Write 'Material = \"...\";' to choose your own.
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:3470`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:4323`
 <!-- generated:end DFX5004 -->
 
 **Cause.** A renderer with no `Material` gets the engine default, which is why an untextured effect still draws.
 
 **Fix.** Write `Material = "...";` to choose your own.
+
+## DFX5015
+
+<!-- generated:begin DFX5015 -->
+**Severity** error
+
+**Message**
+
+```
+Emitter '%s' has no record in the last build's plan.
+```
+
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:4106`
+<!-- generated:end DFX5015 -->
+
+**Cause.** _Not written yet._
+
+**Fix.** _Not written yet._
+
+## DFX5020
+
+<!-- generated:begin DFX5020 -->
+**Severity** error
+
+**Message**
+
+```
+The last build of this stack recorded %d module node(s) for %d module(s), so its nodes cannot be addressed.
+```
+
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:2919`
+<!-- generated:end DFX5020 -->
+
+**Cause.** _Not written yet._
+
+**Fix.** _Not written yet._
 
 ## DFX5027
 
@@ -94,7 +130,7 @@ No Material was set, so the engine default was applied: %s. Write 'Material = \"
 Could not read native parent defaults: %s.
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:2249`, `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:2328`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:2255`, `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:2334`
 <!-- generated:end DFX5027 -->
 
 **Cause.** An explicit default changes a native parent's parameter type, or Niagara could not apply the emitter's declared or inherited defaults.
@@ -112,7 +148,7 @@ Could not read native parent defaults: %s.
 SavePackage failed for '%s'.
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1425`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1436`
 <!-- generated:end DFX5030 -->
 
 **Cause.** Writing the package failed -- read-only file, source control lock, or a path the process cannot write.
@@ -130,7 +166,7 @@ SavePackage failed for '%s'.
 Emitter '%s' declares more than one OnEvent block. Only one event handler per emitter is representable; split the extra handlers into their own emitters.
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:2398`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:2404`
 <!-- generated:end DFX5031 -->
 
 **Cause.** An emitter block declares two or more `OnEvent` blocks.
@@ -150,7 +186,7 @@ DreamFX reaches event stacks through the external edit API's ordinary stack rail
 Emitter '%s' declares two Stage blocks named '%s'. Stages are identified by name; rename one.
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:2376`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:2382`
 <!-- generated:end DFX5032 -->
 
 **Cause.** One emitter declares two `Stage` blocks with the same name. The write side
@@ -173,7 +209,7 @@ its own.
 Emitter '%s' declares Stage blocks but simulates on the CPU. Simulation stages are a GPU feature: set `SimTarget = GPU` in the emitter's Settings.
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:3614`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:4495`
 <!-- generated:end DFX5033 -->
 
 **Cause.** An emitter declares `Stage` blocks while simulating on the CPU. Simulation stages are a
@@ -195,7 +231,7 @@ emitters cannot compute for themselves), or delete the `Stage` blocks.
 Emitter '%s' uses 'as %s' on two module calls. Node names are unique per emitter; rename one.
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:2453`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:2459`
 <!-- generated:end DFX5034 -->
 
 **Cause.** Two module calls in one emitter carry the same `as <name>` suffix. The suffix names the
@@ -235,7 +271,7 @@ are unique by construction, so this fires on hand-edited sources.
 OnEvent source '%s' is an id no emitter in this system answers to, so this handler never fires. Point it at the emitter that raises the event, or delete the handler.
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:3537`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:4404`
 <!-- generated:end DFX5036 -->
 
 **Cause.** An `OnEvent` header's `Source` is an id no emitter in this system answers to, written the
@@ -267,7 +303,7 @@ names a live emitter.
 'MaterialParam' is reserved syntax and is not implemented in v1 (plan section 7).
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:1772`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:1777`
 <!-- generated:end DFX5093 -->
 
 **Cause.** `MaterialParam` is reserved syntax (L8) with no implementation in v1.
@@ -285,7 +321,7 @@ names a live emitter.
 Only System documents can be generated right now; this file declares a %s.
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:4273`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:5192`
 <!-- generated:end DFX5097 -->
 
 **Cause.** Only `.dfs` and `.dfm` produce assets. A `.dfe` is merged into its host by copy (R3) and has nothing of its own to generate.
@@ -303,7 +339,7 @@ Only System documents can be generated right now; this file declares a %s.
 Data interface parameter '%s' takes its configuration as a quoted JSON object, the form the decompiler writes.
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:2031`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:2037`
 <!-- generated:end DFX5098 -->
 
 **Cause.** A `DI<T>` user parameter's configuration is a quoted JSON object — the same verbatim form a module's data interface input takes, and the form the exporter writes. Anything else here is a value the applier cannot read. The code also reports under DFX5098 when the configuration was well-formed but the engine refused to apply it, which usually means a property name in the blob no longer exists on that interface class.
@@ -323,7 +359,7 @@ Data interface parameter '%s' takes its configuration as a quoted JSON object, t
 '%s' is a %s with no generated asset at '%s', and %s
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:832`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:834`
 <!-- generated:end DFX5100 -->
 
 **Cause.** No previously generated asset was found, and this build has no graph backend to make one. That is rarer than it used to be: an engine that does not export the five declarations still gets the reflection backend, so reaching this means its startup self-check failed and the message names which check it was. See [dfm.md](/en/docs/language/dfm) for the three outcomes.
@@ -341,7 +377,7 @@ Data interface parameter '%s' takes its configuration as a quoted JSON object, t
 (built at runtime)
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:714`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:716`
 <!-- generated:end DFX5101 -->
 
 **Cause.** The `Root="..."` on a `.dfm` does not name a mounted content root.
@@ -359,7 +395,7 @@ Data interface parameter '%s' takes its configuration as a quoted JSON object, t
 Input '%s' is marked [StaticSwitch]. Tier-one generation (plan 3.3) lowers the whole Body to a single custom HLSL node, which has no branch for a switch to select, so it is written as an ordinary input instead. The body reads it the same way; only the compile-time folding is lost.
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1066`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1068`
 <!-- generated:end DFX5102 -->
 
 **Cause.** Tier-one generation (plan 3.3) puts the whole body in one custom HLSL node, which has no branch for a switch to select, so a `[StaticSwitch]` input becomes an ordinary one. Said out loud because silently downgrading a declared compile-time switch to a runtime value is the kind of difference that surfaces later as a performance question nobody can source.
@@ -377,7 +413,7 @@ Input '%s' is marked [StaticSwitch]. Tier-one generation (plan 3.3) lowers the w
 Package '%s' exists on disk but could not be loaded.
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:744`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:746`
 <!-- generated:end DFX5103 -->
 
 **Cause.** The package exists on disk but would not load. Usually a partially written file or one held by another process.
@@ -395,7 +431,7 @@ Package '%s' exists on disk but could not be loaded.
 Package '%s' exists but holds no Niagara script named '%s'. Refusing to overwrite it.
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:753`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:755`
 <!-- generated:end DFX5104 -->
 
 **Cause.** The target package exists and holds something other than the expected script. DreamFX refuses to overwrite it rather than replacing an unrelated asset.
@@ -413,7 +449,7 @@ Package '%s' exists but holds no Niagara script named '%s'. Refusing to overwrit
 Could not create package '%s'.
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1115`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1117`
 <!-- generated:end DFX5105 -->
 
 **Cause.** The package could not be created -- usually an unmounted root or an invalid name.
@@ -431,7 +467,7 @@ Could not create package '%s'.
 Could not wire the module graph. The Niagara schema rejected a parameter map connection.
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1205`, `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1230`, `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1239`, `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1253`, `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1330`, `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1339`, `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1356`, `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1368`, `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1376`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1216`, `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1241`, `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1250`, `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1264`, `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1341`, `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1350`, `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1367`, `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1379`, `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:1387`
 <!-- generated:end DFX5106 -->
 
 **Cause.** The Niagara schema rejected a connection while building the module graph. A type mismatch between an input's declared type and the pin it feeds is the usual cause.
@@ -449,7 +485,7 @@ Could not wire the module graph. The Niagara schema rejected a parameter map con
 '%s' no longer matches the module asset at '%s', and this build cannot regenerate it. Rebuild it where a graph backend runs and commit the updated asset; %s
 ```
 
-**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:849`
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXModuleGenerator.cpp:851`
 <!-- generated:end DFX5107 -->
 
 **Cause.** The `.dfm` source no longer matches its committed asset, and this build has no graph backend to regenerate it. Distinct from DFX5100 because the remedy differs: there is an asset, it is simply out of date.
@@ -477,15 +513,13 @@ See [user parameters in the system reference](/en/docs/language/dfs) for the cur
 
 ## DFX5015
 
-**Compatibility entry only.** This number appeared in an earlier documentation snapshot, but
-it is not emitted by the published implementation documented here and is not part of its
-172-code generated catalog. The heading preserves existing links; it does not introduce a
-supported diagnostic or describe an unreleased feature. Use the
-[published diagnostic catalog](/en/docs/plugin/diagnostics/readme) to look up codes from this version.
+This compatibility heading preserves links from an earlier documentation snapshot. `DFX5015` is
+now part of the published incremental-build diagnostics: an emitter has no record in the last
+build's plan. See the current [DFX5015 reference](/en/docs/diagnostics/dfx5xxx#dfx5015) for its cause and remedy.
 
 ## DFX5020
 
-**Compatibility entry only.** This number is absent from the published implementation and its
-172-code generated catalog. It remains here solely so links from the earlier documentation
-snapshot have a destination. No current behavior or remedy is associated with this number in
-this manual. Consult the [published diagnostic catalog](/en/docs/plugin/diagnostics/readme) for supported codes.
+This compatibility heading preserves links from an earlier documentation snapshot. `DFX5020` is
+now part of the published incremental-build diagnostics: the stored module-node count does not
+match the stack's module count, so its nodes cannot be addressed. See the current
+[DFX5020 reference](/en/docs/diagnostics/dfx5xxx#dfx5020) for its cause and remedy.

@@ -19,7 +19,7 @@ description: "DFX1xxx --- Driver and file I/O"
 Could not read source file '%s'.
 ```
 
-**Raised by** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:2133`, `Source/DreamFXEditor/Private/WriteBack/DreamFXPull.cpp:2437`
+**Raised by** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:2133`, `Source/DreamFXEditor/Private/WriteBack/DreamFXPull.cpp:2527`
 <!-- generated:end DFX1000 -->
 
 **Cause.** The path does not exist, or the process cannot read it. A `from` reference and a `-File=` argument both land here.

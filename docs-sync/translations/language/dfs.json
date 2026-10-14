@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "status": "unreviewed",
+  "sourceHash": null,
+  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+  "sources": [
+    {
+      "path": "Docs/language/dfs.md",
+      "sourceHash": null,
+      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "translationHash": "2beca566e3bcc11f03119c429872a25940bd864dd8ab09cd2ab88c91b8e3fce9"
+    }
+  ],
+  "translationFile": "content/docs/language/dfs.md",
+  "translationHash": "6f6c3316d27c6ab24f922a967bc57d93487f3ad9bcaf3e22c6d304f04fff562c"
+}

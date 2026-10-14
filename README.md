@@ -1,6 +1,6 @@
 # fx.toolchain.64hz.cn — the DreamFXLang documentation site
 
-文档维护采用插件原文同步、AI 中文翻译 PR 与人工合并发布，配置见 [DOCS_SYNC.md](DOCS_SYNC.md)。
+中英文文档都在插件仓库维护。AI 配置留在本站，翻译 PR 开到插件仓库，人工合并后网站同步发布；见 [DOCS_SYNC.md](DOCS_SYNC.md)。
 
 The manual for [DreamFX](https://github.com/TypeDreamMoon/DreamFX): text-first Niagara authoring for
 Unreal Engine. Chinese is the default locale, English lives under `/en`.
@@ -146,7 +146,7 @@ premultiplied and bleeds the edge colour outward first.
 
 ## Updating diagnostics
 
-Use [DOCS_SYNC.md](DOCS_SYNC.md): plugin `Docs/diagnostics/` supplies English, and Chinese changes arrive in AI translation PRs for review. The old `scripts/diagnostics/sync.py` and its translation files are historical; do not use them to overwrite reviewed pages.
+Use [DOCS_SYNC.md](DOCS_SYNC.md): plugin `Docs/diagnostics/` supplies English, and `Docs/zh-CN/diagnostics/` supplies reviewed Chinese. AI runs from this website and opens PRs in the plugin repository; merged plugin documents are synchronized before publication. Website-only additions stay after `<!-- docs-sync:notes -->`. The old `scripts/diagnostics/sync.py` and its translation files are historical; do not use them to overwrite reviewed pages.
 
 ## Checking links
 

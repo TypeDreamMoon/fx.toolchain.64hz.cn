@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "status": "unreviewed",
+  "sourceHash": null,
+  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+  "sources": [
+    {
+      "path": "Docs/language/values.md",
+      "sourceHash": null,
+      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "translationHash": "bdf9db2b1a4f11b51ce190a29683b0511db9e2b8e43a31a0a4631f3af2e6bf3d"
+    }
+  ],
+  "translationFile": "content/docs/language/values.md",
+  "translationHash": "0126486aa99261e6db29e8d0f4c5f56b2431364a5db0f625f5e7d56bbebc1b89"
+}
