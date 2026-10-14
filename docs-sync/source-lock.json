@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repository": "TypeDreamMoon/DreamFX",
-  "revision": "ed0a113a039bed6d8a748dd532a85044e88aaa38",
+  "revision": "b1c700214cf15af4b2b6425520989557a8c55e94",
   "workingTree": false,
   "translationSnapshotHash": "cebcc407cddcef4392f183f9efc5559b0d693160c36e70e91fd3ebbeac1db725",
   "pages": {
@@ -1044,8 +1044,8 @@
       }
     },
     "plugin/tools/incremental-builds": {
-      "hash": "93f76a17920ecd38344385bce6702ef172ae1a96e0e21074e6f11ae130004e61",
-      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "hash": "635100f532c14e505be7f4a9e216cddcb1be7aac50ebbee36b58d89cde72dec2",
+      "revision": "b1c700214cf15af4b2b6425520989557a8c55e94",
       "output": "content/docs/plugin/tools/incremental-builds.en.md",
       "outputHash": "0c0fa546cee80a8c82565846e9b66b6208b44a9c7c65aa3862a83c5c2f3a5621",
       "locale": "en",
@@ -1054,7 +1054,7 @@
       "sources": [
         {
           "path": "Docs/tools/build-on-save.md",
-          "hash": "52e13f682feada2b27918f46a5f980b3ec854bb52c089ab7c736e0153689ffd9"
+          "hash": "cb9f30c9f33d7538a061fb8b7f72f7154d3ace459e426bbe3904076d1f917da8"
         }
       ],
       "translation": {
@@ -1062,17 +1062,17 @@
       }
     },
     "plugin/tools/incremental-build-reference": {
-      "hash": "6fd25db4671e653ea0ffb8e0b4a0c140517751d930c956d67403f79da05580d9",
-      "revision": "ed0a113a039bed6d8a748dd532a85044e88aaa38",
+      "hash": "bc4e435e11a06270cb8aa4b2bfc9c138feab90b1c9d9ccfc02e575184fab67cb",
+      "revision": "b1c700214cf15af4b2b6425520989557a8c55e94",
       "output": "content/docs/plugin/tools/incremental-build-reference.en.md",
-      "outputHash": "81cda0fa61b89301c8d76ca282437b594d4cc97a32f5060bda08f528951359f0",
+      "outputHash": "287ab1047d06eec495ad2205b7f1e0c62d6008216604f73564c926b3ae53f8f2",
       "locale": "en",
       "format": "md",
       "title": "Incremental build reference",
       "sources": [
         {
           "path": "Docs/tools/incremental-builds.md",
-          "hash": "5f778bcb31ab969e3be82dfa35ed15d2c57965fbed95089a6f51ca6626f6b56a"
+          "hash": "77be23013080cf8e619529ed9d236013a2fc994c38ec1c2d66ea9ca6f82cf507"
         }
       ],
       "translation": {

@@ -5,7 +5,7 @@ description: "Incremental build reference"
 
 # Incremental builds
 
-> [DreamFX](https://github.com/TypeDreamMoon/DreamFX/blob/ed0a113a039bed6d8a748dd532a85044e88aaa38/README.md) » **Incremental builds**
+> [DreamFX](https://github.com/TypeDreamMoon/DreamFX/blob/b1c700214cf15af4b2b6425520989557a8c55e94/README.md) » **Incremental builds**
 
 Saving a `.dfs` used to clear every stack of its system and rebuild everything, so the cost of a save
 was proportional to the size of the whole system, not to the edit. An incremental build compares the
@@ -41,9 +41,11 @@ MoonEngine build calls the cleanup and rebuilds single stacks.
 
 The full rebuild itself is faster on the stock engine than the table above says: the build window
 keeps a compile request pending so the engine launches no compile until the build's own, a static
-switch write refreshes only its module, a batch of module adds refreshes its stack once, and an emptied
-stack is cut out of the graph in one step. A headless full rebuild of `NS_Magic_Explosion` went from
-110 s to about 52 s, engine start-up included. Each step has a switch that restores the old behaviour,
+switch write refreshes only its module, a batch of module adds refreshes its stack once, an emptied
+stack is cut out of the graph in one step, module edits keep the edit context wherever it can be
+refreshed in place, and each module probe shares one context. A headless full rebuild of
+`NS_Magic_Explosion` went from 110 s to about 32 s, engine start-up included; its system view models
+went from several hundred to 163. Each step has a switch that restores the old behaviour,
 for one-binary comparisons and as an escape hatch: `-RebuildOnSwitch`, `-RebuildPerAdd` and
 `-ClearPerModule` (the same names on `dfx.ps1 build`).
 
