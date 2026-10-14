@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "status": "unreviewed",
+  "sourceHash": null,
+  "sourceRevision": "b1c700214cf15af4b2b6425520989557a8c55e94",
+  "sources": [
+    {
+      "path": "Docs/getting-started/project-layout.md",
+      "sourceHash": null,
+      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "translationHash": "863c01a0352bbe9955318580d9de5c9a512de8a8fb95c800433bff1048479e0d"
+    }
+  ],
+  "translationFile": "content/docs/start/project-layout.md",
+  "translationHash": "627e84ace4436fa6b6d1c7066aaa52fde468940459ad2b98631215cb122ff403"
+}

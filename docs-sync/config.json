@@ -1,0 +1,615 @@
+{
+  "version": 1,
+  "repository": "TypeDreamMoon/DreamFX",
+  "branch": "main",
+  "siteOnly": [],
+  "pages": [
+    {
+      "id": "changelog/index",
+      "sources": [
+        {
+          "path": "Docs/changelog/index.md"
+        }
+      ],
+      "format": "md",
+      "title": "Changelog",
+      "description": "What each DreamFX release covers, plus the 1.0.0 verification snapshot and known issues.",
+      "locale": "en"
+    },
+    {
+      "id": "diagnostics/dfx1xxx",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX1xxx.md"
+        }
+      ],
+      "format": "md",
+      "title": "DFX1xxx — Driver and file I/O",
+      "description": "Every DFX1xxx diagnostic, with its severity, verbatim message, cause and fix.",
+      "locale": "en"
+    },
+    {
+      "id": "diagnostics/dfx2xxx",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX2xxx.md"
+        }
+      ],
+      "format": "md",
+      "title": "DFX2xxx — Lexer and syntax",
+      "description": "Every DFX2xxx diagnostic, with its severity, verbatim message, cause and fix.",
+      "locale": "en"
+    },
+    {
+      "id": "diagnostics/dfx3xxx",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX3xxx.md"
+        },
+        {
+          "path": "Docs/diagnostics/history/DFX3045.md"
+        }
+      ],
+      "format": "md",
+      "title": "DFX3xxx — Declarations and document structure",
+      "description": "Every DFX3xxx diagnostic, with its severity, verbatim message, cause and fix.",
+      "locale": "en",
+      "titleZh": "DFX3xxx — 声明与文档结构",
+      "descriptionZh": "DFX3xxx 段的全部诊断码，每条带严重级别、逐字消息、成因与修法。"
+    },
+    {
+      "id": "diagnostics/dfx4xxx",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX4xxx.md"
+        }
+      ],
+      "format": "md",
+      "title": "DFX4xxx — Values, types and expressions",
+      "description": "Every DFX4xxx diagnostic, with its severity, verbatim message, cause and fix.",
+      "locale": "en"
+    },
+    {
+      "id": "diagnostics/dfx5xxx",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX5xxx.md"
+        },
+        {
+          "path": "Docs/diagnostics/history/DFX5099.md"
+        },
+        {
+          "path": "Docs/diagnostics/history/unpublished-codes.md"
+        }
+      ],
+      "format": "md",
+      "title": "DFX5xxx — Generation and asset writing",
+      "description": "Every DFX5xxx diagnostic, with its severity, verbatim message, cause and fix.",
+      "locale": "en",
+      "titleZh": "DFX5xxx — 生成与资产写入",
+      "descriptionZh": "DFX5xxx 段的全部诊断码，每条带严重级别、逐字消息、成因与修法。"
+    },
+    {
+      "id": "diagnostics/dfx6xxx",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX6xxx.md"
+        }
+      ],
+      "format": "md",
+      "title": "DFX6xxx — Niagara compilation",
+      "description": "Every DFX6xxx diagnostic, with its severity, verbatim message, cause and fix.",
+      "locale": "en"
+    },
+    {
+      "id": "diagnostics/dfx7xxx",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX7xxx.md"
+        }
+      ],
+      "format": "md",
+      "title": "DFX7xxx — Provenance, drift and lint",
+      "description": "Every DFX7xxx diagnostic, with its severity, verbatim message, cause and fix.",
+      "locale": "en"
+    },
+    {
+      "id": "diagnostics/dfx8xxx",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX8xxx.md"
+        }
+      ],
+      "format": "md",
+      "title": "DFX8xxx — Decompiler",
+      "description": "Every DFX8xxx diagnostic, with its severity, verbatim message, cause and fix.",
+      "locale": "en"
+    },
+    {
+      "id": "diagnostics/index",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/overview.md"
+        }
+      ],
+      "format": "md",
+      "title": "Diagnostics",
+      "description": "How to read a DFXnnnn diagnostic, which pipeline stage each family belongs to, and where to find the generated code catalog.",
+      "locale": "en"
+    },
+    {
+      "id": "diagnostics/limitations",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/limitations.md"
+        }
+      ],
+      "format": "md",
+      "title": "Limits",
+      "description": "What is deliberate, what is not done yet, what the round trip cannot carry, and the 1.0.0 known issues — each with the way it surfaces.",
+      "locale": "en"
+    },
+    {
+      "id": "generation/adopt",
+      "sources": [
+        {
+          "path": "Docs/generation/adopt.md"
+        }
+      ],
+      "format": "md",
+      "title": "Export vs Adopt",
+      "description": "Both decompile; they differ in what happens next — the mirror namespace, the adoption sequence, and the three reasons it refuses.",
+      "locale": "en"
+    },
+    {
+      "id": "generation/engines",
+      "sources": [
+        {
+          "path": "Docs/generation/engines.md"
+        }
+      ],
+      "format": "md",
+      "title": "Engines and backends",
+      "description": "How one plugin source tree runs on a source build and on the installed engine — zero #if forks, three outcomes for .dfm generation, and the drift policy for an experimental API.",
+      "locale": "en"
+    },
+    {
+      "id": "generation/pipeline",
+      "sources": [
+        {
+          "path": "Docs/generation/pipeline.md"
+        }
+      ],
+      "format": "md",
+      "title": "The build pipeline",
+      "description": "What a build actually does — discovery, ordering, schema probing, writing, the Niagara compile, saving, stamping, and why an unchanged source is skipped.",
+      "locale": "en"
+    },
+    {
+      "id": "generation/provenance",
+      "sources": [
+        {
+          "path": "Docs/generation/provenance.md"
+        }
+      ],
+      "format": "md",
+      "title": "Provenance and verify",
+      "description": "What the stamp on a generated asset holds, the drifts verify reports, and the four lint rules.",
+      "locale": "en"
+    },
+    {
+      "id": "generation/roundtrip",
+      "sources": [
+        {
+          "path": "Docs/generation/roundtrip.md"
+        }
+      ],
+      "format": "md",
+      "title": "Round trip and equivalence",
+      "description": "The decompilation contract, how a gap surfaces, what each of the four verification layers answers, and three lessons in \"all green is not the same as correct\".",
+      "locale": "en"
+    },
+    {
+      "id": "index",
+      "sources": [
+        {
+          "path": "Docs/overview.md"
+        }
+      ],
+      "format": "md",
+      "title": "Overview",
+      "description": "DreamFXLang is a text-first language for Unreal Niagara effects, compiled into standard Niagara assets by the DreamFX plugin — and decompiled back out again.",
+      "locale": "en"
+    },
+    {
+      "id": "language/dfe",
+      "sources": [
+        {
+          "path": "Docs/language/dfe.md"
+        }
+      ],
+      "format": "md",
+      "title": ".dfe — a reusable emitter",
+      "description": "One Emitter file, the granularity of the from merge, and the two consequences of \"copy, not inheritance\".",
+      "locale": "en"
+    },
+    {
+      "id": "language/dfm",
+      "sources": [
+        {
+          "path": "Docs/language/dfm.md"
+        }
+      ],
+      "format": "md",
+      "title": ".dfm — modules and dynamic inputs",
+      "description": "Writing a Niagara module or dynamic input as text — Usage, Inputs, the HLSL Body, and which engines can generate one.",
+      "locale": "en"
+    },
+    {
+      "id": "language/dfs",
+      "sources": [
+        {
+          "path": "Docs/language/dfs.md"
+        }
+      ],
+      "format": "md",
+      "title": ".dfs — a system",
+      "description": "System settings, user parameters, module calls and assignments in the six stacks, Defaults, renderers and bindings, and referencing a .dfe.",
+      "locale": "en"
+    },
+    {
+      "id": "language/events-and-stages",
+      "sources": [
+        {
+          "path": "Docs/language/events-and-stages.md"
+        }
+      ],
+      "format": "md",
+      "title": "Events and simulation stages",
+      "description": "OnEvent handlers and named Stage blocks — how they are written, the hard limit on each, and why a DataInterface name is the whole contract.",
+      "locale": "en"
+    },
+    {
+      "id": "language/overview",
+      "sources": [
+        {
+          "path": "Docs/language/README.md"
+        }
+      ],
+      "format": "md",
+      "title": "The file model",
+      "description": "The shape every DreamFXLang file shares — header, blocks, statements, comments, attributes — and an index of the eight L rules.",
+      "locale": "en"
+    },
+    {
+      "id": "language/values",
+      "sources": [
+        {
+          "path": "Docs/language/values.md"
+        }
+      ],
+      "format": "md",
+      "title": "Values, types and rules",
+      "description": "Everything that can appear on the right of an =, the curve literal, the inline-expression whitelist, the type table, and L2 / L3 / L6 / L7.",
+      "locale": "en"
+    },
+    {
+      "id": "start/about",
+      "sources": [
+        {
+          "path": "Docs/getting-started/about.md"
+        }
+      ],
+      "format": "md",
+      "title": "What DreamFX is",
+      "description": "What it does and does not do, and the stances that run through all of it — the text is the truth, a gap must be visible, a menu is not a second implementation.",
+      "locale": "en"
+    },
+    {
+      "id": "start/first-effect",
+      "sources": [
+        {
+          "path": "Docs/getting-started/first-effect.md"
+        }
+      ],
+      "format": "md",
+      "title": "Your first effect",
+      "description": "From an empty directory to a running NS_Hello — one .dfs, one command, one standard UNiagaraSystem.",
+      "locale": "en"
+    },
+    {
+      "id": "start/installation",
+      "sources": [
+        {
+          "path": "Docs/getting-started/installation.md"
+        }
+      ],
+      "format": "md",
+      "title": "Install and sanity check",
+      "description": "Enable the DreamFX plugin, confirm the driver can reach the engine, and the three hard requirements of the environment.",
+      "locale": "en"
+    },
+    {
+      "id": "start/project-layout",
+      "sources": [
+        {
+          "path": "Docs/getting-started/project-layout.md"
+        }
+      ],
+      "format": "md",
+      "title": "Layout and naming",
+      "description": "DFX source roots, how Root and Name resolve into an asset path, module search paths, and what belongs in version control.",
+      "locale": "en"
+    },
+    {
+      "id": "start/workflow",
+      "sources": [
+        {
+          "path": "Docs/getting-started/workflow.md"
+        }
+      ],
+      "format": "md",
+      "title": "The daily loop",
+      "description": "Save-to-rebuild, live preview, the bulk-rebuild gate, the two hard rules, and the four-step CI before you commit.",
+      "locale": "en"
+    },
+    {
+      "id": "tools/ci",
+      "sources": [
+        {
+          "path": "Docs/tools/ci.md"
+        }
+      ],
+      "format": "md",
+      "title": "ci.ps1 and gates",
+      "description": "What each of the four CI steps catches, which switches to use where, the docs drift check, and a minimal pipeline.",
+      "locale": "en"
+    },
+    {
+      "id": "tools/cli",
+      "sources": [
+        {
+          "path": "Docs/tools/headless-compilation.md"
+        }
+      ],
+      "format": "md",
+      "title": "The dfx.ps1 command line",
+      "description": "Every subcommand and switch of the headless driver — build, verify, lint, decompile, mirror-diff, asset-diff, coverage, schema, index, corpus.",
+      "locale": "en"
+    },
+    {
+      "id": "tools/editor",
+      "sources": [
+        {
+          "path": "Docs/tools/editor-integration.md"
+        }
+      ],
+      "format": "md",
+      "title": "Editor integration",
+      "description": "The Tools menu, the level toolbar, Content Browser actions, the Niagara editor toolbar, the toasts, the file watcher and the settings.",
+      "locale": "en"
+    },
+    {
+      "id": "tools/scripting",
+      "sources": [
+        {
+          "path": "Docs/tools/scripting.md"
+        }
+      ],
+      "format": "md",
+      "title": "Python and Blueprint",
+      "description": "UDreamFXEditorLibrary exposes every editor command to scripts — and why that is not an afterthought.",
+      "locale": "en"
+    },
+    {
+      "id": "tools/skills",
+      "sources": [
+        {
+          "path": "Docs/tools/skills.md"
+        }
+      ],
+      "format": "md",
+      "title": "Agent skills",
+      "description": "The four skills that ship with the plugin, and the \"read the schema first\" loop an agent has to follow when writing DreamFXLang.",
+      "locale": "en"
+    },
+    {
+      "id": "tools/vscode",
+      "sources": [
+        {
+          "path": "Docs/tools/vscode.md"
+        }
+      ],
+      "format": "md",
+      "title": "VSCode and the module index",
+      "description": "What the workspace file contains, how VSCode is discovered, the rules for jump links, and why .dfx-index.json probes input signatures.",
+      "locale": "en"
+    },
+    {
+      "id": "plugin/diagnostics/dfx1xxx",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX1xxx.md"
+        }
+      ],
+      "format": "md",
+      "locale": "en"
+    },
+    {
+      "id": "plugin/diagnostics/dfx2xxx",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX2xxx.md"
+        }
+      ],
+      "format": "md",
+      "locale": "en"
+    },
+    {
+      "id": "plugin/diagnostics/dfx3xxx",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX3xxx.md"
+        },
+        {
+          "path": "Docs/diagnostics/history/DFX3045.md"
+        }
+      ],
+      "format": "md",
+      "locale": "en"
+    },
+    {
+      "id": "plugin/diagnostics/dfx4xxx",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX4xxx.md"
+        }
+      ],
+      "format": "md",
+      "locale": "en"
+    },
+    {
+      "id": "plugin/diagnostics/dfx5xxx",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX5xxx.md"
+        },
+        {
+          "path": "Docs/diagnostics/history/DFX5099.md"
+        },
+        {
+          "path": "Docs/diagnostics/history/unpublished-codes.md"
+        }
+      ],
+      "format": "md",
+      "locale": "en"
+    },
+    {
+      "id": "plugin/diagnostics/dfx6xxx",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX6xxx.md"
+        }
+      ],
+      "format": "md",
+      "locale": "en"
+    },
+    {
+      "id": "plugin/diagnostics/dfx7xxx",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX7xxx.md"
+        }
+      ],
+      "format": "md",
+      "locale": "en"
+    },
+    {
+      "id": "plugin/diagnostics/dfx8xxx",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX8xxx.md"
+        }
+      ],
+      "format": "md",
+      "locale": "en"
+    },
+    {
+      "id": "plugin/diagnostics/readme",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/README.md"
+        }
+      ],
+      "format": "md",
+      "locale": "en"
+    },
+    {
+      "id": "plugin/getting-started",
+      "sources": [
+        {
+          "path": "Docs/getting-started/quickstart.md"
+        }
+      ],
+      "format": "md",
+      "locale": "en"
+    },
+    {
+      "id": "plugin/language/native-emitter-inheritance",
+      "sources": [
+        {
+          "path": "Docs/language/native-emitter-inheritance.md"
+        }
+      ],
+      "format": "md",
+      "locale": "en"
+    },
+    {
+      "id": "plugin/language/system-inheritance",
+      "sources": [
+        {
+          "path": "Docs/language/system-inheritance.md"
+        }
+      ],
+      "format": "md",
+      "locale": "en"
+    },
+    {
+      "id": "plugin/tools/asset-comparison-and-export",
+      "sources": [
+        {
+          "path": "Docs/tools/asset-comparison-and-export.md"
+        }
+      ],
+      "format": "md",
+      "locale": "en"
+    },
+    {
+      "id": "plugin/tools/incremental-builds",
+      "sources": [
+        {
+          "path": "Docs/tools/build-on-save.md"
+        }
+      ],
+      "format": "md",
+      "locale": "en",
+      "title": "Build on save and up-to-date checks",
+      "description": "The published DreamFX save workflow: incremental updates, full rebuild fallbacks and provenance checks."
+    },
+    {
+      "id": "plugin/tools/incremental-build-reference",
+      "sources": [
+        {
+          "path": "Docs/tools/incremental-builds.md"
+        }
+      ],
+      "format": "md",
+      "locale": "en",
+      "title": "Incremental build reference"
+    },
+    {
+      "id": "plugin/tools/pull",
+      "sources": [
+        {
+          "path": "Docs/tools/pull.md"
+        }
+      ],
+      "format": "md",
+      "locale": "en"
+    },
+    {
+      "id": "plugin/tools/write-back-coverage",
+      "sources": [
+        {
+          "path": "Docs/tools/write-back-coverage.md"
+        }
+      ],
+      "format": "md",
+      "locale": "en"
+    }
+  ],
+  "exclude": [
+    "Docs/README.md"
+  ],
+  "siteUrl": "https://fx.toolchain.64hz.cn"
+}

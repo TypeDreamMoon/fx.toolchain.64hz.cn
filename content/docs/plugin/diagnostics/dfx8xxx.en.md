@@ -1,0 +1,356 @@
+---
+title: "DFX8xxx --- Decompiler"
+description: "DFX8xxx --- Decompiler"
+---
+
+# DFX8xxx --- Decompiler
+
+> The block between the generated markers is written by `.skill/gen-diagnostics.ps1`.
+> Everything below a marker is written by hand and survives a regeneration.
+
+## DFX8000
+
+<!-- generated:begin DFX8000 -->
+**Severity** error
+
+**Message**
+
+```
+Cannot decompile a null system.
+```
+
+**Raised by** `Source/DreamFXEditor/Private/Decompiler/DreamFXDecompiler.cpp:2316`
+<!-- generated:end DFX8000 -->
+
+**Cause.** The asset path resolved to nothing, or to something that is not a Niagara System.
+
+**Fix.** Check the path. `dfx decompile /Game/FX/NS_Spark` takes a package path.
+
+## DFX8001
+
+<!-- generated:begin DFX8001 -->
+**Severity** error
+
+**Message**
+
+```
+Could not read emitters: %s
+```
+
+**Raised by** `Source/DreamFXEditor/Private/Decompiler/DreamFXDecompiler.cpp:2513`
+<!-- generated:end DFX8001 -->
+
+**Cause.** The system's emitters could not be read.
+
+**Fix.** The inner message is the adapter's. A system that fails to load at all reports DFX8000 instead.
+
+## DFX8002
+
+<!-- generated:begin DFX8002 -->
+**Severity** warning
+
+**Message**
+
+```
+Skipping emitter '%s': %s
+```
+
+**Raised by** `Source/DreamFXEditor/Private/Decompiler/DreamFXDecompiler.cpp:2542`
+<!-- generated:end DFX8002 -->
+
+**Cause.** One emitter could not be exported; the rest of the system still was.
+
+**Fix.** The export is incomplete for that emitter. `dfx coverage` reports the same information across every system at once.
+
+## DFX8003
+
+<!-- generated:begin DFX8003 -->
+**Severity** error
+
+**Message**
+
+```
+Cannot decompile a null emitter.
+```
+
+**Raised by** `Source/DreamFXEditor/Private/Decompiler/DreamFXDecompiler.cpp:2687`
+<!-- generated:end DFX8003 -->
+
+**Cause.** The Export .dfe entry point was reached with nothing selected, or the selected asset failed to load.
+
+**Fix.** Right-click a single `UNiagaraEmitter` asset. Emitters that live inside a system are not separate assets -- export the system instead.
+
+## DFX8004
+
+<!-- generated:begin DFX8004 -->
+**Severity** error
+
+**Message**
+
+```
+Could not create a host system to read the emitter through: %s
+```
+
+**Raised by** `Source/DreamFXEditor/Private/Decompiler/DreamFXDecompiler.cpp:2699`
+<!-- generated:end DFX8004 -->
+
+**Cause.** Reading an emitter needs an owning system: every reader in the Niagara external edit API addresses through one. The throwaway host under `/Temp/DreamFX` could not be created.
+
+**Fix.** The inner message is the adapter's. Nothing under `/Temp` is written to disk, so this is an in-memory failure -- usually the Niagara plugin failing to initialise rather than anything about the emitter.
+
+## DFX8005
+
+<!-- generated:begin DFX8005 -->
+**Severity** error
+
+**Message**
+
+```
+Could not copy emitter '%s' into a host system: %s
+```
+
+**Raised by** `Source/DreamFXEditor/Private/Decompiler/DreamFXDecompiler.cpp:2726`
+<!-- generated:end DFX8005 -->
+
+**Cause.** The emitter could not be copied into the host system. Niagara's `AddEmitter` rejected it as a template.
+
+**Fix.** The inner message is Niagara's. An emitter asset saved by a much older engine version is the usual cause; opening and re-saving it in the Niagara editor upgrades it.
+
+## DFX8006
+
+<!-- generated:begin DFX8006 -->
+**Severity** error
+
+**Message**
+
+```
+Could not read emitter '%s': %s
+```
+
+**Raised by** `Source/DreamFXEditor/Private/Decompiler/DreamFXDecompiler.cpp:2747`
+<!-- generated:end DFX8006 -->
+
+**Cause.** The emitter was copied into the host, but its topology could not be read back.
+
+**Fix.** The inner message is the adapter's. `dfx coverage` exercises the same read path across every system and is the fastest way to see whether the problem is this emitter or the read path itself.
+
+## DFX8010
+
+<!-- generated:begin DFX8010 -->
+**Severity** error
+
+**Message**
+
+```
+'%s' cannot be adopted: '%s' has no DreamFXLang form yet, so adopting would destroy it on the first rebuild. Export .dfs instead.
+```
+
+**Raised by** `Source/DreamFXEditor/Private/UI/DreamFXAssetCommands.cpp:540`
+<!-- generated:end DFX8010 -->
+
+**Cause.** **Adopt** refuses an asset that has features DreamFXLang cannot express. One line is raised per feature.
+
+This is the gate that makes adoption safe. Adopting means the text becomes the only source of truth for that asset, so adopting with a known gap destroys whatever did not survive the first rebuild -- silently, and with no diff to show for it.
+
+**Fix.** Use **Export .dfs** instead. It writes the same text, does not touch the asset, and lists the gaps in the file header. To see which buckets are open across your own content, run `dfx.ps1 coverage`.
+
+## DFX8011
+
+<!-- generated:begin DFX8011 -->
+**Severity** error
+
+**Message**
+
+```
+Cannot adopt '%s': source destination or another source already exists at '%s'. Edit that file instead; Adopt never replaces existing source.
+```
+
+**Raised by** `Source/DreamFXEditor/Private/UI/DreamFXAssetCommands.cpp:456`
+<!-- generated:end DFX8011 -->
+
+**Cause.** Another `.dfs` already declares the same target asset. Two sources generating one asset take turns overwriting each other, and whichever built last wins.
+
+Neither source can detect this at build time -- both succeed. The only place to catch it is here, before the second one exists.
+
+**Fix.** Edit the existing source instead. Its path is in the message and in the toast.
+
+## DFX8012
+
+<!-- generated:begin DFX8012 -->
+**Severity** error
+
+**Message**
+
+```
+'%s' was adopted, but re-exporting the rebuilt asset does not reproduce this file. First difference at %s
+```
+
+**Raised by** `Source/DreamFXEditor/Private/UI/DreamFXAssetCommands.cpp:636`
+<!-- generated:end DFX8012 -->
+
+**Cause.** The asset was adopted and rebuilt, but re-exporting the rebuilt asset does not reproduce the file that was written. The first differing line is in the message.
+
+Because DFX8010 already ruled out every *known* gap, a mismatch here is a real defect in the generator or the decompiler rather than an expected loss.
+
+**Fix.** The source file stays on disk and the asset was rebuilt from it, so the text is authoritative either way -- nothing is lost. Report the differing line: a round-trip that is not a fixed point is exactly what `DreamFX.Corpus.RoundTrip` exists to prevent, so a case that reaches this is one the corpus does not cover yet.
+
+## DFX8013
+
+<!-- generated:begin DFX8013 -->
+**Severity** error
+
+**Message**
+
+```
+This file sits in the decompiled output directory but Name=\"%s\" builds '%s', outside the '%s/' namespace. That would overwrite the asset it was exported from. Re-export it, or move the file out of the decompiled tree to keep this name.
+```
+
+**Raised by** `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:4757`
+<!-- generated:end DFX8013 -->
+
+**Cause.** The file lives under the *Decompiled Output Directory* (`DFX/Decompiled` by default), but its
+`Name=` resolves to an asset outside the `Decompiled/` content namespace. Building it would write over
+the asset it was exported from -- usually third-party content the author only meant to read.
+
+Almost always this is an export written before the plugin started rehoming exports: those files named
+the original asset, and the whole decompiled tree was kept out of the build to compensate. The tree is
+ordinary source now, so the check moved onto the file itself.
+
+**Fix.** Re-export the asset (right-click > *Export .dfs*, or `dfx decompile-all -Path=...`). The new
+file names `Decompiled/<original directory>/<asset>` and rebuilds a mirror beside the original, which
+is what makes it safe to edit and save.
+
+If the intent really is to make this text the asset's source of truth, that is *Adopt*, not *Export*:
+move the file out of the decompiled tree into a `DFX/` directory and keep the name it has. Adopt writes
+exactly that arrangement, and refuses when the export would lose something the language cannot express
+yet (DFX8010).
+
+## DFX8014
+
+<!-- generated:begin DFX8014 -->
+**Severity** warning
+
+**Message**
+
+```
+Emitter '%s' inherits from '%s'. The export flattens the inheritance: the merged stack is carried in full, but the rebuilt emitter no longer follows the parent, so later parent edits will change the original and not the mirror.
+```
+
+**Raised by** `Source/DreamFXEditor/Private/Decompiler/DreamFXDecompiler.cpp:1077`, `Source/DreamFXEditor/Private/Decompiler/DreamFXDecompiler.cpp:1676`, `Source/DreamFXEditor/Private/Decompiler/DreamFXDecompiler.cpp:2173`
+<!-- generated:end DFX8014 -->
+
+**Cause.** Export cannot preserve every aspect of the emitter's native inheritance. System `.dfs` export now retains `inherits "<parent asset>" version "<GUID>"` and omits supported content identical to the selected parent version. This warning identifies a remaining limitation: changed stacks or renderer groups are complete overrides; event handlers and stages are snapshots; inherited defaults, handlers or entire renderer/stage groups cannot be removed in source; or a parent association, version or baseline could not be read reliably. It also reports a parent that is no longer an inheritable standalone asset, an invalid parent chain, and unmerged changes on the parent or child. Standalone `.dfe` export still flattens the parent relationship into a snapshot.
+
+**Fix.** Read the specific message and coverage gap before adopting the export. Export the owning system as `.dfs` to retain a native parent link. Merge and save pending parent/ancestor changes in Niagara, merge the child, and re-export; repair invalid parent assets or versions first. For an intentional complete-block override, keep the warning's inheritance limit in mind: later parent edits inside that block will not propagate on rebuild. For deletions without a source spelling, retain editor authoring or change the parent/source design rather than treating the snapshot as a complete round trip. See [native emitter inheritance](/en/docs/plugin/language/native-emitter-inheritance) for the supported override rules.
+
+## DFX8015
+
+<!-- generated:begin DFX8015 -->
+**Severity** warning
+
+**Message**
+
+```
+Emitter '%s' carries %d event handler(s) this export cannot represent%s. The rebuilt emitter will receive no events -- an event-spawned emitter comes back permanently empty. The gap header names each handler's source emitter and event.
+```
+
+**Raised by** `Source/DreamFXEditor/Private/Decompiler/DreamFXDecompiler.cpp:1125`
+<!-- generated:end DFX8015 -->
+
+**Cause.** The emitter carries event handlers the export has no text form for. Event handlers themselves ARE supported --- they export as `OnEvent(...)` blocks --- so this now fires in two narrower cases only:
+
+- the emitter has **more than one** handler (one `OnEvent` block per emitter is representable, because the write side reaches an event stack through a single zero usage id);
+- the export is a **standalone `.dfe`**, which has no sibling emitter for the handler's `Source` to name (the stored `SourceEmitterID` is a handle guid no rebuild could reproduce, so the source travels by emitter NAME).
+
+**Fix.** For the multi-handler case, split the receiving emitter so each one carries a single handler. For the standalone case, export the whole system as a `.dfs` instead, where the source emitter exists to be named. Either way the gap header names each handler's source emitter and event, so nothing is lost silently.
+
+## DFX8016
+
+<!-- generated:begin DFX8016 -->
+**Severity** warning
+
+**Message**
+
+```
+Emitter '%s' carries %d simulation stage(s) this export cannot represent (custom stage class or missing script). The gap header names each one.
+```
+
+**Raised by** `Source/DreamFXEditor/Private/Decompiler/DreamFXDecompiler.cpp:1172`
+<!-- generated:end DFX8016 -->
+
+**Cause.** The emitter carries a simulation stage the export has no text form for. Ordinary stages
+export as `Stage name(...)` blocks and do not raise this; what remains is a stage whose class is not
+the engine's `UNiagaraSimulationStageGeneric` (a custom C++ stage), or one whose script object is
+missing from the asset. The gap header names each one, so the loss survives into code review rather
+than living only in a commandlet log.
+
+**Fix.** Nothing to fix in the source file — this is a representation limit. If the stage matters,
+keep authoring that emitter in the Niagara editor; a rebuilt mirror will not run it.
+
+## DFX8017
+
+<!-- generated:begin DFX8017 -->
+**Severity** warning
+
+**Message**
+
+```
+emitter '%s' uses unsupported Lightweight/Stateless mode. Keep this emitter in Niagara; DreamFX cannot rebuild its stateless modules and renderers.
+```
+
+**Raised by** `Source/DreamFXEditor/Private/Decompiler/DreamFXDecompiler.cpp:2529`
+<!-- generated:end DFX8017 -->
+
+**Cause.** An emitter handle uses Niagara's Lightweight/Stateless mode. DreamFX does not yet represent its stateless modules and renderers. Export records a coverage gap and omits that emitter instead of presenting an empty standard emitter as a complete export. Adopt rejects exports with this gap before rebuilding the asset.
+
+**Fix.** Keep authoring this emitter in Niagara. A partial export remains useful for inspecting the supported portions of the system, but it is not a complete migration. Convert the emitter to a supported standard emitter in Niagara only if that is appropriate for the effect, then export again.
+
+## DFX8018
+
+<!-- generated:begin DFX8018 -->
+**Severity** error
+
+**Message**
+
+```
+'%s' was not saved: rebuilding it would drop %d fact(s) this source cannot express, and a save would destroy them. They are listed above, and the asset still holds every one of them. -Force writes anyway; full lists in %s
+```
+
+**Raised by** `Source/DreamFXEditor/Private/Diff/DreamFXBuildSafetyGate.cpp:543`, `Source/DreamFXEditor/Private/Diff/DreamFXBuildSafetyGate.cpp:549`, `Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:4963`
+<!-- generated:end DFX8018 -->
+
+**Cause.** A rebuild would leave the asset holding less than it holds now, so the save was refused. One line is
+raised per fact that would be lost, and then this one as the summary; the fact lists themselves are written to
+`Saved/DreamFX/BuildSafety/<asset>.{before,after,lost}.facts`, because the console truncates long facts and
+because after a `-Force` save the asset no longer holds the `before` state at all.
+
+The build replays text onto the asset, and text is not a complete description of a Niagara system. Inputs the
+decompiler suppressed (R8: only inputs that differ from a pristine module are printed), renderer bindings a
+commandlet patched in after the last build, properties no setting table carries --- a rebuild replaces whatever
+those held, silently. Measured on this project's own content: 41 stored module-input constants on one asset,
+`Sprite_Atlas_Size.MeshYaw` -90 -> 0 on another, 61 on a third. Every one of them had L1 and L2 green, because
+both sides of an L1 comparison are the same lossy exporter's output.
+
+What separates this gate from DFX8010 is where it reads. DFX8010 refuses an *adoption* using the exporter's own
+list of features it could not carry, and none of the three assets above appears in that list. This compares the
+asset against itself by reflection --- `DescribeSystemFacts`, read before the build's first write and again
+immediately before the save --- so a loss the exporter makes on both sides is exactly what it is able to see. The
+system's own properties are part of that comparison, which they were not before this gate existed.
+
+**Fix.** Read the lines above: each names one address, the value it holds now, and either the value the rebuild
+would write instead or `(missing)` when the rebuild has nothing for it at all. Then pick one:
+
+- Teach the source to carry it. A suppressed input can usually simply be written out; a renderer's
+  material-parameter bindings travel as the `MaterialParameters = "{...}"` JSON the decompiler emits.
+- Keep authoring that asset in the editor and export it (*Export .dfs*) instead of adopting it. Adopt makes the
+  text the only source of truth, and this gate is what turns that from a side effect into a decision.
+- `-Force` writes anyway. The same list is logged at warning severity, so a forced build stays accountable
+  afterwards; the refusal is never silent.
+
+A refused build writes neither the asset nor its provenance stamp, so the next ordinary build is not skipped as
+up to date. In an editor session the refused package is also reloaded from disk: the rebuild had already been
+applied to the asset in memory, and leaving it there would let *Save All*, autosave or an open Niagara editor
+write exactly what the gate refused. On the command line the process ends and nothing is kept.
+
+A rebuild that loses nothing logs nothing, and a target with no asset yet is never refused: a first generation has
+no earlier content to replace.

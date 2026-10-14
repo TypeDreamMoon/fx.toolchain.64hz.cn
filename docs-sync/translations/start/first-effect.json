@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "status": "unreviewed",
+  "sourceHash": null,
+  "sourceRevision": "b1c700214cf15af4b2b6425520989557a8c55e94",
+  "sources": [
+    {
+      "path": "Docs/getting-started/first-effect.md",
+      "sourceHash": null,
+      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "translationHash": "75ca7e1986d0e6515b6dde889ffab48c666dfda32e8d30b1eedcb7c61a1ddd16"
+    }
+  ],
+  "translationFile": "content/docs/start/first-effect.md",
+  "translationHash": "f5c42c7de76c25844d2bdbad62d75cac8b0c1850102fb9c235e9791c8afc46bf"
+}

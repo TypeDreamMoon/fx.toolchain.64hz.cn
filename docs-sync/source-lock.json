@@ -1,0 +1,1119 @@
+{
+  "version": 1,
+  "repository": "TypeDreamMoon/DreamFX",
+  "revision": "b1c700214cf15af4b2b6425520989557a8c55e94",
+  "workingTree": false,
+  "translationSnapshotHash": "cebcc407cddcef4392f183f9efc5559b0d693160c36e70e91fd3ebbeac1db725",
+  "pages": {
+    "changelog/index": {
+      "hash": "c1dad62ffab3e8dbf3cc99e290d47c875a58a53a0a5882a2de1c2fd76a265757",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/changelog/index.en.md",
+      "outputHash": "8a10377d1f9eb654990ed5c2252468a7d649560152ae503d7681a80df78a485e",
+      "locale": "en",
+      "format": "md",
+      "title": "Changelog",
+      "sources": [
+        {
+          "path": "Docs/changelog/index.md",
+          "hash": "19b04f78ce886a4d2651424e6ab64c8d749db70ab1ee72bb2995e409b47b96d6"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/changelog/index.md",
+        "record": "docs-sync/translations/changelog/index.json",
+        "outputHash": "f876bae8006df2da886ff29784217c910df43676eee8f0f904cba64f5401cdda",
+        "bodyHash": "6de3fc1006dc7423f48548e4dc9e83c07fcb573510b19ca0298ddeb054d2c25f"
+      }
+    },
+    "diagnostics/dfx1xxx": {
+      "hash": "1c881d752ca44f5c6d26e3f5d4965fd0a491103544c7e12d4f7477c4be527eaf",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/diagnostics/dfx1xxx.en.md",
+      "outputHash": "e6cc10a60d673c7e2f2482d66114340630b9a1ab8d954ea72f3fc48f386c9223",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX1xxx — Driver and file I/O",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX1xxx.md",
+          "hash": "06a098cd0d5a36f6142fde8f864d000d753a07ae22b86dddd4000eef785af108"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/diagnostics/dfx1xxx.md",
+        "record": "docs-sync/translations/diagnostics/dfx1xxx.json",
+        "outputHash": "818a1596dcda4e22d9d5da9885779217ed9e1e5d6e780992bed0b201ffcc757d",
+        "bodyHash": "f7acdbf4e9a433c0a058a00e14790686dbe475cd012bf02fead5f6e468dea002"
+      }
+    },
+    "diagnostics/dfx2xxx": {
+      "hash": "beef1f302e55e3cc13d94e1842f78149ddc9aee09097cc2fb54c321cc3018603",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/diagnostics/dfx2xxx.en.md",
+      "outputHash": "e1d0ee227df61e2852f19ad7940fe0c374db40227174b5be739c64d9671db895",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX2xxx — Lexer and syntax",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX2xxx.md",
+          "hash": "b1b4b420ee76d25e5251689c2f647868d1819584958943af4a716e62c8227452"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/diagnostics/dfx2xxx.md",
+        "record": "docs-sync/translations/diagnostics/dfx2xxx.json",
+        "outputHash": "761edae85ccd83f5c64affa7d810fb9e4cdca40c884e5ea38fcc295e66cea315",
+        "bodyHash": "68f24b4fddb1d93bb573db391aaf1109b265b5509c81b11026291ec9a3626ce4"
+      }
+    },
+    "diagnostics/dfx3xxx": {
+      "hash": "d03d22fbd7456c7445f1d3a44f09a1dfe2abd6561ef6556b8b410edcc4c5d4f0",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/diagnostics/dfx3xxx.en.md",
+      "outputHash": "676085e0ad320a55a2ca63da874f69f7e4681af7903f8557d633a78d790b0aae",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX3xxx — Declarations and document structure",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX3xxx.md",
+          "hash": "fe6349277e185ee6869db03fb4e2e79a7efb5594dad552d3a572f53706096fc6"
+        },
+        {
+          "path": "Docs/diagnostics/history/DFX3045.md",
+          "hash": "90bf867048046cb47399228ec447fc373f88c93875fefbf86af2500c80abd1f0"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/diagnostics/dfx3xxx.md",
+        "record": "docs-sync/translations/diagnostics/dfx3xxx.json",
+        "outputHash": "549685d9068b4193d78822b91226cec5c69824a3d8a216f1cc98a56004c452d3",
+        "bodyHash": "5fa56788d7d2a26ebe32c1cd6c5d5b14c9aca4973d00ba9e0415802d9177962a"
+      }
+    },
+    "diagnostics/dfx4xxx": {
+      "hash": "0958f37cf194d1014d5d99f8c7d6cf72762794fa05c9d660cb3632c24dfdb3f4",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/diagnostics/dfx4xxx.en.md",
+      "outputHash": "d281c4240af0c94dc03698d04f51e4193496a6e57d712865619ba815d431e3e6",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX4xxx — Values, types and expressions",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX4xxx.md",
+          "hash": "6e10b3962bc2e4f5f75ce30978a21c6874cf7af1dacb426252a63ae3d539a331"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/diagnostics/dfx4xxx.md",
+        "record": "docs-sync/translations/diagnostics/dfx4xxx.json",
+        "outputHash": "4694769961fb8bbc410d9969401d87941f52a6a5c2098c2c2a89661dd01a98c8",
+        "bodyHash": "4497ff7707a4af4d41c299c044b3b16c78688ace8921ff8d6956eade00174bd6"
+      }
+    },
+    "diagnostics/dfx5xxx": {
+      "hash": "23f7e5ebe8913ecc38b95edf38cf165e66792a54574aefccc644421c69267a56",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/diagnostics/dfx5xxx.en.md",
+      "outputHash": "aa13047be2771ce32270c453d5cf534a6db7b32d5f28fbb34e958cc0384f173e",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX5xxx — Generation and asset writing",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX5xxx.md",
+          "hash": "8199ea7ea3823432f73fe3e6d85a5cf2bee0f765861de323e0384de41ae80746"
+        },
+        {
+          "path": "Docs/diagnostics/history/DFX5099.md",
+          "hash": "4a751f358b0d798abcb80032c7de4e80b4e6a8ca75a3438de42281525930b739"
+        },
+        {
+          "path": "Docs/diagnostics/history/unpublished-codes.md",
+          "hash": "8ce55000b86e5e1f27a180bce632daad304de9d53ef03b6efff25e483e7c2383"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/diagnostics/dfx5xxx.md",
+        "record": "docs-sync/translations/diagnostics/dfx5xxx.json",
+        "outputHash": "72b07e667e15d7410363d94fceb7b8e405cf7d39862b2f5a43928c95bda5c498",
+        "bodyHash": "67159610c66ad1d60f5f6aab30301e59a17fe17619b08c56e0fd1af7d478096f"
+      }
+    },
+    "diagnostics/dfx6xxx": {
+      "hash": "3b26b5bd15f10cf9d19965adb6303c6dfb7349391f3ed7152ffff47422761f89",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/diagnostics/dfx6xxx.en.md",
+      "outputHash": "0689b2765795c3abfe70c93d7d70bf20a3de419e68adc7d1bfa8cb63963ef741",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX6xxx — Niagara compilation",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX6xxx.md",
+          "hash": "4853de4974ea3334b7cc0dda21fd4ff752d6adf0186d3ed668a7d20966408d43"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/diagnostics/dfx6xxx.md",
+        "record": "docs-sync/translations/diagnostics/dfx6xxx.json",
+        "outputHash": "b7dd22d4f06dadd34a245e1e195955079404060e42ec896b4c3c1b496378baf7",
+        "bodyHash": "c7fca627527a030ade5a5cefc408bb12e0acb51b404fdd836a439bf75c890481"
+      }
+    },
+    "diagnostics/dfx7xxx": {
+      "hash": "53c069cd3c8e13fb82edb3309fd857b389ba0d75ff5dc2b34944551c83481b0b",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/diagnostics/dfx7xxx.en.md",
+      "outputHash": "8c4dd2d0b161f899d2479b4720d7632b70a392da5ce0aa78d7aa267e77341270",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX7xxx — Provenance, drift and lint",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX7xxx.md",
+          "hash": "1b3dfd74f612b9b7076c36739afd96ebe0a90d631d4cede711f86a6eab7645b8"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/diagnostics/dfx7xxx.md",
+        "record": "docs-sync/translations/diagnostics/dfx7xxx.json",
+        "outputHash": "ee554b6cd752685dcabcae7f5030bbc0c40a0dde734b570cec542be431c8d909",
+        "bodyHash": "9eba755900a2427fa3f71db7dd1a3fea4d790b1fc2664246d7d109eb385efeb9"
+      }
+    },
+    "diagnostics/dfx8xxx": {
+      "hash": "e3bbba10179961ced0e8bffc42d03a132a79cce5891a6a4363645df80497d6b8",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/diagnostics/dfx8xxx.en.md",
+      "outputHash": "7738bc40a8589df6f7901789325f600ef8b1abef70a7e2b752798e8b505254ca",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX8xxx — Decompiler",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX8xxx.md",
+          "hash": "c15cedddebc7f413acb475754d3bc65ffc3c2f6dbd8047c5c18b1f8426470fb8"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/diagnostics/dfx8xxx.md",
+        "record": "docs-sync/translations/diagnostics/dfx8xxx.json",
+        "outputHash": "d5f4ba84a9536723f6d183195480ecade560a7b2fd54845021819904e7546b8b",
+        "bodyHash": "e9d64429e8ab2553f1c7d42d88331aba990cb07b6681e8968ae1989880e3cb60"
+      }
+    },
+    "diagnostics/index": {
+      "hash": "41279d97b29803670d9e69a9ef260d403efd07ae225eb9d3916cd572e8da2c39",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/diagnostics/index.en.md",
+      "outputHash": "03bb9dc61ce61b919f8a8bee27d44618fe0a1408e84286defa951fff197531cd",
+      "locale": "en",
+      "format": "md",
+      "title": "Diagnostics",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/overview.md",
+          "hash": "41f38396afe75b5b653f8b33d48a94a8d19716341372d34d0ddf402601e7905a"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/diagnostics/index.md",
+        "record": "docs-sync/translations/diagnostics/index.json",
+        "outputHash": "203eff0b82b43b0f27b7779133813a876e4becc18fa9937248ffa94984780b1f",
+        "bodyHash": "aafcf708d416b607cd141e91c27691b2190998143a1fdd62a8ed0db2f6aa27de"
+      }
+    },
+    "diagnostics/limitations": {
+      "hash": "de35bc92e5046fcdb75f39db65868de6e5f4864215155a2fdc9faa488606f859",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/diagnostics/limitations.en.md",
+      "outputHash": "c90afb1e99fec8976ffee1559707e56d17a4bfa6746e5f1b28d45d150feedda8",
+      "locale": "en",
+      "format": "md",
+      "title": "Limits",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/limitations.md",
+          "hash": "4d17598180dff32919e404ff0d4b7f84fe6fc9764a7f6bfdde7b596fdab87fab"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/diagnostics/limitations.md",
+        "record": "docs-sync/translations/diagnostics/limitations.json",
+        "outputHash": "d35b3ba151fa1e5cea8519c48d3d7d6ef8f971ddb871e0e6617d59f526298ddc",
+        "bodyHash": "4781c9c6ff82445172ccc6cba28afb3f4c501029d8a2fedfe9cfba5a336e8ff4"
+      }
+    },
+    "generation/adopt": {
+      "hash": "d0ba57aeea57e619c7c465d339f5ae7899c9de9f6eafe9e42b4a9dfbb50c10a6",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/generation/adopt.en.md",
+      "outputHash": "df5e46dc034298d4ec464a05e5891b2a604abe44465c404f9319e7df01a4d27a",
+      "locale": "en",
+      "format": "md",
+      "title": "Export vs Adopt",
+      "sources": [
+        {
+          "path": "Docs/generation/adopt.md",
+          "hash": "ac243e14a3962b4a8d2b5fcd5200683bf43b6def7edd6641488ebf65888ef737"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/generation/adopt.md",
+        "record": "docs-sync/translations/generation/adopt.json",
+        "outputHash": "60e7d36ffd8ec27554f357b85d0efe7eeb9926d00ed747bb43f186db232a99aa",
+        "bodyHash": "4514e61f73a45a91aa61084c0e8e053f0a51a75bbadbe95381bf2ce608a8a5c0"
+      }
+    },
+    "generation/engines": {
+      "hash": "330d4380b60e3157acae605a563e4091776c05aed8dc92b2d6272ffd38300894",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/generation/engines.en.md",
+      "outputHash": "a50d5b59279604fd91cec1d1fbb12ddb1f4b6b107ae01ccf318dbbe528825444",
+      "locale": "en",
+      "format": "md",
+      "title": "Engines and backends",
+      "sources": [
+        {
+          "path": "Docs/generation/engines.md",
+          "hash": "6d76d838c2637c06d34fb8ddc1f99721f0a99184a7a14f3dab15a4bce689746b"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/generation/engines.md",
+        "record": "docs-sync/translations/generation/engines.json",
+        "outputHash": "aa55d94dd0c89a951fd751e142f08d9c50af7af3a8f6a6dcdf431b727e9f7042",
+        "bodyHash": "c882e1dd6ef1f725ed2946ba7a3b9e1676d16353f74afd8f7c97fa00fe6daed6"
+      }
+    },
+    "generation/pipeline": {
+      "hash": "44adea2e8d32abdd4804a080917b845a27389d41560ec83572c11cd1d73a9e16",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/generation/pipeline.en.md",
+      "outputHash": "3df074c63cef78eaec4630026881428df55e95afc625a15ce70ccb731d5753e0",
+      "locale": "en",
+      "format": "md",
+      "title": "The build pipeline",
+      "sources": [
+        {
+          "path": "Docs/generation/pipeline.md",
+          "hash": "d4781cde538558de849d26ab726540c3acd56a7201cbf716c8d86985a091a7a9"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/generation/pipeline.md",
+        "record": "docs-sync/translations/generation/pipeline.json",
+        "outputHash": "5269b8df1068dcf7b1e480e4b58ab584a400ab25bf7ec183bde410093cf1b064",
+        "bodyHash": "f4b2c3544387f9f895ead63dadf5537490167f320208c23ce48acc7b6c70a498"
+      }
+    },
+    "generation/provenance": {
+      "hash": "cffed4b22a45443c7b2756ff1ade8f42ad6478775c0391b6ac84c2f57bf79c92",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/generation/provenance.en.md",
+      "outputHash": "5d9bd6e9a4f5814034662c630d563b93d4ea635cfc3edd7859fb4c47b4277f93",
+      "locale": "en",
+      "format": "md",
+      "title": "Provenance and verify",
+      "sources": [
+        {
+          "path": "Docs/generation/provenance.md",
+          "hash": "76f7ea9065242c866c8c08770417fe0e2bd4c859390e754d2267e884863c9482"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/generation/provenance.md",
+        "record": "docs-sync/translations/generation/provenance.json",
+        "outputHash": "9268e28c2cbc0a402957c4d153b57c2d393c9cfbcf5c8021cdf20a9e782b6b55",
+        "bodyHash": "c2e31a01d02efbf89a31cba05ac1f569b5ef19267b3c7ee2abecdf5af3a0463d"
+      }
+    },
+    "generation/roundtrip": {
+      "hash": "686cd173b5a808806829a5b9a6f401425978bfbbe5c0c0707d2e857d39e48dcf",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/generation/roundtrip.en.md",
+      "outputHash": "545647511b0545b83d6499a2ae6b26aa3b1648869e4a922f7e1e180f508ebac9",
+      "locale": "en",
+      "format": "md",
+      "title": "Round trip and equivalence",
+      "sources": [
+        {
+          "path": "Docs/generation/roundtrip.md",
+          "hash": "06a7f250a141afbd7061a0dd75f66a0eb0e8f39629e9f2514ac7936231055e09"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/generation/roundtrip.md",
+        "record": "docs-sync/translations/generation/roundtrip.json",
+        "outputHash": "6297fdc581026bfac60fa128737fbf0d6039039c8a41d446526a7d70e241a71c",
+        "bodyHash": "f7d47fc3f77527f796c3c8ed1b6b83f327e8ef42510a62eda976894e0816d932"
+      }
+    },
+    "index": {
+      "hash": "796d3871349a736e7503b339f98255b8342a9a4e204cb9844213f7d7c95fa0c8",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/index.en.md",
+      "outputHash": "1ff71479cb991eea3496fc0e8f7f3f1fffccf4930938bace45a7329398ce79b9",
+      "locale": "en",
+      "format": "md",
+      "title": "Overview",
+      "sources": [
+        {
+          "path": "Docs/overview.md",
+          "hash": "68af2fa2fad561e0fa62c2a663acdf4aa1a985157c639c1a7d75ccb49705b0b1"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/index.md",
+        "record": "docs-sync/translations/index.json",
+        "outputHash": "8e014c4f763cc8a74a2470959ba387efae6bcd1b8382c4aee715a84b448f7a8f",
+        "bodyHash": "5d57bff7bfb3df23b81f1db830407a85c94b8a47de39b2e70ed3e0d0f9c4dbcf"
+      }
+    },
+    "language/dfe": {
+      "hash": "6abe8720afc7e6c19d8a05249ad09150b0f1d695a4c0cbddb7c072c52421a807",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/language/dfe.en.md",
+      "outputHash": "99e5c8fdf84cb438437d8c5edf255bad1cb7dc7dca54c9b882e668c079db8c1f",
+      "locale": "en",
+      "format": "md",
+      "title": ".dfe — a reusable emitter",
+      "sources": [
+        {
+          "path": "Docs/language/dfe.md",
+          "hash": "14e458f3e0f52ab45a6d23c624e80eb5101ca657f0cd6293bcd2b76643d30c22"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/language/dfe.md",
+        "record": "docs-sync/translations/language/dfe.json",
+        "outputHash": "08fbb029a10e7679e763d005c589e031a3a5f983898b11ab245e6e602197b7a7",
+        "bodyHash": "2eb273735d1c7869e17dd3de3758b8d8be8a26534dc9254b7dbb51a471ae7a84"
+      }
+    },
+    "language/dfm": {
+      "hash": "ac94297c7a6495b3f62dc019fb6aa19e5aad198a1da894da8488824c1904d3c3",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/language/dfm.en.md",
+      "outputHash": "0d265c0b68062c0b0d1be936c2eb656ccdf90fadaa3b497ac926a11a2ad9a08f",
+      "locale": "en",
+      "format": "md",
+      "title": ".dfm — modules and dynamic inputs",
+      "sources": [
+        {
+          "path": "Docs/language/dfm.md",
+          "hash": "2de0e0fb4162f720ddf4ba95f91b45c8ec46d6ed924ba3a3a8df49d95b106995"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/language/dfm.md",
+        "record": "docs-sync/translations/language/dfm.json",
+        "outputHash": "884fd80f1456d1d24c66268294ec0f7679ceac580c3ddecdc6cb58d6991f3d26",
+        "bodyHash": "b9b9b3a4f000abb5325d201fb72c738c86c0b70415877cd0d9387d1ae952768d"
+      }
+    },
+    "language/dfs": {
+      "hash": "b92a5ff275df8e8641f591818ae2ad21d2f6702f2b6c563034fdc4d5264e72ef",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/language/dfs.en.md",
+      "outputHash": "3e81d84ff52217ba239aaaa28558e5ecab568e8611b7f41dee3cbc4361ee6c67",
+      "locale": "en",
+      "format": "md",
+      "title": ".dfs — a system",
+      "sources": [
+        {
+          "path": "Docs/language/dfs.md",
+          "hash": "1ea8a1ca9c5bdead1142f6144933bad34bf27c5929acb4ab19fa9b2bcd5c81d2"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/language/dfs.md",
+        "record": "docs-sync/translations/language/dfs.json",
+        "outputHash": "6f6c3316d27c6ab24f922a967bc57d93487f3ad9bcaf3e22c6d304f04fff562c",
+        "bodyHash": "acb4b1c6e568bf3c138ac21c84a74fc1f808316f1e91650245d49e648d31ef57"
+      }
+    },
+    "language/events-and-stages": {
+      "hash": "324d80700c7291d7a00b0e3d7902b8ed579401501ad0c4bcdf3f9494a16c1b06",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/language/events-and-stages.en.md",
+      "outputHash": "979bb40536053eb4c0c53a5c6329087170971b0239826f67103d09ffa654cedc",
+      "locale": "en",
+      "format": "md",
+      "title": "Events and simulation stages",
+      "sources": [
+        {
+          "path": "Docs/language/events-and-stages.md",
+          "hash": "0e24cfce42493e976624adf4943a51b82766c4d96e7065328ddd806cf22591cd"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/language/events-and-stages.md",
+        "record": "docs-sync/translations/language/events-and-stages.json",
+        "outputHash": "8d9dc5e50f94dd9484b8a6f35f9f3cd3d64c672fde6f8f4c2f665be57dad60d8",
+        "bodyHash": "5adf98a3f1056ec7d87bf20fc1c670988323a8f78a7bfc5a5937007d93b554a9"
+      }
+    },
+    "language/overview": {
+      "hash": "2ceb6735a1a0562fdedf068e68daa2ff96e4d7acee71c9557ef6e47acecc3f14",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/language/overview.en.md",
+      "outputHash": "674daa6e43fe0d545762a1d8636b756e1c112251e1f6d699b075059d0aa715dc",
+      "locale": "en",
+      "format": "md",
+      "title": "The file model",
+      "sources": [
+        {
+          "path": "Docs/language/README.md",
+          "hash": "a757be5741ea751e109e7a46f33999b9c5d949860079686198ca4244a4b35412"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/language/overview.md",
+        "record": "docs-sync/translations/language/overview.json",
+        "outputHash": "e37e47907532ca40bfc25ab106946248260db8969b1f307ae3d3a24cd7f9ead7",
+        "bodyHash": "7d533e3c7dd10f42d02691e01caf164c37a84094c5b034f782d58c10ef412f04"
+      }
+    },
+    "language/values": {
+      "hash": "c2eed38f2c36ec0722f6127b366f32832d7c488a92fbe0311c2e0e4e161924ba",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/language/values.en.md",
+      "outputHash": "6a9903340360fb8e2041fd7f040950f49688ea000ea2290b101a5f0e80867dae",
+      "locale": "en",
+      "format": "md",
+      "title": "Values, types and rules",
+      "sources": [
+        {
+          "path": "Docs/language/values.md",
+          "hash": "468ffd285f1836eb1a480609aa7f811cac38b301ff9bd1e2cacf383227120ac2"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/language/values.md",
+        "record": "docs-sync/translations/language/values.json",
+        "outputHash": "0126486aa99261e6db29e8d0f4c5f56b2431364a5db0f625f5e7d56bbebc1b89",
+        "bodyHash": "d4a01b24c1365747aa974f8962e7829608865051bc1323cadb954df0a31ebca9"
+      }
+    },
+    "start/about": {
+      "hash": "16eb7f0e9c375e464d65d4e504b0c4da43d7a295b35390d84083d4a86befb8db",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/start/about.en.md",
+      "outputHash": "6583547fcfa68bfaa712f354c85677be4e6ef5292356873b23b8e32302fb7fb4",
+      "locale": "en",
+      "format": "md",
+      "title": "What DreamFX is",
+      "sources": [
+        {
+          "path": "Docs/getting-started/about.md",
+          "hash": "408b07f23b13d856063ae818abc122bb00e654ce5eb9b41387e000b8bbee2726"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/start/about.md",
+        "record": "docs-sync/translations/start/about.json",
+        "outputHash": "74c4751e7eb82329f2e797b56afab17ebf339354be095db5a4e710c331155e8f",
+        "bodyHash": "f5a9dadc1131484f2ff812d05157a965da7fd493985f03f99c224906d86ad74b"
+      }
+    },
+    "start/first-effect": {
+      "hash": "89cdcd34790e2d7a161802f80185b16276299badf787c7b32ef154dda3f8a72a",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/start/first-effect.en.md",
+      "outputHash": "4309b404333d9efb9929401b74506725fdd81ca982128bf0ad61b395f8dd6eb7",
+      "locale": "en",
+      "format": "md",
+      "title": "Your first effect",
+      "sources": [
+        {
+          "path": "Docs/getting-started/first-effect.md",
+          "hash": "260e1aad018a7326304c09035bfb59b8d08b98678b7362822c37df5de9c2fb63"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/start/first-effect.md",
+        "record": "docs-sync/translations/start/first-effect.json",
+        "outputHash": "f5c42c7de76c25844d2bdbad62d75cac8b0c1850102fb9c235e9791c8afc46bf",
+        "bodyHash": "b5a06d63dd74b783b829ba110b6e1f6dd412e464560b4622efb1051909002478"
+      }
+    },
+    "start/installation": {
+      "hash": "4e28c75f0fbf69a8963a0e3efb5682a87b529859e741e53c023cbf22e71c5a70",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/start/installation.en.md",
+      "outputHash": "b3014c50c022b7d8c9a4190bef2d5ae1ddc30fdbec2794e67ce606e0a09e1cf9",
+      "locale": "en",
+      "format": "md",
+      "title": "Install and sanity check",
+      "sources": [
+        {
+          "path": "Docs/getting-started/installation.md",
+          "hash": "4a208e142d8ed5d293e3c89f1f28f289bb21d7f67467832a49fc8e2340e1c5e5"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/start/installation.md",
+        "record": "docs-sync/translations/start/installation.json",
+        "outputHash": "e4f51dac9ed2201d764053f54d83a26a6742a3321a8f173d6db548f0f86e73ed",
+        "bodyHash": "c7977415e945cea05b3562d00a6c2f14fc11b023709528f839745efb89baec47"
+      }
+    },
+    "start/project-layout": {
+      "hash": "205fb5eb1dba21a7e518aef900896bace935219ca429726abf5638e43af0cf41",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/start/project-layout.en.md",
+      "outputHash": "32bab0ae1008c0c48ae3aac2b29b9275e1ee5df810907672250210e8154dd61c",
+      "locale": "en",
+      "format": "md",
+      "title": "Layout and naming",
+      "sources": [
+        {
+          "path": "Docs/getting-started/project-layout.md",
+          "hash": "b96948c227a0e4e3d7773f697be8bac609026e619152c25eea14152f4005bd97"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/start/project-layout.md",
+        "record": "docs-sync/translations/start/project-layout.json",
+        "outputHash": "627e84ace4436fa6b6d1c7066aaa52fde468940459ad2b98631215cb122ff403",
+        "bodyHash": "9ec651f6eb507b419b98576b23bfdbd6effe5695573e72522cbf8488b4b78bc1"
+      }
+    },
+    "start/workflow": {
+      "hash": "5fe08d7f10f95e79f1c827d774927a539eeb24adc4814c81e48c8822288c42a1",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/start/workflow.en.md",
+      "outputHash": "e5b4e84ec14bd1d49992952f8b51fd7cf2ff971cd34a139448c38157a918d419",
+      "locale": "en",
+      "format": "md",
+      "title": "The daily loop",
+      "sources": [
+        {
+          "path": "Docs/getting-started/workflow.md",
+          "hash": "7396a915f1783ffd26fecfd01ccecc4efd4dbd12dcaad70b2cf315c7dc2aa93e"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/start/workflow.md",
+        "record": "docs-sync/translations/start/workflow.json",
+        "outputHash": "9ac3d3c689e6ca6b40b0b78906dbe1063b5c1bbd13b8cf73e08f6cba79a73feb",
+        "bodyHash": "1d6ddfdf7d209cf1dcc73cc09558ed92fcef34152381545bd06d3f5548794278"
+      }
+    },
+    "tools/ci": {
+      "hash": "85b13b4d21b0eb7bda7d4c126e865ec0916831ec3706379f4ad36c16b6adbed5",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/tools/ci.en.md",
+      "outputHash": "113dbc31f6f8ea50664a7b09f288ff3267d14f54d8dc5b950f238570896fcaa2",
+      "locale": "en",
+      "format": "md",
+      "title": "ci.ps1 and gates",
+      "sources": [
+        {
+          "path": "Docs/tools/ci.md",
+          "hash": "bb0f633d173463a24e084fe395603132a73b1754eabcfc3ac7f5e988868327a1"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/tools/ci.md",
+        "record": "docs-sync/translations/tools/ci.json",
+        "outputHash": "2bc5d86f233ceab8b24c678b90b0ef74cd2082d98319e2543ff19d0414caeeb6",
+        "bodyHash": "2a78e69d60dd4660ac0181ba37085938d9af15a404da14739b521138ed4aece5"
+      }
+    },
+    "tools/cli": {
+      "hash": "7ed6ad2d21bc6acbb12b196e342fb8e13bad8140c46ea60b660aac0be5436eeb",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/tools/cli.en.md",
+      "outputHash": "fa2d8eef4f598dd5fa0b3df0d895440db482e546d256829d6cec36f42177a74b",
+      "locale": "en",
+      "format": "md",
+      "title": "The dfx.ps1 command line",
+      "sources": [
+        {
+          "path": "Docs/tools/headless-compilation.md",
+          "hash": "0b0868e9b4650738f13b7ab091c8228b703740fb976c229dfd0b51cce0da9690"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/tools/cli.md",
+        "record": "docs-sync/translations/tools/cli.json",
+        "outputHash": "8c1ab518336b2faffd7e19de5aeebe083c602e255e544689b06191bc7ec75a49",
+        "bodyHash": "e63c9f813215b7cad80e2390526ccc2d1fa0b8e141a5a5c728e5086bca63d5b3"
+      }
+    },
+    "tools/editor": {
+      "hash": "167c8685e0a3cbd3a5f6fc9d686d47aa6c23b16c891d4d5e8e2c4154855c343c",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/tools/editor.en.md",
+      "outputHash": "c85574d6bccf0fc58e9c4645a654c38045621df2151286240545c0dab4a5e005",
+      "locale": "en",
+      "format": "md",
+      "title": "Editor integration",
+      "sources": [
+        {
+          "path": "Docs/tools/editor-integration.md",
+          "hash": "9d9a8f25619d020c6c12a1ccd96cfdc40ca6555e4f5164862d47f76b79d36a2c"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/tools/editor.md",
+        "record": "docs-sync/translations/tools/editor.json",
+        "outputHash": "ca172623abfbb964b944bb4c099a5f84a1e0119c8f7d72626169acb82c19f3ef",
+        "bodyHash": "4a9cbca6a8f5d3f052ad94b9bca7c103e18c565fdd798f060464e62a838d4e1a"
+      }
+    },
+    "tools/scripting": {
+      "hash": "5345e84e1c27d1a5359d2cbf891b2701fc022e06a6320db62b437c6e58e18305",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/tools/scripting.en.md",
+      "outputHash": "fc02bc6cf05b3ffe3c787a255cd641e71db5cb82b1c271f4959e270b1dc40166",
+      "locale": "en",
+      "format": "md",
+      "title": "Python and Blueprint",
+      "sources": [
+        {
+          "path": "Docs/tools/scripting.md",
+          "hash": "89f3a024e65aca91fedef6c6d6b481a8ae8b54734b3a14d81f75fb6b3763a095"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/tools/scripting.md",
+        "record": "docs-sync/translations/tools/scripting.json",
+        "outputHash": "5b4b97075760101152651659f9d9a6af5d92cee0919c32069bd369b04685de24",
+        "bodyHash": "aa3cb5449f98a5a437796c050e2fb71531aba8327069689c301971ef3714f5fc"
+      }
+    },
+    "tools/skills": {
+      "hash": "4cd7905d2c48e7cd6b5132060ab6971515b1d58fa47c7ef960e55c6d7f047f03",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/tools/skills.en.md",
+      "outputHash": "f783c508ae7eaf641924737b925112442b0f372e53218a6c75f7bd1d0820196c",
+      "locale": "en",
+      "format": "md",
+      "title": "Agent skills",
+      "sources": [
+        {
+          "path": "Docs/tools/skills.md",
+          "hash": "3c6c739097177cef5182dade03100e935b01e448adf739122eb3c785ba480a13"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/tools/skills.md",
+        "record": "docs-sync/translations/tools/skills.json",
+        "outputHash": "1188df727ae7059b2228662a53cd248d6c7d5b4c8a4d0e8dedb9a49ac0377d12",
+        "bodyHash": "90ed3d9fb5e75fc322a87bd470bc1913a1acbc02a316d9c520b168b36401856a"
+      }
+    },
+    "tools/vscode": {
+      "hash": "4f087dd67b57ca5de7f451407a7d9088152095bac14f041e7085c2e775455c68",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/tools/vscode.en.md",
+      "outputHash": "d190d680bd13014bb7021baf3ee5165ed943d1a720a137f3548e8ac5a30935f6",
+      "locale": "en",
+      "format": "md",
+      "title": "VSCode and the module index",
+      "sources": [
+        {
+          "path": "Docs/tools/vscode.md",
+          "hash": "e6a00192fb3f95ccbcddd169dc9620f355ba916d25cf633cc7c72dfe09a267cd"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/tools/vscode.md",
+        "record": "docs-sync/translations/tools/vscode.json",
+        "outputHash": "1fcc056ca345c9dd726292080785d0e3fbfdd4d2d3aa97bf960830365cf391ff",
+        "bodyHash": "f0648074cd745630aad0643f5f04b70adb543d275c0092b6001f0f621d9954de"
+      }
+    },
+    "plugin/diagnostics/dfx1xxx": {
+      "hash": "686174b81b9c4ec3f29470655b423c2623faf8ccc862440b92ba7c438f9170b1",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/plugin/diagnostics/dfx1xxx.en.md",
+      "outputHash": "1bdcc886d8f2943b05ec0ded1efd7f011711f5b40dd30c6c81b42a316055277c",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX1xxx --- Driver and file I/O",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX1xxx.md",
+          "hash": "06a098cd0d5a36f6142fde8f864d000d753a07ae22b86dddd4000eef785af108"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/plugin/diagnostics/dfx1xxx.md",
+        "record": "docs-sync/translations/plugin/diagnostics/dfx1xxx.json",
+        "outputHash": "818a1596dcda4e22d9d5da9885779217ed9e1e5d6e780992bed0b201ffcc757d",
+        "bodyHash": "f7acdbf4e9a433c0a058a00e14790686dbe475cd012bf02fead5f6e468dea002"
+      }
+    },
+    "plugin/diagnostics/dfx2xxx": {
+      "hash": "f989f5e43659f915561d4abfab5bcd43306a2dfaed83b0a4e4d7d5054654adbf",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/plugin/diagnostics/dfx2xxx.en.md",
+      "outputHash": "3075e6690acc02730dd680331fc7b292101e375a607c61f677b516c7d7a7ea0e",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX2xxx --- Lexer and syntax",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX2xxx.md",
+          "hash": "b1b4b420ee76d25e5251689c2f647868d1819584958943af4a716e62c8227452"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/plugin/diagnostics/dfx2xxx.md",
+        "record": "docs-sync/translations/plugin/diagnostics/dfx2xxx.json",
+        "outputHash": "761edae85ccd83f5c64affa7d810fb9e4cdca40c884e5ea38fcc295e66cea315",
+        "bodyHash": "68f24b4fddb1d93bb573db391aaf1109b265b5509c81b11026291ec9a3626ce4"
+      }
+    },
+    "plugin/diagnostics/dfx3xxx": {
+      "hash": "51297f1a0dd94912cabf903b88ccae601359e3b8f77760477a873d39528a27c1",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/plugin/diagnostics/dfx3xxx.en.md",
+      "outputHash": "2505e07ad249ed1119e3a9642e04cb746e53466da0db102b452140e5a51b7efb",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX3xxx --- Declarations and document structure",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX3xxx.md",
+          "hash": "fe6349277e185ee6869db03fb4e2e79a7efb5594dad552d3a572f53706096fc6"
+        },
+        {
+          "path": "Docs/diagnostics/history/DFX3045.md",
+          "hash": "90bf867048046cb47399228ec447fc373f88c93875fefbf86af2500c80abd1f0"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/plugin/diagnostics/dfx3xxx.md",
+        "record": "docs-sync/translations/plugin/diagnostics/dfx3xxx.json",
+        "outputHash": "549685d9068b4193d78822b91226cec5c69824a3d8a216f1cc98a56004c452d3",
+        "bodyHash": "5fa56788d7d2a26ebe32c1cd6c5d5b14c9aca4973d00ba9e0415802d9177962a"
+      }
+    },
+    "plugin/diagnostics/dfx4xxx": {
+      "hash": "2d06261be2ff00ff2561e1f9fa205058c6ef899f2d1dba5f2bafd360a5a616f5",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/plugin/diagnostics/dfx4xxx.en.md",
+      "outputHash": "f1da5702728f4f13bcbaa73e1ae296c7bde92792d735c5bfd09518e69cbe202c",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX4xxx --- Values, types and expressions",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX4xxx.md",
+          "hash": "6e10b3962bc2e4f5f75ce30978a21c6874cf7af1dacb426252a63ae3d539a331"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/plugin/diagnostics/dfx4xxx.md",
+        "record": "docs-sync/translations/plugin/diagnostics/dfx4xxx.json",
+        "outputHash": "4694769961fb8bbc410d9969401d87941f52a6a5c2098c2c2a89661dd01a98c8",
+        "bodyHash": "4497ff7707a4af4d41c299c044b3b16c78688ace8921ff8d6956eade00174bd6"
+      }
+    },
+    "plugin/diagnostics/dfx5xxx": {
+      "hash": "a8cf6a47a57a80b1310a931f11a15378fc3991983fa4c4b6789dbd5656c0b12f",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/plugin/diagnostics/dfx5xxx.en.md",
+      "outputHash": "c5e15b4a467157616089cf5e50e8c6d1d6b9c53a4a34d1b1e7d31eef07af4acf",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX5xxx --- Generation and asset writing",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX5xxx.md",
+          "hash": "8199ea7ea3823432f73fe3e6d85a5cf2bee0f765861de323e0384de41ae80746"
+        },
+        {
+          "path": "Docs/diagnostics/history/DFX5099.md",
+          "hash": "4a751f358b0d798abcb80032c7de4e80b4e6a8ca75a3438de42281525930b739"
+        },
+        {
+          "path": "Docs/diagnostics/history/unpublished-codes.md",
+          "hash": "8ce55000b86e5e1f27a180bce632daad304de9d53ef03b6efff25e483e7c2383"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/plugin/diagnostics/dfx5xxx.md",
+        "record": "docs-sync/translations/plugin/diagnostics/dfx5xxx.json",
+        "outputHash": "72b07e667e15d7410363d94fceb7b8e405cf7d39862b2f5a43928c95bda5c498",
+        "bodyHash": "67159610c66ad1d60f5f6aab30301e59a17fe17619b08c56e0fd1af7d478096f"
+      }
+    },
+    "plugin/diagnostics/dfx6xxx": {
+      "hash": "67461c6adb423c45e3c1e9f3722b032fd26f8e85b1f36a0a5130c085f1817182",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/plugin/diagnostics/dfx6xxx.en.md",
+      "outputHash": "edb5ddc78969fed897d457601b63101965135322183ba222d736d1acd1afbc91",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX6xxx --- Niagara compilation",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX6xxx.md",
+          "hash": "4853de4974ea3334b7cc0dda21fd4ff752d6adf0186d3ed668a7d20966408d43"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/plugin/diagnostics/dfx6xxx.md",
+        "record": "docs-sync/translations/plugin/diagnostics/dfx6xxx.json",
+        "outputHash": "b7dd22d4f06dadd34a245e1e195955079404060e42ec896b4c3c1b496378baf7",
+        "bodyHash": "c7fca627527a030ade5a5cefc408bb12e0acb51b404fdd836a439bf75c890481"
+      }
+    },
+    "plugin/diagnostics/dfx7xxx": {
+      "hash": "f23067d0d907693bc1453a002927f365da8ca07145ccf0fcfa2811855bae2c63",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/plugin/diagnostics/dfx7xxx.en.md",
+      "outputHash": "0304c4891ed87307e58be9c87e9f7b8e588925189a11fee33119057998c2e20d",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX7xxx --- Provenance, drift and lint",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX7xxx.md",
+          "hash": "1b3dfd74f612b9b7076c36739afd96ebe0a90d631d4cede711f86a6eab7645b8"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/plugin/diagnostics/dfx7xxx.md",
+        "record": "docs-sync/translations/plugin/diagnostics/dfx7xxx.json",
+        "outputHash": "ee554b6cd752685dcabcae7f5030bbc0c40a0dde734b570cec542be431c8d909",
+        "bodyHash": "9eba755900a2427fa3f71db7dd1a3fea4d790b1fc2664246d7d109eb385efeb9"
+      }
+    },
+    "plugin/diagnostics/dfx8xxx": {
+      "hash": "a1f6b156ba8069d30fb1985d8d23b4461c35065803b934c680ee4171efe778e9",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/plugin/diagnostics/dfx8xxx.en.md",
+      "outputHash": "8d54dd31132636a9c9b35ec169bdbdba843bbcd31bf51f37265c4e4986405104",
+      "locale": "en",
+      "format": "md",
+      "title": "DFX8xxx --- Decompiler",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/DFX8xxx.md",
+          "hash": "c15cedddebc7f413acb475754d3bc65ffc3c2f6dbd8047c5c18b1f8426470fb8"
+        }
+      ],
+      "translation": {
+        "status": "unreviewed",
+        "output": "content/docs/plugin/diagnostics/dfx8xxx.md",
+        "record": "docs-sync/translations/plugin/diagnostics/dfx8xxx.json",
+        "outputHash": "d5f4ba84a9536723f6d183195480ecade560a7b2fd54845021819904e7546b8b",
+        "bodyHash": "e9d64429e8ab2553f1c7d42d88331aba990cb07b6681e8968ae1989880e3cb60"
+      }
+    },
+    "plugin/diagnostics/readme": {
+      "hash": "eb4481a5afaf9e23827ba07a5fdb38ab71dae0dbdfe1002ce50bc2dc02363a9a",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/plugin/diagnostics/readme.en.md",
+      "outputHash": "00524aaf239f494036524bfb28a29d720a884b2b6dde2e2e6fbff36023388ddc",
+      "locale": "en",
+      "format": "md",
+      "title": "DreamFX diagnostics",
+      "sources": [
+        {
+          "path": "Docs/diagnostics/README.md",
+          "hash": "1141844c1b76ef7fa53e66b7e8f7de5105c602ed873785e48b67147ddb80092f"
+        }
+      ],
+      "translation": {
+        "status": "missing"
+      }
+    },
+    "plugin/getting-started": {
+      "hash": "5d92b250b6e1d6fecb89457248cda8304f80092ae5d2aedf3775d1fa84f7ffd2",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/plugin/getting-started.en.md",
+      "outputHash": "c8fdc3445fa7a6a45515d616c99fd0af7773a56cb5c2404998b418c059000fa4",
+      "locale": "en",
+      "format": "md",
+      "title": "Getting started with DreamFX",
+      "sources": [
+        {
+          "path": "Docs/getting-started/quickstart.md",
+          "hash": "5d28e579c044b96e446913ffb64b02abb0f70e2465e0143829fc543f49c83409"
+        }
+      ],
+      "translation": {
+        "status": "missing"
+      }
+    },
+    "plugin/language/native-emitter-inheritance": {
+      "hash": "aa8d0c4607962e635e98ad4c49fd16422ad9da0132a35243504b2fcd5d6269cd",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/plugin/language/native-emitter-inheritance.en.md",
+      "outputHash": "a597f172676f46d863a99d006cb01ac4ac87f378005505376bbd648b764cac81",
+      "locale": "en",
+      "format": "md",
+      "title": "Native emitter inheritance",
+      "sources": [
+        {
+          "path": "Docs/language/native-emitter-inheritance.md",
+          "hash": "0ac8c3d8f246a71a675e338cc021c659704e31a900e68c11a7118ed2f10d8b2b"
+        }
+      ],
+      "translation": {
+        "status": "missing"
+      }
+    },
+    "plugin/language/system-inheritance": {
+      "hash": "c532f46b25ee96665ed491c50e4404c09b5fed2d98e897fe9efc201402c69d8f",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/plugin/language/system-inheritance.en.md",
+      "outputHash": "02f1674587f506c6bb5ba21c905af17188a0d0fe9f546c211dfdb4dbb8b53bb7",
+      "locale": "en",
+      "format": "md",
+      "title": "System source inheritance",
+      "sources": [
+        {
+          "path": "Docs/language/system-inheritance.md",
+          "hash": "038d73763dac92e26efb9803a003a83c294ccbe4d8b8438be126ec962f8b1b77"
+        }
+      ],
+      "translation": {
+        "status": "missing"
+      }
+    },
+    "plugin/tools/asset-comparison-and-export": {
+      "hash": "f58077e4ba0cb5a4af3ea34778ac6fd16d03c5802690a484172c68964944deb1",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/plugin/tools/asset-comparison-and-export.en.md",
+      "outputHash": "e40f3624365b1aef694ca6143029e8a4e065cdfd6640b01c9cb9372fd32d2eed",
+      "locale": "en",
+      "format": "md",
+      "title": "Asset comparison and export coverage",
+      "sources": [
+        {
+          "path": "Docs/tools/asset-comparison-and-export.md",
+          "hash": "dccc56525d05ab27511cf3fb24a3459dd99bbf97b35b06e8b0356e744c886b76"
+        }
+      ],
+      "translation": {
+        "status": "missing"
+      }
+    },
+    "plugin/tools/incremental-builds": {
+      "hash": "635100f532c14e505be7f4a9e216cddcb1be7aac50ebbee36b58d89cde72dec2",
+      "revision": "b1c700214cf15af4b2b6425520989557a8c55e94",
+      "output": "content/docs/plugin/tools/incremental-builds.en.md",
+      "outputHash": "0c0fa546cee80a8c82565846e9b66b6208b44a9c7c65aa3862a83c5c2f3a5621",
+      "locale": "en",
+      "format": "md",
+      "title": "Build on save and up-to-date checks",
+      "sources": [
+        {
+          "path": "Docs/tools/build-on-save.md",
+          "hash": "cb9f30c9f33d7538a061fb8b7f72f7154d3ace459e426bbe3904076d1f917da8"
+        }
+      ],
+      "translation": {
+        "status": "missing"
+      }
+    },
+    "plugin/tools/incremental-build-reference": {
+      "hash": "bc4e435e11a06270cb8aa4b2bfc9c138feab90b1c9d9ccfc02e575184fab67cb",
+      "revision": "b1c700214cf15af4b2b6425520989557a8c55e94",
+      "output": "content/docs/plugin/tools/incremental-build-reference.en.md",
+      "outputHash": "287ab1047d06eec495ad2205b7f1e0c62d6008216604f73564c926b3ae53f8f2",
+      "locale": "en",
+      "format": "md",
+      "title": "Incremental build reference",
+      "sources": [
+        {
+          "path": "Docs/tools/incremental-builds.md",
+          "hash": "77be23013080cf8e619529ed9d236013a2fc994c38ec1c2d66ea9ca6f82cf507"
+        }
+      ],
+      "translation": {
+        "status": "missing"
+      }
+    },
+    "plugin/tools/pull": {
+      "hash": "91c31be777ef78aeced3b71f5e92d7ce0f6ff2ff63c77349adfe96e854afa0e5",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/plugin/tools/pull.en.md",
+      "outputHash": "c125f4ccacd53505f319510d246dc8cda335c19014937471f4685de39646ffd4",
+      "locale": "en",
+      "format": "md",
+      "title": "`pull`: write current asset values back to source",
+      "sources": [
+        {
+          "path": "Docs/tools/pull.md",
+          "hash": "27fe8a12ad888f9f7ad34e9fc567ff2ecd0622980f3e6692f7941c60a7bf9b92"
+        }
+      ],
+      "translation": {
+        "status": "missing"
+      }
+    },
+    "plugin/tools/write-back-coverage": {
+      "hash": "f3cb7d84c7cdd450bf5b583086aa15bb15b99410da4f138752d3722036bd8034",
+      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "output": "content/docs/plugin/tools/write-back-coverage.en.md",
+      "outputHash": "38e3dbc4c546e2b12590e04f5c0e3d712a3c8a0f34138d225421de44b28b8e20",
+      "locale": "en",
+      "format": "md",
+      "title": "Write-back coverage and gaps: measured inventory",
+      "sources": [
+        {
+          "path": "Docs/tools/write-back-coverage.md",
+          "hash": "6d000e27a69212148919b1cd272eb1083e64776b7a0b5e2615e0758dbeace0c2"
+        }
+      ],
+      "translation": {
+        "status": "missing"
+      }
+    }
+  }
+}

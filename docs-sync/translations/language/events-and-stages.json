@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "status": "unreviewed",
+  "sourceHash": null,
+  "sourceRevision": "b1c700214cf15af4b2b6425520989557a8c55e94",
+  "sources": [
+    {
+      "path": "Docs/language/events-and-stages.md",
+      "sourceHash": null,
+      "sourceRevision": "92cdd2c7a3e7ab9677d502af97b43ebd59f2f8fa",
+      "translationHash": "5fbcc2cadcc8367a732820788a68e170d37137850a7cbbbec6979b5e572765db"
+    }
+  ],
+  "translationFile": "content/docs/language/events-and-stages.md",
+  "translationHash": "8d9dc5e50f94dd9484b8a6f35f9f3cd3d64c672fde6f8f4c2f665be57dad60d8"
+}
