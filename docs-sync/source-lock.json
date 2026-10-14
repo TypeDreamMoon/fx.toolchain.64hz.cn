@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repository": "TypeDreamMoon/DreamFX",
-  "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+  "revision": "ed0a113a039bed6d8a748dd532a85044e88aaa38",
   "workingTree": false,
   "translationSnapshotHash": "cebcc407cddcef4392f183f9efc5559b0d693160c36e70e91fd3ebbeac1db725",
   "pages": {
@@ -1062,17 +1062,17 @@
       }
     },
     "plugin/tools/incremental-build-reference": {
-      "hash": "d7e317f8acc25e658ce6f8a488c794edd57132dde4e1fdf35151e7215c4bb831",
-      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "hash": "6fd25db4671e653ea0ffb8e0b4a0c140517751d930c956d67403f79da05580d9",
+      "revision": "ed0a113a039bed6d8a748dd532a85044e88aaa38",
       "output": "content/docs/plugin/tools/incremental-build-reference.en.md",
-      "outputHash": "127a1a14af233245cafd608c963629caf1827ceb59d2b4ea527b300a0d840343",
+      "outputHash": "81cda0fa61b89301c8d76ca282437b594d4cc97a32f5060bda08f528951359f0",
       "locale": "en",
       "format": "md",
       "title": "Incremental build reference",
       "sources": [
         {
           "path": "Docs/tools/incremental-builds.md",
-          "hash": "80cc98de7b08e6b175d43aa4c4c581a261d2f6f8082b2c4dc997cc19cca1bf50"
+          "hash": "5f778bcb31ab969e3be82dfa35ed15d2c57965fbed95089a6f51ca6626f6b56a"
         }
       ],
       "translation": {

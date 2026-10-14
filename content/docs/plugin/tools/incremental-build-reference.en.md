@@ -5,7 +5,7 @@ description: "Incremental build reference"
 
 # Incremental builds
 
-> [DreamFX](https://github.com/TypeDreamMoon/DreamFX/blob/c6ac796202e623a3fd81d32addce75f8ef5fa8ef/README.md) » **Incremental builds**
+> [DreamFX](https://github.com/TypeDreamMoon/DreamFX/blob/ed0a113a039bed6d8a748dd532a85044e88aaa38/README.md) » **Incremental builds**
 
 Saving a `.dfs` used to clear every stack of its system and rebuild everything, so the cost of a save
 was proportional to the size of the whole system, not to the edit. An incremental build compares the
@@ -33,10 +33,19 @@ editor then keeps.
 
 On the stock prebuilt engine the incremental path covers value edits and emitters added or removed;
 any other structural change — a stack or an emitter that has to be rebuilt — runs the full rebuild.
-That engine launches a compile on every edit, and which value the constant of a hidden input ends up
-with depends on the order those compiles run in, so rebuilding part of a system does not land on the
-same asset as rebuilding all of it. The MoonEngine build suppresses those compiles and rebuilds single
-stacks.
+Rebuilding one stack has to drop the rapid-iteration constants of the modules it removed first, or a
+re-added module keeps the constant its previous node left — a hidden input's old value where the full
+rebuild has the module default. The engine's own cleanup for that is not exported there; the per-edit
+compiles that engine used to launch did it as a side effect, and the build now holds those off. The
+MoonEngine build calls the cleanup and rebuilds single stacks.
+
+The full rebuild itself is faster on the stock engine than the table above says: the build window
+keeps a compile request pending so the engine launches no compile until the build's own, a static
+switch write refreshes only its module, a batch of module adds refreshes its stack once, and an emptied
+stack is cut out of the graph in one step. A headless full rebuild of `NS_Magic_Explosion` went from
+110 s to about 52 s, engine start-up included. Each step has a switch that restores the old behaviour,
+for one-binary comparisons and as an escape hatch: `-RebuildOnSwitch`, `-RebuildPerAdd` and
+`-ClearPerModule` (the same names on `dfx.ps1 build`).
 
 ## How it works
 
