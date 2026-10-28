@@ -5,7 +5,7 @@ description: "编辑器集成"
 
 # 编辑器集成 [#editor-integration]
 
-> [DreamFX](https://github.com/TypeDreamMoon/DreamFX/blob/04b380e2addb2b205b89cf8c5d8f0664632d3d64/README.md) » **编辑器集成**
+> [DreamFX](https://github.com/TypeDreamMoon/DreamFX/blob/49df393f789c0ce609e7d3bea43fac471621388b/README.md) » **编辑器集成**
 
 DreamFX 挂接到 Unreal 编辑器 UI 的每一处：Tools 菜单、关卡编辑器工具栏、Content Browser 资产上下文菜单，以及 Niagara 系统与脚本编辑器工具栏。
 
@@ -52,7 +52,7 @@ DreamFX 挂接到 Unreal 编辑器 UI 的每一处：Tools 菜单、关卡编辑
 
 ### System 子菜单 [#system-submenu]
 
-`DreamFX.SystemActions` —— 标签 **DreamFX**，图标 `Icons.Settings`。它的内容取决于该资产是否带有 DreamFX [溯源戳](https://github.com/TypeDreamMoon/DreamFX/blob/04b380e2addb2b205b89cf8c5d8f0664632d3d64/README.md)，因为生成出来的资产和导入进来的资产需要的是相反的两件事。
+`DreamFX.SystemActions` —— 标签 **DreamFX**，图标 `Icons.Settings`。它的内容取决于该资产是否带有 DreamFX [溯源戳](https://github.com/TypeDreamMoon/DreamFX/blob/49df393f789c0ce609e7d3bea43fac471621388b/README.md)，因为生成出来的资产和导入进来的资产需要的是相反的两件事。
 
 **没有溯源戳**（DreamFX 没做过它），分区 `DreamFX.DecompileActions`，标题为 *Decompiler*：
 

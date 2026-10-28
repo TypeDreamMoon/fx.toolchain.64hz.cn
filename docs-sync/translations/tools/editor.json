@@ -2,7 +2,7 @@
   "version": 2,
   "status": "current",
   "sourceHash": "167c8685e0a3cbd3a5f6fc9d686d47aa6c23b16c891d4d5e8e2c4154855c343c",
-  "sourceRevision": "04b380e2addb2b205b89cf8c5d8f0664632d3d64",
+  "sourceRevision": "49df393f789c0ce609e7d3bea43fac471621388b",
   "sources": [
     {
       "path": "Docs/tools/editor-integration.md",
@@ -12,5 +12,5 @@
     }
   ],
   "translationFile": "content/docs/tools/editor.md",
-  "translationHash": "d1212c9caa1801cac79bf2f0b9696e60d800078d8d62b35a6ae7edb43f983699"
+  "translationHash": "51a617874aaf7f0a05ed87e485b90a431adaae172a5f2f8911c21752b99e4911"
 }

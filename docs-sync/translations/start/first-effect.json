@@ -2,7 +2,7 @@
   "version": 2,
   "status": "current",
   "sourceHash": "89cdcd34790e2d7a161802f80185b16276299badf787c7b32ef154dda3f8a72a",
-  "sourceRevision": "04b380e2addb2b205b89cf8c5d8f0664632d3d64",
+  "sourceRevision": "49df393f789c0ce609e7d3bea43fac471621388b",
   "sources": [
     {
       "path": "Docs/getting-started/first-effect.md",

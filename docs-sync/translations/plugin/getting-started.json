@@ -2,7 +2,7 @@
   "version": 2,
   "status": "current",
   "sourceHash": "5d92b250b6e1d6fecb89457248cda8304f80092ae5d2aedf3775d1fa84f7ffd2",
-  "sourceRevision": "04b380e2addb2b205b89cf8c5d8f0664632d3d64",
+  "sourceRevision": "49df393f789c0ce609e7d3bea43fac471621388b",
   "sources": [
     {
       "path": "Docs/getting-started/quickstart.md",
@@ -12,5 +12,5 @@
     }
   ],
   "translationFile": "content/docs/plugin/getting-started.md",
-  "translationHash": "8672c2abd39c66c55598cabfece357e04b0ce76825ec8ae96eefe99a75f4e83e"
+  "translationHash": "b92061efd25bd125c9d4cfa23ec4075754a38cd217382cc9ddcbe139e6c42669"
 }
