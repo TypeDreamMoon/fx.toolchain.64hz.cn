@@ -2,7 +2,7 @@
   "version": 2,
   "status": "current",
   "sourceHash": "5345e84e1c27d1a5359d2cbf891b2701fc022e06a6320db62b437c6e58e18305",
-  "sourceRevision": "a31430767998e154603e58c84ea52b2e619fde00",
+  "sourceRevision": "04b380e2addb2b205b89cf8c5d8f0664632d3d64",
   "sources": [
     {
       "path": "Docs/tools/scripting.md",

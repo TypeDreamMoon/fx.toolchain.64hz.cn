@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "status": "current",
-  "sourceHash": "bc4e435e11a06270cb8aa4b2bfc9c138feab90b1c9d9ccfc02e575184fab67cb",
-  "sourceRevision": "a31430767998e154603e58c84ea52b2e619fde00",
+  "status": "outdated",
+  "sourceHash": null,
+  "sourceRevision": "04b380e2addb2b205b89cf8c5d8f0664632d3d64",
   "sources": [
     {
       "path": "Docs/tools/incremental-builds.md",
@@ -12,5 +12,5 @@
     }
   ],
   "translationFile": "content/docs/plugin/tools/incremental-build-reference.md",
-  "translationHash": "e9d7531345bdf29dbcb95561c8e1e8b49e2e41a0ff9f4ff366f16b1e87ecf32f"
+  "translationHash": "6d16fb735ba44bd7699688a39adbad0b68e787b668c2a212a8805c3cd9b90463"
 }

@@ -2,7 +2,7 @@
   "version": 2,
   "status": "current",
   "sourceHash": "c532f46b25ee96665ed491c50e4404c09b5fed2d98e897fe9efc201402c69d8f",
-  "sourceRevision": "a31430767998e154603e58c84ea52b2e619fde00",
+  "sourceRevision": "04b380e2addb2b205b89cf8c5d8f0664632d3d64",
   "sources": [
     {
       "path": "Docs/language/system-inheritance.md",

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repository": "TypeDreamMoon/DreamFX",
-  "revision": "a31430767998e154603e58c84ea52b2e619fde00",
+  "revision": "04b380e2addb2b205b89cf8c5d8f0664632d3d64",
   "workingTree": false,
   "translationSnapshotHash": "b6f16bfd3885f8ce7ca1fd099a8891d22548f879c4495e42f3a9173b1508f921",
   "pages": {
@@ -120,17 +120,17 @@
       }
     },
     "diagnostics/dfx5xxx": {
-      "hash": "23f7e5ebe8913ecc38b95edf38cf165e66792a54574aefccc644421c69267a56",
-      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "hash": "8f763b720bb643cb32df9eb891e6fcec6139f227f312313ec87087fd1b0b1e5f",
+      "revision": "04b380e2addb2b205b89cf8c5d8f0664632d3d64",
       "output": "content/docs/diagnostics/dfx5xxx.en.md",
-      "outputHash": "aa13047be2771ce32270c453d5cf534a6db7b32d5f28fbb34e958cc0384f173e",
+      "outputHash": "13eb792f5a625fe3c905d5ae57e017c44dfcc81bad9c8ac9584cef8c469bdb34",
       "locale": "en",
       "format": "md",
       "title": "DFX5xxx — Generation and asset writing",
       "sources": [
         {
           "path": "Docs/diagnostics/DFX5xxx.md",
-          "hash": "8199ea7ea3823432f73fe3e6d85a5cf2bee0f765861de323e0384de41ae80746"
+          "hash": "de94301456f0a40eef90429fe6d023a855583d825dd4b614cdf3dd98fb0901ac"
         },
         {
           "path": "Docs/diagnostics/history/DFX5099.md",
@@ -142,7 +142,7 @@
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/diagnostics/dfx5xxx.md",
         "record": "docs-sync/translations/diagnostics/dfx5xxx.json",
         "outputHash": "46d73045f9f645e3c391ffea727bd230fa87a4f8445fd176ad4bc19cec09744e",
@@ -436,21 +436,21 @@
       }
     },
     "language/dfs": {
-      "hash": "b92a5ff275df8e8641f591818ae2ad21d2f6702f2b6c563034fdc4d5264e72ef",
-      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "hash": "bb01b70b0f9b3ebe5e98f8c435c8adcde790107c4503f849a1dcbc162f8585b4",
+      "revision": "04b380e2addb2b205b89cf8c5d8f0664632d3d64",
       "output": "content/docs/language/dfs.en.md",
-      "outputHash": "3e81d84ff52217ba239aaaa28558e5ecab568e8611b7f41dee3cbc4361ee6c67",
+      "outputHash": "2909a661284abf835c48665ac6d6a4245ef72be0c4a8c56c81b137704c4f627a",
       "locale": "en",
       "format": "md",
       "title": ".dfs — a system",
       "sources": [
         {
           "path": "Docs/language/dfs.md",
-          "hash": "1ea8a1ca9c5bdead1142f6144933bad34bf27c5929acb4ab19fa9b2bcd5c81d2"
+          "hash": "0b8c63852d4d2c63682c15bc28c3d348106b3166d5a6fd3e964a1a7b80aa0c16"
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/language/dfs.md",
         "record": "docs-sync/translations/language/dfs.json",
         "outputHash": "ed562b45095284f0f6cf5b6248c8668f265409c45830cb248702ece2cb6d06d9",
@@ -695,8 +695,8 @@
         "status": "current",
         "output": "content/docs/tools/editor.md",
         "record": "docs-sync/translations/tools/editor.json",
-        "outputHash": "bc8c0809c3a47ea3fdff990731a555abd17f157cfe62a283039fed6a69fc4b32",
-        "bodyHash": "41603876d5e94692e452f593a74893ffb55d017af1620592eae33165b8b86b4d"
+        "outputHash": "d1212c9caa1801cac79bf2f0b9696e60d800078d8d62b35a6ae7edb43f983699",
+        "bodyHash": "a06aa79844797955ff0007e67f0d3cd5c413d79e7b9d72b189d1d3fa2e8a8c47"
       }
     },
     "tools/scripting": {
@@ -858,17 +858,17 @@
       }
     },
     "plugin/diagnostics/dfx5xxx": {
-      "hash": "a8cf6a47a57a80b1310a931f11a15378fc3991983fa4c4b6789dbd5656c0b12f",
-      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "hash": "7a22b95eb499e47e6000c94df27bab3c02102e82525d0f2dd3fc35636a361903",
+      "revision": "04b380e2addb2b205b89cf8c5d8f0664632d3d64",
       "output": "content/docs/plugin/diagnostics/dfx5xxx.en.md",
-      "outputHash": "c5e15b4a467157616089cf5e50e8c6d1d6b9c53a4a34d1b1e7d31eef07af4acf",
+      "outputHash": "c56c51cc342f23df21d6536395d1b184f235411a1f1e717215ac6228a7fc31d7",
       "locale": "en",
       "format": "md",
       "title": "DFX5xxx --- Generation and asset writing",
       "sources": [
         {
           "path": "Docs/diagnostics/DFX5xxx.md",
-          "hash": "8199ea7ea3823432f73fe3e6d85a5cf2bee0f765861de323e0384de41ae80746"
+          "hash": "de94301456f0a40eef90429fe6d023a855583d825dd4b614cdf3dd98fb0901ac"
         },
         {
           "path": "Docs/diagnostics/history/DFX5099.md",
@@ -880,7 +880,7 @@
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/plugin/diagnostics/dfx5xxx.md",
         "record": "docs-sync/translations/plugin/diagnostics/dfx5xxx.json",
         "outputHash": "46d73045f9f645e3c391ffea727bd230fa87a4f8445fd176ad4bc19cec09744e",
@@ -993,8 +993,8 @@
         "status": "current",
         "output": "content/docs/plugin/getting-started.md",
         "record": "docs-sync/translations/plugin/getting-started.json",
-        "outputHash": "d089a53809e0f667b6e4cfe5b9d847e65cfb44dc54ad7af071c73a91a14a7442",
-        "bodyHash": "da98939244387f397d869e3790cdef344f10b916769919adf61140f0243772df"
+        "outputHash": "8672c2abd39c66c55598cabfece357e04b0ce76825ec8ae96eefe99a75f4e83e",
+        "bodyHash": "3c3a911bb27cd00ceebf117101bb0a5163069a0b4b2925f7ad9907e3b93550e2"
       }
     },
     "plugin/language/native-emitter-inheritance": {
@@ -1086,25 +1086,25 @@
       }
     },
     "plugin/tools/incremental-build-reference": {
-      "hash": "bc4e435e11a06270cb8aa4b2bfc9c138feab90b1c9d9ccfc02e575184fab67cb",
-      "revision": "b1c700214cf15af4b2b6425520989557a8c55e94",
+      "hash": "c0b4d3c6c372f386a2a6db8bbdc020f51ec340b7e1725a5438678cb7581b07e1",
+      "revision": "04b380e2addb2b205b89cf8c5d8f0664632d3d64",
       "output": "content/docs/plugin/tools/incremental-build-reference.en.md",
-      "outputHash": "287ab1047d06eec495ad2205b7f1e0c62d6008216604f73564c926b3ae53f8f2",
+      "outputHash": "dc336d4c143fad022938d89b4873a146dff047f6e1a01a2322343df8b1041447",
       "locale": "en",
       "format": "md",
       "title": "Incremental build reference",
       "sources": [
         {
           "path": "Docs/tools/incremental-builds.md",
-          "hash": "77be23013080cf8e619529ed9d236013a2fc994c38ec1c2d66ea9ca6f82cf507"
+          "hash": "bd627c89eab67afa08b37cfce05cb097107a2fe68a1a795f9c6b2ab596f6fa86"
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/plugin/tools/incremental-build-reference.md",
         "record": "docs-sync/translations/plugin/tools/incremental-build-reference.json",
-        "outputHash": "e9d7531345bdf29dbcb95561c8e1e8b49e2e41a0ff9f4ff366f16b1e87ecf32f",
-        "bodyHash": "006f309adf7b0148dbe63101b48e22902103cddfbf1b9f0291e93aa4d46bc618"
+        "outputHash": "6d16fb735ba44bd7699688a39adbad0b68e787b668c2a212a8805c3cd9b90463",
+        "bodyHash": "c3a282f4ebd04c6dc696d6b5ae1f2f338466340c31e6ae59751e9b811753e1e3"
       }
     },
     "plugin/tools/pull": {

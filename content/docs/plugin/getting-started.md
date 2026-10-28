@@ -198,7 +198,7 @@ pwsh -File Plugins/DreamFX/.skill/ci.ps1
 - **[tools/editor-integration.md](/docs/tools/editor)** —— 每个菜单、每个吐司通知、工作区文件、VSCode 发现机制，以及如何从 Python 调用相同的命令。
 - **[tools/incremental-builds.md](/docs/plugin/tools/incremental-build-reference)** —— 保存会写入什么、每种编辑的代价，以及构建何时会回退到完整重新构建。
 - **[diagnostics/](/docs/plugin/diagnostics/readme)** —— 每一个 `DFXnnnn`。
-- **[../CHANGELOG.md](https://github.com/TypeDreamMoon/DreamFX/blob/a31430767998e154603e58c84ea52b2e619fde00/CHANGELOG.md)** —— 每个版本涵盖的内容，以及已知问题列表。
+- **[../CHANGELOG.md](https://github.com/TypeDreamMoon/DreamFX/blob/04b380e2addb2b205b89cf8c5d8f0664632d3d64/CHANGELOG.md)** —— 每个版本涵盖的内容，以及已知问题列表。
 
 要对你自己的内容提出覆盖度问题——其中有多大比例 DreamFX 已经能够表示，哪些缺口值得填补——你可以自己运行：
 

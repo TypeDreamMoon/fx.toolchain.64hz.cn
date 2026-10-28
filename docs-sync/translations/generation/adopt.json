@@ -2,7 +2,7 @@
   "version": 2,
   "status": "current",
   "sourceHash": "d0ba57aeea57e619c7c465d339f5ae7899c9de9f6eafe9e42b4a9dfbb50c10a6",
-  "sourceRevision": "a31430767998e154603e58c84ea52b2e619fde00",
+  "sourceRevision": "04b380e2addb2b205b89cf8c5d8f0664632d3d64",
   "sources": [
     {
       "path": "Docs/generation/adopt.md",

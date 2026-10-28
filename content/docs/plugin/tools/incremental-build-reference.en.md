@@ -5,7 +5,7 @@ description: "Incremental build reference"
 
 # Incremental builds
 
-> [DreamFX](https://github.com/TypeDreamMoon/DreamFX/blob/b1c700214cf15af4b2b6425520989557a8c55e94/README.md) » **Incremental builds**
+> [DreamFX](https://github.com/TypeDreamMoon/DreamFX/blob/04b380e2addb2b205b89cf8c5d8f0664632d3d64/README.md) » **Incremental builds**
 
 Saving a `.dfs` used to clear every stack of its system and rebuild everything, so the cost of a save
 was proportional to the size of the whole system, not to the edit. An incremental build compares the
@@ -136,7 +136,10 @@ rebuild stays the reference, and the incremental path is tested against it:
   and `asset-diff` read).
 
 The test is `DreamFX.Incremental.Equivalence`; `DreamFX.Incremental.Coverage` runs the same histories
-and also asserts which edits were applied incrementally rather than by falling back. Three fixture
+and also asserts which edits were applied incrementally rather than by falling back. Each has one
+sub-test per fixture (`DreamFX.Incremental.Equivalence.Sparks`, `.Relay`, `.Gpu`); a fixture's history
+runs once per process and both of its sub-tests read that record, so a sharded run should keep a
+fixture's two sub-tests in the same process. Three fixture
 systems (several emitters with a module shared by two stacks, an event source and receiver, a GPU
 emitter with simulation stages) are edited by about ninety mutations, each a find-and-replace pair in
 the mutation table at the top of `Tests/DreamFXIncrementalEquivalenceTest.cpp`, so a new case is one
