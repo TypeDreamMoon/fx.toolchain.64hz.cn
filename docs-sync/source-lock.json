@@ -1,9 +1,9 @@
 {
   "version": 1,
   "repository": "TypeDreamMoon/DreamFX",
-  "revision": "49df393f789c0ce609e7d3bea43fac471621388b",
+  "revision": "2b90553f109ba3c7c84047783fd7ef8bc35ec6e0",
   "workingTree": false,
-  "translationSnapshotHash": "b6f16bfd3885f8ce7ca1fd099a8891d22548f879c4495e42f3a9173b1508f921",
+  "translationSnapshotHash": "e1ecd17060f6a116c409be46b586a87a6b2e946bc54bea72cf425912c559c39f",
   "pages": {
     "changelog/index": {
       "hash": "c1dad62ffab3e8dbf3cc99e290d47c875a58a53a0a5882a2de1c2fd76a265757",
@@ -145,8 +145,8 @@
         "status": "outdated",
         "output": "content/docs/diagnostics/dfx5xxx.md",
         "record": "docs-sync/translations/diagnostics/dfx5xxx.json",
-        "outputHash": "46d73045f9f645e3c391ffea727bd230fa87a4f8445fd176ad4bc19cec09744e",
-        "bodyHash": "fc07beddcd5e1e3b59d3b266a4fc2d34f0ad73e56d87cce47f665bf516bdc66b"
+        "outputHash": "60c87c7a8235389413bd703ada33a46626966fc6ec42ffb891ab073d9fc0501a",
+        "bodyHash": "84ba8c935beed1cb348e947879c7730f4d86b89b2b8bcba73ae0cdef24ec7049"
       }
     },
     "diagnostics/dfx6xxx": {
@@ -453,8 +453,8 @@
         "status": "outdated",
         "output": "content/docs/language/dfs.md",
         "record": "docs-sync/translations/language/dfs.json",
-        "outputHash": "ed562b45095284f0f6cf5b6248c8668f265409c45830cb248702ece2cb6d06d9",
-        "bodyHash": "a2f6eea0d98886e1ffd61e5a09963263a925492c44e5bb2a161cdfa0216e623f"
+        "outputHash": "e93980b148afb75fa7d220f13cb1f9fce23bb0ae9d32d56a3a1ff4dfabbb2785",
+        "bodyHash": "064e86cada3def5cc5a3e49668a0103bcaf0b1d4a295e4fa4af55d448515524b"
       }
     },
     "language/events-and-stages": {
@@ -695,8 +695,8 @@
         "status": "current",
         "output": "content/docs/tools/editor.md",
         "record": "docs-sync/translations/tools/editor.json",
-        "outputHash": "51a617874aaf7f0a05ed87e485b90a431adaae172a5f2f8911c21752b99e4911",
-        "bodyHash": "a2d4ae63b13ab6c66f9edb94603693af14864dbe5237c47279b9157903b795f6"
+        "outputHash": "886f858ad012a6fd826961caf8a0acad3906c3a7924d0343eeda45392b599bd5",
+        "bodyHash": "23a3981bb17033f318c5071dd89edd0469c46e58baf9716a77e2df222f17de27"
       }
     },
     "tools/scripting": {
@@ -883,8 +883,8 @@
         "status": "outdated",
         "output": "content/docs/plugin/diagnostics/dfx5xxx.md",
         "record": "docs-sync/translations/plugin/diagnostics/dfx5xxx.json",
-        "outputHash": "46d73045f9f645e3c391ffea727bd230fa87a4f8445fd176ad4bc19cec09744e",
-        "bodyHash": "fc07beddcd5e1e3b59d3b266a4fc2d34f0ad73e56d87cce47f665bf516bdc66b"
+        "outputHash": "60c87c7a8235389413bd703ada33a46626966fc6ec42ffb891ab073d9fc0501a",
+        "bodyHash": "84ba8c935beed1cb348e947879c7730f4d86b89b2b8bcba73ae0cdef24ec7049"
       }
     },
     "plugin/diagnostics/dfx6xxx": {
@@ -993,8 +993,8 @@
         "status": "current",
         "output": "content/docs/plugin/getting-started.md",
         "record": "docs-sync/translations/plugin/getting-started.json",
-        "outputHash": "b92061efd25bd125c9d4cfa23ec4075754a38cd217382cc9ddcbe139e6c42669",
-        "bodyHash": "dacd7dd70e4b9150279129165936b7f4c731d970262df3792a1de276f6e882d9"
+        "outputHash": "d6a9b572e7eba7615b097c1a7ca579a94a931a2b43e4ff4cf0d75bb75f96a0b5",
+        "bodyHash": "0e70ef1c08eb12096986804fab576dbb0bbbdcc3cd5fa4a0c9fc43d368303287"
       }
     },
     "plugin/language/native-emitter-inheritance": {
@@ -1100,11 +1100,11 @@
         }
       ],
       "translation": {
-        "status": "outdated",
+        "status": "current",
         "output": "content/docs/plugin/tools/incremental-build-reference.md",
         "record": "docs-sync/translations/plugin/tools/incremental-build-reference.json",
-        "outputHash": "f981e88ba2c77a568c23839e42ea5df25e0f36693e68fe0130fd98a6e2d25f6f",
-        "bodyHash": "c0933f7fa903f777c7d0007a47a53861c33ea3c27db3fa7b392e2d313c22dd26"
+        "outputHash": "5a92fb16dd89bd31a54bea978b5331965ee3494251447866c9db5300894785f5",
+        "bodyHash": "e0db5c4587e0c9a01993d32eafee0894714e1e6e55d8c441856c8a0456ac2707"
       }
     },
     "plugin/tools/pull": {

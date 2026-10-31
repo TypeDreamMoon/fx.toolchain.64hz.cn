@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "status": "outdated",
-  "sourceHash": null,
-  "sourceRevision": "49df393f789c0ce609e7d3bea43fac471621388b",
+  "status": "current",
+  "sourceHash": "c0b4d3c6c372f386a2a6db8bbdc020f51ec340b7e1725a5438678cb7581b07e1",
+  "sourceRevision": "2b90553f109ba3c7c84047783fd7ef8bc35ec6e0",
   "sources": [
     {
       "path": "Docs/tools/incremental-builds.md",
-      "sourceHash": "77be23013080cf8e619529ed9d236013a2fc994c38ec1c2d66ea9ca6f82cf507",
-      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
-      "translationHash": "8a93d9c20d1cef4ea279de0ee48715348da2ba9329c089766a20aa368fa7f3b9"
+      "sourceHash": "bd627c89eab67afa08b37cfce05cb097107a2fe68a1a795f9c6b2ab596f6fa86",
+      "sourceRevision": "04b380e2addb2b205b89cf8c5d8f0664632d3d64",
+      "translationHash": "6a105f08835a205a1be3d64119cea1f54db995ae6107b030e0ebbae5d11606d4"
     }
   ],
   "translationFile": "content/docs/plugin/tools/incremental-build-reference.md",
-  "translationHash": "f981e88ba2c77a568c23839e42ea5df25e0f36693e68fe0130fd98a6e2d25f6f"
+  "translationHash": "5a92fb16dd89bd31a54bea978b5331965ee3494251447866c9db5300894785f5"
 }
