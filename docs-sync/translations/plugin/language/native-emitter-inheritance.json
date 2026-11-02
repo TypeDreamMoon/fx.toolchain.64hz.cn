@@ -2,7 +2,7 @@
   "version": 2,
   "status": "current",
   "sourceHash": "aa8d0c4607962e635e98ad4c49fd16422ad9da0132a35243504b2fcd5d6269cd",
-  "sourceRevision": "2b90553f109ba3c7c84047783fd7ef8bc35ec6e0",
+  "sourceRevision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
   "sources": [
     {
       "path": "Docs/language/native-emitter-inheritance.md",

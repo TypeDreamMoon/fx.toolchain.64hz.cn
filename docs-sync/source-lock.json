@@ -1,7 +1,7 @@
 {
   "version": 1,
   "repository": "TypeDreamMoon/DreamFX",
-  "revision": "2b90553f109ba3c7c84047783fd7ef8bc35ec6e0",
+  "revision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
   "workingTree": false,
   "translationSnapshotHash": "e1ecd17060f6a116c409be46b586a87a6b2e946bc54bea72cf425912c559c39f",
   "pages": {
@@ -436,17 +436,17 @@
       }
     },
     "language/dfs": {
-      "hash": "eea11d3af526dd99a5f159517d2687f9b97f329a972a2fe1d93fb58f30b0991b",
-      "revision": "49df393f789c0ce609e7d3bea43fac471621388b",
+      "hash": "14a2314398415b86d05f899817ee73b40b42930641585ce97d6d0b45bafddc5e",
+      "revision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
       "output": "content/docs/language/dfs.en.md",
-      "outputHash": "63555e9cdda4738c86c4f172b1926b43e62234e8cdbe3893f7a48b21db372e95",
+      "outputHash": "96a150172232db2578ab842c36c3aadf256d6bf43329349b093989dff4c01bce",
       "locale": "en",
       "format": "md",
       "title": ".dfs — a system",
       "sources": [
         {
           "path": "Docs/language/dfs.md",
-          "hash": "3ab58fb4e9669d592b4ddda36baf3caceae8b8d7fe1db05a97770899c1d25942"
+          "hash": "fd7ef602c83a70686275b14dd11f7a99ed3088105e5d38d4d5f45360377a3b98"
         }
       ],
       "translation": {
@@ -695,8 +695,8 @@
         "status": "current",
         "output": "content/docs/tools/editor.md",
         "record": "docs-sync/translations/tools/editor.json",
-        "outputHash": "886f858ad012a6fd826961caf8a0acad3906c3a7924d0343eeda45392b599bd5",
-        "bodyHash": "23a3981bb17033f318c5071dd89edd0469c46e58baf9716a77e2df222f17de27"
+        "outputHash": "0d79747d841dfc88060048e537be52061da7801ab933a684eb131901ef22f17f",
+        "bodyHash": "2dc976f8b958102d566aa4f1615c2f3bc801e63c9973bcad5e0aa06e90743b5c"
       }
     },
     "tools/scripting": {
@@ -993,8 +993,8 @@
         "status": "current",
         "output": "content/docs/plugin/getting-started.md",
         "record": "docs-sync/translations/plugin/getting-started.json",
-        "outputHash": "d6a9b572e7eba7615b097c1a7ca579a94a931a2b43e4ff4cf0d75bb75f96a0b5",
-        "bodyHash": "0e70ef1c08eb12096986804fab576dbb0bbbdcc3cd5fa4a0c9fc43d368303287"
+        "outputHash": "942b79442d91d4a7d16e930ae4306f9fbece140c50149a66713454666cbbf4b4",
+        "bodyHash": "bddbda534a54cbc3d7f6784604ce774fd4611bdf166a5e8af64c431c5e84cdea"
       }
     },
     "plugin/language/native-emitter-inheritance": {
@@ -1103,8 +1103,8 @@
         "status": "current",
         "output": "content/docs/plugin/tools/incremental-build-reference.md",
         "record": "docs-sync/translations/plugin/tools/incremental-build-reference.json",
-        "outputHash": "5a92fb16dd89bd31a54bea978b5331965ee3494251447866c9db5300894785f5",
-        "bodyHash": "e0db5c4587e0c9a01993d32eafee0894714e1e6e55d8c441856c8a0456ac2707"
+        "outputHash": "b651bfaf2abaf646e894d2a930a091143fe155e05776f20d83887c6e125c026d",
+        "bodyHash": "3189b0004148db0ac33ac6b4be9b48b4c3ff392d9ff1d62b500f1cf0acfebd66"
       }
     },
     "plugin/tools/pull": {
@@ -1152,17 +1152,17 @@
       }
     },
     "plugin/language/dynamic-mesh": {
-      "hash": "d67f433423d2260dada00a9094b17158f796a5f08f87690adfec8ab3b831155e",
-      "revision": "49df393f789c0ce609e7d3bea43fac471621388b",
+      "hash": "47bafb04c1520de2dd631339c86c53dbfcf0e2e6b9bca26998f0b5cc2b4935e0",
+      "revision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
       "output": "content/docs/plugin/language/dynamic-mesh.en.md",
-      "outputHash": "6e9308cc3397e3571ae7cda4352e58d3e29600a0518dc6ce9c59211d937c26af",
+      "outputHash": "e45e9cea122e7159c5f9f12186377e520e1c481fd14703aeec445a650ce4352e",
       "locale": "en",
       "format": "md",
       "title": "`DynamicMesh` — procedural geometry written by the simulation",
       "sources": [
         {
           "path": "Docs/language/dynamic-mesh.md",
-          "hash": "0aee6588af8201e7a6c11ddbe4e66ccb3dcf072372a6dff9b5f5bed9364e2194"
+          "hash": "c982cc8781e235f523502aed0838572f9330367d5d66a2bf61c210697aa5085b"
         }
       ],
       "translation": {
