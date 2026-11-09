@@ -5,13 +5,12 @@ description: "DFX1xxx — 驱动与文件 I/O"
 
 # DFX1xxx — 驱动与文件 I/O [#dfx1xxx-----driver-and-file-io]
 
-> 生成标记之间的块由 `.skill/gen-diagnostics.ps1` 写入。
-> 标记下方的所有内容均为手写，重新生成后仍会保留。
+> 生成标记之间的块由 `.skill/gen-diagnostics.ps1` 写入。标记下方的所有内容均为手写，重新生成后仍会保留。
 
 ## DFX1000 [#dfx1000]
 
 <!-- generated:begin DFX1000 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -19,7 +18,7 @@ description: "DFX1xxx — 驱动与文件 I/O"
 Could not read source file '%s'.
 ```
 
-**触发位置：** ``Source/DreamFX/Private/Parser/DreamFXParser.cpp:2133``, ``Source/DreamFXEditor/Private/WriteBack/DreamFXPull.cpp:2527``
+**触发位置** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:2289`、`Source/DreamFXEditor/Private/WriteBack/DreamFXPull.cpp:2527`
 <!-- generated:end DFX1000 -->
 
 **原因.** 路径不存在，或者进程读不了它。``from`` 引用和 ``-File=`` 参数都落在这里。
@@ -29,7 +28,7 @@ Could not read source file '%s'.
 ## DFX1001 [#dfx1001]
 
 <!-- generated:begin DFX1001 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -47,7 +46,7 @@ Unterminated string literal.
 ## DFX1002 [#dfx1002]
 
 <!-- generated:begin DFX1002 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -65,7 +64,7 @@ Unterminated block comment.
 ## DFX1003 [#dfx1003]
 
 <!-- generated:begin DFX1003 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -83,7 +82,7 @@ Unexpected character '%c' (U+%04X).
 ## DFX1004 [#dfx1004]
 
 <!-- generated:begin DFX1004 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -101,7 +100,7 @@ Unterminated raw block: missing '}'.
 ## DFX1005 [#dfx1005]
 
 <!-- generated:begin DFX1005 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -114,8 +113,7 @@ Unterminated back-quoted name. A `name` must close on the same line.
 
 **原因.** 一个反引号开了一个名字，但到行尾都没有闭合；或者开了就立刻闭合，中间什么都没有。
 
-反引号名字是这门语言用来承载那些否则写不出来的 Niagara 名字的办法 ——
-``` `PillarPower(0~1)` ```, ``` `Ring/DiscDistributionMode` ```。名字从不跨行，所以缺了闭合引号会在行尾就报出来，而不是把文件剩下的部分整个吞掉。
+反引号名字是这门语言用来承载那些否则写不出来的 Niagara 名字的办法 —— ``` `PillarPower(0~1)` ```, ``` `Ring/DiscDistributionMode` ```。名字从不跨行，所以缺了闭合引号会在行尾就报出来，而不是把文件剩下的部分整个吞掉。
 
 **修复.** 补上引号。如果名字本身含有一个反引号，那它就没有书写形式：转义还需要转义，而 Niagara 里也不会产出这种名字 —— 改掉那个参数的名字。
 

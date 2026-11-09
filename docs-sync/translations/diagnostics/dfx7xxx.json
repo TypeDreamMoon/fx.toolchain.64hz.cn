@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "status": "outdated",
-  "sourceHash": null,
+  "status": "current",
+  "sourceHash": "1cbbca0d010aa1ae3c951e18f24b89e43a5f66a8f06ed8d7a48f8c5f4779f434",
   "sourceRevision": "49df393f789c0ce609e7d3bea43fac471621388b",
   "sources": [
     {
       "path": "Docs/diagnostics/DFX7xxx.md",
-      "alignedRevision": "6677fe4ed04d",
-      "alignedPage": "1b3dfd74f612",
-      "translationHash": "07a38fbeb8dd152d86b3bb41ea05bae430bf9361a4a57bda4ee00471c3e24acd"
+      "alignedRevision": "62d3a03794ac",
+      "alignedPage": "af30d8fe1b35",
+      "translationHash": "d3b3d3ddc96df3f971499a9c59c3d9db9fe7d59b2f79f24e15e4acb4bd052519"
     }
   ],
   "translationFile": "content/docs/diagnostics/dfx7xxx.md",
-  "translationHash": "d96261a4db405280adccd48ee03ba38408adc8833ed8d53c907e0614bc1b134a"
+  "translationHash": "52edaea96f323b41997e6243d37c6c17e187db18880ece5af4777c99db98c25e"
 }

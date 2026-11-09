@@ -5,13 +5,12 @@ description: "DFX2xxx —— 词法与语法"
 
 # DFX2xxx —— 词法与语法 [#dfx2xxx-----lexer-and-syntax]
 
-> 生成标记之间的块由 `.skill/gen-diagnostics.ps1` 写入。
-> 标记之下的所有内容都是手写的，重新生成后仍然保留。
+> 生成标记之间的块由 `.skill/gen-diagnostics.ps1` 写入。标记之下的所有内容都是手写的，重新生成后仍然保留。
 
 ## DFX2000 [#dfx2000]
 
 <!-- generated:begin DFX2000 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -19,7 +18,7 @@ description: "DFX2xxx —— 词法与语法"
 Unknown document type '%s'. Expected System, Emitter, Module or DynamicInput.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:2016`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:2163`
 <!-- generated:end DFX2000 -->
 
 **原因.** 文件的第一个词不是四种文档类型之一。
@@ -29,7 +28,7 @@ Unknown document type '%s'. Expected System, Emitter, Module or DynamicInput.
 ## DFX2001 [#dfx2001]
 
 <!-- generated:begin DFX2001 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -37,7 +36,7 @@ Unknown document type '%s'. Expected System, Emitter, Module or DynamicInput.
 Expected '{' to open a raw block but found '%s'.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXLexer.cpp:410`、`Source/DreamFX/Private/Parser/DreamFXParser.cpp:101`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXLexer.cpp:410`、`Source/DreamFX/Private/Parser/DreamFXParser.cpp:103`
 <!-- generated:end DFX2001 -->
 
 **原因.** 一个需要 raw block 的构造后面没有跟 `{`。
@@ -47,7 +46,7 @@ Expected '{' to open a raw block but found '%s'.
 ## DFX2002 [#dfx2002]
 
 <!-- generated:begin DFX2002 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -55,7 +54,7 @@ Expected '{' to open a raw block but found '%s'.
 Expected a name but found %s.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:112`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:114`
 <!-- generated:end DFX2002 -->
 
 **原因.** 这里期待一个标识符 —— 模块名、输入名、发射器名。
@@ -65,7 +64,7 @@ Expected a name but found %s.
 ## DFX2003 [#dfx2003]
 
 <!-- generated:begin DFX2003 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -73,7 +72,7 @@ Expected a name but found %s.
 Expected a number but found '%s'.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:425`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:427`
 <!-- generated:end DFX2003 -->
 
 **原因.** 这里期待一个数字：向量字面量里、`box()` 里，或者曲线的键上。
@@ -83,7 +82,7 @@ Expected a number but found '%s'.
 ## DFX2004 [#dfx2004]
 
 <!-- generated:begin DFX2004 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -91,7 +90,7 @@ Expected a number but found '%s'.
 Expected a value but found %s.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:612`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:614`
 <!-- generated:end DFX2004 -->
 
 **原因.** `=` 后面期待一个值。
@@ -101,7 +100,7 @@ Expected a value but found %s.
 ## DFX2005 [#dfx2005]
 
 <!-- generated:begin DFX2005 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -109,7 +108,7 @@ Expected a value but found %s.
 '#EndRegion' has no matching '#Region'.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:941`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:943`
 <!-- generated:end DFX2005 -->
 
 **原因.** 出现了 `#EndRegion`，但没有打开着的 `#Region`。
@@ -119,7 +118,7 @@ Expected a value but found %s.
 ## DFX2006 [#dfx2006]
 
 <!-- generated:begin DFX2006 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -127,7 +126,7 @@ Expected a value but found %s.
 Unknown directive '#%s'. Expected Region or EndRegion.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:951`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:953`
 <!-- generated:end DFX2006 -->
 
 **原因.** 指令只有 `#Region` 和 `#EndRegion` 两个。
@@ -137,7 +136,7 @@ Unknown directive '#%s'. Expected Region or EndRegion.
 ## DFX2007 [#dfx2007]
 
 <!-- generated:begin DFX2007 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -145,7 +144,7 @@ Unknown directive '#%s'. Expected Region or EndRegion.
 Expected a version after '@'.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1010`、`Source/DreamFX/Private/Parser/DreamFXParser.cpp:491`、`Source/DreamFX/Private/Parser/DreamFXParser.cpp:512`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1012`、`Source/DreamFX/Private/Parser/DreamFXParser.cpp:493`、`Source/DreamFX/Private/Parser/DreamFXParser.cpp:514`
 <!-- generated:end DFX2007 -->
 
 **原因.** `@` 引入一个 R7 版本固定，后面必须跟版本号。
@@ -155,7 +154,7 @@ Expected a version after '@'.
 ## DFX2008 [#dfx2008]
 
 <!-- generated:begin DFX2008 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -163,7 +162,7 @@ Expected a version after '@'.
 Module '%s' was given a positional argument. Module inputs must be written as 'Name = Value'.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1029`、`Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:1233`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1031`、`Source/DreamFXEditor/Private/Generation/DreamFXGenerator.cpp:1234`
 <!-- generated:end DFX2008 -->
 
 **原因.** 模块调用被喂了一个裸值。Niagara 按名字寻址模块输入，而它们在栈 UI 里出现的顺序并不是声明顺序。
@@ -173,7 +172,7 @@ Module '%s' was given a positional argument. Module inputs must be written as 'N
 ## DFX2010 [#dfx2010]
 
 <!-- generated:begin DFX2010 -->
-**严重级别：** 警告 (`warning`)
+**严重级别** 警告
 
 **消息：**
 
@@ -181,7 +180,7 @@ Module '%s' was given a positional argument. Module inputs must be written as 'N
 '#Region \"%s\"' was never closed with '#EndRegion'.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1104`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1106`
 <!-- generated:end DFX2010 -->
 
 **原因.** 一个 `#Region` 到块结束都没等到 `#EndRegion`。无害 —— region 只是文本 —— 但通常意味着某一段被搬走了，闭合行留在了原地。
@@ -191,7 +190,7 @@ Module '%s' was given a positional argument. Module inputs must be written as 'N
 ## DFX2013 [#dfx2013]
 
 <!-- generated:begin DFX2013 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -199,7 +198,7 @@ Module '%s' was given a positional argument. Module inputs must be written as 'N
 '%s' is a system-scope stack and must be written at the top level of a .dfs, not inside an emitter.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1310`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1312`
 <!-- generated:end DFX2013 -->
 
 **原因.** `SystemSpawn` 和 `SystemUpdate` 属于系统，不属于发射器（L1）。
@@ -209,7 +208,7 @@ Module '%s' was given a positional argument. Module inputs must be written as 'N
 ## DFX2015 [#dfx2015]
 
 <!-- generated:begin DFX2015 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -217,7 +216,7 @@ Module '%s' was given a positional argument. Module inputs must be written as 'N
 'from' must be followed by a quoted path to a .dfe source file.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1726`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1728`
 <!-- generated:end DFX2015 -->
 
 **原因.** `from` 后面要跟一个带引号的 `.dfe` 路径。
@@ -227,7 +226,7 @@ Module '%s' was given a positional argument. Module inputs must be written as 'N
 ## DFX2016 [#dfx2016]
 
 <!-- generated:begin DFX2016 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -235,7 +234,7 @@ Module '%s' was given a positional argument. Module inputs must be written as 'N
 (built at runtime)
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1254`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1256`
 <!-- generated:end DFX2016 -->
 
 **原因.** 一个 `Defaults = { … }` 块里出现了赋值以外的东西。默认值说的是「没人写过它时读出什么」，模块调用在那里没有任何含义。
@@ -245,7 +244,7 @@ Module '%s' was given a positional argument. Module inputs must be written as 'N
 ## DFX2018 [#dfx2018]
 
 <!-- generated:begin DFX2018 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -253,7 +252,7 @@ Module '%s' was given a positional argument. Module inputs must be written as 'N
 A Module or DynamicInput must declare a 'Body = { }' block.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1914`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:2061`
 <!-- generated:end DFX2018 -->
 
 **原因.** 一个没有 `Body` 的 `.dfm` 只声明了输入，生成出来的模块什么都不做。
@@ -263,7 +262,7 @@ A Module or DynamicInput must declare a 'Body = { }' block.
 ## DFX2019 [#dfx2019]
 
 <!-- generated:begin DFX2019 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -271,7 +270,7 @@ A Module or DynamicInput must declare a 'Body = { }' block.
 Header argument '%s' must be a quoted string.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1942`、`Source/DreamFX/Private/Parser/DreamFXParser.cpp:1961`、`Source/DreamFX/Private/Parser/DreamFXParser.cpp:1970`、`Source/DreamFX/Private/Parser/DreamFXParser.cpp:1978`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:2089`、`Source/DreamFX/Private/Parser/DreamFXParser.cpp:2108`、`Source/DreamFX/Private/Parser/DreamFXParser.cpp:2117`、`Source/DreamFX/Private/Parser/DreamFXParser.cpp:2125`
 <!-- generated:end DFX2019 -->
 
 **原因.** 文件头的参数（`Name=`、`Root=`）是带引号的字符串。
@@ -281,7 +280,7 @@ Header argument '%s' must be a quoted string.
 ## DFX2020 [#dfx2020]
 
 <!-- generated:begin DFX2020 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -289,7 +288,7 @@ Header argument '%s' must be a quoted string.
 Unknown curve key attribute '%s'. Expected Interp, Tangent, Arrive or Leave.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:396`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:398`
 <!-- generated:end DFX2020 -->
 
 **原因.** 曲线键的属性列表只接受 `Interp`、`Arrive` 和 `Leave`（plan 3.5）。
@@ -299,7 +298,7 @@ Unknown curve key attribute '%s'. Expected Interp, Tangent, Arrive or Leave.
 ## DFX2021 [#dfx2021]
 
 <!-- generated:begin DFX2021 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -307,7 +306,7 @@ Unknown curve key attribute '%s'. Expected Interp, Tangent, Arrive or Leave.
 File declares '%s' but its extension is '%s'. Rename the file to '%s' or change the declaration.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:2030`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:2177`
 <!-- generated:end DFX2021 -->
 
 **原因.** 声明的文档类型和文件扩展名对不上。
@@ -317,7 +316,7 @@ File declares '%s' but its extension is '%s'. Rename the file to '%s' or change 
 ## DFX2022 [#dfx2022]
 
 <!-- generated:begin DFX2022 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -325,7 +324,7 @@ File declares '%s' but its extension is '%s'. Rename the file to '%s' or change 
 Unexpected '%s' after the end of the document. A DreamFX file declares exactly one top-level object.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:2059`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:2206`
 <!-- generated:end DFX2022 -->
 
 **原因.** 顶层对象的收尾花括号后面还有内容。通常是某个块被复制了一份，或者上面某处少了一个花括号。
@@ -335,7 +334,7 @@ Unexpected '%s' after the end of the document. A DreamFX file declares exactly o
 ## DFX2023 [#dfx2023]
 
 <!-- generated:begin DFX2023 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -343,7 +342,7 @@ Unexpected '%s' after the end of the document. A DreamFX file declares exactly o
 '%s' is a module call, so it cannot be given a type. Types are written only on assignments.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1070`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1072`
 <!-- generated:end DFX2023 -->
 
 **原因.** 模块调用前面写了类型。类型是给赋值用的 —— L2 需要知道一个新属性是什么类型；模块调用的类型来自它自己的 schema。
@@ -353,7 +352,7 @@ Unexpected '%s' after the end of the document. A DreamFX file declares exactly o
 ## DFX2024 [#dfx2024]
 
 <!-- generated:begin DFX2024 -->
-**严重级别：** 错误 (`error`)
+**严重级别** 错误
 
 **消息：**
 
@@ -361,7 +360,7 @@ Unexpected '%s' after the end of the document. A DreamFX file declares exactly o
 A Defaults declaration cannot be disabled; defaults are not executed stack nodes.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1248`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1250`
 <!-- generated:end DFX2024 -->
 
 **原因.** `disabled` 被用在了 `Defaults` 内的一个声明上。默认值注册的是参数值；它们不是可执行的栈节点。可执行的栈赋值和模块调用确实支持 `disabled`。
@@ -379,17 +378,14 @@ A Defaults declaration cannot be disabled; defaults are not executed stack nodes
 Unknown OnEvent argument '%s'. Expected Source, Event, Mode, SpawnNumber, MaxEventsPerFrame, UpdateAttributeInitialValues, RandomSpawnNumber or MinSpawnNumber.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1468`、`Source/DreamFX/Private/Parser/DreamFXParser.cpp:1476`、`Source/DreamFX/Private/Parser/DreamFXParser.cpp:1491`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1470`、`Source/DreamFX/Private/Parser/DreamFXParser.cpp:1478`、`Source/DreamFX/Private/Parser/DreamFXParser.cpp:1493`
 <!-- generated:end DFX2025 -->
 
 **原因.** 一个 `OnEvent(...)` 头部带了一个解析器不认识的参数，或者某个参数缺了值，或者必填参数（`Source`、`Event`）根本没写。
 
-这个头部不是模块调用 —— 它的参数配置的是*处理器自身*（听哪个 emitter 的事件、怎么花掉它们），
-所以接受的集合是固定的：`Source`（本系统里的 emitter 名）、`Event`（事件名，带引号）、`Mode`（`SpawnedParticles` 或 `EveryParticle`）、`SpawnNumber`、`MaxEventsPerFrame`、`UpdateAttributeInitialValues`、`RandomSpawnNumber`、`MinSpawnNumber`。*响应*事件的模块写在块里面，不写在头部。
+这个头部不是模块调用 —— 它的参数配置的是*处理器自身*（听哪个 emitter 的事件、怎么花掉它们），所以接受的集合是固定的：`Source`（本系统里的 emitter 名）、`Event`（事件名，带引号）、`Mode`（`SpawnedParticles` 或 `EveryParticle`）、`SpawnNumber`、`MaxEventsPerFrame`、`UpdateAttributeInitialValues`、`RandomSpawnNumber`、`MinSpawnNumber`。*响应*事件的模块写在块里面，不写在头部。
 
-**修复.** 按上面的列表拼写参数（匹配时忽略大小写），每个参数给一个形状正确的值 ——
-`Source` 和 `Mode` 是标识符，`Event` 是名字或字符串，数量是整数，标志是 `true`/`false` ——
-并且至少写上 `Source` 和 `Event`：
+**修复.** 按上面的列表拼写参数（匹配时忽略大小写），每个参数给一个形状正确的值 —— `Source` 和 `Mode` 是标识符，`Event` 是名字或字符串，数量是整数，标志是 `true`/`false` —— 并且至少写上 `Source` 和 `Event`：
 
 ```
 OnEvent(Source = Sparks, Event = "LocationEvent", Mode = SpawnedParticles, SpawnNumber = 1) = {
@@ -408,7 +404,7 @@ OnEvent(Source = Sparks, Event = "LocationEvent", Mode = SpawnedParticles, Spawn
 Unknown Stage argument '%s'. Expected a stage iteration, enabled, dispatch or particle-state option; see the Stage language reference.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1690`、`Source/DreamFX/Private/Parser/DreamFXParser.cpp:1698`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1692`、`Source/DreamFX/Private/Parser/DreamFXParser.cpp:1700`
 <!-- generated:end DFX2026 -->
 
 **原因.** 一个 `Stage name(...)` 头部包含了一个未知参数，或者某个参数的值类型不对。Stage 选项涵盖迭代、启用、执行行为、直接派发、线程组和粒子状态过滤。
@@ -426,7 +422,7 @@ Unknown Stage argument '%s'. Expected a stage iteration, enabled, dispatch or pa
 Group(...) takes a quoted name: Group(\"Name\") { ... }.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:839`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:841`
 <!-- generated:end DFX2027 -->
 
 **原因.** 一个 `Group(...)` 声明的名字没加引号或者缺失。
@@ -444,9 +440,27 @@ Group(...) takes a quoted name: Group(\"Name\") { ... }.
 Group(...) requires a non-empty name.
 ```
 
-**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:847`
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:849`
 <!-- generated:end DFX2028 -->
 
 **原因.** 一个 `Group(...)` 声明使用了空名字。
 
 **修复.** 给这个组一个非空名字，这样它的 emitter 才能有一致地组织起来。
+
+## DFX2030 [#dfx2030]
+
+<!-- generated:begin DFX2030 -->
+**严重级别** 错误
+
+**消息：**
+
+```
+Patch '%s' needs a topology call such as Grid(33, 9) or Tube(65, 17, Copies = 3), followed by its HLSL body in braces.
+```
+
+**触发位置：** `Source/DreamFX/Private/Parser/DreamFXParser.cpp:1780`
+<!-- generated:end DFX2030 -->
+
+**原因。** 一个 `DynamicMesh` 块中只包含 `Settings`、`Inputs`、`Renderer`、`Draw` 和 `Patch` 条目，不含其他内容；一个 `Patch` 是 `Patch <Name> = <Topology>(...)` 后跟其放在花括号中的 HLSL 主体。出现第二个 `Draw` 块时也会被报告。
+
+**修复。** 改用这五个部分之一，并按照 `Patch Sheet = Grid(33, 9) { ... }` 的形式编写 patch。参见 [dynamic-mesh.md](/docs/plugin/language/dynamic-mesh)。

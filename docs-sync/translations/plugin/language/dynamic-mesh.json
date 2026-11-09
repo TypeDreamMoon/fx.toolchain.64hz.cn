@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "status": "current",
+  "sourceHash": "47bafb04c1520de2dd631339c86c53dbfcf0e2e6b9bca26998f0b5cc2b4935e0",
+  "sourceRevision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
+  "sources": [
+    {
+      "path": "Docs/language/dynamic-mesh.md",
+      "alignedRevision": "62d3a03794ac",
+      "alignedPage": "c982cc8781e2",
+      "translationHash": "8eaf02ce32cd60373c17afd4c7c31817836cfc7673668a59fcff162ae1fc4794"
+    }
+  ],
+  "translationFile": "content/docs/plugin/language/dynamic-mesh.md",
+  "translationHash": "d107db44134fc08b0e1c7610a002f372ac878d8b3e26d8b5c81cac21559cec61"
+}
