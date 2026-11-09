@@ -2,12 +2,12 @@
   "version": 2,
   "status": "outdated",
   "sourceHash": null,
-  "sourceRevision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
+  "sourceRevision": "49df393f789c0ce609e7d3bea43fac471621388b",
   "sources": [
     {
       "path": "Docs/language/values.md",
-      "sourceHash": "468ffd285f1836eb1a480609aa7f811cac38b301ff9bd1e2cacf383227120ac2",
-      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
+      "alignedRevision": "6677fe4ed04d",
+      "alignedPage": "468ffd285f18",
       "translationHash": "676f543ae65c1424545ea265b7b94a9f9e1424316fb2b6a3b75fec174ab52502"
     }
   ],

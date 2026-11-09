@@ -27,8 +27,7 @@ description: "两者都会反编译；区别在于之后发生的事 —— 镜�
 
 所以整棵反编译树都是**普通源码** —— 被监视、保存即构建、被 lint 并进入 CI —— 而无论文件如何被编辑，原始资产都保持不变。
 
-在此约定之前写出的导出仍然会命名原始资产。它们会被以
-[DFX8013](/docs/diagnostics/dfx8xxx#dfx8013) **拒绝**，而不是被执行；重新导出即可替换它们。
+在此约定之前写出的导出仍然会命名原始资产。它们会被以 [DFX8013](/docs/diagnostics/dfx8xxx#dfx8013) **拒绝**，而不是被执行；重新导出即可替换它们。
 
 对一个*已经是*镜像的资产执行导出同样会被拒绝 —— 那会留下两份源码争夺一个资产 —— 并且提示会链接到该镜像所基于的源码。
 
@@ -36,11 +35,10 @@ description: "两者都会反编译；区别在于之后发生的事 —— 镜�
 
 
 ### 反编译 [#decompile]
-如果有任何无法表示的内容 → **拒绝**，并列出是什么
-（[DFX8010](/docs/diagnostics/dfx8xxx#dfx8010)）。
+如果有任何无法表示的内容 → **拒绝**，并列出是什么（[DFX8010](/docs/diagnostics/dfx8xxx#dfx8010)）。
 
 ### 根据挂载点推导出源码路径 [#work-out-the-source-path-from-the-mount-point]
-`/Game/FX/NS_X` → `<Project>/DFX/FX/NS_X.dfs`；`/MoonToon/FX/NS_X` → `<MoonToon>/DFX/FX/NS_X.dfs`。
+`/Game/FX/NS_X` → `<Project>/DFX/FX/NS_X.dfs`; `/MoonToon/FX/NS_X` → `<MoonToon>/DFX/FX/NS_X.dfs`.
 
 ### 检查是否已有其他东西声明了此资产 [#check-nothing-else-already-declares-this-asset]
 如果有 → **拒绝**（[DFX8011](/docs/diagnostics/dfx8xxx#dfx8011)）。两份源码会在交替构建时互相覆盖。
@@ -54,13 +52,11 @@ description: "两者都会反编译；区别在于之后发生的事 —— 镜�
 不一致即为 [DFX8012](/docs/diagnostics/dfx8xxx#dfx8012)，并记录第一处不同的行。
 
 
-第 1 步正是第 6 步有意义的原因：在没有已知缺口的情况下，不一致是**真正的缺陷**，
-而不是预期内的丢失。
+第 1 步正是第 6 步有意义的原因：在没有已知缺口的情况下，不一致是**真正的缺陷**，而不是预期内的丢失。
 
 > **注意：**
 >
-> `DFX8012` 会保留源码文件 —— 资产已经根据它重建，所以文本无论如何都是权威的 ——
-> 并记录第一处不同的行供你判断。
+> `DFX8012` 会保留源码文件 —— 资产已经根据它重建，所以文本无论如何都是权威的 —— 并记录第一处不同的行供你判断。
 
 ## 该用哪一个 [#which-one-to-use]
 
@@ -73,8 +69,7 @@ description: "两者都会反编译；区别在于之后发生的事 —— 镜�
 
 > **警告：**
 >
-> Adopt 之后，该资产就是构建产物：手动编辑会在下次重建时被抹掉。这正是你选择采用 Adopt 所要求的 ——
-> 只要确保团队知晓即可。
+> Adopt 之后，该资产就是构建产物：手动编辑会在下次重建时被抹掉。这正是你选择采用 Adopt 所要求的 —— 只要确保团队知晓即可。
 
 ## 从命令行做同一件事 [#the-same-thing-from-the-command-line]
 
@@ -89,5 +84,4 @@ pwsh -File Plugins/DreamFX/.skill/dfx.ps1 decompile /Game/VFX/NS_Explosion -Out 
 pwsh -File Plugins/DreamFX/.skill/dfx.ps1 decompile-all -Path=/Game/VFX
 ```
 
-`-NoDefaults` 会打印每一个输入，包括与全新模块默认值相等的那些。这**仅用于诊断** ——
-其结果并非旨在维护；它回答的是“基线隐藏了什么？”。
+`-NoDefaults` 会打印每一个输入，包括与全新模块默认值相等的那些。这**仅用于诊断** —— 其结果并非旨在维护；它回答的是“基线隐藏了什么？”。

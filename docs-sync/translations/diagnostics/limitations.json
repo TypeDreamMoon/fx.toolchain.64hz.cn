@@ -2,15 +2,15 @@
   "version": 2,
   "status": "current",
   "sourceHash": "de35bc92e5046fcdb75f39db65868de6e5f4864215155a2fdc9faa488606f859",
-  "sourceRevision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
+  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
   "sources": [
     {
       "path": "Docs/diagnostics/limitations.md",
-      "sourceHash": "81f9a8fa8e91601eb7b13a836ba21e279845f1ac24540303904952d1ad5d9b47",
-      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
-      "translationHash": "fa7f9103ac047ba6a2b6dfb20d01d08222054efe347b0204a6cfb030c628290f"
+      "alignedRevision": "37dd25b1940d",
+      "alignedPage": "81f9a8fa8e91",
+      "translationHash": "ada8623f364f319009de39ca1c763eb10cbab2b080cac7eddc1cd2646d7dc903"
     }
   ],
   "translationFile": "content/docs/diagnostics/limitations.md",
-  "translationHash": "5081266d29c822e106e5a885bdf97b7b8f47ee4badcdc1f17afaf436f23ad3a5"
+  "translationHash": "2cdc0c6e67a6738323d87b1d52ad4a91e350b6b47048cd6d23453bd972c08cd5"
 }

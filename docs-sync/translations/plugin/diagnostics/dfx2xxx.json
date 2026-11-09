@@ -2,12 +2,12 @@
   "version": 2,
   "status": "outdated",
   "sourceHash": null,
-  "sourceRevision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
+  "sourceRevision": "49df393f789c0ce609e7d3bea43fac471621388b",
   "sources": [
     {
       "path": "Docs/diagnostics/DFX2xxx.md",
-      "sourceHash": "b1b4b420ee76d25e5251689c2f647868d1819584958943af4a716e62c8227452",
-      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
+      "alignedRevision": "6677fe4ed04d",
+      "alignedPage": "b1b4b420ee76",
       "translationHash": "b86c8b064f405a2bb791bb5610d709dcc11e7f581cb933863f2ba2c13bd020d1"
     }
   ],

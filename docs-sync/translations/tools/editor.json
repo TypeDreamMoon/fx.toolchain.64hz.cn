@@ -2,15 +2,15 @@
   "version": 2,
   "status": "current",
   "sourceHash": "167c8685e0a3cbd3a5f6fc9d686d47aa6c23b16c891d4d5e8e2c4154855c343c",
-  "sourceRevision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
+  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
   "sources": [
     {
       "path": "Docs/tools/editor-integration.md",
-      "sourceHash": "9d9a8f25619d020c6c12a1ccd96cfdc40ca6555e4f5164862d47f76b79d36a2c",
-      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
-      "translationHash": "377cbf3a4258de074888512e5f0176bdab894667af1c7524b325580257dea061"
+      "alignedRevision": "37dd25b1940d",
+      "alignedPage": "9d9a8f25619d",
+      "translationHash": "8bcada59a4208f67e26aaf52d7e5f20a729d663fa1af16ca6fc39aaf754ad1fa"
     }
   ],
   "translationFile": "content/docs/tools/editor.md",
-  "translationHash": "0d79747d841dfc88060048e537be52061da7801ab933a684eb131901ef22f17f"
+  "translationHash": "b72a288cd9da621690ed4c99a874e862673ac9f32b46e1b80f995935494f07ad"
 }

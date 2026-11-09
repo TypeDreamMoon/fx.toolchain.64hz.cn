@@ -2,15 +2,15 @@
   "version": 2,
   "status": "current",
   "sourceHash": "c0b4d3c6c372f386a2a6db8bbdc020f51ec340b7e1725a5438678cb7581b07e1",
-  "sourceRevision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
+  "sourceRevision": "04b380e2addb2b205b89cf8c5d8f0664632d3d64",
   "sources": [
     {
       "path": "Docs/tools/incremental-builds.md",
-      "sourceHash": "bd627c89eab67afa08b37cfce05cb097107a2fe68a1a795f9c6b2ab596f6fa86",
-      "sourceRevision": "04b380e2addb2b205b89cf8c5d8f0664632d3d64",
-      "translationHash": "6a105f08835a205a1be3d64119cea1f54db995ae6107b030e0ebbae5d11606d4"
+      "alignedRevision": "37dd25b1940d",
+      "alignedPage": "bd627c89eab6",
+      "translationHash": "907c70310c85c11d153789704e6c2975ffb4c2cfa114bedb352d515fe6779c99"
     }
   ],
   "translationFile": "content/docs/plugin/tools/incremental-build-reference.md",
-  "translationHash": "b651bfaf2abaf646e894d2a930a091143fe155e05776f20d83887c6e125c026d"
+  "translationHash": "cbf656c9c6fac0a08e6e8cc258158e0445c99f04fe2288fbd317a889db914f99"
 }

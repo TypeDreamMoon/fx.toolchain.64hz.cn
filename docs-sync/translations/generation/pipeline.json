@@ -2,15 +2,15 @@
   "version": 2,
   "status": "current",
   "sourceHash": "44adea2e8d32abdd4804a080917b845a27389d41560ec83572c11cd1d73a9e16",
-  "sourceRevision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
+  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
   "sources": [
     {
       "path": "Docs/generation/pipeline.md",
-      "sourceHash": "beddddd1036eb4d23fd1525e9ae3c346191dd9ff7dac9d38ad890e4cd0ff9e59",
-      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
-      "translationHash": "0c1147e4eb141e0a79625583193ee0be71becde4247c7c84b5b87de9fba0d3a0"
+      "alignedRevision": "37dd25b1940d",
+      "alignedPage": "beddddd1036e",
+      "translationHash": "f59674bae31379ee8f142fa4fa14fb25c514bcf12998cc40b61c796a4149bb50"
     }
   ],
   "translationFile": "content/docs/generation/pipeline.md",
-  "translationHash": "b0452c305f41c8b9c69215ea95ec8f11321818b8d536fd50aa6f52ffe854dfdd"
+  "translationHash": "9dd480b9315dc09218af04437083ff9935eb8f8db049add9b054d92611907570"
 }

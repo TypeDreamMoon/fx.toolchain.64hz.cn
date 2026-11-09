@@ -32,9 +32,7 @@ Did you mean 'Gravity'? Available inputs: Gravity, CoordinateSpace
 
 > **注意：**
 >
-> 这些页面中有一半是**机器写的**：严重级别、消息模板和抛出位置从插件源中扫描出来，
-> 而 `gen-diagnostics.ps1 -Check` 是阻止它们漂移的门。人写的那一半 —— 成因与修法 —— 只写一次。
-> 见 [ci.ps1 与门](/docs/tools/ci)。
+> 这些页面中有一半是**机器写的**：严重级别、消息模板和抛出位置从插件源中扫描出来，而 `gen-diagnostics.ps1 -Check` 是阻止它们漂移的门。人写的那一半 —— 成因与修法 —— 只写一次。见 [ci.ps1 与门](/docs/tools/ci)。
 
 ## 排错的顺序 [#the-order-to-debug-in]
 
@@ -43,8 +41,7 @@ Did you mean 'Gravity'? Available inputs: Gravity, CoordinateSpace
 使用[生成的代码索引](/docs/plugin/diagnostics/readme)或下面的某个系列页面。代码是稳定的：`DFX3003` 永远是同一个失败模式。
 
 ### 对照真实签名核对 [#check-against-the-real-signature]
-`dfx.ps1 schema <Module> -Stack <Stack>` 会打印构建所看到的输入签名 ——
-包括静态开关。关于名称，权威在资产，而不在记忆。
+`dfx.ps1 schema <Module> -Stack <Stack>` 会打印构建所看到的输入签名 —— 包括静态开关。关于名称，权威在资产，而不在记忆。
 
 ### 还是不对？阅读限制 [#still-wrong-read-the-limits]
 [限制](/docs/diagnostics/limitations)列出了未覆盖的内容以及 1.0.0 已知问题。
@@ -52,8 +49,7 @@ Did you mean 'Gravity'? Available inputs: Gravity, CoordinateSpace
 
 ## 按代码查找 [#lookup-by-code]
 
-[完整代码索引](/docs/plugin/diagnostics/readme)由当前插件源生成。它拥有
-严重级别与消息表；本指南链接到该目录，而不是维护第二份副本。
+[完整代码索引](/docs/plugin/diagnostics/readme)由当前插件源生成。它拥有严重级别与消息表；本指南链接到该目录，而不是维护第二份副本。
 
 ### DFX1xxx —— 驱动器与文件 I/O [#dfx1xxx--driver-and-file-io]
 

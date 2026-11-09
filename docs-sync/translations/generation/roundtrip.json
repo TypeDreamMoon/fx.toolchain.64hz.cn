@@ -2,15 +2,15 @@
   "version": 2,
   "status": "current",
   "sourceHash": "686cd173b5a808806829a5b9a6f401425978bfbbe5c0c0707d2e857d39e48dcf",
-  "sourceRevision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
+  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
   "sources": [
     {
       "path": "Docs/generation/roundtrip.md",
-      "sourceHash": "7160b9803cbfd6db782204a8e6d811f78b81eb83a93d4165d4b0a7609242662d",
-      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
-      "translationHash": "9b2e9a49206da61c940fd3ad4a65671b55d4a75399c54882dfe4dabb3790f8a5"
+      "alignedRevision": "37dd25b1940d",
+      "alignedPage": "7160b9803cbf",
+      "translationHash": "87c895a8af71479af9daaf66076ec90c7baf83b38421df849a61b360d4fc95b2"
     }
   ],
   "translationFile": "content/docs/generation/roundtrip.md",
-  "translationHash": "3ba6ab91f8a64fccb5392bcbec38c67ef1a296b5f5bcd8a662b1c3e10ebb535c"
+  "translationHash": "d2f8b4b98e8210c0174c37de9aeb76888187d48f3f5c66b30a5c109370cbea9d"
 }

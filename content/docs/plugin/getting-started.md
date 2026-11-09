@@ -13,8 +13,7 @@ DreamFX 将文本编译为标准的 Niagara 资产。你编写一个 `.dfs` 文�
 
 ## 1. 确认插件已启用 [#1-check-the-plugin-is-on]
 
-`DreamFX` 和 `DreamFXEditor` 是编辑器模块，它们会随编辑器和 commandlet 一起加载。
-确认驱动能找到引擎：
+`DreamFX` 和 `DreamFXEditor` 是编辑器模块，它们会随编辑器和 commandlet 一起加载。确认驱动能找到引擎：
 
 ```bash
 pwsh -File Plugins/DreamFX/.skill/dfx.ps1 list
@@ -198,7 +197,7 @@ pwsh -File Plugins/DreamFX/.skill/ci.ps1
 - **[tools/editor-integration.md](/docs/tools/editor)** —— 每个菜单、每个吐司通知、工作区文件、VSCode 发现机制，以及如何从 Python 调用相同的命令。
 - **[tools/incremental-builds.md](/docs/plugin/tools/incremental-build-reference)** —— 保存会写入什么、每种编辑的代价，以及构建何时会回退到完整重新构建。
 - **[diagnostics/](/docs/plugin/diagnostics/readme)** —— 每一个 `DFXnnnn`。
-- **[../CHANGELOG.md](https://github.com/TypeDreamMoon/DreamFX/blob/f11dd7d322f01c01d05c46c7c383f9979b6b083d/CHANGELOG.md)** —— 每个版本涵盖的内容，以及已知问题列表。
+- **[../CHANGELOG.md](https://github.com/TypeDreamMoon/DreamFX/blob/62d3a03794ac1ca17110cd3f5bd00c411a40cc8c/CHANGELOG.md)** —— 每个版本涵盖的内容，以及已知问题列表。
 
 要对你自己的内容提出覆盖度问题——其中有多大比例 DreamFX 已经能够表示，哪些缺口值得填补——你可以自己运行：
 

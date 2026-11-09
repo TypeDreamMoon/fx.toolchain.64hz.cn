@@ -2,15 +2,15 @@
   "version": 2,
   "status": "current",
   "sourceHash": "324d80700c7291d7a00b0e3d7902b8ed579401501ad0c4bcdf3f9494a16c1b06",
-  "sourceRevision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
+  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
   "sources": [
     {
       "path": "Docs/language/events-and-stages.md",
-      "sourceHash": "326885cda6b96d4e157cd253d033a997c851e8143351dd36167fc663e3eadcf0",
-      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
-      "translationHash": "605ad65e31cc7dc536024aab40ac661186f87d266885bee4e93dd2d4c0a852ad"
+      "alignedRevision": "37dd25b1940d",
+      "alignedPage": "326885cda6b9",
+      "translationHash": "ad4f8f36b3638760f8d984e1c90de3bd3986302e3def0130102b30f35d1b1e8b"
     }
   ],
   "translationFile": "content/docs/language/events-and-stages.md",
-  "translationHash": "fde6c02a58af86f9892ad1bed8a053e21b79cc61196bb14293391a0259648ea1"
+  "translationHash": "0d71a62d16032f9de5e71160f5a6a6eb246f2c1ef4bd043b09bb30b377b229f3"
 }

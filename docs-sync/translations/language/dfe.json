@@ -2,15 +2,15 @@
   "version": 2,
   "status": "current",
   "sourceHash": "6abe8720afc7e6c19d8a05249ad09150b0f1d695a4c0cbddb7c072c52421a807",
-  "sourceRevision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
+  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
   "sources": [
     {
       "path": "Docs/language/dfe.md",
-      "sourceHash": "14e458f3e0f52ab45a6d23c624e80eb5101ca657f0cd6293bcd2b76643d30c22",
-      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
-      "translationHash": "6faded4a95a28911d7c5333e853a766c5708f3c211405f934012142faae359a4"
+      "alignedRevision": "37dd25b1940d",
+      "alignedPage": "14e458f3e0f5",
+      "translationHash": "ddc413498586df75867aff2f03183c12a2f5d4e8f2d066a9108e4feccb7fd56d"
     }
   ],
   "translationFile": "content/docs/language/dfe.md",
-  "translationHash": "47a92260bdcd5c48c0bf7896819d77a59b681de1a3dbd5c704bb353aa0156cba"
+  "translationHash": "bb62452d504dd6bf8be4b9893c7e236ee0f5c8c8a876f6571030fb9426c2b4d5"
 }

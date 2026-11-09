@@ -2,15 +2,15 @@
   "version": 2,
   "status": "current",
   "sourceHash": "4f087dd67b57ca5de7f451407a7d9088152095bac14f041e7085c2e775455c68",
-  "sourceRevision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
+  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
   "sources": [
     {
       "path": "Docs/tools/vscode.md",
-      "sourceHash": "c12329eb100e9ce4c59a906e5e45ada3ac4ca3b48b41ac4e6078a4dbb941c5f5",
-      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
-      "translationHash": "e9105884190b648fbc3c4ad3fe358d1d5ec493c20416652127f904f76c39d2de"
+      "alignedRevision": "37dd25b1940d",
+      "alignedPage": "c12329eb100e",
+      "translationHash": "4a1ecacb4babd0e59032124eab023f6a8b8d69c977b716bd896704afa6db080a"
     }
   ],
   "translationFile": "content/docs/tools/vscode.md",
-  "translationHash": "439124b63d5523d4fed36945abe6363635e8cd5fe9747fc91fbc9f740bc9a580"
+  "translationHash": "e4e64b6d294451b4c30accde9f49f953ecabc05f9920d3c9134143d9ffa87ced"
 }

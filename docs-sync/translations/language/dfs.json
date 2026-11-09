@@ -6,8 +6,8 @@
   "sources": [
     {
       "path": "Docs/language/dfs.md",
-      "sourceHash": "0b8c63852d4d2c63682c15bc28c3d348106b3166d5a6fd3e964a1a7b80aa0c16",
-      "sourceRevision": "04b380e2addb2b205b89cf8c5d8f0664632d3d64",
+      "alignedRevision": "04b380e2addb",
+      "alignedPage": "0b8c63852d4d",
       "translationHash": "74d2038cf928510cdce2d4fdf99e3004a2e8df51e9214433ab8fdbf69e1827d4"
     }
   ],

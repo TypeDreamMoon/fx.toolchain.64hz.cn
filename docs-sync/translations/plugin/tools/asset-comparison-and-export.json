@@ -2,13 +2,13 @@
   "version": 2,
   "status": "current",
   "sourceHash": "f58077e4ba0cb5a4af3ea34778ac6fd16d03c5802690a484172c68964944deb1",
-  "sourceRevision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
+  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
   "sources": [
     {
       "path": "Docs/tools/asset-comparison-and-export.md",
-      "sourceHash": "dccc56525d05ab27511cf3fb24a3459dd99bbf97b35b06e8b0356e744c886b76",
-      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
-      "translationHash": "c3780196f1268dcc73934c4838aa45f72e4ee5442a6d13fcb8ffd3d7f0490de7"
+      "alignedRevision": "37dd25b1940d",
+      "alignedPage": "dccc56525d05",
+      "translationHash": "a327dd9b715e91abdc1a9b294be40e4bf14003568204242006913611fb900196"
     }
   ],
   "translationFile": "content/docs/plugin/tools/asset-comparison-and-export.md",

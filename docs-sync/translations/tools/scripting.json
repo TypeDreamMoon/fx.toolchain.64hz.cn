@@ -2,15 +2,15 @@
   "version": 2,
   "status": "current",
   "sourceHash": "5345e84e1c27d1a5359d2cbf891b2701fc022e06a6320db62b437c6e58e18305",
-  "sourceRevision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
+  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
   "sources": [
     {
       "path": "Docs/tools/scripting.md",
-      "sourceHash": "c497946ef32d170f153359569f3ce172a3d79ab4b4cce38d06cbb7da6d9d1c3d",
-      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
-      "translationHash": "86c5f8909fa164a11f294b669eed8105e3082cba0787a6bbd7ee3f046fae346a"
+      "alignedRevision": "37dd25b1940d",
+      "alignedPage": "c497946ef32d",
+      "translationHash": "619a6e01dbdb3ac0e7e2303294937568a8855a678b21d705b711ebfdd8d45bc3"
     }
   ],
   "translationFile": "content/docs/tools/scripting.md",
-  "translationHash": "08af5d87331b5d61d391d6c81435a9a035700afc26fae59e288865f499866c66"
+  "translationHash": "ed969cc02c68a422672017b6e01429a13035af2112f102b5bfc7ef782fefadb6"
 }

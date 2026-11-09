@@ -2,15 +2,15 @@
   "version": 2,
   "status": "current",
   "sourceHash": "89cdcd34790e2d7a161802f80185b16276299badf787c7b32ef154dda3f8a72a",
-  "sourceRevision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
+  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
   "sources": [
     {
       "path": "Docs/getting-started/first-effect.md",
-      "sourceHash": "d195dc4485f5afc99f5b4542d29ce240796ff5e34341218c75dd07527a0c11ab",
-      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
-      "translationHash": "0131d66057369f9d570eea7bfc292b98031ede5055ab04eff8ecc6aa6e9faa69"
+      "alignedRevision": "37dd25b1940d",
+      "alignedPage": "d195dc4485f5",
+      "translationHash": "a397db83a660eb1f885a323cf281177a492e8f22212db8c94e38cad2f1c7882c"
     }
   ],
   "translationFile": "content/docs/start/first-effect.md",
-  "translationHash": "45fb3d86ce367dbe8624d54c407aac59e40caf8f0f431116275cb6d4dd537806"
+  "translationHash": "406051857db586220a4dc6c704a4b35105f1a6bf14dd9b0bcd639446657d77c0"
 }

@@ -2,25 +2,25 @@
   "version": 2,
   "status": "outdated",
   "sourceHash": null,
-  "sourceRevision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
+  "sourceRevision": "49df393f789c0ce609e7d3bea43fac471621388b",
   "sources": [
     {
       "path": "Docs/diagnostics/DFX5xxx.md",
-      "sourceHash": "de94301456f0a40eef90429fe6d023a855583d825dd4b614cdf3dd98fb0901ac",
-      "sourceRevision": "04b380e2addb2b205b89cf8c5d8f0664632d3d64",
+      "alignedRevision": "04b380e2addb",
+      "alignedPage": "de94301456f0",
       "translationHash": "046f6cff403c1f81755ee8c7251b2dc6ef46ec2f78f503330fcd9cb976ea5d16"
     },
     {
       "path": "Docs/diagnostics/history/DFX5099.md",
-      "sourceHash": "4a751f358b0d798abcb80032c7de4e80b4e6a8ca75a3438de42281525930b739",
-      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
-      "translationHash": "4a48651e039c348746ab418fa78c41c3eb841c813a9dd1d6ed0107030b192a70"
+      "alignedRevision": "37dd25b1940d",
+      "alignedPage": "4a751f358b0d",
+      "translationHash": "c10b72a285d3f083fca1286af4c58061b1c9947c2a345565e16dc49918e79161"
     },
     {
       "path": "Docs/diagnostics/history/unpublished-codes.md",
-      "sourceHash": "8ce55000b86e5e1f27a180bce632daad304de9d53ef03b6efff25e483e7c2383",
-      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
-      "translationHash": "63025a9984e8e7d364d5c511f0069a446080f75a2f6e79f2a59ccd9c6fd4919b"
+      "alignedRevision": "37dd25b1940d",
+      "alignedPage": "8ce55000b86e",
+      "translationHash": "bb1c3407ba221f5826d87a9cfed0603ef48598e6782769bd9f41ba62a6089d6f"
     }
   ],
   "translationFile": "content/docs/diagnostics/dfx5xxx.md",

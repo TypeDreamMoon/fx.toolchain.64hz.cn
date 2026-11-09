@@ -2,13 +2,13 @@
   "version": 2,
   "status": "current",
   "sourceHash": "c532f46b25ee96665ed491c50e4404c09b5fed2d98e897fe9efc201402c69d8f",
-  "sourceRevision": "f11dd7d322f01c01d05c46c7c383f9979b6b083d",
+  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
   "sources": [
     {
       "path": "Docs/language/system-inheritance.md",
-      "sourceHash": "038d73763dac92e26efb9803a003a83c294ccbe4d8b8438be126ec962f8b1b77",
-      "sourceRevision": "6677fe4ed04df8f491f7a24fbf6da8afe207dfa0",
-      "translationHash": "cfd515e7373327ef7ea30546ec7c5ad57240e4bffaaa7a3024ea45a8d223a5d7"
+      "alignedRevision": "37dd25b1940d",
+      "alignedPage": "038d73763dac",
+      "translationHash": "d5a1c1e991981e681634923fcbbe345b39cace1f1ae1100224407226ef1b5ce2"
     }
   ],
   "translationFile": "content/docs/plugin/language/system-inheritance.md",
