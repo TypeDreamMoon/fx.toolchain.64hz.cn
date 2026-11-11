@@ -3,8 +3,6 @@ title: ".dfs — a system"
 description: "System settings, user parameters, module calls and assignments in the six stacks, Defaults, renderers and bindings, and referencing a .dfe."
 ---
 
-# `.dfs` — a system
-
 Produces one `UNiagaraSystem`.
 
 Add `Parent="../Base.dfs"` to inherit another system's source. See

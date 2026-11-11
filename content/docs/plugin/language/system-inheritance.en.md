@@ -1,9 +1,7 @@
 ---
-title: "System source inheritance"
-description: "System source inheritance"
+title: "Resolution and merge rules"
+description: "Resolution and merge rules"
 ---
-
-# System source inheritance
 
 A `.dfs` system can inherit another `.dfs` source with `Parent`:
 

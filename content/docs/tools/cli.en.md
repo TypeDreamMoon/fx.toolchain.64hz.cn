@@ -3,8 +3,6 @@ title: "The dfx.ps1 command line"
 description: "Every subcommand and switch of the headless driver — build, verify, lint, decompile, mirror-diff, asset-diff, coverage, schema, index, corpus."
 ---
 
-# Headless Niagara compilation
-
 A system build, including `dfx.ps1 build <system.dfs> -Force`, requests Niagara compilation and waits
 for the resulting executable data before stamping or saving the asset. CPU scripts must contain VM
 bytecode and a valid compile ID matching the current source. Active or queued compilation, stale

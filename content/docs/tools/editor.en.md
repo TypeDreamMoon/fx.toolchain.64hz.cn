@@ -3,9 +3,7 @@ title: "Editor integration"
 description: "The Tools menu, the level toolbar, Content Browser actions, the Niagara editor toolbar, the toasts, the file watcher and the settings."
 ---
 
-# Editor integration
-
-> [DreamFX](https://github.com/TypeDreamMoon/DreamFX/blob/c6ac796202e623a3fd81d32addce75f8ef5fa8ef/README.md) » **Editor integration**
+> [DreamFX](https://github.com/TypeDreamMoon/DreamFX/blob/7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c/README.md) » **Editor integration**
 
 Every place DreamFX attaches itself to the Unreal editor UI: the Tools menu, the Level Editor
 toolbar, the Content Browser asset context menus, and the Niagara system and script editor toolbars.
@@ -57,7 +55,7 @@ Added into the stock `GetAssetActions` section of the per-class asset context me
 ### System submenu
 
 `DreamFX.SystemActions` — label **DreamFX**, icon `Icons.Settings`. Its contents depend on whether
-the asset carries a DreamFX [provenance stamp](https://github.com/TypeDreamMoon/DreamFX/blob/c6ac796202e623a3fd81d32addce75f8ef5fa8ef/README.md), because a generated asset and an
+the asset carries a DreamFX [provenance stamp](https://github.com/TypeDreamMoon/DreamFX/blob/7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c/README.md), because a generated asset and an
 imported one need opposite things.
 
 **Without provenance** (an asset DreamFX did not make), section `DreamFX.DecompileActions`,

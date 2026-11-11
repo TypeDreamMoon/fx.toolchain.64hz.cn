@@ -1,9 +1,7 @@
 ---
-title: "Write-back coverage and gaps: measured inventory"
-description: "Write-back coverage and gaps: measured inventory"
+title: "0. Conclusions"
+description: "0. Conclusions"
 ---
-
-# Write-back coverage and gaps: measured inventory
 
 > Recorded on 2026-10-08 to answer **what DFX can and cannot write back**, and **which editor
 > changes cannot be synchronized back to text**.

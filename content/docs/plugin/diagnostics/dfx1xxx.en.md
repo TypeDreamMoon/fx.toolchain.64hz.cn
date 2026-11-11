@@ -1,9 +1,7 @@
 ---
-title: "DFX1xxx --- Driver and file I/O"
-description: "DFX1xxx --- Driver and file I/O"
+title: "DFX1000"
+description: "DFX1000"
 ---
-
-# DFX1xxx --- Driver and file I/O
 
 > The block between the generated markers is written by `.skill/gen-diagnostics.ps1`.
 > Everything below a marker is written by hand and survives a regeneration.

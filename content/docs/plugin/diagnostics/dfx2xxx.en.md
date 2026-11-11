@@ -1,9 +1,7 @@
 ---
-title: "DFX2xxx --- Lexer and syntax"
-description: "DFX2xxx --- Lexer and syntax"
+title: "DFX2000"
+description: "DFX2000"
 ---
-
-# DFX2xxx --- Lexer and syntax
 
 > The block between the generated markers is written by `.skill/gen-diagnostics.ps1`.
 > Everything below a marker is written by hand and survives a regeneration.

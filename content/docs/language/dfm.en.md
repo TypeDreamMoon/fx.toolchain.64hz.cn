@@ -3,8 +3,6 @@ title: ".dfm — modules and dynamic inputs"
 description: "Writing a Niagara module or dynamic input as text — Usage, Inputs, the HLSL Body, and which engines can generate one."
 ---
 
-# `.dfm` — a module or a dynamic input
-
 Produces one `UNiagaraScript`. Two kinds, differing in two lines:
 
 ```cpp

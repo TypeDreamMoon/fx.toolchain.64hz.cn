@@ -3,8 +3,6 @@ title: "Values, types and rules"
 description: "Everything that can appear on the right of an =, the curve literal, the inline-expression whitelist, the type table, and L2 / L3 / L6 / L7."
 ---
 
-# Values, types and the `L*` rules
-
 Everything that can appear on the right of an `=`, and the rules that decide what it means.
 
 ---

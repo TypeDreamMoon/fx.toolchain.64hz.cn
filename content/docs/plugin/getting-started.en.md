@@ -1,9 +1,7 @@
 ---
-title: "Getting started with DreamFX"
-description: "Getting started with DreamFX"
+title: "1. Check the plugin is on"
+description: "1. Check the plugin is on"
 ---
-
-# Getting started with DreamFX
 
 DreamFX compiles text into standard Niagara assets. You write a `.dfs` file, run one command, and get
 a `UNiagaraSystem` that a level, a blueprint or a sequencer can reference like any other. The text is
@@ -230,7 +228,7 @@ not a gate.
 - **[tools/incremental-builds.md](/en/docs/plugin/tools/incremental-build-reference)** — what a save writes, what each kind
   of edit costs, and when a build falls back to rebuilding everything.
 - **[diagnostics/](/en/docs/plugin/diagnostics/readme)** — every `DFXnnnn`.
-- **[../CHANGELOG.md](https://github.com/TypeDreamMoon/DreamFX/blob/c6ac796202e623a3fd81d32addce75f8ef5fa8ef/CHANGELOG.md)** — what each release covers, and the known-issue list.
+- **[../CHANGELOG.md](https://github.com/TypeDreamMoon/DreamFX/blob/7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c/CHANGELOG.md)** — what each release covers, and the known-issue list.
 
 To ask the coverage question of your own content — what fraction of it DreamFX can already
 represent, and which gaps are worth closing — run it yourself:

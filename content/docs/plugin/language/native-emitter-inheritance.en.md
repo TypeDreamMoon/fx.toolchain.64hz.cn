@@ -1,9 +1,7 @@
 ---
-title: "Native emitter inheritance"
-description: "Native emitter inheritance"
+title: "Overrides"
+description: "Overrides"
 ---
-
-# Native emitter inheritance
 
 An emitter in a `.dfs` system can inherit a standalone Niagara emitter asset:
 

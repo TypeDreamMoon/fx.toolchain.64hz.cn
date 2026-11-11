@@ -3,9 +3,7 @@ title: "Incremental build reference"
 description: "Incremental build reference"
 ---
 
-# Incremental builds
-
-> [DreamFX](https://github.com/TypeDreamMoon/DreamFX/blob/04b380e2addb2b205b89cf8c5d8f0664632d3d64/README.md) » **Incremental builds**
+> [DreamFX](https://github.com/TypeDreamMoon/DreamFX/blob/7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c/README.md) » **Incremental builds**
 
 Saving a `.dfs` used to clear every stack of its system and rebuild everything, so the cost of a save
 was proportional to the size of the whole system, not to the edit. An incremental build compares the

@@ -1,9 +1,7 @@
 ---
-title: "DFX5xxx --- Generation and asset writing"
-description: "DFX5xxx --- Generation and asset writing"
+title: "DFX5001"
+description: "DFX5001"
 ---
-
-# DFX5xxx --- Generation and asset writing
 
 > The block between the generated markers is written by `.skill/gen-diagnostics.ps1`.
 > Everything below a marker is written by hand and survives a regeneration.

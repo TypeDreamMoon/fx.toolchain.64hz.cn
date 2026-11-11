@@ -1,9 +1,7 @@
 ---
-title: "`pull`: write current asset values back to source"
-description: "`pull`: write current asset values back to source"
+title: "0. Summary"
+description: "0. Summary"
 ---
-
-# `pull`: write current asset values back to source
 
 > Recorded on 2026-10-09 on branch `feat/pull`. Tool: `dfx pull`, implemented in
 > `Source/DreamFXEditor/Private/WriteBack/DreamFXPull.cpp`.

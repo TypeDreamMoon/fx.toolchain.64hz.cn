@@ -3,8 +3,6 @@ title: "The file model"
 description: "The shape every DreamFXLang file shares — header, blocks, statements, comments, attributes — and an index of the eight L rules."
 ---
 
-# DreamFXLang reference
-
 The language, split by what you are writing. Where a rule exists because the engine forced it —
 why the stack is a statement list, why the expression whitelist is short, why `#Region` is only a
 comment — the page says so where the rule is stated.

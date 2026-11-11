@@ -1,9 +1,7 @@
 ---
-title: "DFX4xxx --- Values, types and expressions"
-description: "DFX4xxx --- Values, types and expressions"
+title: "DFX4001"
+description: "DFX4001"
 ---
-
-# DFX4xxx --- Values, types and expressions
 
 > The block between the generated markers is written by `.skill/gen-diagnostics.ps1`.
 > Everything below a marker is written by hand and survives a regeneration.

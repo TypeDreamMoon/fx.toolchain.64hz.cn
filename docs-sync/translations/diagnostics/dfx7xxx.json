@@ -1,8 +1,8 @@
 {
   "version": 2,
   "status": "current",
-  "sourceHash": "1cbbca0d010aa1ae3c951e18f24b89e43a5f66a8f06ed8d7a48f8c5f4779f434",
-  "sourceRevision": "49df393f789c0ce609e7d3bea43fac471621388b",
+  "sourceHash": "0c2e9d3f41e2041ca53552e09ed4f6e7dbb353a77a1bd59468a5672e00f1682d",
+  "sourceRevision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
   "sources": [
     {
       "path": "Docs/diagnostics/DFX7xxx.md",

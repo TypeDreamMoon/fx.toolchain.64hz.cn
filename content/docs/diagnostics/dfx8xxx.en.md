@@ -3,8 +3,6 @@ title: "DFX8xxx — Decompiler"
 description: "Every DFX8xxx diagnostic, with its severity, verbatim message, cause and fix."
 ---
 
-# DFX8xxx --- Decompiler
-
 > The block between the generated markers is written by `.skill/gen-diagnostics.ps1`.
 > Everything below a marker is written by hand and survives a regeneration.
 

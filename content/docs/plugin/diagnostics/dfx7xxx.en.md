@@ -1,9 +1,7 @@
 ---
-title: "DFX7xxx --- Provenance, drift and lint"
-description: "DFX7xxx --- Provenance, drift and lint"
+title: "DFX7001"
+description: "DFX7001"
 ---
-
-# DFX7xxx --- Provenance, drift and lint
 
 > The block between the generated markers is written by `.skill/gen-diagnostics.ps1`.
 > Everything below a marker is written by hand and survives a regeneration.
