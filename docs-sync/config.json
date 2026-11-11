@@ -427,6 +427,18 @@
       "locale": "en"
     },
     {
+      "id": "contributing/index",
+      "sources": [
+        {
+          "path": "Docs/contributing/index.md"
+        }
+      ],
+      "format": "md",
+      "title": "Contributing",
+      "description": "Repository layout, the two modules, building in a test host, the ci.ps1 gate, and the conventions for generated files, docs and releases.",
+      "locale": "en"
+    },
+    {
       "id": "plugin/diagnostics/dfx1xxx",
       "sources": [
         {
