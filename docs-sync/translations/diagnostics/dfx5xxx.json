@@ -6,9 +6,9 @@
   "sources": [
     {
       "path": "Docs/diagnostics/DFX5xxx.md",
-      "alignedRevision": "62d3a03794ac",
+      "alignedRevision": "b8541f5d92b2",
       "alignedPage": "503ba26878c9",
-      "translationHash": "c91c44081c11fd22d537df43068643d8a7adfb26fff606261c4620680efcda14"
+      "translationHash": "15d1b855f5d1164ad493995a05200bc703f482d09f4f1fa222ab1368b540d7ad"
     },
     {
       "path": "Docs/diagnostics/history/DFX5099.md",
@@ -24,5 +24,5 @@
     }
   ],
   "translationFile": "content/docs/diagnostics/dfx5xxx.md",
-  "translationHash": "305f1756d5ffe33c074e6ca82d9a6c0f84c4ffe4ba6cc02876c76e35a6d3ddee"
+  "translationHash": "11c22ffe91b3e3b0d242f9846f5c704d145046d157193ecddac7c1940b95a73c"
 }

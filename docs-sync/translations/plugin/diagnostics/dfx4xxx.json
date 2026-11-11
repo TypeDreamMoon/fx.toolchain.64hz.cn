@@ -6,11 +6,11 @@
   "sources": [
     {
       "path": "Docs/diagnostics/DFX4xxx.md",
-      "alignedRevision": "62d3a03794ac",
+      "alignedRevision": "b8541f5d92b2",
       "alignedPage": "a3ed261d14a1",
-      "translationHash": "0c08c148e441b72adbd1ecbc56376c6bf4a31fa237def4f64d8f5d2c1c774d65"
+      "translationHash": "b3af4a8e2c71d3cd83d3caa03b6d100deed5d1c83b9fc7132ae8b0f4cb31a199"
     }
   ],
   "translationFile": "content/docs/plugin/diagnostics/dfx4xxx.md",
-  "translationHash": "39fc7c209b977528eb62a1e76597a53223bd74087c59349c1bdfa1617e341123"
+  "translationHash": "0ee14fa5d8ef872d3f366053e9934f8480b3441905e17a4311a1abc845647d52"
 }

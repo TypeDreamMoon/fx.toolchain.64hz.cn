@@ -3,7 +3,7 @@ title: "增量构建"
 description: "增量构建"
 ---
 
-> [DreamFX](https://github.com/TypeDreamMoon/DreamFX/blob/7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c/README.md) » **增量构建**
+> [DreamFX](https://github.com/TypeDreamMoon/DreamFX/blob/ecd893ccdd02b754b68d0b6782b431d2a1cfdc2d/README.md) » **增量构建**
 
 过去保存一个 `.dfs` 会清空其系统中每个堆栈并重建全部内容，因此一次保存的开销与整个系统的大小成正比，而不是与本次编辑成比例。增量构建会将新的构建计划与上一次构建记录的计划进行比较，只写入差异部分。
 

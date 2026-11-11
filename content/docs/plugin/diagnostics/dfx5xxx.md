@@ -8,7 +8,7 @@ description: "DFX5xxx 段的全部诊断码，每条带严重级别、逐字消�
 ## DFX5001 [#dfx5001]
 
 <!-- generated:begin DFX5001 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -26,7 +26,7 @@ Stack '%s' has no Niagara script usage mapping.
 ## DFX5002 [#dfx5002]
 
 <!-- generated:begin DFX5002 -->
-**严重级别** 警告
+**严重性** 警告
 
 **消息**
 
@@ -44,7 +44,7 @@ This system declares no emitters, so it will produce nothing.
 ## DFX5003 [#dfx5003]
 
 <!-- generated:begin DFX5003 -->
-**严重级别** 提示
+**严重性** 信息
 
 **消息**
 
@@ -62,7 +62,7 @@ This system declares no emitters, so it will produce nothing.
 ## DFX5004 [#dfx5004]
 
 <!-- generated:begin DFX5004 -->
-**严重级别** 提示
+**严重性** 信息
 
 **消息**
 
@@ -80,7 +80,7 @@ No Material was set, so the engine default was applied: %s. Write 'Material = \"
 ## DFX5015 [#dfx5015]
 
 <!-- generated:begin DFX5015 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -98,7 +98,7 @@ Emitter '%s' has no record in the last build's plan.
 ## DFX5020 [#dfx5020]
 
 <!-- generated:begin DFX5020 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -116,7 +116,7 @@ The last build of this stack recorded %d module node(s) for %d module(s), so its
 ## DFX5027 [#dfx5027]
 
 <!-- generated:begin DFX5027 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -134,7 +134,7 @@ Could not read native parent defaults: %s.
 ## DFX5030 [#dfx5030]
 
 <!-- generated:begin DFX5030 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -152,7 +152,7 @@ SavePackage failed for '%s'.
 ## DFX5031 [#dfx5031]
 
 <!-- generated:begin DFX5031 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -172,7 +172,7 @@ DreamFX 通过外部编辑 API 的普通栈轨道访问事件栈，而那些轨�
 ## DFX5032 [#dfx5032]
 
 <!-- generated:begin DFX5032 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -190,7 +190,7 @@ Emitter '%s' declares two Stage blocks named '%s'. Stages are identified by name
 ## DFX5033 [#dfx5033]
 
 <!-- generated:begin DFX5033 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -208,7 +208,7 @@ Emitter '%s' declares Stage blocks but simulates on the CPU. Simulation stages a
 ## DFX5034 [#dfx5034]
 
 <!-- generated:begin DFX5034 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -226,7 +226,7 @@ Emitter '%s' uses 'as %s' on two module calls. Node names are unique per emitter
 ## DFX5035 [#dfx5035]
 
 <!-- generated:begin DFX5035 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -244,7 +244,7 @@ Emitter '%s' uses 'as %s' on two module calls. Node names are unique per emitter
 ## DFX5036 [#dfx5036]
 
 <!-- generated:begin DFX5036 -->
-**严重级别** 警告
+**严重性** 警告
 
 **消息**
 
@@ -264,9 +264,9 @@ OnEvent source '%s' is an id no emitter in this system answers to, so this handl
 ## DFX5037 [#dfx5037]
 
 <!-- generated:begin DFX5037 -->
-**严重级别** 错误
+**严重性** 错误
 
-**消息：**
+**消息**
 
 ```
 The module DreamFX generated for this DynamicMesh did not parse (%s is the text). This is a DreamFX defect -- report it with the .dfs:\n%s
@@ -282,7 +282,7 @@ The module DreamFX generated for this DynamicMesh did not parse (%s is the text)
 ## DFX5093 [#dfx5093]
 
 <!-- generated:begin DFX5093 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -300,7 +300,7 @@ The module DreamFX generated for this DynamicMesh did not parse (%s is the text)
 ## DFX5097 [#dfx5097]
 
 <!-- generated:begin DFX5097 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -318,7 +318,7 @@ Only System documents can be generated right now; this file declares a %s.
 ## DFX5098 [#dfx5098]
 
 <!-- generated:begin DFX5098 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -338,7 +338,7 @@ Data interface parameter '%s' takes its configuration as a quoted JSON object, t
 ## DFX5100 [#dfx5100]
 
 <!-- generated:begin DFX5100 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -356,7 +356,7 @@ Data interface parameter '%s' takes its configuration as a quoted JSON object, t
 ## DFX5101 [#dfx5101]
 
 <!-- generated:begin DFX5101 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -374,7 +374,7 @@ Data interface parameter '%s' takes its configuration as a quoted JSON object, t
 ## DFX5102 [#dfx5102]
 
 <!-- generated:begin DFX5102 -->
-**严重级别** 提示
+**严重性** 信息
 
 **消息**
 
@@ -392,7 +392,7 @@ Input '%s' is marked [StaticSwitch]. Tier-one generation (plan 3.3) lowers the w
 ## DFX5103 [#dfx5103]
 
 <!-- generated:begin DFX5103 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -410,7 +410,7 @@ Package '%s' exists on disk but could not be loaded.
 ## DFX5104 [#dfx5104]
 
 <!-- generated:begin DFX5104 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -428,7 +428,7 @@ Package '%s' exists but holds no Niagara script named '%s'. Refusing to overwrit
 ## DFX5105 [#dfx5105]
 
 <!-- generated:begin DFX5105 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -446,7 +446,7 @@ Could not create package '%s'.
 ## DFX5106 [#dfx5106]
 
 <!-- generated:begin DFX5106 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -464,7 +464,7 @@ Could not wire the module graph. The Niagara schema rejected a parameter map con
 ## DFX5107 [#dfx5107]
 
 <!-- generated:begin DFX5107 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
@@ -482,7 +482,7 @@ Could not wire the module graph. The Niagara schema rejected a parameter map con
 ## DFX5109 [#dfx5109]
 
 <!-- generated:begin DFX5109 -->
-**严重级别** 错误
+**严重性** 错误
 
 **消息**
 
