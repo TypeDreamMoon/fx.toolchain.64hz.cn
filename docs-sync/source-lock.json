@@ -1,9 +1,9 @@
 {
   "version": 1,
   "repository": "TypeDreamMoon/DreamFX",
-  "revision": "ecd893ccdd02b754b68d0b6782b431d2a1cfdc2d",
+  "revision": "a69079e4bcbeb5ce99f0f2b1f61d687763e4b5f9",
   "workingTree": false,
-  "translationSnapshotHash": "a8127db4268b5b2992f89a003a7f2bfc3d78067db3c557d55eaee15745d7d6aa",
+  "translationSnapshotHash": "d8486fe31594655aeb861782822cbbd5b63519f8cbb4307e61f50ff2faf52935",
   "pages": {
     "changelog/index": {
       "hash": "c1dad62ffab3e8dbf3cc99e290d47c875a58a53a0a5882a2de1c2fd76a265757",
@@ -695,8 +695,8 @@
         "status": "current",
         "output": "content/docs/tools/editor.md",
         "record": "docs-sync/translations/tools/editor.json",
-        "outputHash": "523c637024b8d754408be622147460bfe0a04fe20a0b99b26d0612fa835ba70c",
-        "bodyHash": "05a03636014985ca0069fe555e57462d342366351cb41a7e370cd5fa05ae5c21"
+        "outputHash": "374e209f3d79fe7a8482022bb5c64a67176e9a02c1720cfd25eb3d0e7603ca21",
+        "bodyHash": "be4378fd528f5687e475462d2bac5ea5857bfc40c0c404cefdbb19a327ae481b"
       }
     },
     "tools/scripting": {
@@ -722,23 +722,24 @@
       }
     },
     "tools/skills": {
-      "hash": "4cd7905d2c48e7cd6b5132060ab6971515b1d58fa47c7ef960e55c6d7f047f03",
-      "revision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+      "hash": "681d5ada38051bb868440fcb2e61cef1deb0256324f8a6cb15c4c36cc598e6af",
+      "revision": "a69079e4bcbeb5ce99f0f2b1f61d687763e4b5f9",
       "output": "content/docs/tools/skills.en.md",
-      "outputHash": "f783c508ae7eaf641924737b925112442b0f372e53218a6c75f7bd1d0820196c",
+      "outputHash": "d049f632df301c923e67c6c3627aa112ed34724d2e2b9ef7ae8a88d25971be38",
       "locale": "en",
       "format": "md",
       "title": "Agent skills",
       "sources": [
         {
           "path": "Docs/tools/skills.md",
-          "hash": "3c6c739097177cef5182dade03100e935b01e448adf739122eb3c785ba480a13"
+          "hash": "8a15dfba109ce5243eee6c6e66426e4515a5fc969c0e8922b9e2d987517acc23"
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/tools/skills.md",
         "record": "docs-sync/translations/tools/skills.json",
+        "pending": 8,
         "outputHash": "6953e060495510bb06e048538550c2a27d867e751267e03c2583f1fead3d109b",
         "bodyHash": "e579d9089ce50966a2cf3052d13211c4b0086a92304c1076538395f8c96ea718"
       }
@@ -763,6 +764,24 @@
         "record": "docs-sync/translations/tools/vscode.json",
         "outputHash": "e4e64b6d294451b4c30accde9f49f953ecabc05f9920d3c9134143d9ffa87ced",
         "bodyHash": "1dae7be01d5a52ceb3c38d290a5c51bca2fa39ad295e3fb319e5d2146825c2ca"
+      }
+    },
+    "contributing/index": {
+      "hash": "26cc3486013b7831880aa18087486343e8bd24e70975cdad2781a4581b503977",
+      "revision": "a69079e4bcbeb5ce99f0f2b1f61d687763e4b5f9",
+      "output": "content/docs/contributing/index.en.md",
+      "outputHash": "9ba7d5593ef7c87c12a2b125e118c4de0812b5f8469d0455cc1f8182cee6d3c7",
+      "locale": "en",
+      "format": "md",
+      "title": "Contributing",
+      "sources": [
+        {
+          "path": "Docs/contributing/index.md",
+          "hash": "af2e2ad173316a795a24c6cdf38b66b08675ac7c8881d2b969c72d7f2ab9a403"
+        }
+      ],
+      "translation": {
+        "status": "missing"
       }
     },
     "plugin/diagnostics/dfx1xxx": {
@@ -993,8 +1012,8 @@
         "status": "current",
         "output": "content/docs/plugin/getting-started.md",
         "record": "docs-sync/translations/plugin/getting-started.json",
-        "outputHash": "93173d4873f70b8672ca56d0bb470efd3776d9653f414099e14913b80ff0c524",
-        "bodyHash": "d7ea55f418a00d5defc2e2a3c3debfb63961b7730b07cdcfd01226b91755d02a"
+        "outputHash": "86f055da04edd9c431ba936d03b4397433c39fb255674f456018383abf0a361b",
+        "bodyHash": "9bfa7c8fdea2fb40ec5d8a7a00aceace79e13ec958dc7a32ec9568a6cffbae56"
       }
     },
     "plugin/language/native-emitter-inheritance": {
@@ -1103,8 +1122,8 @@
         "status": "current",
         "output": "content/docs/plugin/tools/incremental-build-reference.md",
         "record": "docs-sync/translations/plugin/tools/incremental-build-reference.json",
-        "outputHash": "dd3085483a303afef187bc87ecabbfb47d4133a44a1bfba16a91457edf3bc032",
-        "bodyHash": "e7b25a674dee4804f7e0ae3058433591b374dfe2b5629dfc137973e2f7e25529"
+        "outputHash": "0ab7aac4b660765bf1338ee6da5fc7642c47a3317f5658c1e9de7c6be968a4d6",
+        "bodyHash": "dac4ffa3000a3e16cc978d9d143613d38e7c35c15c9c002c339f82f8de4c7b3d"
       }
     },
     "plugin/tools/pull": {
