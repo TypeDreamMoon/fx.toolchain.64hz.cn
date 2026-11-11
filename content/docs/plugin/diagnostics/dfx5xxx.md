@@ -3,8 +3,6 @@ title: "DFX5xxx — 生成与资产写入"
 description: "DFX5xxx 段的全部诊断码，每条带严重级别、逐字消息、成因与修法。"
 ---
 
-# DFX5xxx --- 生成与资产写入 [#dfx5xxx-----generation-and-asset-writing]
-
 > 生成标记之间的块由 `.skill/gen-diagnostics.ps1` 写入。标记以下的所有内容均为手工编写，并在重新生成后保留。
 
 ## DFX5001 [#dfx5001]

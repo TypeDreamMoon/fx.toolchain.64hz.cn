@@ -2,7 +2,7 @@
   "version": 1,
   "repository": "TypeDreamMoon/DreamFX",
   "branch": "main",
-  "tool": "0.2.0",
+  "tool": "0.3.2",
   "siteOnly": [],
   "pages": [
     {
@@ -612,5 +612,6 @@
   "exclude": [
     "Docs/README.md"
   ],
-  "siteUrl": "https://fx.toolchain.64hz.cn"
+  "siteUrl": "https://fx.toolchain.64hz.cn",
+  "stripLeadingTitle": true
 }

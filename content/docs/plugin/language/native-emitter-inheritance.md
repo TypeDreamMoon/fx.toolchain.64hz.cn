@@ -3,8 +3,6 @@ title: "原生发射器继承"
 description: "原生发射器继承"
 ---
 
-# 原生发射器继承 [#native-emitter-inheritance]
-
 `.dfs` 系统中的发射器可以继承一个独立的 Niagara 发射器资产：
 
 ```dfs

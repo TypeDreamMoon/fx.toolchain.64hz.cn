@@ -1,8 +1,8 @@
 {
   "version": 2,
   "status": "current",
-  "sourceHash": "aa8d0c4607962e635e98ad4c49fd16422ad9da0132a35243504b2fcd5d6269cd",
-  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+  "sourceHash": "ee342344cdf1096c08c34905d4bac7235b2e24f8db1a2f5284e4191bd3d8812e",
+  "sourceRevision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
   "sources": [
     {
       "path": "Docs/language/native-emitter-inheritance.md",
@@ -12,5 +12,5 @@
     }
   ],
   "translationFile": "content/docs/plugin/language/native-emitter-inheritance.md",
-  "translationHash": "3b37f096acef1bbfcd19cc9653aaa5a0df17222aa6de0459d8810c4e2e432630"
+  "translationHash": "d2756ccc9fb5c108475451aa1d54eefc73ea73cf7aac6de13715cdd8a5b66d45"
 }

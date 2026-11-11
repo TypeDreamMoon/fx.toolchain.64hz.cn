@@ -1,8 +1,8 @@
 {
   "version": 2,
   "status": "current",
-  "sourceHash": "f3cb7d84c7cdd450bf5b583086aa15bb15b99410da4f138752d3722036bd8034",
-  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+  "sourceHash": "cbf5b6a21c9f6d23e56ba0108320ebef0d727adfbfa9d8c8eec148a9cf2c5390",
+  "sourceRevision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
   "sources": [
     {
       "path": "Docs/tools/write-back-coverage.md",
@@ -12,5 +12,5 @@
     }
   ],
   "translationFile": "content/docs/plugin/tools/write-back-coverage.md",
-  "translationHash": "d4bf2a9b09cdbc2f39f48941325354f7de3aaf9299f12289e7d4f048b48b4ac7"
+  "translationHash": "6546945038e8fd9153ba89de5a2672f91af7ffa36f0f4963fee2f65cd2da541d"
 }

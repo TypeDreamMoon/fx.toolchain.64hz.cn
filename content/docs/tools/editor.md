@@ -3,8 +3,6 @@ title: "编辑器集成"
 description: "编辑器集成"
 ---
 
-# 编辑器集成 [#editor-integration]
-
 > [DreamFX](https://github.com/TypeDreamMoon/DreamFX/blob/7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c/README.md) » **编辑器集成**
 
 DreamFX 挂接到 Unreal 编辑器 UI 的每一处：Tools 菜单、关卡编辑器工具栏、Content Browser 资产上下文菜单，以及 Niagara 系统与脚本编辑器工具栏。

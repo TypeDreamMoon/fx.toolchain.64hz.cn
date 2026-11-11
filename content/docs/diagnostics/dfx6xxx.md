@@ -3,8 +3,6 @@ title: "DFX6xxx --- Niagara 编译"
 description: "DFX6xxx --- Niagara 编译"
 ---
 
-# DFX6xxx --- Niagara 编译 [#dfx6xxx-----niagara-compilation]
-
 > 生成标记之间的内容由 `.skill/gen-diagnostics.ps1` 写入。标记以下的全部内容均为手写，重新生成后仍会保留。
 
 ## DFX6001 [#dfx6001]

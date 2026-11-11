@@ -1,9 +1,7 @@
 ---
-title: "DreamFX diagnostics"
-description: "DreamFX diagnostics"
+title: "plugin/diagnostics/readme"
+description: "plugin/diagnostics/readme"
 ---
-
-# DreamFX diagnostics
 
 Every `DFXnnnn` DreamFX can emit. The leading digit is the stage that raises it:
 

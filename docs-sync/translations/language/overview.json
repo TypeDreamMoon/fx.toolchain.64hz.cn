@@ -1,8 +1,8 @@
 {
   "version": 2,
   "status": "current",
-  "sourceHash": "ebbecd9797b898e2e8a9cbc80f4c37f0ec70ade4e5c0e3a4456b401f96b75e78",
-  "sourceRevision": "49df393f789c0ce609e7d3bea43fac471621388b",
+  "sourceHash": "b625bc1a76e923e62b167afeb88cff4ebd9483fd764ff6a8a9d89990cf4f7916",
+  "sourceRevision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
   "sources": [
     {
       "path": "Docs/language/README.md",
@@ -12,5 +12,5 @@
     }
   ],
   "translationFile": "content/docs/language/overview.md",
-  "translationHash": "7a5779267d0ecbc9e7a72d2c279502055404cfae4c64631b3814986db15249a3"
+  "translationHash": "1047cf0c9da24b1ba56bea48b4fbcf4aa6cca3aa962dd3ba33c7d1797276515f"
 }

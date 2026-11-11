@@ -3,8 +3,6 @@ title: "`.dfs` — 一种系统"
 description: "`.dfs` — 一种系统"
 ---
 
-# `.dfs` — 一种系统 [#dfs--a-system]
-
 产生一个 `UNiagaraSystem`。
 
 添加 `Parent="../Base.dfs"` 以继承另一个系统的源。有关合并、路径与重建规则，见[系统源继承](/docs/plugin/language/system-inheritance)。

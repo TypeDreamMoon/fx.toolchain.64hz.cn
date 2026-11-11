@@ -3,8 +3,6 @@ title: "DFX2xxx —— 词法与语法"
 description: "DFX2xxx —— 词法与语法"
 ---
 
-# DFX2xxx —— 词法与语法 [#dfx2xxx-----lexer-and-syntax]
-
 > 生成标记之间的块由 `.skill/gen-diagnostics.ps1` 写入。标记之下的所有内容都是手写的，重新生成后仍然保留。
 
 ## DFX2000 [#dfx2000]

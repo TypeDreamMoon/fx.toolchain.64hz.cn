@@ -1,9 +1,7 @@
 ---
-title: "Asset comparison and export coverage"
-description: "Asset comparison and export coverage"
+title: "plugin/tools/asset-comparison-and-export"
+description: "plugin/tools/asset-comparison-and-export"
 ---
-
-# Asset comparison and export coverage
 
 `asset-diff` compares the original Niagara systems with their `Decompiled/` mirrors. Its exit status is nonzero when any pair differs, a mirror or original cannot be loaded, a content root cannot be resolved, or either side fails compilation. Failed comparisons are counted separately and never reported as `SAME`. By default both sides are recompiled before comparison; `-NoCompile` explicitly compares their currently available data without validating a new compilation.
 

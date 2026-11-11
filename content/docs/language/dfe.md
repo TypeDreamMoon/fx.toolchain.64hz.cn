@@ -3,8 +3,6 @@ title: "`.dfe` —— 可复用的发射器"
 description: "`.dfe` —— 可复用的发射器"
 ---
 
-# `.dfe` —— 可复用的发射器 [#dfe--a-reusable-emitter]
-
 一个 `.dfe` 装一个 `Emitter` 块,写法和它内联在 `.dfs` 里时一模一样:
 
 ```cpp

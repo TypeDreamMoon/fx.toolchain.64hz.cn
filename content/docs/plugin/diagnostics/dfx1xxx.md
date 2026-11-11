@@ -3,8 +3,6 @@ title: "DFX1xxx — 驱动与文件 I/O"
 description: "DFX1xxx — 驱动与文件 I/O"
 ---
 
-# DFX1xxx — 驱动与文件 I/O [#dfx1xxx-----driver-and-file-io]
-
 > 生成标记之间的块由 `.skill/gen-diagnostics.ps1` 写入。标记下方的所有内容均为手写，重新生成后仍会保留。
 
 ## DFX1000 [#dfx1000]

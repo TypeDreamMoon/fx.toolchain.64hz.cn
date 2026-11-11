@@ -3,8 +3,6 @@ title: "DFX3xxx — 声明与文档结构"
 description: "DFX3xxx 段的全部诊断码，每条带严重级别、逐字消息、成因与修法。"
 ---
 
-# DFX3xxx —— 声明与文档结构 [#dfx3xxx-----declarations-and-document-structure]
-
 > 生成标记之间的区块由 `.skill/gen-diagnostics.ps1` 写入。标记下方的所有内容均为手工撰写，在重新生成后依然保留。
 
 ## DFX3000 [#dfx3000]

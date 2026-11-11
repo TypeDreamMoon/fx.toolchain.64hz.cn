@@ -1,8 +1,8 @@
 {
   "version": 2,
   "status": "current",
-  "sourceHash": "a0e140f7a4ff8cf7c7aedeec3a8194b65e7cb6628d831c1db8495670403b44ad",
-  "sourceRevision": "49df393f789c0ce609e7d3bea43fac471621388b",
+  "sourceHash": "af3675e65f6870e63491cd0dba622c02eb645e3cb96e2ceb73428d637013a752",
+  "sourceRevision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
   "sources": [
     {
       "path": "Docs/diagnostics/DFX4xxx.md",
@@ -12,5 +12,5 @@
     }
   ],
   "translationFile": "content/docs/plugin/diagnostics/dfx4xxx.md",
-  "translationHash": "5fd4c65575592c7d0d3756cf4ce59cc504ed959dd14099f57b1b0605b013e70e"
+  "translationHash": "39fc7c209b977528eb62a1e76597a53223bd74087c59349c1bdfa1617e341123"
 }

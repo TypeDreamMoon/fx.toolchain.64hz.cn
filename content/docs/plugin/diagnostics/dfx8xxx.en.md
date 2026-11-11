@@ -1,9 +1,7 @@
 ---
-title: "DFX8xxx --- Decompiler"
-description: "DFX8xxx --- Decompiler"
+title: "DFX8000"
+description: "DFX8000"
 ---
-
-# DFX8xxx --- Decompiler
 
 > The block between the generated markers is written by `.skill/gen-diagnostics.ps1`.
 > Everything below a marker is written by hand and survives a regeneration.

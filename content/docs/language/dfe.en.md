@@ -3,8 +3,6 @@ title: ".dfe — a reusable emitter"
 description: "One Emitter file, the granularity of the from merge, and the two consequences of \"copy, not inheritance\"."
 ---
 
-# `.dfe` — a reusable emitter
-
 A `.dfe` holds one `Emitter` block, written exactly as it would be inline in a `.dfs`:
 
 ```cpp

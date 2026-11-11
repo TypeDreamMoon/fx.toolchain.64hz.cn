@@ -3,8 +3,6 @@ title: "Build on save and up-to-date checks"
 description: "The published DreamFX save workflow: incremental updates, full rebuild fallbacks and provenance checks."
 ---
 
-# Build on save and up-to-date checks
-
 Saving source in the editor uses incremental builds by default. This page preserves the existing
 website address `plugin/tools/incremental-builds` and its section links. The complete published
 reference is [Incremental builds](/en/docs/plugin/tools/incremental-build-reference).

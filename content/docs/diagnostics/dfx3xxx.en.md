@@ -3,8 +3,6 @@ title: "DFX3xxx — Declarations and document structure"
 description: "Every DFX3xxx diagnostic, with its severity, verbatim message, cause and fix."
 ---
 
-# DFX3xxx --- Declarations and document structure
-
 > The block between the generated markers is written by `.skill/gen-diagnostics.ps1`.
 > Everything below a marker is written by hand and survives a regeneration.
 

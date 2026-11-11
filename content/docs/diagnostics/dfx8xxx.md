@@ -3,8 +3,6 @@ title: "DFX8xxx —— 反编译器"
 description: "DFX8xxx —— 反编译器"
 ---
 
-# DFX8xxx —— 反编译器 [#dfx8xxx-----decompiler]
-
 > 生成标记之间的内容由 `.skill/gen-diagnostics.ps1` 写入。标记以下的全部内容为手写，重新生成后依然保留。
 
 ## DFX8000 [#dfx8000]

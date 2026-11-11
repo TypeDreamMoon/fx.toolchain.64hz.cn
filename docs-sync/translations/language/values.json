@@ -1,8 +1,8 @@
 {
   "version": 2,
   "status": "current",
-  "sourceHash": "bcb912e8dbb9e59cce561e9fdf09c2a587c4826943f522d447c32d53eb0a9bf1",
-  "sourceRevision": "49df393f789c0ce609e7d3bea43fac471621388b",
+  "sourceHash": "27675302a67e01373dbac86ffd45bb174a7109e7a01c58c578caee6508566c59",
+  "sourceRevision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
   "sources": [
     {
       "path": "Docs/language/values.md",
@@ -12,5 +12,5 @@
     }
   ],
   "translationFile": "content/docs/language/values.md",
-  "translationHash": "7e810b18a3e0212245ef2333cc5f4ce949acbbbb18cb246f3c32282ad69fe664"
+  "translationHash": "4770cb2637e642bd43a4d6f43f82ea89363da29230cbc1b714527fe63aeccfc4"
 }

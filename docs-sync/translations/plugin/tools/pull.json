@@ -1,8 +1,8 @@
 {
   "version": 2,
   "status": "current",
-  "sourceHash": "91c31be777ef78aeced3b71f5e92d7ce0f6ff2ff63c77349adfe96e854afa0e5",
-  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+  "sourceHash": "ca93ba163d3ece90bb1f7e582ae66b23bd96f53919cfc841eb576493b0020ec2",
+  "sourceRevision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
   "sources": [
     {
       "path": "Docs/tools/pull.md",
@@ -12,5 +12,5 @@
     }
   ],
   "translationFile": "content/docs/plugin/tools/pull.md",
-  "translationHash": "1717bf3d15a20083cc8a4148971c9093c8e1aa11f3ab0ab9c05c0b264c531550"
+  "translationHash": "7cc27ccbfd8c02b54a81cb7b353bda454c04ef0593ddfad0588dcab6512349e0"
 }

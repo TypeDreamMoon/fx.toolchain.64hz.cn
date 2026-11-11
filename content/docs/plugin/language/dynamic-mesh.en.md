@@ -1,9 +1,7 @@
 ---
-title: "`DynamicMesh` — procedural geometry written by the simulation"
-description: "`DynamicMesh` — procedural geometry written by the simulation"
+title: "Shape of the block"
+description: "Shape of the block"
 ---
-
-# `DynamicMesh` — procedural geometry written by the simulation
 
 A `DynamicMesh` block in a `.dfs` declares a mesh whose vertices a GPU simulation computes every frame:
 its topology (grids of quads, in patches), its material and vertex layout, and one HLSL program per
