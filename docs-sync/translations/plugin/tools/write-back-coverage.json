@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "status": "outdated",
-  "sourceHash": null,
+  "status": "current",
+  "sourceHash": "ea589e1c50338b28f4266d8e93f6aa395bd3c77de26a4a45652fbac78e1b4ff8",
   "sourceRevision": "15f17c4697f61353be28a9829eacd179311756b6",
   "sources": [
     {
       "path": "Docs/tools/write-back-coverage.md",
-      "alignedRevision": "37dd25b1940d",
-      "alignedPage": "6d000e27a692",
-      "translationHash": "81dee41600bb2d105da184961eb42b81298bd0a55cf0e30c8f6d07b75297d1ae"
+      "alignedRevision": "15f17c4697f6",
+      "alignedPage": "555983dc1b67",
+      "translationHash": "50318933994e85edc54fdd9a7fd2d2c03ebb342cc67a1fc3e756a38ae1c518ac"
     }
   ],
   "translationFile": "content/docs/plugin/tools/write-back-coverage.md",
-  "translationHash": "6546945038e8fd9153ba89de5a2672f91af7ffa36f0f4963fee2f65cd2da541d"
+  "translationHash": "3026681e7f37bb8e6b6b24c884944e155d4a01c064e8119817fe5fdcbdeba4a3"
 }

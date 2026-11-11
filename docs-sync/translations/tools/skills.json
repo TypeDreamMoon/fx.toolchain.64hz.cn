@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "status": "outdated",
-  "sourceHash": null,
+  "status": "current",
+  "sourceHash": "681d5ada38051bb868440fcb2e61cef1deb0256324f8a6cb15c4c36cc598e6af",
   "sourceRevision": "a69079e4bcbeb5ce99f0f2b1f61d687763e4b5f9",
   "sources": [
     {
       "path": "Docs/tools/skills.md",
-      "alignedRevision": "37dd25b1940d",
-      "alignedPage": "3b4692527f64",
-      "translationHash": "d98e987d5174522b36f9b84615d2ee8e82e824723f72c6efcc0e7ac8397a56ed"
+      "alignedRevision": "15f17c4697f6",
+      "alignedPage": "7a0faeec89fd",
+      "translationHash": "bf3cb8c7b51756758225564961980c7ef299bb8eb0f595f2e84f2bdab952c63d"
     }
   ],
   "translationFile": "content/docs/tools/skills.md",
-  "translationHash": "6953e060495510bb06e048538550c2a27d867e751267e03c2583f1fead3d109b"
+  "translationHash": "316c784faba20fb68b10559a5dd58f8522c7605fe8813283005670b49f72e4b8"
 }
