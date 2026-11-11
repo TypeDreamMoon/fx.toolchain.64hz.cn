@@ -1,9 +1,9 @@
 {
   "version": 1,
   "repository": "TypeDreamMoon/DreamFX",
-  "revision": "a69079e4bcbeb5ce99f0f2b1f61d687763e4b5f9",
+  "revision": "15f17c4697f61353be28a9829eacd179311756b6",
   "workingTree": false,
-  "translationSnapshotHash": "d8486fe31594655aeb861782822cbbd5b63519f8cbb4307e61f50ff2faf52935",
+  "translationSnapshotHash": "a8127db4268b5b2992f89a003a7f2bfc3d78067db3c557d55eaee15745d7d6aa",
   "pages": {
     "changelog/index": {
       "hash": "c1dad62ffab3e8dbf3cc99e290d47c875a58a53a0a5882a2de1c2fd76a265757",
@@ -50,39 +50,40 @@
       }
     },
     "diagnostics/dfx2xxx": {
-      "hash": "6e914a2c1c095425807d2f99274b2b27d321c808b2f9cd007650292e53e6e0b7",
-      "revision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
+      "hash": "2a30e895a3c5ad3f469c49ae1735ded243b32d9bf86093c6e13458b8ea529fc8",
+      "revision": "15f17c4697f61353be28a9829eacd179311756b6",
       "output": "content/docs/diagnostics/dfx2xxx.en.md",
-      "outputHash": "e789078f811b441715059e2895b71140e7669c94ce1bd64e13aeb5bf22b81d9d",
+      "outputHash": "3860f2d1598b66522bbc22b80d965989fbffa3df9668c1180d68e40b6269580d",
       "locale": "en",
       "format": "md",
       "title": "DFX2xxx — Lexer and syntax",
       "sources": [
         {
           "path": "Docs/diagnostics/DFX2xxx.md",
-          "hash": "2d2a233ee97318d65c7946fabc7099b6182250bff3fa39533a740b48d5a23ea8"
+          "hash": "6f0f7a3cd49601ff9f8bb45bfb460ba48ad126680e2a2e57e78a470caa787501"
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/diagnostics/dfx2xxx.md",
         "record": "docs-sync/translations/diagnostics/dfx2xxx.json",
+        "pending": 1,
         "outputHash": "abd86b0807bf6e415ff75d0045ca9dd4ae16994fb42f3029563e4228b3c8df2a",
         "bodyHash": "0b064315304372d22593837d3b79e5b7b20a6107fa9dbefcba34e613da6d2347"
       }
     },
     "diagnostics/dfx3xxx": {
-      "hash": "33039002ec42ebb9155ee35109a63d3df3545de4f938098a4a9cee96f53c5996",
-      "revision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
+      "hash": "bb918482f0be60eebd3225964c0bc22eb834492ceb960c2e9833a622314fec70",
+      "revision": "15f17c4697f61353be28a9829eacd179311756b6",
       "output": "content/docs/diagnostics/dfx3xxx.en.md",
-      "outputHash": "6042c28e359e6ff7a07ee35e480164e8bafad48140ab6fd19100fc4d4ca7a03d",
+      "outputHash": "ed5197bfbaaae857200f81509565202bb6364d475ab59d43c44d775413022b45",
       "locale": "en",
       "format": "md",
       "title": "DFX3xxx — Declarations and document structure",
       "sources": [
         {
           "path": "Docs/diagnostics/DFX3xxx.md",
-          "hash": "8444e0548ed9f5eee70794140b1288eb473cb77b8b082736d50d26f50e53a0bf"
+          "hash": "70c7bff868ed302f7c04e19f3f6ce8026d60c52b271ab2ec6519873e926891f6"
         },
         {
           "path": "Docs/diagnostics/history/DFX3045.md",
@@ -90,47 +91,49 @@
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/diagnostics/dfx3xxx.md",
         "record": "docs-sync/translations/diagnostics/dfx3xxx.json",
+        "pending": 21,
         "outputHash": "044257f0a620f6aaa00e60d66fc62bc42035ea63a1fea405880b2172812c39bd",
         "bodyHash": "14e1658e2b33c228a501dd030a871a3443f972f59a05927ec856814573ed60ce"
       }
     },
     "diagnostics/dfx4xxx": {
-      "hash": "9da4f465b6f46dfac8d117bf1a0eff07c2b1da44736a40176473284d698782a0",
-      "revision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
+      "hash": "633e25ac1c5f8620510fc593e8d7a001b5fcd024a72fcd62ae22488afc595607",
+      "revision": "15f17c4697f61353be28a9829eacd179311756b6",
       "output": "content/docs/diagnostics/dfx4xxx.en.md",
-      "outputHash": "785bc43960330a7886f5527835ae700a1e45e65d4f44f7c1b3f4034451cae39d",
+      "outputHash": "9412dee5bc4689361854c3a0d4b8a0bd76ecef8d77c49ff7990ffb17705d69f0",
       "locale": "en",
       "format": "md",
       "title": "DFX4xxx — Values, types and expressions",
       "sources": [
         {
           "path": "Docs/diagnostics/DFX4xxx.md",
-          "hash": "a3ed261d14a148e750f22b7d501b2f7993b26b1060526c3ec0cf3b53d906135d"
+          "hash": "bfcd0ef434498223e10c893cfa9dccf3a9e6b3c160334241bf94f97602c99d64"
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/diagnostics/dfx4xxx.md",
         "record": "docs-sync/translations/diagnostics/dfx4xxx.json",
+        "pending": 9,
         "outputHash": "0ee14fa5d8ef872d3f366053e9934f8480b3441905e17a4311a1abc845647d52",
         "bodyHash": "ef6a440f316f8cc924776945807c984cfe22677cf405ef41a4903ca842b6c96f"
       }
     },
     "diagnostics/dfx5xxx": {
-      "hash": "76c0c956af31c533f13ae9d31d0bd3fc27fa938342e1aeecb4ec4a4f3866e027",
-      "revision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
+      "hash": "46cedfd6fa643d28ab05df8aea73d32322308342bea207607a4e7ebd8084e541",
+      "revision": "15f17c4697f61353be28a9829eacd179311756b6",
       "output": "content/docs/diagnostics/dfx5xxx.en.md",
-      "outputHash": "6bb4ec51c440dbefeaa921fa03cb83c9721c1a1d92c999f5e3efa25b35e6476f",
+      "outputHash": "a3c0f62453791b817dcca0fe18cc7efd8f201db10aa72e940a3e0820b6aef71e",
       "locale": "en",
       "format": "md",
       "title": "DFX5xxx — Generation and asset writing",
       "sources": [
         {
           "path": "Docs/diagnostics/DFX5xxx.md",
-          "hash": "503ba26878c954adab95552d6f3bf8fc04682e98e098eaf998188f7944fc5721"
+          "hash": "ef423ea8646fa1fab0987d7c1ece990ecad4da371e9052b579ed1f1522cc1146"
         },
         {
           "path": "Docs/diagnostics/history/DFX5099.md",
@@ -142,75 +145,79 @@
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/diagnostics/dfx5xxx.md",
         "record": "docs-sync/translations/diagnostics/dfx5xxx.json",
+        "pending": 16,
         "outputHash": "11c22ffe91b3e3b0d242f9846f5c704d145046d157193ecddac7c1940b95a73c",
         "bodyHash": "984d3e71a6143a8f7c9592998def9df32b93aeecfa5b9e5d45e0ff2b5cff54e0"
       }
     },
     "diagnostics/dfx6xxx": {
-      "hash": "8fe7970654bfde16dd5ca8cf9d34202e05c76b2e9f75942a03bb0771acb0528c",
-      "revision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
+      "hash": "52ebad7adbae160f9882857a96230f9e0dbe2502f710412c48c9fb2f48604724",
+      "revision": "15f17c4697f61353be28a9829eacd179311756b6",
       "output": "content/docs/diagnostics/dfx6xxx.en.md",
-      "outputHash": "44e07c6d2f2d17521828b8626ec2dc8a4d1bb4fa61a01d181a1078c85fb815b0",
+      "outputHash": "22308730312aeda51715de815376a18993b380998f07969fae8d5a2edd51faef",
       "locale": "en",
       "format": "md",
       "title": "DFX6xxx — Niagara compilation",
       "sources": [
         {
           "path": "Docs/diagnostics/DFX6xxx.md",
-          "hash": "4335b45f928b92671f37039351ff7de5338d648b7db2fd1e65bc66d27d29d38c"
+          "hash": "d56b50ed23e9f36a8f3e07b4cd3bf8549caf349ceaa0ec4f6c6faec0ef48ca53"
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/diagnostics/dfx6xxx.md",
         "record": "docs-sync/translations/diagnostics/dfx6xxx.json",
+        "pending": 7,
         "outputHash": "57d9cedd2ddb742094a26f091b657087af10bedac92a87f75e26a074fd894e71",
         "bodyHash": "1b400584244b966821d348be9711811d79f90a873bf73a842cccc57e0c99f627"
       }
     },
     "diagnostics/dfx7xxx": {
-      "hash": "0c2e9d3f41e2041ca53552e09ed4f6e7dbb353a77a1bd59468a5672e00f1682d",
-      "revision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
+      "hash": "045cf47837ea53f741c48e8d5c389f9b65edf5ee20c7e4af77b1a7dd9fa1c406",
+      "revision": "15f17c4697f61353be28a9829eacd179311756b6",
       "output": "content/docs/diagnostics/dfx7xxx.en.md",
-      "outputHash": "a2974dc340e67e67cc635e16f6f4115a43f635cb6b4ac9c27611edc980510014",
+      "outputHash": "efcd3a84a9937a23d0038bd80c3735c0b419f1c4922afa1d6286b8b53c0a0b01",
       "locale": "en",
       "format": "md",
       "title": "DFX7xxx — Provenance, drift and lint",
       "sources": [
         {
           "path": "Docs/diagnostics/DFX7xxx.md",
-          "hash": "af30d8fe1b35c480d01501b7c145e0d40c9365e1ea530242677b8621f04f3297"
+          "hash": "316c3876c04b1987e9088305965d60160aec145c04517f609f1030e0d3855fbe"
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/diagnostics/dfx7xxx.md",
         "record": "docs-sync/translations/diagnostics/dfx7xxx.json",
+        "pending": 6,
         "outputHash": "78144e70e92f8b9e6117a2896ee8519770f584264cf8b3a5117af4a87f72555a",
         "bodyHash": "631951644d5ee740e27e2d70c9a6d60034e9033c226ff0672e24c0057d80536d"
       }
     },
     "diagnostics/dfx8xxx": {
-      "hash": "332dab678984364c7c311a85e85ba80d0e9967c634a0216f09d7c6709beb1dbf",
-      "revision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
+      "hash": "8bceb43bbd342fee09ae244cfbde106dab5ce670fd76efa043645276f0b354a0",
+      "revision": "15f17c4697f61353be28a9829eacd179311756b6",
       "output": "content/docs/diagnostics/dfx8xxx.en.md",
-      "outputHash": "0e3b3e5f58ca2746aa4a7ac97938afc2c6c90f74bda62132764c875780290668",
+      "outputHash": "6c6433ec1b7583c20adbbbc8b4ad153b538ccccf9ea020c8ad76554773cff09c",
       "locale": "en",
       "format": "md",
       "title": "DFX8xxx — Decompiler",
       "sources": [
         {
           "path": "Docs/diagnostics/DFX8xxx.md",
-          "hash": "9b5d87ececbedc37636e71932f6bd394effd9c50fdd5069252568a026650edb5"
+          "hash": "c93dc8bc73a282533d9a0d67ea8c71811d606e444f08a2622f217c6a68c96d73"
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/diagnostics/dfx8xxx.md",
         "record": "docs-sync/translations/diagnostics/dfx8xxx.json",
+        "pending": 13,
         "outputHash": "5d2a7285b909ddbdeeeac928e177a822995b2fc7e92b2ed74470d119cb62b77f",
         "bodyHash": "64d09eb8a95be674b783f2e58e70e4b5e032e5e715cd52565e0ab96a8985d8be"
       }
@@ -695,8 +702,8 @@
         "status": "current",
         "output": "content/docs/tools/editor.md",
         "record": "docs-sync/translations/tools/editor.json",
-        "outputHash": "374e209f3d79fe7a8482022bb5c64a67176e9a02c1720cfd25eb3d0e7603ca21",
-        "bodyHash": "be4378fd528f5687e475462d2bac5ea5857bfc40c0c404cefdbb19a327ae481b"
+        "outputHash": "785e73b73f87b6686cb284a919d1b38e6ff40230e468bad2e5f382c4bf25733f",
+        "bodyHash": "1cffb0ed1d7f27b3f29a8aa0042d6c36d25f2dc5224c4618273bec1db2cc13c3"
       }
     },
     "tools/scripting": {
@@ -807,39 +814,40 @@
       }
     },
     "plugin/diagnostics/dfx2xxx": {
-      "hash": "e0c44bbbb2fed17124e7e1d9ff99953fab0fdb6fa7e8d04181f199af6c12f321",
-      "revision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
+      "hash": "978c17e62fb05b5e934189a589a4892188c51f3124cc7ddaa94795e5ef21cd01",
+      "revision": "15f17c4697f61353be28a9829eacd179311756b6",
       "output": "content/docs/plugin/diagnostics/dfx2xxx.en.md",
-      "outputHash": "d0777a6894fb59fdbe3d1ede1c8a3c9a7af02a3149916abe57ca9a0db305d5ac",
+      "outputHash": "bbb32d1cf20706247870a504c5e6f62527765ae80149adba370d950bfae4ea73",
       "locale": "en",
       "format": "md",
       "title": "DFX2000",
       "sources": [
         {
           "path": "Docs/diagnostics/DFX2xxx.md",
-          "hash": "2d2a233ee97318d65c7946fabc7099b6182250bff3fa39533a740b48d5a23ea8"
+          "hash": "6f0f7a3cd49601ff9f8bb45bfb460ba48ad126680e2a2e57e78a470caa787501"
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/plugin/diagnostics/dfx2xxx.md",
         "record": "docs-sync/translations/plugin/diagnostics/dfx2xxx.json",
+        "pending": 1,
         "outputHash": "abd86b0807bf6e415ff75d0045ca9dd4ae16994fb42f3029563e4228b3c8df2a",
         "bodyHash": "0b064315304372d22593837d3b79e5b7b20a6107fa9dbefcba34e613da6d2347"
       }
     },
     "plugin/diagnostics/dfx3xxx": {
-      "hash": "a97d63d71e555a8b6da5a005afcc89a7e7e8d70486d1d35930f75946e7443985",
-      "revision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
+      "hash": "37ae436418b068b63d3c492e13211e41e45f82baa2ac2daae0c8c1f414af4610",
+      "revision": "15f17c4697f61353be28a9829eacd179311756b6",
       "output": "content/docs/plugin/diagnostics/dfx3xxx.en.md",
-      "outputHash": "88a8874cc83d364afded2c8e88b9dd6b460dfc815a304c7d1218eec65706e164",
+      "outputHash": "6195c480d9d4d5b8f65dc9b5a0d07484b6085253c9850793edb499d45fbd989d",
       "locale": "en",
       "format": "md",
       "title": "DFX3000",
       "sources": [
         {
           "path": "Docs/diagnostics/DFX3xxx.md",
-          "hash": "8444e0548ed9f5eee70794140b1288eb473cb77b8b082736d50d26f50e53a0bf"
+          "hash": "70c7bff868ed302f7c04e19f3f6ce8026d60c52b271ab2ec6519873e926891f6"
         },
         {
           "path": "Docs/diagnostics/history/DFX3045.md",
@@ -847,47 +855,49 @@
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/plugin/diagnostics/dfx3xxx.md",
         "record": "docs-sync/translations/plugin/diagnostics/dfx3xxx.json",
+        "pending": 21,
         "outputHash": "044257f0a620f6aaa00e60d66fc62bc42035ea63a1fea405880b2172812c39bd",
         "bodyHash": "14e1658e2b33c228a501dd030a871a3443f972f59a05927ec856814573ed60ce"
       }
     },
     "plugin/diagnostics/dfx4xxx": {
-      "hash": "af3675e65f6870e63491cd0dba622c02eb645e3cb96e2ceb73428d637013a752",
-      "revision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
+      "hash": "961ca54662c53096728bcd64a7a9d264c2456bbd28458ca9bce14a61c5f38f7f",
+      "revision": "15f17c4697f61353be28a9829eacd179311756b6",
       "output": "content/docs/plugin/diagnostics/dfx4xxx.en.md",
-      "outputHash": "b8dd0a34bf6fc08a6059bc4e3fb6a226362fdee49d2926ec13bb50502eeae7d1",
+      "outputHash": "813ab484867f6ad2b938f22690a09f6e74cb209b91e50e0a77ffe58482573da6",
       "locale": "en",
       "format": "md",
       "title": "DFX4001",
       "sources": [
         {
           "path": "Docs/diagnostics/DFX4xxx.md",
-          "hash": "a3ed261d14a148e750f22b7d501b2f7993b26b1060526c3ec0cf3b53d906135d"
+          "hash": "bfcd0ef434498223e10c893cfa9dccf3a9e6b3c160334241bf94f97602c99d64"
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/plugin/diagnostics/dfx4xxx.md",
         "record": "docs-sync/translations/plugin/diagnostics/dfx4xxx.json",
+        "pending": 9,
         "outputHash": "0ee14fa5d8ef872d3f366053e9934f8480b3441905e17a4311a1abc845647d52",
         "bodyHash": "ef6a440f316f8cc924776945807c984cfe22677cf405ef41a4903ca842b6c96f"
       }
     },
     "plugin/diagnostics/dfx5xxx": {
-      "hash": "9441054e2d31e3b183cb801add7cd0a92cb759bbf744d2b975d58d98c9e00f8f",
-      "revision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
+      "hash": "4b8a0fad0bbc5bf1ed5617788c98710afa44adb34b2bf350747601149fb048ea",
+      "revision": "15f17c4697f61353be28a9829eacd179311756b6",
       "output": "content/docs/plugin/diagnostics/dfx5xxx.en.md",
-      "outputHash": "e3eb9171d7079eb39738051ea6017f1a2bb880c1d6ccdedf7d9be18b7c427333",
+      "outputHash": "e84381bdd23703e2c8382f60ea080a4f67f148f11f36a53da93bedbeb7862819",
       "locale": "en",
       "format": "md",
       "title": "DFX5001",
       "sources": [
         {
           "path": "Docs/diagnostics/DFX5xxx.md",
-          "hash": "503ba26878c954adab95552d6f3bf8fc04682e98e098eaf998188f7944fc5721"
+          "hash": "ef423ea8646fa1fab0987d7c1ece990ecad4da371e9052b579ed1f1522cc1146"
         },
         {
           "path": "Docs/diagnostics/history/DFX5099.md",
@@ -899,75 +909,79 @@
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/plugin/diagnostics/dfx5xxx.md",
         "record": "docs-sync/translations/plugin/diagnostics/dfx5xxx.json",
+        "pending": 16,
         "outputHash": "11c22ffe91b3e3b0d242f9846f5c704d145046d157193ecddac7c1940b95a73c",
         "bodyHash": "984d3e71a6143a8f7c9592998def9df32b93aeecfa5b9e5d45e0ff2b5cff54e0"
       }
     },
     "plugin/diagnostics/dfx6xxx": {
-      "hash": "ef0289c3d04da98417c44f966ef2772a32ec3c3e5c8fe526cd74feb3fb371e68",
-      "revision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
+      "hash": "d82ad8a055ee126075e680576f75373b8ed3abdd9cdb25b948b1b01694c81cbd",
+      "revision": "15f17c4697f61353be28a9829eacd179311756b6",
       "output": "content/docs/plugin/diagnostics/dfx6xxx.en.md",
-      "outputHash": "8813b34c066737e015b10bb82fb1322c0d8f3dbcacfd4ec9cd4c75a5be4fcd0a",
+      "outputHash": "daece84a2c29225389601c3f7b1243a033d72c2eba9b3166b99dd7f9d449fa5a",
       "locale": "en",
       "format": "md",
       "title": "DFX6001",
       "sources": [
         {
           "path": "Docs/diagnostics/DFX6xxx.md",
-          "hash": "4335b45f928b92671f37039351ff7de5338d648b7db2fd1e65bc66d27d29d38c"
+          "hash": "d56b50ed23e9f36a8f3e07b4cd3bf8549caf349ceaa0ec4f6c6faec0ef48ca53"
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/plugin/diagnostics/dfx6xxx.md",
         "record": "docs-sync/translations/plugin/diagnostics/dfx6xxx.json",
+        "pending": 7,
         "outputHash": "57d9cedd2ddb742094a26f091b657087af10bedac92a87f75e26a074fd894e71",
         "bodyHash": "1b400584244b966821d348be9711811d79f90a873bf73a842cccc57e0c99f627"
       }
     },
     "plugin/diagnostics/dfx7xxx": {
-      "hash": "a2169e574fd97744cff87b247d3c37c1adc70cc40f6acb8769027a6cc069ba85",
-      "revision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
+      "hash": "d731df0f8de76cda8859a77efab0edfd7bf84e577d501cbd5eff5ee15f581b03",
+      "revision": "15f17c4697f61353be28a9829eacd179311756b6",
       "output": "content/docs/plugin/diagnostics/dfx7xxx.en.md",
-      "outputHash": "4a97b0feeca72d9f45a2a0576e448eed8e2a17b951eeb526df19f7b8958ea243",
+      "outputHash": "0ac92967a01d3457638da55af4dc1e7ba5f1b50751bf5f5348666e01914cbf8a",
       "locale": "en",
       "format": "md",
       "title": "DFX7001",
       "sources": [
         {
           "path": "Docs/diagnostics/DFX7xxx.md",
-          "hash": "af30d8fe1b35c480d01501b7c145e0d40c9365e1ea530242677b8621f04f3297"
+          "hash": "316c3876c04b1987e9088305965d60160aec145c04517f609f1030e0d3855fbe"
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/plugin/diagnostics/dfx7xxx.md",
         "record": "docs-sync/translations/plugin/diagnostics/dfx7xxx.json",
+        "pending": 6,
         "outputHash": "78144e70e92f8b9e6117a2896ee8519770f584264cf8b3a5117af4a87f72555a",
         "bodyHash": "631951644d5ee740e27e2d70c9a6d60034e9033c226ff0672e24c0057d80536d"
       }
     },
     "plugin/diagnostics/dfx8xxx": {
-      "hash": "330d5437827ffd748c87ccf819df58b72a448f3a74ffbad8b4c546e68b7d9f6b",
-      "revision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
+      "hash": "5b5d932d97a058fd3a30f25b7c4ebba61b271a8d65988d8546c9af726772a1c8",
+      "revision": "15f17c4697f61353be28a9829eacd179311756b6",
       "output": "content/docs/plugin/diagnostics/dfx8xxx.en.md",
-      "outputHash": "11aab4a5d341fe285be50feaed36a937c83f86277b2f88a7f191175eaad3428a",
+      "outputHash": "fa9ebbff60e356b2a1410b61e8956a479f628a95ed96e06c15bd010d766f6615",
       "locale": "en",
       "format": "md",
       "title": "DFX8000",
       "sources": [
         {
           "path": "Docs/diagnostics/DFX8xxx.md",
-          "hash": "9b5d87ececbedc37636e71932f6bd394effd9c50fdd5069252568a026650edb5"
+          "hash": "c93dc8bc73a282533d9a0d67ea8c71811d606e444f08a2622f217c6a68c96d73"
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/plugin/diagnostics/dfx8xxx.md",
         "record": "docs-sync/translations/plugin/diagnostics/dfx8xxx.json",
+        "pending": 13,
         "outputHash": "5d2a7285b909ddbdeeeac928e177a822995b2fc7e92b2ed74470d119cb62b77f",
         "bodyHash": "64d09eb8a95be674b783f2e58e70e4b5e032e5e715cd52565e0ab96a8985d8be"
       }
@@ -1012,8 +1026,8 @@
         "status": "current",
         "output": "content/docs/plugin/getting-started.md",
         "record": "docs-sync/translations/plugin/getting-started.json",
-        "outputHash": "86f055da04edd9c431ba936d03b4397433c39fb255674f456018383abf0a361b",
-        "bodyHash": "9bfa7c8fdea2fb40ec5d8a7a00aceace79e13ec958dc7a32ec9568a6cffbae56"
+        "outputHash": "350f75bccf47712248d1d8a43bab72c811e2743dcdfcb83a53707a7e26d7f477",
+        "bodyHash": "104038a9d4e88f2c6af14ddb9b17e7a57b9d9d9479932746f5507e2f7354d97f"
       }
     },
     "plugin/language/native-emitter-inheritance": {
@@ -1122,26 +1136,26 @@
         "status": "current",
         "output": "content/docs/plugin/tools/incremental-build-reference.md",
         "record": "docs-sync/translations/plugin/tools/incremental-build-reference.json",
-        "outputHash": "0ab7aac4b660765bf1338ee6da5fc7642c47a3317f5658c1e9de7c6be968a4d6",
-        "bodyHash": "dac4ffa3000a3e16cc978d9d143613d38e7c35c15c9c002c339f82f8de4c7b3d"
+        "outputHash": "9a3afd7b8709be633220e92471ebed4680a9d36f4c38f50d6c71d6fee1b77102",
+        "bodyHash": "486f01077018fbf2e9006b9f023c280e7ad081f6236a4380458780329ba49f95"
       }
     },
     "plugin/tools/pull": {
-      "hash": "ca93ba163d3ece90bb1f7e582ae66b23bd96f53919cfc841eb576493b0020ec2",
-      "revision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
+      "hash": "50365d20a071df5d829bddc99f3b8be08ea10f6568dd2e1e33b9c0fa2c9aa2e1",
+      "revision": "15f17c4697f61353be28a9829eacd179311756b6",
       "output": "content/docs/plugin/tools/pull.en.md",
-      "outputHash": "ef95cafc54f79b61d8a168f8a5d7e1244f766ea0a4e2e072114d4299744dafac",
+      "outputHash": "a25ff8955e57add69c70217707afb06f88041943bb8f84d1fa50f855be1e37a9",
       "locale": "en",
       "format": "md",
       "title": "0. Summary",
       "sources": [
         {
           "path": "Docs/tools/pull.md",
-          "hash": "27fe8a12ad888f9f7ad34e9fc567ff2ecd0622980f3e6692f7941c60a7bf9b92"
+          "hash": "71b72279f31aa1f3190cbadac7f4541d6a956e861f237ff76f48ee08b7ae2ff6"
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/plugin/tools/pull.md",
         "record": "docs-sync/translations/plugin/tools/pull.json",
         "outputHash": "7cc27ccbfd8c02b54a81cb7b353bda454c04ef0593ddfad0588dcab6512349e0",
@@ -1149,23 +1163,24 @@
       }
     },
     "plugin/tools/write-back-coverage": {
-      "hash": "cbf5b6a21c9f6d23e56ba0108320ebef0d727adfbfa9d8c8eec148a9cf2c5390",
-      "revision": "7153f1b18b0e42d343fbe3388fb9f9e6c0bc4d2c",
+      "hash": "ea589e1c50338b28f4266d8e93f6aa395bd3c77de26a4a45652fbac78e1b4ff8",
+      "revision": "15f17c4697f61353be28a9829eacd179311756b6",
       "output": "content/docs/plugin/tools/write-back-coverage.en.md",
-      "outputHash": "cc91a4b03f47c6fb51a97c4d04766e11f11babcd98ba03661400437ed9547b93",
+      "outputHash": "34e8dd60d54a172df69b213d6d883597b490be91bb28d2394756a45b10f6a5f8",
       "locale": "en",
       "format": "md",
       "title": "0. Conclusions",
       "sources": [
         {
           "path": "Docs/tools/write-back-coverage.md",
-          "hash": "6d000e27a69212148919b1cd272eb1083e64776b7a0b5e2615e0758dbeace0c2"
+          "hash": "555983dc1b6792a01ea06597136608a5abb66f35cc493843a6ab2b228ed8bb7c"
         }
       ],
       "translation": {
-        "status": "current",
+        "status": "outdated",
         "output": "content/docs/plugin/tools/write-back-coverage.md",
         "record": "docs-sync/translations/plugin/tools/write-back-coverage.json",
+        "pending": 7,
         "outputHash": "6546945038e8fd9153ba89de5a2672f91af7ffa36f0f4963fee2f65cd2da541d",
         "bodyHash": "efa0167451477a8cbfa0ede4e0b25b3027ad62e61fe68819e03eab646d2d2005"
       }
