@@ -3,8 +3,6 @@ title: "`.dfm` — 模块或动态输入"
 description: "`.dfm` — 模块或动态输入"
 ---
 
-# `.dfm` — 模块或动态输入 [#dfm--a-module-or-a-dynamic-input]
-
 生成一个 `UNiagaraScript`。两种，差别在两行：
 
 ```cpp

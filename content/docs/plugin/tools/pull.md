@@ -3,8 +3,6 @@ title: "`pull`：将当前资产值写回源"
 description: "`pull`：将当前资产值写回源"
 ---
 
-# `pull`：将当前资产值写回源 [#pull-write-current-asset-values-back-to-source]
-
 > 记录于 2026-10-09，分支 `feat/pull`。工具：`dfx pull`，实现于 `Source/DreamFXEditor/Private/WriteBack/DreamFXPull.cpp`。
 >
 > [写回覆盖范围](/docs/plugin/tools/write-back-coverage)记录了实测差距。另一份研究笔记 `write-back-from-dreamgui.md` 描述了值得复用的 DreamGUI/DUI 技术。本文档涵盖 `pull` 本身的语义、边界和测量；它不替代那些笔记。

@@ -3,8 +3,6 @@ title: "DFX7xxx —— 溯源、漂移与 lint"
 description: "DFX7xxx —— 溯源、漂移与 lint"
 ---
 
-# DFX7xxx —— 溯源、漂移与 lint [#dfx7xxx-----provenance-drift-and-lint]
-
 > 生成标记之间的区块由 `.skill/gen-diagnostics.ps1` 写入。标记以下的内容全部由手工写入，并在重新生成后保留。
 
 ## DFX7001 [#dfx7001]

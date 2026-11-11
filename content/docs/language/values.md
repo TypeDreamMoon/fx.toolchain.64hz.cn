@@ -3,8 +3,6 @@ title: "值、类型与 `L*` 规则"
 description: "值、类型与 `L*` 规则"
 ---
 
-# 值、类型与 `L*` 规则 [#values-types-and-the-l-rules]
-
 所有可以出现在 `=` 右边的东西，以及决定它含义的规则。
 
 ---

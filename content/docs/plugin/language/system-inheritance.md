@@ -3,8 +3,6 @@ title: "系统源继承"
 description: "系统源继承"
 ---
 
-# 系统源继承 [#system-source-inheritance]
-
 `.dfs` 系统可以借助 `Parent` 继承另一个 `.dfs` 源：
 
 ```cpp

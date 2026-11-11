@@ -3,8 +3,6 @@ title: "DFX4xxx —— 值、类型与表达式"
 description: "DFX4xxx —— 值、类型与表达式"
 ---
 
-# DFX4xxx —— 值、类型与表达式 [#dfx4xxx-----values-types-and-expressions]
-
 > 生成标记之间的内容由 `.skill/gen-diagnostics.ps1` 写入。标记下方的所有内容均为手写，会在重新生成后保留。
 
 ## DFX4001 [#dfx4001]

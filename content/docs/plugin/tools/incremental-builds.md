@@ -3,8 +3,6 @@ title: "保存时构建与最新状态检查"
 description: "保存时构建与最新状态检查"
 ---
 
-# 保存时构建与最新状态检查 [#build-on-save-and-up-to-date-checks]
-
 在编辑器中保存源文件默认使用增量构建。本页保留现有的网站地址 `plugin/tools/incremental-builds` 及其章节链接。完整的已发布参考为[增量构建](/docs/plugin/tools/incremental-build-reference)。
 
 ## 已发布的构建范围 [#incremental-builds]

@@ -3,8 +3,6 @@ title: "`DynamicMesh` — 由模拟写入的程序化几何体"
 description: "`DynamicMesh` — 由模拟写入的程序化几何体"
 ---
 
-# `DynamicMesh` — 由模拟写入的程序化几何体 [#dynamicmesh--procedural-geometry-written-by-the-simulation]
-
 `DynamicMesh` 块在 `.dfs` 中声明一个网格，其顶点由 GPU 模拟每帧计算：它的拓扑（四边形网格，按 patch 组织）、它的材质和顶点布局，以及每个 patch 一个 HLSL 程序，说明每个顶点在哪里以及携带什么。构建会把该块转换为普通的 Niagara 组成部分——一个 `DI<DynamicMesh>` 用户参数、每个 patch 一个 GPU 发射器、两个生成的模块，以及一个绘制该网格的发射器——并顺带处理引擎的动态网格缺陷。
 
 它的存在是为了让形状被*计算*出来，而不是烘焙出来：没有逐帧网格，没有顶点数据的翻页动画，也没有任何只在追踪它的那一台摄像机视角下才成立的东西。一片薄片会变成弯曲的外壳，一个扇形会变成锥体，一条条带会变成管状——而同一程序可从任意角度运行。

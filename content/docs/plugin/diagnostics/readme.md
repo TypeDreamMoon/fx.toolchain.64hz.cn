@@ -3,8 +3,6 @@ title: "DreamFX 诊断"
 description: "DreamFX 诊断"
 ---
 
-# DreamFX 诊断 [#dreamfx-diagnostics]
-
 每个 `DFXnnnn` DreamFX 可能发出的诊断。首位数字表示引发它的阶段：
 
 - **DFX1xxx** --- 驱动与文件 I/O --- [DFX1xxx.md](/docs/diagnostics/dfx1xxx)

@@ -3,8 +3,6 @@ title: "DreamFXLang 参考"
 description: "DreamFXLang 参考"
 ---
 
-# DreamFXLang 参考 [#dreamfxlang-reference]
-
 这门语言按你所写的内容划分。凡规则因引擎所迫而存在的 —— 栈为什么是语句列表、表达式白名单为什么很短、`#Region` 为什么只是注释 —— 页面都会在陈述该规则之处说明原因。
 
 | 页面 | 涵盖内容 |

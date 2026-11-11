@@ -3,8 +3,6 @@ title: "DreamFX 快速入门"
 description: "DreamFX 快速入门"
 ---
 
-# DreamFX 快速入门 [#getting-started-with-dreamfx]
-
 DreamFX 将文本编译为标准的 Niagara 资产。你编写一个 `.dfs` 文件，运行一条命令，即可得到一个 `UNiagaraSystem`，关卡、蓝图或 Sequencer 都可以像引用其他资产一样引用它。文本是源，`.uasset` 是构建产物，不手动编辑。
 
 本页将带你从零开始得到一个可运行的效果。十五分钟，无需编辑器。
