@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "status": "current",
-  "sourceHash": "4cd7905d2c48e7cd6b5132060ab6971515b1d58fa47c7ef960e55c6d7f047f03",
-  "sourceRevision": "c6ac796202e623a3fd81d32addce75f8ef5fa8ef",
+  "status": "outdated",
+  "sourceHash": null,
+  "sourceRevision": "a69079e4bcbeb5ce99f0f2b1f61d687763e4b5f9",
   "sources": [
     {
       "path": "Docs/tools/skills.md",
