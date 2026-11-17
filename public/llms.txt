@@ -1,0 +1,36 @@
+# DreamFX
+
+> DreamFX is an Unreal Engine plugin that generates Niagara systems, emitters and modules from text sources written in DreamFXLang (.dfs systems, .dfe reusable emitters, .dfm modules and dynamic inputs).
+
+DreamFXLang is its own language, not HLSL or C++. Module input names come from the real Niagara assets, so look a module's inputs up (`dfx.ps1 schema <Module>`) instead of guessing them. Read the cheat sheet before writing a source.
+
+Every diagnostic carries a code `DFXnnnn` with a line and a column. diagnostics.json lists each code with its severity, stage, message, meaning, fix and documentation link.
+
+llms-full.txt holds the cheat sheet and the whole language reference in one file.
+
+## Start here
+
+- [Cheat sheet](https://fx.toolchain.64hz.cn/en/docs/start/cheatsheet/): the language on one page; its complete system is built by the plugin's gate
+- [The full language reference](https://fx.toolchain.64hz.cn/llms-full.txt): cheat sheet and every language page in one text file
+- [Diagnostics as JSON](https://fx.toolchain.64hz.cn/diagnostics.json): every DFXnnnn: severity, stage, title, meaning, fix, doc
+
+## Language
+
+- [The file model](https://fx.toolchain.64hz.cn/en/docs/language/overview/): the language at a glance
+- [.dfs — a system](https://fx.toolchain.64hz.cn/en/docs/language/dfs/): .dfs systems: settings, user parameters, stacks, renderers
+- [.dfe — a reusable emitter](https://fx.toolchain.64hz.cn/en/docs/language/dfe/): .dfe reusable emitters
+- [.dfm — modules and dynamic inputs](https://fx.toolchain.64hz.cn/en/docs/language/dfm/): .dfm modules and dynamic inputs
+- [Values, types and rules](https://fx.toolchain.64hz.cn/en/docs/language/values/): literals, links, dynamic inputs, hlsl, curves, expressions, types
+- [Events and simulation stages](https://fx.toolchain.64hz.cn/en/docs/language/events-and-stages/): event handlers and simulation stages
+
+## Tools
+
+- [Your first effect](https://fx.toolchain.64hz.cn/en/docs/start/first-effect/): write and build a first effect
+- [The dfx.ps1 command line](https://fx.toolchain.64hz.cn/en/docs/tools/cli/): the headless command line
+- [Agent skills](https://fx.toolchain.64hz.cn/en/docs/tools/skills/): skills for coding agents
+- [Diagnostics](https://fx.toolchain.64hz.cn/en/docs/diagnostics/): how to read a diagnostic
+
+## Optional
+
+- [The build pipeline](https://fx.toolchain.64hz.cn/en/docs/generation/pipeline/): how a source becomes an asset
+- [Changelog](https://fx.toolchain.64hz.cn/en/docs/changelog/): release notes
