@@ -2,7 +2,7 @@
   "version": 1,
   "repository": "TypeDreamMoon/DreamFX",
   "branch": "main",
-  "tool": "0.3.2",
+  "tool": "0.3.3",
   "siteOnly": [],
   "pages": [
     {
@@ -293,6 +293,17 @@
       "title": "Values, types and rules",
       "description": "Everything that can appear on the right of an =, the curve literal, the inline-expression whitelist, the type table, and L2 / L3 / L6 / L7.",
       "locale": "en"
+    },
+    {
+      "id": "start/cheatsheet",
+      "sources": [
+        {
+          "path": "Docs/cheatsheet.md"
+        }
+      ],
+      "format": "md",
+      "title": "Cheat sheet",
+      "description": "DreamFXLang on one page: the three file kinds, a complete system, stack statements, values, user parameters and renderers, .dfe and .dfm, and the diagnostics that cost the most time."
     },
     {
       "id": "start/about",
@@ -625,5 +636,110 @@
     "Docs/README.md"
   ],
   "siteUrl": "https://fx.toolchain.64hz.cn",
-  "stripLeadingTitle": true
+  "stripLeadingTitle": true,
+  "llms": {
+    "title": "DreamFX",
+    "summary": "DreamFX is an Unreal Engine plugin that generates Niagara systems, emitters and modules from text sources written in DreamFXLang (.dfs systems, .dfe reusable emitters, .dfm modules and dynamic inputs).",
+    "details": [
+      "DreamFXLang is its own language, not HLSL or C++. Module input names come from the real Niagara assets, so look a module's inputs up (`dfx.ps1 schema <Module>`) instead of guessing them. Read the cheat sheet before writing a source.",
+      "Every diagnostic carries a code `DFXnnnn` with a line and a column. diagnostics.json lists each code with its severity, stage, message, meaning, fix and documentation link.",
+      "llms-full.txt holds the cheat sheet and the whole language reference in one file."
+    ],
+    "sections": [
+      {
+        "title": "Start here",
+        "links": [
+          {
+            "page": "start/cheatsheet",
+            "note": "the language on one page; its complete system is built by the plugin's gate"
+          },
+          {
+            "file": "llms-full.txt",
+            "title": "The full language reference",
+            "note": "cheat sheet and every language page in one text file"
+          },
+          {
+            "file": "diagnostics.json",
+            "title": "Diagnostics as JSON",
+            "note": "every DFXnnnn: severity, stage, title, meaning, fix, doc"
+          }
+        ]
+      },
+      {
+        "title": "Language",
+        "links": [
+          {
+            "page": "language/overview",
+            "note": "the language at a glance"
+          },
+          {
+            "page": "language/dfs",
+            "note": ".dfs systems: settings, user parameters, stacks, renderers"
+          },
+          {
+            "page": "language/dfe",
+            "note": ".dfe reusable emitters"
+          },
+          {
+            "page": "language/dfm",
+            "note": ".dfm modules and dynamic inputs"
+          },
+          {
+            "page": "language/values",
+            "note": "literals, links, dynamic inputs, hlsl, curves, expressions, types"
+          },
+          {
+            "page": "language/events-and-stages",
+            "note": "event handlers and simulation stages"
+          }
+        ]
+      },
+      {
+        "title": "Tools",
+        "links": [
+          {
+            "page": "start/first-effect",
+            "note": "write and build a first effect"
+          },
+          {
+            "page": "tools/cli",
+            "note": "the headless command line"
+          },
+          {
+            "page": "tools/skills",
+            "note": "skills for coding agents"
+          },
+          {
+            "page": "diagnostics/index",
+            "note": "how to read a diagnostic"
+          }
+        ]
+      },
+      {
+        "title": "Optional",
+        "links": [
+          {
+            "page": "generation/pipeline",
+            "note": "how a source becomes an asset"
+          },
+          {
+            "page": "changelog/index",
+            "note": "release notes"
+          }
+        ]
+      }
+    ],
+    "full": [
+      "start/cheatsheet",
+      "language/overview",
+      "language/dfs",
+      "language/dfe",
+      "language/dfm",
+      "language/values",
+      "language/events-and-stages"
+    ],
+    "publish": {
+      "diagnostics.json": "Docs/diagnostics/codes.json"
+    }
+  }
 }
