@@ -1,9 +1,9 @@
 {
   "version": 1,
   "repository": "TypeDreamMoon/DreamFX",
-  "revision": "3d109c3788eab16d71f972a988765200b824a09c",
+  "revision": "723bd480169dbfa65e96d76ed73a5928320dbfc5",
   "workingTree": false,
-  "translationSnapshotHash": "4de7298dcca5498875704b7e743e92669d94c1d1733b724f8538735190d0a718",
+  "translationSnapshotHash": "b137207bf48cf6bc895743ee612ac6648caeb6d536c5b48966886cf99fe62811",
   "pages": {
     "changelog/index": {
       "hash": "c1dad62ffab3e8dbf3cc99e290d47c875a58a53a0a5882a2de1c2fd76a265757",
@@ -538,7 +538,11 @@
         }
       ],
       "translation": {
-        "status": "missing"
+        "status": "current",
+        "output": "content/docs/start/cheatsheet.md",
+        "record": "docs-sync/translations/start/cheatsheet.json",
+        "outputHash": "d46d5dfc1a6c63a90f7a6a11410d46783aa199f9139eff94d371d7e9bcf181a4",
+        "bodyHash": "8302f1718da720471dc241d55fe45fe973aa187d7059ac068bc5820a91f47752"
       }
     },
     "start/about": {
@@ -666,12 +670,11 @@
         }
       ],
       "translation": {
-        "status": "outdated",
+        "status": "current",
         "output": "content/docs/tools/ci.md",
         "record": "docs-sync/translations/tools/ci.json",
-        "pending": 1,
-        "outputHash": "f65a023334b58d09c36bf41893d83b4073b1aae3fa2a3e41b1a85ed9028ce563",
-        "bodyHash": "856fd6cb9735f38f0aed5afaeaf6493d0088b5489f78976e72a36ad679ab83b1"
+        "outputHash": "cc142488c93ec2fbf513e972cb1710d275ad3e2bfc4fe0c5e9fa18260033d68f",
+        "bodyHash": "88748ce3ea1ae94f5e78f526af1617f6d2fe01b5a919f2528e7509b092519249"
       }
     },
     "tools/cli": {
@@ -714,8 +717,8 @@
         "status": "current",
         "output": "content/docs/tools/editor.md",
         "record": "docs-sync/translations/tools/editor.json",
-        "outputHash": "de8abd1aac47775192e6944bbe7902eca60ff4889cb7bcace3e87bd8ea8c8078",
-        "bodyHash": "f66cc6091465eff6b36ebb4dd3ba89152859d228922bb691f2d47ee275f21380"
+        "outputHash": "5362a624b5341b746da2c091fbbdd2ec7e560719cbbe35d3921d93e22bccba6c",
+        "bodyHash": "c715afba43d35fd3dc1e4c2b5a87de6a4a9d26f283cfbad1ab898e616b1fba73"
       }
     },
     "tools/scripting": {
@@ -1034,8 +1037,8 @@
         "status": "current",
         "output": "content/docs/plugin/getting-started.md",
         "record": "docs-sync/translations/plugin/getting-started.json",
-        "outputHash": "0737f04457bdd4d6fa41b27df8ee37caee8a8b488586c41ec459da31939e6e24",
-        "bodyHash": "58c82a6f4513fc9144aa1c815143179ffd10fa8fcf2dfdc822883b2236e4babb"
+        "outputHash": "8e0bfb7482706868cb83c2f32f576174dbd909b5d5a28c4737ac571b8fa4ce84",
+        "bodyHash": "c712aeb9d044a6a2d033561dd51c2d4d9cde14bc37c3c569898baf052c28d8a5"
       }
     },
     "plugin/language/native-emitter-inheritance": {
@@ -1144,8 +1147,8 @@
         "status": "current",
         "output": "content/docs/plugin/tools/incremental-build-reference.md",
         "record": "docs-sync/translations/plugin/tools/incremental-build-reference.json",
-        "outputHash": "8f01d5652992375ef58f74fb830a12b49f47eb728bd9a50abda8cb2450014822",
-        "bodyHash": "94fb34ddb1fb233e673b05798732e82fc2066f8ceea1e0b922f4790d21d69cd3"
+        "outputHash": "fa451c4ac31ffbe8624c68e2c9119758be8316ffb7a8f0033a57875fd28516f3",
+        "bodyHash": "e4328f238903aa2ad67f5041d6e820ae33e6d275897f05ed7fefddfb890ac0ef"
       }
     },
     "plugin/tools/pull": {
@@ -1217,7 +1220,7 @@
   },
   "published": {
     "public/diagnostics.json": "038129dda7463cde8c18b1789d51efa5cd0bc39066fb99f72a846abc89fff889",
-    "public/llms-full.txt": "d86cc26858e585c2051066e6e8d8072532469aeb3bce00936cde2da475e250b9",
+    "public/llms-full.txt": "4c63987581dcb9684081cc22441096d4c8d122f45eff39b1db8e1c4515715de8",
     "public/llms.txt": "b261dfa0a18a45643b48c21ea219c4d31e51ae6d1d623db0706b9cbd8919f5a5"
   }
 }
